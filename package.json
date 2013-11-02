@@ -20,6 +20,8 @@
   "author": "Tyler Stark (front end)",
   "license": "BSD",
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+    "connect-redis": "~1.4.5",
+    "redis": "~0.9.0"
   }
 }
