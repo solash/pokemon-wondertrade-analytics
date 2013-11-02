@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-wondertrade-analytics",
+  "version": "0.0.0",
+  "description": "Node/Express Webapp designed to show wonder trade analytics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TheIronDeveloper/pokemon-wondertrade-analytics.git"
+  },
+  "keywords": [
+    "Wonder",
+    "Trade",
+    "Pokemon",
+    "High",
+    "Charts"
+  ],
+  "author": "Tyler Stark (front end)",
+  "license": "BSD",
+  "dependencies": {
+    "express": "3.x"
+  }
+}
