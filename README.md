@@ -13,6 +13,7 @@ sudo apt-get install redis-server
 
 ##Pull in npm dependencies
 sudo npm install  
+sudo npm install -g nodemon
 
 ##Start the server
 node server.js  
