@@ -1,43 +1,21 @@
 var express = require('express'),
 	ejs = require('ejs'),
+	engine = require('ejs-locals'),
 	redis = require('redis'),
 	dataStore = redis.createClient(),
 	app = express();
 
-
+app.engine('ejs', engine);
 app.use(express.cookieParser());
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
+// Init Home Controller
+(require('./controllers/home')).initController(app, dataStore);
 
-app.get('/', function(request, response){	
-	response.render('../views/home.ejs', {
-		date: new Date()
-	});
-	dataStore.get('test', function(err, msg) {
-		console.log(msg);
-	});
-});
+// Init WonderTrade Controller
+(require('./controllers/wondertrade')).initController(app);
 
-app.get('/wondertrade', function(request, response){
-	response.render('../views/wondertrade/index.ejs', {
-		date: new Date()
-	});
-});
-
-app.get('/wondertrade/new', function(request, response){
-	response.render('../views/wondertrade/new.ejs', {});
-});
-
-app.get('/wondertrade/:id', function(request, response){
-	var wondertrade_id = request.params.id;
-	response.render('../views/wondertrade/show.ejs', {id:wondertrade_id});
-});
-
-app.post('/wondertrade/:id', function(request, response){
-	var wondertrade_id = request.params.id;
-	// code to save to datastore here
-	response.render('../views/wondertrade/show.ejs', {id:wondertrade_id});
-});
 
 // app.get('/test/:newValue', function(req, res){
 // 	var newValue = req.params.newValue;
