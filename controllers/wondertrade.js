@@ -5,18 +5,24 @@ exports.initController =  function(app) {
 		});
 	});
 
+	app.get('/wondertrade/show/:id', function(request, response){
+		var wondertrade_id = request.params.id;
+		response.render('wondertrade/show', {
+			id:wondertrade_id,
+			title: 'WonderTrade By ID'
+		});
+	});
+
 	app.get('/wondertrade/new', function(request, response){
-		response.render('wondertrade/new', {});
+		response.render('wondertrade/new', {
+			title: 'New Wonder Trade'
+		});
 	});
-
-	app.get('/wondertrade/:id', function(request, response){
-		var wondertrade_id = request.params.id;
-		response.render('wondertrade/show', {id:wondertrade_id});
-	});
-
-	app.post('/wondertrade/:id', function(request, response){
-		var wondertrade_id = request.params.id;
+	app.post('/wondertrade/new', function(request, response){		
 		// code to save to datastore here
-		response.render('wondertrade/show', {id:wondertrade_id});
+		response.render('wondertrade/show', {
+			id:wondertrade_id,
+			title: 'New Wonder Trade'
+		});
 	});
 };
