@@ -16,3 +16,5 @@ sudo npm install
 
 ##Start the server
 node server.js  
+
+... even better, nodemon server.js (constantly updates)
