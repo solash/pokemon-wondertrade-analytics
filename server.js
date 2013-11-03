@@ -1,5 +1,6 @@
 var express = require('express'),
-	RedisStore = require('connect-redis')(express),
+	redis = require('redis'),
+	dataStore = redis.createClient(),
 	app = express();
 
 
@@ -8,16 +9,17 @@ app.use(express.cookieParser());
 
 app.get('/', function(req, res){	
 	res.send('hello world');
+	dataStore.get('test', function(err, msg) {
+		console.log(msg);
+	});
 });
 
-app.get('/test1', function(req, res){
-	res.send('test1, your session should reflect you visited test1 last');
-});
-app.get('/test2', function(req, res){
-	res.send('test1, your session should reflect you visited test2 last');
+app.get('/test/:newValue', function(req, res){
+	var newValue = req.params.newValue;
+	res.send('the test field should reflect "'+newValue+'"');
+	dataStore.set('test', newValue);
 });
 
 app.listen(3000, function(){
 	console.log('Listening on port 3000');
-	console.log(RedisStore);
 });
