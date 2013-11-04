@@ -1,2 +1,23 @@
 <% layout('../layout') -%>
 <h1>form here</h1>
+<form name="input" action="/wondertrade/new" method="post">
+	<label>PokemonID: <input type="text" name="pokemonId" /></label>
+
+	<label>Pokemon Nickname (optional): <input type="text" name="pokemonNickname" /></label>	
+
+	<label>Pokemon Has Item?: <input type="checkbox" name="hasItem" /></label>
+
+	<label>Pokemon Has Hidden Ability?: <input type="checkbox" name="hasHiddenAbility" /></label>
+
+	<label>Pokemon Is Shiny?: <input type="checkbox" name="isShiny" /></label>
+
+	<label>Pokemon Held Item?: <input type="text" name="item" /></label>
+
+	<label>Trainer Gender: <input type="text" name="trainerGender" /></label>	
+
+	<label>Trainer Country: <input type="text" name="trainerCountry" /></label>
+
+	<label>Trainer Country Sub: <input type="text" name="trainerCountrySub1" /></label>
+
+	<input type="submit" />
+</form>

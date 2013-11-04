@@ -4,8 +4,11 @@ exports.initController = function(app, dataStore) {
 			date: new Date(),
 			title: 'Homepage Title'
 		});
-		dataStore.get('test', function(err, msg) {
-			console.log('from the datastore:'+msg);
+		dataStore.get('test', function(err, result) {
+			console.log('from the datastore:'+result);
+		});
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			console.log(result);
 		});
 	});
 };

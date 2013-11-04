@@ -1,4 +1,5 @@
 var express = require('express'),
+	util = require('util'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),
 	redis = require('redis'),
@@ -6,6 +7,7 @@ var express = require('express'),
 	app = express();
 
 app.engine('ejs', engine);
+app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -14,7 +16,7 @@ app.set('views', __dirname + '/views');
 (require('./controllers/home')).initController(app, dataStore);
 
 // Init WonderTrade Controller
-(require('./controllers/wondertrade')).initController(app);
+(require('./controllers/wondertrade')).initController(app, dataStore);
 
 
 // app.get('/test/:newValue', function(req, res){
