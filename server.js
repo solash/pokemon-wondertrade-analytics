@@ -11,6 +11,7 @@ app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
 
 // Init Home Controller
 (require('./controllers/home')).initController(app, dataStore);
