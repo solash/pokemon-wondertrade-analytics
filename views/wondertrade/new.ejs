@@ -6,7 +6,14 @@
 
 <form name="input" action="/wondertrade/new" method="post">
 	<div class="col2">
-		<label>PokemonID: <input type="text" name="pokemonId" /></label>
+		<label>
+			PokemonID:
+			<select name="pokemonId">
+				<% for(var pokemon in pokemonList) { %>
+					<option value="<%= pokemonList[pokemon]['id'] %>"><%= pokemonList[pokemon].name %></option>
+				<% } %>				
+			</select>
+		</label>
 		<label>Pokemon Nickname (optional): <input type="text" name="pokemonNickname" /></label>	
 		<label>Pokemon Has Item?: <input type="checkbox" name="hasItem" /></label>
 		<label>Pokemon Has Hidden Ability?: <input type="checkbox" name="hasHiddenAbility" /></label>
@@ -15,7 +22,7 @@
 	</div>
 	<div class="col2">
 		Trainer Gender:
-		<label> Male  <input type="radio" name="trainerGender" value="male" /><label>
+		<label> Male  <input type="radio" name="trainerGender" value="male" /></label>
 		<label> Female<input type="radio" name="trainerGender" value="female" /></label>	
 		<label>Trainer Country: <input type="text" name="trainerCountry" /></label>
 		<label>Trainer Country Sub: <input type="text" name="trainerCountrySub1" /></label>

@@ -1,5 +1,7 @@
 exports.initController =  function(app, dataStore, util) {
 	var WondertradeModel = require('../models/wondertrade').model;
+	var PokemonList = require('../data/pokemonList.json');
+
 	app.get('/wondertrade', function(request, response){
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
 			var deserializedWondertrades = [];			
@@ -11,7 +13,6 @@ exports.initController =  function(app, dataStore, util) {
 					deserializedWondertrades.push(JSON.parse(currentWonderTrade));
 				}
 			}
-
 			
 			response.render('wondertrade/index', {
 				wondertrades: deserializedWondertrades,
@@ -25,6 +26,7 @@ exports.initController =  function(app, dataStore, util) {
 	app.get('/wondertrade/new', function(request, response){
 		response.render('wondertrade/new', {
 			title: 'New Wonder Trade',
+			pokemonList: PokemonList,
 			state:	'form'
 		});
 	});
@@ -37,6 +39,7 @@ exports.initController =  function(app, dataStore, util) {
 		dataStore.lpush('wondertrade', serializedWondertrade, function(err, size) {			
 			response.render('wondertrade/new', {
 				title: 'New Wonder Trade',
+				pokemonList: PokemonList,
 				state:	'post'
 			});
 			console.log('A new wondertrade was added');

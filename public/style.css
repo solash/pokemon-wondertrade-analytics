@@ -1,1 +1,4 @@
 .container{width: 100%; max-width: 960px;margin: 0 auto;border: 1px solid #ccc;}
+
+.col2{float: left;width: 49%;}
+.col2 label{display: block;}
