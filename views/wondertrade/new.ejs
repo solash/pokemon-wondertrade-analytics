@@ -1,5 +1,9 @@
 <% layout('../layout') -%>
 <h1>form here</h1>
+<% if(state === "post") { %>
+	<h3>Your last wonder trade has been added </h3>
+<% } %>
+
 <form name="input" action="/wondertrade/new" method="post">
 	<label>PokemonID: <input type="text" name="pokemonId" /></label>
 

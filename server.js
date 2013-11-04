@@ -16,7 +16,7 @@ app.set('views', __dirname + '/views');
 (require('./controllers/home')).initController(app, dataStore);
 
 // Init WonderTrade Controller
-(require('./controllers/wondertrade')).initController(app, dataStore);
+(require('./controllers/wondertrade')).initController(app, dataStore, util);
 
 
 // app.get('/test/:newValue', function(req, res){
