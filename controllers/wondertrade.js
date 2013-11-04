@@ -1,6 +1,12 @@
 exports.initController =  function(app, dataStore, util) {
-	var WondertradeModel = require('../models/wondertrade').model;
-	var PokemonList = require('../data/pokemonList.json');
+	var WondertradeModel = require('../models/wondertrade').model,
+		PokemonList = require('../data/pokemonList.json'),
+		PokemonHash = {};
+
+	for(var pokemon in PokemonList) {
+		PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
+	}
+
 
 	app.get('/wondertrade', function(request, response){
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
@@ -17,7 +23,8 @@ exports.initController =  function(app, dataStore, util) {
 			response.render('wondertrade/index', {
 				wondertrades: deserializedWondertrades,
 				date: new Date(),
-				title: 'Wonder Trade List'
+				title: 'Wonder Trade List',
+				pokemonHash: PokemonHash
 			});
 		});		
 		

@@ -1,7 +1,7 @@
 exports.model = function(params) {
 	var pokemonModel = {};
 
-	pokemonModel.pokemonId = params.pokemonId;
+	pokemonModel.pokemonId = params.pokemonId || 0;
 	pokemonModel.pokemonNickname = params.pokemonNickname || '';
 	pokemonModel.hasItem = params.hasItem || '';
 	pokemonModel.hasHiddenAbility = params.hasHiddenAbility || '';
