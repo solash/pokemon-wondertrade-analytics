@@ -3,8 +3,31 @@
 <h3>A list of all wonder trades should be shown here</h3>
 
 
-<ul>
-	<% for(var i=0, max=wondertrades.length;i<max;i++) { %>
-		<li><%= pokemonHash[wondertrades[i].pokemonId] %></li>
-	<% } %>
-</ul>
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Pokemon</th>
+		<th>Nickname</th>
+		<th>Item?</th>
+		<th>Shiny?</th>
+		<th>Hidden Ability?</th>
+		<th>Trainer Gender</th>
+		<th>Trainer Country</th>
+		<th>Trainer Country Sub</th>
+		<th>Submitted By:</th>
+	</tr>
+	<% wondertrades.forEach(function(wondertrade){ %>
+		<tr>
+			<td><%= wondertrade.date %></td>
+    		<td><%= pokemonHash[wondertrade.pokemonId] %></td>
+    		<td><%= wondertrade.pokemonNickname %></td>    		
+    		<td><%= wondertrade.hasItem %></td>
+    		<td><%= wondertrade.isShiny %></td>
+    		<td><%= wondertrade.hasHiddenAbility %></td>
+    		<td><%= wondertrade.trainerGender %></td>
+    		<td><%= wondertrade.trainerCountry %></td>
+    		<td><%= wondertrade.trainerCountrySub1 %></td>
+    		<td><%= wondertrade.userId %></td>
+    	</tr>
+  	<% }); %>
+</table>
