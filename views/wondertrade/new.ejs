@@ -5,26 +5,43 @@
 <% } %>
 
 <form name="input" action="/wondertrade/new" method="post">
-	<div class="col2">
-		<label>
-			PokemonID:
-			<select name="pokemonId">
-				<% for(var pokemon in pokemonList) { %>
-					<option value="<%= pokemonList[pokemon]['id'] %>"><%= pokemonList[pokemon].name %></option>
-				<% } %>				
-			</select>
-		</label>
-		<label>Pokemon Nickname (optional): <input type="text" name="pokemonNickname" /></label>	
-		<label>Item?: <input type="checkbox" name="hasItem" /></label>
-		<label>Hidden Ability?: <input type="checkbox" name="hasHiddenAbility" /></label>
-		<label>Shiny?: <input type="checkbox" name="isShiny" /></label>
+	<div class="input-columns">
+		<div class="input-column pokemon-details">
+			<div class="input-row">
+			<label>
+				PokemonID:
+				<select name="pokemonId">
+					<% for(var pokemon in pokemonList) { %>
+						<option value="<%= pokemonList[pokemon]['id'] %>"><%= pokemonList[pokemon].name %></option>
+					<% } %>				
+				</select>
+			</label>
+			</div>
+			<div class="input-row">
+				<label>Nickname (optional): <input type="text" name="pokemonNickname" /></label>
+			</div>
+			<div class="input-row">
+				<label>Item?: <input type="checkbox" name="hasItem" /></label>
+				<label>Hidden Ability?: <input type="checkbox" name="hasHiddenAbility" /></label>
+				<label>Shiny?: <input type="checkbox" name="isShiny" /></label>
+			</div>
+		</div>
+		<div class="input-column trainer-details">
+			<div class="input-row">
+				Trainer Gender:
+				<span class="radio-group">
+					<label> Male  <input type="radio" name="gender" value="male" /></label>
+					<label> Female <input type="radio" name="gender" value="female" /></label>
+				</span>
+			</div>
+			<div class="input-row">
+				<label>Trainer Country: <input type="text" name="trainerCountry" /></label>
+			</div>
+			<div class="input-row">
+				<label>Trainer Country Sub: <input type="text" name="trainerCountrySub1" /></label>
+			</div>				
+		</div>
 	</div>
-	<div class="col2">
-		Trainer Gender:
-		<label> Male  <input type="radio" name="gender" value="male" /></label>
-		<label> Female <input type="radio" name="gender" value="female" /></label>	
-		<label>Trainer Country: <input type="text" name="trainerCountry" /></label>
-		<label>Trainer Country Sub: <input type="text" name="trainerCountrySub1" /></label>
-		<input type="submit" />
-	</div>
+	<button><i class="pokeball-submit"></i>Submit</button>
+
 </form>

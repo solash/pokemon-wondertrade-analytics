@@ -1,4 +1,4 @@
-*{box-sizing:border-box;}
+*{box-sizing:border-box;-moz-box-sizing:border-box;}
 body{margin: 0;}
 h1{text-align: center;}
 table{border-collapse: collapse;}
@@ -13,5 +13,23 @@ a{color: #efef38}
 
 .wondertrade-list{text-align: center;}
 
-.col2{float: left;width: 49%;}
-.col2 label{display: block;}
+.input-columns{margin: 0 auto;overflow: hidden;width: 80%}
+.input-column{float: left;width: 48%;margin: 0 1%;min-height:9em;padding: 1em;font-weight: bold;}
+.input-column label{font-weight: normal;}
+.input-column .radio-group,
+.input-column select,
+.input-column input[type="text"]{float: right;}
+.input-column .input-row{line-height: 2em;}
+.pokemon-details{background: rgba(100,150,100,.6);}
+.trainer-details{background: rgba(100,100,150,.6);}
+
+
+button{border: none;display:block;margin: 0 auto;}
+.pokeball-submit{
+	/* hot linking while developing, I'll make a different version */
+	background: url(http://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG) no-repeat center center;
+	background-size: contain;
+	display:block;
+	height: 5em;
+	width: 5em;
+}
