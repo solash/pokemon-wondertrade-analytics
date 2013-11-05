@@ -67,6 +67,7 @@ exports.initController =  function(app, dataStore, util) {
 			test6 = WondertradeModel({"pokemonId":"704","pokemonNickname":"Our Lord","hasItem":true,"hasHiddenAbility":true,"isShiny":true,"gender":"male","trainerCountry":"USA","trainerCountrySub1":"","date":"2013-11-04","userId":"Test"}),
 			testArray = [test1, test2, test3, test4, test5, test6];
 
+		dataStore.del('wondertrade');
 		for(var testWT in testArray) {
 			var stringifiedWT = JSON.stringify(testArray[testWT]);
 			dataStore.lpush('wondertrade', stringifiedWT);

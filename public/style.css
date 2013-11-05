@@ -1,4 +1,17 @@
-.container{width: 100%; max-width: 960px;margin: 0 auto;border: 1px solid #ccc;}
+*{box-sizing:border-box;}
+body{margin: 0;}
+h1{text-align: center;}
+table{border-collapse: collapse;}
+td, th{border:1px solid #000;padding: 0.1em;}
+tr{background: #131f43;color:#efefef;}
+tr:nth-child(even){background: #59627b;}
+a{color: #efef38}
+
+/* Page specific */
+.wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;overflow: hidden;}
+.container{width: 100%; max-width: 960px;margin: 0 auto;}
+
+.wondertrade-list{text-align: center;}
 
 .col2{float: left;width: 49%;}
 .col2 label{display: block;}
