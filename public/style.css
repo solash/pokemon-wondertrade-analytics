@@ -1,6 +1,16 @@
 *{box-sizing:border-box;-moz-box-sizing:border-box;}
-body{margin: 0;}
+
+
+@font-face {
+    font-family: Steelworks;
+    src: url("/fonts/SteelworksBook.otf");
+    font-weight:400;
+}
+
+
+body{margin: 0;font-family: "helvetica"}
 h1{text-align: center;}
+h1,h2,h3,h4{font-family: "Steelworks"}
 table{border-collapse: collapse;}
 td, th{border:1px solid #000;padding: 0.1em;}
 tr{background: #131f43;color:#efefef;}
