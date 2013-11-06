@@ -1,7 +1,8 @@
 exports.initController = function(app, dataStore) {
 	app.get('/', function(request, response){	
 		response.render('home', {
-			title: 'Homepage Title'
+			title: 'Homepage Title',
+			pageState: ''
 		});
 		dataStore.get('test', function(err, result) {
 			console.log('from the datastore:'+result);
@@ -13,7 +14,8 @@ exports.initController = function(app, dataStore) {
 
 	app.get('/about', function(request, response){	
 		response.render('about', {
-			title: 'About this Project'
+			title: 'About this Project',
+			pageState: ''
 		});		
 	});
 };

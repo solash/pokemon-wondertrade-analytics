@@ -9,7 +9,7 @@ exports.initController =  function(app, dataStore, util) {
 
 
 	app.get('/wondertrade', function(request, response){
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+		dataStore.lrange('wondertrade' ,0, 100, function(error, result){
 			var deserializedWondertrades = [];			
 			for(var i = 0, max =  result.length;i<max;i++) {				
 				var currentWonderTrade = result[i];
@@ -24,7 +24,8 @@ exports.initController =  function(app, dataStore, util) {
 				wondertrades: deserializedWondertrades,
 				date: new Date(),
 				title: 'Wonder Trade List',
-				pokemonHash: PokemonHash
+				pokemonHash: PokemonHash,
+				pageState: ''
 			});
 		});		
 		
@@ -34,7 +35,8 @@ exports.initController =  function(app, dataStore, util) {
 		response.render('wondertrade/new', {
 			title: 'New Wonder Trade',
 			pokemonList: PokemonList,
-			state:	'form'
+			pageState: '',
+			stateMessage:	''
 		});
 	});
 
@@ -47,12 +49,18 @@ exports.initController =  function(app, dataStore, util) {
 				response.render('wondertrade/new', {
 					title: 'New Wonder Trade',
 					pokemonList: PokemonList,
-					state:	'post'
+					pageState: 'success',
+					stateMessage:	'Your Wonder Trade was successfully added.'
 				});
 				console.log('A new wondertrade was added');
 			});	
 		} else {
-			response.send('There was an error with the pokemon you were loading...');
+			response.render('wondertrade/new', {
+				title: 'New Wonder Trade',
+				pokemonList: PokemonList,
+				pageState: 'error',
+				stateMessage:	'There was a problem adding your last wonder trade.'
+			});
 		}
 				
 	});

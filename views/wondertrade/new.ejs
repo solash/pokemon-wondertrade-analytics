@@ -1,8 +1,5 @@
 <% layout('../layout') -%>
-<h1>form here</h1>
-<% if(state === "post") { %>
-	<h3>Your last wonder trade has been added </h3>
-<% } %>
+<h2>Submit a new Wonder Trade</h2>
 
 <form name="input" action="/wondertrade/new" method="post">
 	<div class="input-columns">
@@ -11,6 +8,7 @@
 			<label>
 				PokemonID:
 				<select name="pokemonId">
+					<option value="0">Select a Pokemon</option>
 					<% for(var pokemon in pokemonList) { %>
 						<option value="<%= pokemonList[pokemon]['id'] %>"><%= pokemonList[pokemon].name %></option>
 					<% } %>				
@@ -20,18 +18,18 @@
 			<div class="input-row">
 				<label>Nickname (optional): <input type="text" name="pokemonNickname" /></label>
 			</div>
-			<div class="input-row">
-				<label>Item?: <input type="checkbox" name="hasItem" /></label>
-				<label>Hidden Ability?: <input type="checkbox" name="hasHiddenAbility" /></label>
-				<label>Shiny?: <input type="checkbox" name="isShiny" /></label>
+			<div class="input-row checkbox-group">
+				<label><input type="checkbox" name="hasItem" />Item</label>
+				<label><input type="checkbox" name="hasHiddenAbility" />Hidden Ability</label>
+				<label><input type="checkbox" name="isShiny" />Shiny</label>
 			</div>
 		</div>
 		<div class="input-column trainer-details">
 			<div class="input-row">
 				Trainer Gender:
 				<span class="radio-group">
-					<label> Male  <input type="radio" name="gender" value="male" /></label>
-					<label> Female <input type="radio" name="gender" value="female" /></label>
+					<label> Male &#9794; <input type="radio" name="gender" value="male" /></label>
+					<label> Female &#9792; <input type="radio" name="gender" value="female" /></label>
 				</span>
 			</div>
 			<div class="input-row">

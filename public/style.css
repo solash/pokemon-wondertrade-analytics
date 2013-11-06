@@ -9,12 +9,13 @@
 
 
 body{margin: 0;font-family: "helvetica"}
-h1{text-align: center;}
-h1,h2,h3,h4{font-family: "Steelworks"}
+h1,h2,h3,h4{text-align: center;color: #fff;text-shadow:1px 1px 1px #000;font-family: "Steelworks"}
 table{border-collapse: collapse;}
 td, th{border:1px solid #000;padding: 0.1em;}
-tr{background: #131f43;color:#efefef;}
-tr:nth-child(even){background: #59627b;}
+tr{background: #C5DBF3;color:#000;}
+tr:nth-child(even){background: #efefef;}
+tbody tr:hover{background: #ffa}
+thead tr{background: #333;color: #fff;text-shadow:1px 1px 1px #000;}
 a{color: #efef38}
 
 
@@ -23,20 +24,41 @@ a{color: #efef38}
 .wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;overflow: hidden;}
 .container{width: 100%; max-width: 960px;margin: 0 auto;}
 
-.wondertrade-list{text-align: center;}
+.stateMessage{color:#000;padding:1em 0;text-align: center;}
+.stateMessage.warning{background: #ff6;}
+.stateMessage.error{background: #f00;color: #fff;text-shadow: 1px 1px 1px #000;}
+.stateMessage.success{background: #0f0;}
 
+/* About page */
+.team-member{background: #efefef;color: #000;float: left;margin:1%;padding:0.5em;width: 48%;}
+.team-member .avatar{float: left;width: 30%;}
+.team-member .description{float: left;width: 70%;}
+
+/* Wondertrade list*/
+.wondertrade-list{text-align: center;width: 100%;}
+.wondertrade-list .strong-divider{border-right: 2px solid #000}
+.wondertrade-list .gender-male{color:blue;}
+.wondertrade-list .gender-female{color:#f0f;}
+
+/* Wondertrade new*/
 .input-columns{margin: 0 auto;overflow: hidden;width: 80%}
-.input-column{float: left;width: 48%;margin: 0 1%;min-height:9em;padding: 1em;font-weight: bold;}
+.input-column{float: left;width: 48%;margin: 0 1%;min-height:10em;padding: 1em;font-weight: bold;}
 .input-column label{font-weight: normal;}
 .input-column .radio-group,
 .input-column select,
-.input-column input[type="text"]{float: right;}
-.input-column .input-row{line-height: 2em;}
+.input-column input[type="text"]{float: right;width: 180px}
+.input-column .input-row{line-height: 1.5em;clear:both;margin: 1em 0;}
 .pokemon-details{background: rgba(100,150,100,.6);}
 .trainer-details{background: rgba(100,100,150,.6);}
 
+.checkbox-group{overflow: hidden;}
+.input-column .radio-group label,
+.checkbox-group label{background: rgba(0,0,0,.3);display:inline-block;min-width: 30%;text-align: center;}
+.input-column .radio-group label:hover,
+.checkbox-group label:hover{cursor: pointer;background: rgba(0,0,0,.6)}
 
 button{border: none;display:block;margin: 0 auto;}
+button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .pokeball-submit{
 	/* hot linking while developing, I'll make a different version */
 	background: url(http://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG) no-repeat center center;
