@@ -25,14 +25,17 @@ a{color: #efef38}
 .wrapper:after{clear: both;content: '';display: block;}
 .container{width: 1020px;margin: 0 auto;}
 
+/* Layout */
 .page{position: relative;}
 .page-content{width:100%;}
-.page-sidebar{width:200px;position: absolute;top:0;right: 0;}
-.page-sidebar ul{height: 0;overflow: hidden;}
-.page-sidebar ul{list-style: none;text-align: center;padding: 0}
-.page-sidebar:hover{height: auto;background: rgba(0,0,0,0.8);}
-.page-sidebar:hover ul{height: auto;}
+
+/* Sidebar */
+.page-sidebar{width:200px;position: absolute;top:-1em;right: 0;background: rgba(0,0,0,0.8);padding: 1em;}
+.page-sidebar h3{padding: 0;margin:0;}
+.page-sidebar ul{list-style: none;padding: 0;height: 0;margin:0;overflow: hidden;text-align: center;}
 .page-sidebar ul li a{display: block;}
+
+.page-sidebar:hover ul{height: auto;}
 .page-sidebar ul li a:hover{background: rgba(255,255,255,.2);}
 
 .stateMessage{color:#000;padding:1em 0;text-align: center;}
