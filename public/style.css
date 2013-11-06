@@ -7,7 +7,9 @@ tr{background: #131f43;color:#efefef;}
 tr:nth-child(even){background: #59627b;}
 a{color: #efef38}
 
+
 /* Page specific */
+.page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: absolute;width: 100%;top:0;z-index: -1;}
 .wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;overflow: hidden;}
 .container{width: 100%; max-width: 960px;margin: 0 auto;}
 
