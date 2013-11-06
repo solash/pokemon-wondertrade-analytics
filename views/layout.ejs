@@ -16,8 +16,19 @@
         </div>
       <% } %>
 
-    	<div class="container">	    
-  	     <%- body %>
+    	<div class="container page">	    
+  	     <div class="page-content">
+          <%- body %>
+        </div>
+        <div class="page-sidebar">
+          <h3>Site Nav</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/wondertrade">Recent Wonder Trades</a></li>
+            <li><a href="/wondertrade/new">Add a Wonder Trade</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>

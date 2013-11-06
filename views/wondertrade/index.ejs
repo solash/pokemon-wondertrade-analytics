@@ -29,11 +29,11 @@
     		<td><%= wondertrade.hasItem? 'x' : '' %></td>
     		<td><%= wondertrade.isShiny? 'x' : '' %></td>
     		<td class="strong-divider"><%= wondertrade.hasHiddenAbility? 'x' : '' %></td>
-    		<td><%- wondertrade.trainerGender === 'male' ? '<span class="gender-male">&#9794;</span>' : '<span class="gender-female">&#9792;</span>' %></td>
+    		<td><span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male">&#9794;' : 'female">&#9792;' %></td></span>
     		<td><%= wondertrade.trainerCountry %></td>
     		<td><%= wondertrade.trainerCountrySub1 %></td>
     		<td><%= wondertrade.userId %></td>
-    		<td><%= wondertrade.date %></td>
+    		<td><%= (new Date(wondertrade.date)).toDateString() %></td>
     	</tr>
   	<% }); %>
   	</tbody>
