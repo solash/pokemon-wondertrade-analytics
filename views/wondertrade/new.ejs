@@ -33,7 +33,15 @@
 				</span>
 			</div>
 			<div class="input-row">
-				<label>Trainer Country: <input type="text" name="trainerCountry" /></label>
+				<label>
+					Trainer Country:
+					<select name="trainerCountry">
+						<option value="">Select a Country</option>
+						<% for(var country in countryList) { %>
+							<option value="<%= countryList[country]['id'] %>"><%= countryList[country].name %></option>
+						<% } %>				
+					</select>
+				</label>
 			</div>
 			<div class="input-row">
 				<label>Trainer Country Sub: <input type="text" name="trainerCountrySub1" /></label>

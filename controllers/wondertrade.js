@@ -1,10 +1,16 @@
 exports.initController =  function(app, dataStore, util) {
 	var WondertradeModel = require('../models/wondertrade').model,
 		PokemonList = require('../data/pokemonList.json'),
-		PokemonHash = {};
+		CountryList = require('../data/countryList.json'),
+		PokemonHash = {},
+		CountryHash = {};
 
 	for(var pokemon in PokemonList) {
 		PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
+	}
+
+	for(var country in CountryList) {
+		CountryHash[CountryList[country].id] = CountryList[country].name;
 	}
 
 
@@ -25,6 +31,7 @@ exports.initController =  function(app, dataStore, util) {
 				date: new Date(),
 				title: 'Wonder Trade List',
 				pokemonHash: PokemonHash,
+				countryHash: CountryHash,
 				pageState: ''
 			});
 		});		
@@ -35,6 +42,7 @@ exports.initController =  function(app, dataStore, util) {
 		response.render('wondertrade/new', {
 			title: 'New Wonder Trade',
 			pokemonList: PokemonList,
+			countryList: CountryList,
 			pageState: '',
 			stateMessage:	''
 		});
@@ -49,6 +57,7 @@ exports.initController =  function(app, dataStore, util) {
 				response.render('wondertrade/new', {
 					title: 'New Wonder Trade',
 					pokemonList: PokemonList,
+					countryList: CountryList,
 					pageState: 'success',
 					stateMessage:	'Your Wonder Trade was successfully added.'
 				});
@@ -58,6 +67,7 @@ exports.initController =  function(app, dataStore, util) {
 			response.render('wondertrade/new', {
 				title: 'New Wonder Trade',
 				pokemonList: PokemonList,
+				countryList: CountryList,
 				pageState: 'error',
 				stateMessage:	'There was a problem adding your last wonder trade.'
 			});

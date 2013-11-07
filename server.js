@@ -19,6 +19,8 @@ app.use(express.static(__dirname + '/public'));
 // Init WonderTrade Controller
 (require('./controllers/wondertrade')).initController(app, dataStore, util);
 
+// Init Data Controller
+(require('./controllers/data')).initController(app, dataStore);
 
 // app.get('/test/:newValue', function(req, res){
 // 	var newValue = req.params.newValue;

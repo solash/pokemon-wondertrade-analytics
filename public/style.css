@@ -81,3 +81,8 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 	height: 5em;
 	width: 5em;
 }
+
+
+/* Data */
+.chart-box{background: rgba(0,0,0,.3);padding: 1em;margin: 1px 0}
+.chart-box.half-chart{float:left;width: 50%;}
