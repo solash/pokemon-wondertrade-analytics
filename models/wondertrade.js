@@ -31,6 +31,7 @@ function sanitizeParams(params) {
 	params.pokemonNickname = params.pokemonNickname || '';
 	params.hasItem = (params.hasItem ? true : false);
 	params.hasHiddenAbility = (params.hasHiddenAbility ? true : false);
+	params.hasPokerus = (params.hasPokerus ? true : false);	
 	params.isShiny = (params.isShiny ? true : false);
 	params.trainerGender = params.trainerGender || '';
 	params.trainerCountry = params.trainerCountry || '';
@@ -51,6 +52,7 @@ exports.model = function(params) {
 		"pokemonNickname" : params.pokemonNickname,
 		"hasItem" : params.hasItem,
 		"hasHiddenAbility" : params.hasHiddenAbility,
+		"hasPokerus" : params.hasPokerus,
 		"isShiny" : params.isShiny,
 		"trainerGender" : params.trainerGender,
 		"trainerCountry" : params.trainerCountry,
