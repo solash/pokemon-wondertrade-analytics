@@ -15,6 +15,12 @@
               ]
           };
       });
+      Date.prototype.customFormatDate = function(){
+        var year = this.getFullYear(),
+          month = ('0'+(this.getMonth()+1)).slice(-2),
+          day = ('0'+(this.getDate())).slice(-2);
+        return [year, month, day].join('-');
+      };
     </script>
   </head>
   <body>
@@ -42,6 +48,7 @@
             <li><a href="/wondertrade/new">Add a Wonder Trade</a></li>
             <li>&nbsp;</li>
             <li><a href="/data">Data Index</a></li>
+            <li><a href="/data/pokemon">Data By Pokemon</a></li>
           </ul>
         </div>
       </div>

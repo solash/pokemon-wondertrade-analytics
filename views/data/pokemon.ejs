@@ -1,0 +1,63 @@
+<% layout('../layout') -%>
+<h3>Pokemon Overview</h3>
+
+<div class="chart-box half-chart">
+<h4>Top Ten Wonder Trades <h4>
+</div>
+<div class="chart-box half-chart">
+<h4>Bottom Ten Wonder Trades <h4>
+</div>
+<div class="chart-box full-chart" id="pokemon-chart"></div>
+
+<script>
+	$(document).ready(function(){
+		var today = new Date();
+		function fmtDate(date, offset) {
+			var newDate = new Date(date);
+			if(offset) {
+				newDate.setDate(date.getDate()+offset);							
+			} 			
+			return newDate.customFormatDate();			
+		}
+
+		var dateCategories = [
+			fmtDate(today, -6),
+			fmtDate(today, -5),
+			fmtDate(today, -4),
+			fmtDate(today, -3),
+			fmtDate(today, -2),
+			fmtDate(today, -1),
+			fmtDate(today)
+		];
+				
+		$('#pokemon-chart').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Wonder Trades by Pokemon (past Week)'
+            },            
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: { // don't display the dummy year
+                    day: '%b, %e'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Wonder Trades'
+                },
+                min: 0
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+ this.y;
+                }
+            },
+            
+            series: <%- trendingPokemonChart %>
+        });
+
+	    
+	});
+</script>
