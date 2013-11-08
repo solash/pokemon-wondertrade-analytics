@@ -1,6 +1,13 @@
+var _ = require('underscore');
 exports.initController = function(app, dataStore) {
 	app.get('/data', function(request, response){					
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var pokemon = [],
+				regions = [],
+				gender = [];
+
+			console.log(result);
+
 			response.render('data/index', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',

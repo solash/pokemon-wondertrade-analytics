@@ -3,16 +3,135 @@
 
 <p>There are a total of <%= result.length %> wonder trades recorded.</p>
 
-<div class="chart-box full-chart">
-<h4><a href="/data/pokemon">Pokemon</a></h4>
-</div>
+<div class="chart-box half-chart" id="gender-chart"></div>
+<div class="chart-box half-chart" id="region-chart"></div>
+<div class="chart-box full-chart" id="pokemon-chart"></div>
 
-<div class="chart-box half-chart">
-<h4>Gender</h4>
-</div>
 
-<div class="chart-box half-chart">
-	<h4><a href="/data/regions">Regions</a></h4>
+.. consider http://datamaps.github.io/
 
-	.. consider http://datamaps.github.io/
-</div>
+<script>
+	$(document).ready(function(){
+		$('#pokemon-chart').highcharts({
+			credits: {enabled: false},
+			chart: {
+				height: 1000
+			},
+	        title: {
+	            text: 'Wonder Trades by Pokemon'
+	        },
+	        tooltip: {
+	    	    pointFormat: '{series.name} : <b>{point.y} ({point.percentage:.1f}%)</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                    enabled: true,
+	                    color: '#000000',
+	                    connectorColor: '#000000',
+	                    format: '<b>{point.name}</b>: {point.y}'
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: 'Pokemon',
+	            data: [					
+					[ 'Bunnelby', 9 ],
+					[ 'Froakie', 10 ],
+					[ 'Eevee', 10 ]
+  				]
+	        }]
+	    });
+
+	    $('#gender-chart').highcharts({
+	        title: {
+	            text: 'Wonder Shares by Gender'
+	        },
+	        credits: {
+				enabled: false
+			},
+	        tooltip: {
+	    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                    enabled: true,
+	                    color: '#fff',
+	                    connectorColor: '#000000',
+	                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+	                    distance: -60
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: 'Gender',
+	            data: [
+	                ['Guys',   216],
+	                ['Girls', 84]
+	            ]
+	        }]
+	    });
+
+	    $('#region-chart').highcharts({
+	        title: {
+	            text: 'Wonder Shares by Country'
+	        },
+	        color: ['#fff00', '#000fff'],	        
+	        credits: {
+				enabled: false
+			},
+	        tooltip: {
+	    	    pointFormat: '<b>{point.y}</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                    enabled: true,
+	                    color: '#000000',
+	                    connectorColor: '#000000',
+	                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: 'Country',
+	            data: [
+					[ 'Switzerland', 1 ],
+					[ 'Poland', 1 ],
+					[ 'Austria', 1 ],
+					[ 'Singapore', 1 ],
+					[ 'Portugal', 1 ],
+					[ 'Anguilla', 1 ],
+					[ 'Peru', 1 ],
+					[ 'South Korea', 2 ],
+					[ 'Sweden', 2 ],
+					[ 'Greece', 2 ],
+					[ 'Netherlands', 3 ],
+					[ 'Belgium', 3 ],
+					[ 'Norway', 3 ],
+					[ 'Brazil', 4 ],
+					[ 'Mexico', 4 ],
+					[ 'Spain', 5 ],
+					[ 'France', 5 ],
+					[ 'Italy', 7 ],
+					[ 'Australia', 8 ],
+					[ 'Germany', 9 ],
+					[ 'Canada', 12 ],
+					[ 'United Kingdom', 12 ],
+					[ 'Japan', 75 ],
+					[ 'United States', 137 ]
+  				]
+	        }]
+	    });
+	});
+</script>
