@@ -1,4 +1,5 @@
 var _ = require('underscore'),
+	HighChartsData = require('../models/HighChartsData').model,
 	PokemonList = require('../data/pokemonList.json'),
 	CountryList = require('../data/countryList.json'),
 	PokemonHash = {},
@@ -32,27 +33,8 @@ exports.initController = function(app, dataStore) {
 
 			// Deserialize the wondertrades from the dataStore
 			
-			
-			// Pluck out the counts that we need
-			var trainerGender = _.countBy(deserializedWondertrades, 'trainerGender'),
-				pokemonByIds = _.countBy(deserializedWondertrades, 'pokemonId'),
-				trainerCountries = _.countBy(deserializedWondertrades, 'trainerCountry');
-			
-			// The Chart Data that will be spit on the page
-			var genderChart = [["Guys", trainerGender.male], ["Girls", trainerGender.female]],
-				pokemonChart = [],
-				countryChart = [];
-				
 
-
-			// Convert the Arrays into the Highcharts format
-			_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
-				pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);				
-			});
-
-			_.each(trainerCountries, function(countryCount, countryId) {
-				countryChart.push([CountryHash[countryId], countryCount]);
-			});						
+			var highChartsData = new HighChartsData(result);			
 
 			response.render('data/index', {
 				title: 'Wonder Trade Analytics',
@@ -60,10 +42,9 @@ exports.initController = function(app, dataStore) {
 				result: result,
 				PokemonHash: PokemonHash,
 				CountryHash: CountryHash,
-				trainerGender: trainerGender,
-				pokemonChart: JSON.stringify(pokemonChart),
-				genderChart: JSON.stringify(genderChart),
-				countryChart: JSON.stringify(countryChart)
+				pokemonChart: JSON.stringify(highChartsData.getCountsByPokemon()),
+				genderChart: JSON.stringify(highChartsData.getCountsByGender()),
+				countryChart: JSON.stringify(highChartsData.getCountsByCountries())
 			});
 		});
 	});

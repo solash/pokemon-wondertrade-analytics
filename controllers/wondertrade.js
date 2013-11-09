@@ -1,5 +1,6 @@
 exports.initController =  function(app, dataStore, util) {
 	var WondertradeModel = require('../models/wondertrade').model,
+		HighChartsData = require('../models/HighChartsData').model,
 		PokemonList = require('../data/pokemonList.json'),
 		CountryList = require('../data/countryList.json'),
 		PokemonHash = {},
@@ -16,19 +17,11 @@ exports.initController =  function(app, dataStore, util) {
 
 	app.get('/wondertrade', function(request, response){
 		dataStore.lrange('wondertrade' ,0, 100, function(error, result){
-			var deserializedWondertrades = [];			
-			for(var i = 0, max =  result.length;i<max;i++) {				
-				var currentWonderTrade = result[i];
-				if(typeof currentWonderTrade === "string"
-					&& currentWonderTrade.charAt(0) === '{'
-					&& currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
-					deserializedWondertrades.push(JSON.parse(currentWonderTrade));
-				}
-			}
-			// Debug ALL THE THINGS: console.log(result);
+			
+			var highChartsData = new HighChartsData(result);
+
 			response.render('wondertrade/index', {
-				wondertrades: deserializedWondertrades,
-				date: new Date(),
+				wondertrades: highChartsData.deserializedResults,
 				title: 'Wonder Trade List',
 				pokemonHash: PokemonHash,
 				countryHash: CountryHash,
@@ -52,9 +45,6 @@ exports.initController =  function(app, dataStore, util) {
 		var WondertradeParams = request.body,
 			wondertrade = WondertradeModel(WondertradeParams),
 			serializedWondertrade = JSON.stringify(wondertrade);
-
-		console.log("sdfsdfsdf");
-		console.log(WondertradeParams);
 
 		if(wondertrade) {
 			dataStore.lpush('wondertrade', serializedWondertrade, function(err, size) {			
