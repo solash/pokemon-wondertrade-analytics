@@ -60,6 +60,7 @@ a{color: #efef38}
 .input-column label{font-weight: normal;}
 .input-column .radio-group,
 .input-column select,
+.input-column input[type="number"],
 .input-column input[type="text"]{float: right;width: 180px}
 .input-column .input-row{line-height: 1.5em;clear:both;margin: 1em 0;}
 .pokemon-details{background: rgba(100,150,100,.6);}

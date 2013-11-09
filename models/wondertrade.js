@@ -27,12 +27,20 @@ function sanitizeParams(params) {
 		pokemonId = false;
 	}
 
+	// Sanitize Level
+	var pokemonLevel = ( params.level ?  parseInt(params.level) : false );
+	if(!pokemonLevel  || pokemonLevel <= 0 || pokemonLevel > 100 ) {
+		pokemonLevel = '';		
+	}	
+	
+
 	params.pokemonId = pokemonId;
 	params.pokemonNickname = params.pokemonNickname || '';
 	params.hasItem = (params.hasItem ? true : false);
 	params.hasHiddenAbility = (params.hasHiddenAbility ? true : false);
 	params.hasPokerus = (params.hasPokerus ? true : false);	
 	params.isShiny = (params.isShiny ? true : false);
+	params.level = pokemonLevel;
 	params.trainerGender = params.trainerGender || '';
 	params.trainerCountry = params.trainerCountry || '';
 	params.trainerCountrySub1 = params.trainerCountrySub1  || '';
@@ -54,6 +62,7 @@ exports.model = function(params) {
 		"hasHiddenAbility" : params.hasHiddenAbility,
 		"hasPokerus" : params.hasPokerus,
 		"isShiny" : params.isShiny,
+		"level" : params.level,
 		"trainerGender" : params.trainerGender,
 		"trainerCountry" : params.trainerCountry,
 		"trainerCountrySub1" : params.trainerCountrySub1,
