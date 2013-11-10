@@ -55,4 +55,41 @@ HighChartsData.prototype.getCountsByGender = function(){
 	return [["Guys", trainerGender.male], ["Girls", trainerGender.female]];
 };
 
+HighChartsData.prototype.getCountTrendsByPokemon = function(){
+	var pokemonGroupedByDate = {},
+		trendingPokemonChart = [];
+	// Split the results by Pokemon
+	var wonderTradesByPokemon = _.groupBy(this.deserializedResults, function(wonderTrade){
+		return wonderTrade.pokemonId;
+	});
+
+	// Then split those results by their dates.
+	_.each(wonderTradesByPokemon, function(wonderTradeByDate, wonderTradeDate){
+		pokemonGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date')
+	});
+
+	// And now.. we review each pokemon, and add their counts if available
+	_.each(pokemonGroupedByDate, function(pokemonTradesByDate, pokemonId) {
+		// Generic Literal Object to hold pokemon data
+		var pokemonData = {
+			name: PokemonHash[pokemonId],
+			data: []
+		};
+		
+		// We only care about this past week
+		var today = new Date();
+		for(var i=0, max=7;i<max;i++) {
+			today.setDate(today.getDate()-1);
+			if(pokemonTradesByDate[today.customFormatDate()]) {
+				var dateField = Date.UTC(today.getFullYear(),  today.getMonth(), today.getDate()),
+					countField = pokemonTradesByDate[today.customFormatDate()];
+				pokemonData.data.push([dateField,countField]);
+			} 
+		}
+		trendingPokemonChart.push(pokemonData);
+	});
+
+	return trendingPokemonChart;
+};
+
 exports.model = HighChartsData;

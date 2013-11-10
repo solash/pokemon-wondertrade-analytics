@@ -29,11 +29,6 @@ function deserializeWT(result) {
 exports.initController = function(app, dataStore) {
 	app.get('/data', function(request, response){					
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-			var deserializedWondertrades = deserializeWT(result);
-
-			// Deserialize the wondertrades from the dataStore
-			
-
 			var highChartsData = new HighChartsData(result);			
 
 			response.render('data/index', {
@@ -41,7 +36,7 @@ exports.initController = function(app, dataStore) {
 				pageState: '',
 				result: result,
 				PokemonHash: PokemonHash,
-				CountryHash: CountryHash,
+				CountryHash: CountryHash,	
 				pokemonChart: JSON.stringify(highChartsData.getCountsByPokemon()),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender()),
 				countryChart: JSON.stringify(highChartsData.getCountsByCountries())
@@ -51,47 +46,14 @@ exports.initController = function(app, dataStore) {
 
 
 	app.get('/data/pokemon', function(request, response){					
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-			var deserializedWondertrades = deserializeWT(result),
-				pokemonGroupedByDate = {},
-				trendingPokemonChart = [];
-
-			// Split the results by Pokemon
-			var wonderTradesByPokemon = _.groupBy(deserializedWondertrades, function(wonderTrade){
-				return wonderTrade.pokemonId;
-			});
-
-			// Then split those results by their dates.
-			_.each(wonderTradesByPokemon, function(wonderTradeByDate, wonderTradeDate){
-				pokemonGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date')
-			});
-
-			// And now.. we review each pokemon, and add their counts if available
-			_.each(pokemonGroupedByDate, function(pokemonTradesByDate, pokemonId) {
-				// Generic Literal Object to hold pokemon data
-				var pokemonData = {
-					name: PokemonHash[pokemonId],
-					data: []
-				};
-				
-				// We only care about this past week
-				var today = new Date();
-				for(var i=0, max=7;i<max;i++) {
-					today.setDate(today.getDate()-1);
-					if(pokemonTradesByDate[today.customFormatDate()]) {
-						var dateField = Date.UTC(today.getFullYear(),  today.getMonth(), today.getDate()),
-							countField = pokemonTradesByDate[today.customFormatDate()];
-						pokemonData.data.push([dateField,countField]);
-					} 
-				}
-				trendingPokemonChart.push(pokemonData);
-			});
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
+			var highChartsData = new HighChartsData(result);
 
 			response.render('data/pokemon', {
 				title: 'Wonder Trade Pokemon Analytics',
 				pageState: '',
 				result: result,
-				trendingPokemonChart: JSON.stringify(trendingPokemonChart)
+				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon())
 			});
 		});
 	});
