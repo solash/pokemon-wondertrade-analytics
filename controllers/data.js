@@ -13,19 +13,6 @@ for(var country in CountryList) {
 	CountryHash[CountryList[country].id] = CountryList[country].name;
 }
 
-function deserializeWT(result) {
-	var deserializedWondertrades = [];
-	for(var i = 0, max =  result.length;i<max;i++) {				
-		var currentWonderTrade = result[i];
-		if(typeof currentWonderTrade === "string"
-			&& currentWonderTrade.charAt(0) === '{'
-			&& currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
-			deserializedWondertrades.push(JSON.parse(currentWonderTrade));
-		}
-	}
-	return deserializedWondertrades;
-}
-
 exports.initController = function(app, dataStore) {
 	app.get('/data', function(request, response){					
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
@@ -53,7 +40,8 @@ exports.initController = function(app, dataStore) {
 				title: 'Wonder Trade Pokemon Analytics',
 				pageState: '',
 				result: result,
-				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon())
+				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon()),
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels())
 			});
 		});
 	});

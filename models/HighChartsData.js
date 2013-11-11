@@ -40,7 +40,7 @@ HighChartsData.prototype.getCountsByCountries = function(){
 };
 
 HighChartsData.prototype.getCountsByPokemon = function(){
-	var pokemonByIds = _.countBy(this.deserializedResults, 'pokemonId')
+	var pokemonByIds = _.countBy(this.deserializedResults, 'pokemonId'),
 		pokemonChart = [];
 	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
 		pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);				
@@ -53,6 +53,39 @@ HighChartsData.prototype.getCountsByPokemon = function(){
 HighChartsData.prototype.getCountsByGender = function(){
 	var trainerGender = _.countBy(this.deserializedResults, 'trainerGender');
 	return [["Guys", trainerGender.male], ["Girls", trainerGender.female]];
+};
+
+HighChartsData.prototype.getCountsByLevels = function(){
+	var pokemonLevels = _.countBy(this.deserializedResults, 'level'),
+		levelsChart = [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		levelsChartFormatted = [{
+            name: 'Levels',
+            data: []    
+        }];	
+
+	_.each(pokemonLevels, function(levelCount, level){
+		var currentLevel = parseInt(level),
+			roundedLevel = Math.floor(currentLevel/10);
+
+		if(roundedLevel >= 0 && roundedLevel < 10) {
+			levelsChart[roundedLevel]+=levelCount;
+		}
+	});
+
+	levelsChartFormatted[0].data = levelsChart;
+
+	return levelsChartFormatted;
 };
 
 HighChartsData.prototype.getCountTrendsByPokemon = function(){
