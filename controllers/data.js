@@ -48,12 +48,19 @@ exports.initController = function(app, dataStore) {
 		});
 	});
 
-	app.get('/data/pokemon/:name', function(request, response){					
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
-			response.render('data/index', {
+	app.get('/data/pokemon/:pokemonId', function(request, response){					
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var pokemonId = request.params.pokemonId
+			var highChartsData = new HighChartsData(result),
+				highChartsDataByPokemonId = highChartsData.getResultsByPokemon(pokemonId);
+
+			//console.log(highChartsDataByPokemonId);
+
+			response.render('data/pokemonById', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
-				result: result
+				result: result,
+				pokemonName: PokemonHash[pokemonId]
 			});
 		});
 	});

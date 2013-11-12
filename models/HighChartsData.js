@@ -58,6 +58,14 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(){
 	return pokemonChart;
 };
 
+HighChartsData.prototype.getResultsByPokemon = function(pokemonId) {
+	pokemonId = parseInt(pokemonId);
+	if(pokemonId > 0 && pokemonId < 719) {
+		return _.where(this.deserializedResults, {pokemonId: parseInt(pokemonId)});	
+	}
+	return [];
+	
+}
 
 HighChartsData.prototype.getCountsByGender = function(){
 	var trainerGender = _.countBy(this.deserializedResults, 'trainerGender');
