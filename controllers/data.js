@@ -24,9 +24,9 @@ exports.initController = function(app, dataStore) {
 				result: result,
 				PokemonHash: PokemonHash,
 				CountryHash: CountryHash,	
-				pokemonChart: JSON.stringify(highChartsData.getCountsByPokemon()),
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon()),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender()),
-				countryChart: JSON.stringify(highChartsData.getCountsByCountries())
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries())
 			});
 		});
 	});
@@ -41,7 +41,9 @@ exports.initController = function(app, dataStore) {
 				pageState: '',
 				result: result,
 				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon()),
-				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels())
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
+				topTenPokemon: highChartsData.getTopTenPokemon(),
+				pokemonList: PokemonList
 			});
 		});
 	});

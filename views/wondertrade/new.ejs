@@ -8,10 +8,7 @@
 			<label>
 				PokemonID:
 				<select name="pokemonId">
-					<option value="0">Select a Pokemon</option>
-					<% for(var pokemon in pokemonList) { %>
-						<option value="<%= pokemonList[pokemon]['id'] %>"><%= pokemonList[pokemon].name %></option>
-					<% } %>				
+					<%- include ../partials/_pokemon-select-menu.ejs %>			
 				</select>
 			</label>
 			</div>

@@ -18,9 +18,11 @@ tbody tr:hover{background: #ffa}
 thead tr{background: #333;color: #fff;text-shadow:1px 1px 1px #000;}
 a{color: #efef38}
 
+/* Cheaty Helpers */
+.center{text-align: center;}
 
 /* Page specific */
-.page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: absolute;width: 100%;top:0;z-index: -1;}
+.page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
 .wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;}
 .wrapper:after{clear: both;content: '';display: block;}
 .container{width: 1020px;margin: 0 auto;}

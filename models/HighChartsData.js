@@ -27,23 +27,32 @@ var HighChartsData = function(jsonResults){
 	}
 	
 	this.deserializedResults = deserializedResults;
+	this.pokemonList = PokemonList;
 };
 
-HighChartsData.prototype.getCountsByCountries = function(){
+HighChartsData.prototype.getSortedCountsByCountries = function(){
 	var trainerCountries = _.countBy(this.deserializedResults, 'trainerCountry'),
 		countryChart = [];
 	_.each(trainerCountries, function(countryCount, countryId) {
 		countryChart.push([CountryHash[countryId], countryCount]);
 	});
 
+	countryChart = _.sortBy(countryChart, function(itr){
+		return itr[1];
+	});
+
 	return countryChart;
 };
 
-HighChartsData.prototype.getCountsByPokemon = function(){
+HighChartsData.prototype.getSortedCountsByPokemon = function(){
 	var pokemonByIds = _.countBy(this.deserializedResults, 'pokemonId'),
 		pokemonChart = [];
 	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
 		pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);				
+	});
+
+	pokemonChart = _.sortBy(pokemonChart, function(itr){
+		return itr[1];
 	});
 
 	return pokemonChart;
@@ -123,6 +132,12 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(){
 	});
 
 	return trendingPokemonChart;
+};
+
+HighChartsData.prototype.getTopTenPokemon = function(){
+	var countTrends = this.getSortedCountsByPokemon();
+	countTrends = countTrends.reverse();
+	return _.first(countTrends,5);
 };
 
 exports.model = HighChartsData;

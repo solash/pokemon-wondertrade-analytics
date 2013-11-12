@@ -1,0 +1,4 @@
+<option value="0">Select a Pokemon</option>
+<% for(var pokemon in pokemonList) { %>
+	<option value="<%= pokemonList[pokemon]['id'] %>"><%= pokemonList[pokemon].name %></option>
+<% } %>		

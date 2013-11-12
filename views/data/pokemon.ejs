@@ -1,12 +1,23 @@
 <% layout('../layout') -%>
 <h3>Pokemon Overview</h3>
 
+<div class="chart-box half-chart" id="levels-chart"></div>
 <div class="chart-box half-chart">
-    <h4>Top Ten Wonder Trades <h4>
-    <h4>Bottom Ten Wonder Trades <h4>
+    <h4>Review by Pokemon</h4>
+    <form id="selectPokemon" class="center">
+        <select>
+            <%- include ../partials/_pokemon-select-menu.ejs %>
+        </select>
+        <input type="submit" value="Go!">
+    </form>
+    <h4>Top Ten Wonder Traded Pokemon </h4>
+    <ol>
+        <% for(var pokemon in topTenPokemon) { %>
+            <li><%= topTenPokemon[pokemon][0] %> (<%= topTenPokemon[pokemon][1] %>)</li>
+        <% } %>
+    </ol>    
 </div>
 <div class="chart-box full-chart" id="pokemon-chart"></div>
-<div class="chart-box full-chart" id="levels-chart"></div>
 
 <script>
 	$(document).ready(function(){
@@ -28,6 +39,14 @@
 			fmtDate(today, -1),
 			fmtDate(today)
 		];
+
+        $('#selectPokemon').on('submit', function(){            
+            var pokemonId = $(this).find('option:selected').val();
+            if(pokemonId > 0 && pokemonId < 719) {
+                window.location = '/data/pokemon/'+pokemonId;
+            }            
+            return false;
+        });
 				
 		$('#pokemon-chart').highcharts({
             chart: {
@@ -59,7 +78,8 @@
 
         $('#levels-chart').highcharts({
             chart: {
-                type: 'column'
+                type: 'column',
+                height: '300'
             },
             title: {
                 text: 'Pokemon by Levels'
@@ -81,7 +101,7 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Number of Pokemon'
+                    text: 'Pokemon Count'
                 }
             },
             tooltip: {
@@ -92,12 +112,11 @@
             plotOptions: {
                 column: {
                     pointPadding: 0.2,
-                    borderWidth: 0
+                    borderWidth: 0,
+                    showInLegend: false
                 }
             },
             series: <%- levelBarChart %>
-        });   
-
-	    
+        });   	    
 	});
 </script>
