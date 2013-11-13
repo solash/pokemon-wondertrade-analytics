@@ -7,99 +7,10 @@
 <div class="chart-box half-chart" id="region-chart"></div>
 <div class="chart-box full-chart" id="pokemon-chart"></div>
 
-
-.. consider http://datamaps.github.io/
-
 <script>
 	$(document).ready(function(){
-		$('#pokemon-chart').highcharts({
-			credits: {enabled: false},
-			chart: {
-				height: 1000
-			},
-	        title: {
-	            text: 'Wonder Trades by Pokemon'
-	        },
-	        tooltip: {
-	    	    pointFormat: '{series.name} : <b>{point.y} ({point.percentage:.1f}%)</b>'
-	        },
-	        plotOptions: {
-	            pie: {
-	                allowPointSelect: true,
-	                cursor: 'pointer',
-	                dataLabels: {
-	                    enabled: true,
-	                    color: '#000000',
-	                    connectorColor: '#000000',
-	                    format: '<b>{point.name}</b>: {point.y}'
-	                }
-	            }
-	        },
-	        series: [{
-	            type: 'pie',
-	            name: 'Pokemon',
-	            data: <%- pokemonChart %>
-	        }]
-	    });
-
-	    $('#gender-chart').highcharts({
-	        title: {
-	            text: 'Wonder Shares by Gender'
-	        },
-	        credits: {
-				enabled: false
-			},
-	        tooltip: {
-	    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-	        },
-	        plotOptions: {
-	            pie: {
-	                allowPointSelect: true,
-	                cursor: 'pointer',
-	                dataLabels: {
-	                    enabled: true,
-	                    color: '#fff',
-	                    connectorColor: '#000000',
-	                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-	                    distance: -60
-	                }
-	            }
-	        },
-	        series: [{
-	            type: 'pie',
-	            name: 'Gender',
-	            data: <%- genderChart%>
-	        }]
-	    });
-
-	    $('#region-chart').highcharts({
-	        title: {
-	            text: 'Wonder Shares by Country'
-	        },
-	        color: ['#fff00', '#000fff'],	        
-	        credits: {
-				enabled: false
-			},
-	        tooltip: {
-	    	    pointFormat: '<b>{point.y}</b>'
-	        },
-	        plotOptions: {
-	            pie: {
-	                allowPointSelect: true,
-	                cursor: 'pointer',
-	                dataLabels: {
-	                    enabled: true,
-	                    color: '#000000',
-	                    connectorColor: '#000000',
-	                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-	                }
-	            }
-	        },
-	        series: [{
-	            type: 'pie',
-	            name: 'Country',
-	            data: <%- countryChart %>
-	        }]
-	    });
+		<% include ../partials/highcharts/_pokemon-chart.ejs %>
+	    <% include ../partials/highcharts/_gender-chart.ejs %>
+	    <% include ../partials/highcharts/_region-chart.ejs %>
 	});
 </script>

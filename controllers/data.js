@@ -36,6 +36,8 @@ exports.initController = function(app, dataStore) {
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
 			var highChartsData = new HighChartsData(result);
 
+
+
 			response.render('data/pokemon', {
 				title: 'Wonder Trade Pokemon Analytics',
 				pageState: '',
@@ -43,7 +45,11 @@ exports.initController = function(app, dataStore) {
 				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon()),
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
 				topTenPokemon: highChartsData.getTopTenPokemon(),
-				pokemonList: PokemonList
+				pokemonList: PokemonList,
+				shinyPercentage: highChartsData.getShinyPercentage(),
+				hiddenAbilityPercentage: highChartsData.getHiddenAbilityPercentage(),
+				itemPercentage: highChartsData.getItemPercentage(),
+				pokerusPercentage: highChartsData.getPokerusPercentage()
 			});
 		});
 	});
@@ -52,15 +58,17 @@ exports.initController = function(app, dataStore) {
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
 			var pokemonId = request.params.pokemonId
 			var highChartsData = new HighChartsData(result),
-				highChartsDataByPokemonId = highChartsData.getResultsByPokemon(pokemonId);
-
-			//console.log(highChartsDataByPokemonId);
+				highChartsDataByPokemonId = highChartsData.getResultsByPokemonId(pokemonId);
 
 			response.render('data/pokemonById', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
 				result: result,
-				pokemonName: PokemonHash[pokemonId]
+				pokemonName: PokemonHash[pokemonId],
+				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(highChartsDataByPokemonId)),
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByPokemonId)),
+				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByPokemonId)),
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByPokemonId))
 			});
 		});
 	});

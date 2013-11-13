@@ -30,8 +30,12 @@ var HighChartsData = function(jsonResults){
 	this.pokemonList = PokemonList;
 };
 
-HighChartsData.prototype.getSortedCountsByCountries = function(){
-	var trainerCountries = _.countBy(this.deserializedResults, 'trainerCountry'),
+HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+
+	var trainerCountries = _.countBy(resultSet, 'trainerCountry'),
 		countryChart = [];
 	_.each(trainerCountries, function(countryCount, countryId) {
 		countryChart.push([CountryHash[countryId], countryCount]);
@@ -58,22 +62,27 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(){
 	return pokemonChart;
 };
 
-HighChartsData.prototype.getResultsByPokemon = function(pokemonId) {
+HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 	pokemonId = parseInt(pokemonId);
 	if(pokemonId > 0 && pokemonId < 719) {
 		return _.where(this.deserializedResults, {pokemonId: parseInt(pokemonId)});	
 	}
-	return [];
-	
+	return [];	
 }
 
-HighChartsData.prototype.getCountsByGender = function(){
-	var trainerGender = _.countBy(this.deserializedResults, 'trainerGender');
+HighChartsData.prototype.getCountsByGender = function(resultSet){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var trainerGender = _.countBy(resultSet, 'trainerGender');
 	return [["Guys", trainerGender.male], ["Girls", trainerGender.female]];
 };
 
-HighChartsData.prototype.getCountsByLevels = function(){
-	var pokemonLevels = _.countBy(this.deserializedResults, 'level'),
+HighChartsData.prototype.getCountsByLevels = function(resultSet){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var pokemonLevels = _.countBy(resultSet, 'level'),
 		levelsChart = [
 			0,
 			0,
@@ -105,11 +114,16 @@ HighChartsData.prototype.getCountsByLevels = function(){
 	return levelsChartFormatted;
 };
 
-HighChartsData.prototype.getCountTrendsByPokemon = function(){
+HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet){
 	var pokemonGroupedByDate = {},
 		trendingPokemonChart = [];
+
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+
 	// Split the results by Pokemon
-	var wonderTradesByPokemon = _.groupBy(this.deserializedResults, function(wonderTrade){
+	var wonderTradesByPokemon = _.groupBy(resultSet, function(wonderTrade){
 		return wonderTrade.pokemonId;
 	});
 
@@ -146,6 +160,30 @@ HighChartsData.prototype.getTopTenPokemon = function(){
 	var countTrends = this.getSortedCountsByPokemon();
 	countTrends = countTrends.reverse();
 	return _.first(countTrends,5);
+};
+
+HighChartsData.prototype.getPercentageByAttribute = function(attribute) {
+	var countsByAttribute = _.countBy(this.deserializedResults, attribute),
+		totalSize = _.size(this.deserializedResults),
+		percentage = ((countsByAttribute.true)/totalSize*100).toFixed(2);
+
+	return percentage;
+};
+
+HighChartsData.prototype.getShinyPercentage = function() {	
+	return this.getPercentageByAttribute('isShiny');
+};
+
+HighChartsData.prototype.getItemPercentage = function() {
+	return this.getPercentageByAttribute('hasItem');
+};
+
+HighChartsData.prototype.getPokerusPercentage = function() {
+	return this.getPercentageByAttribute('hasPokerus');
+};
+
+HighChartsData.prototype.getHiddenAbilityPercentage = function() {
+	return this.getPercentageByAttribute('hasHiddenAbility');
 };
 
 exports.model = HighChartsData;

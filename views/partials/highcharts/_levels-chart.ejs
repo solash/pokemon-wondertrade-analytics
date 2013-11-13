@@ -1,0 +1,42 @@
+$('#levels-chart').highcharts({
+    chart: {
+        type: 'column',
+        height: '300'
+    },
+    title: {
+        text: 'Pokemon by Levels'
+    },            
+    xAxis: {
+        categories: [
+            '1-9',
+            '10-19',
+            '20-29',
+            '30-39',
+            '40-49',
+            '50-59',
+            '60-69',
+            '70-79',
+            '80-89',
+            '90-100'
+        ]
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Pokemon Count'
+        }
+    },
+    tooltip: {
+        formatter: function() {
+                return '<b>'+ this.series.name +' '+this.x+'</b><br/>'+ this.y;
+        }
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+            showInLegend: false
+        }
+    },
+    series: <%- levelBarChart %>
+}); 

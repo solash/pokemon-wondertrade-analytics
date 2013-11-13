@@ -1,2 +1,16 @@
 <% layout('../layout') -%>
 <h3>Pokemon Overview: <%= pokemonName %></h3>
+
+<div class="chart-box half-chart" id="gender-chart"></div>
+<div class="chart-box half-chart" id="region-chart"></div>
+<div class="chart-box full-chart" id="pokemon-chart"></div>
+<div class="chart-box full-chart" id="levels-chart"></div>
+
+<script>
+	$(document).ready(function(){		
+		<% include ../partials/highcharts/_trend-chart.ejs %>
+		<% include ../partials/highcharts/_levels-chart.ejs %>        
+	    <% include ../partials/highcharts/_gender-chart.ejs %>
+	    <% include ../partials/highcharts/_region-chart.ejs %>
+	});
+</script>

@@ -1,0 +1,29 @@
+$('#pokemon-chart').highcharts({
+	credits: {enabled: false},
+	chart: {
+		height: 1000
+	},
+    title: {
+        text: 'Wonder Trades by Pokemon'
+    },
+    tooltip: {
+	    pointFormat: '{series.name} : <b>{point.y} ({point.percentage:.1f}%)</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                color: '#000000',
+                connectorColor: '#000000',
+                format: '<b>{point.name}</b>: {point.y}'
+            }
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Pokemon',
+        data: <%- pokemonChart %>
+    }]
+});
