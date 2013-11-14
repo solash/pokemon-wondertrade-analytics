@@ -1,6 +1,7 @@
 <% layout('../layout') -%>
 <h3>Pokemon Overview: <%= pokemonName %></h3>
 
+<% include ../partials/_quick-stats.ejs %>
 <div class="chart-box half-chart" id="gender-chart"></div>
 <div class="chart-box half-chart" id="region-chart"></div>
 <div class="chart-box full-chart" id="pokemon-chart"></div>

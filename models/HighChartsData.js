@@ -203,28 +203,48 @@ HighChartsData.prototype.getTopTenPokemon = function(){
 	return _.first(countTrends,5);
 };
 
-HighChartsData.prototype.getPercentageByAttribute = function(attribute) {
-	var countsByAttribute = _.countBy(this.deserializedResults, attribute),
-		totalSize = _.size(this.deserializedResults),
-		percentage = ((countsByAttribute.true)/totalSize*100).toFixed(2);
+HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSet) {
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
 
+	var countsByAttribute = _.countBy(resultSet, attribute),
+		totalSize = _.size(resultSet);
+	if(!countsByAttribute.true) {
+		countsByAttribute.true = 0;
+	}		
+	var percentage = ((countsByAttribute.true)/totalSize*100).toFixed(2);
+	
 	return percentage;
 };
 
-HighChartsData.prototype.getShinyPercentage = function() {	
-	return this.getPercentageByAttribute('isShiny');
+HighChartsData.prototype.getShinyPercentage = function(resultSet) {	
+	return this.getPercentageByAttribute('isShiny', resultSet);
 };
 
-HighChartsData.prototype.getItemPercentage = function() {
-	return this.getPercentageByAttribute('hasItem');
+HighChartsData.prototype.getItemPercentage = function(resultSet) {
+	return this.getPercentageByAttribute('hasItem', resultSet);
 };
 
-HighChartsData.prototype.getPokerusPercentage = function() {
-	return this.getPercentageByAttribute('hasPokerus');
+HighChartsData.prototype.getPokerusPercentage = function(resultSet) {
+	return this.getPercentageByAttribute('hasPokerus', resultSet);
 };
 
-HighChartsData.prototype.getHiddenAbilityPercentage = function() {
-	return this.getPercentageByAttribute('hasHiddenAbility');
+HighChartsData.prototype.getHiddenAbilityPercentage = function(resultSet) {
+	return this.getPercentageByAttribute('hasHiddenAbility', resultSet);
+};
+
+HighChartsData.prototype.getQuickStats = function(resultSet) {	
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	return {
+		resultCount: _.size(resultSet), 		
+		shinyPercentage: this.getShinyPercentage(resultSet),
+		hiddenAbilityPercentage: this.getHiddenAbilityPercentage(resultSet),
+		itemPercentage: this.getItemPercentage(resultSet),
+		pokerusPercentage: this.getPokerusPercentage(resultSet)
+	};
 };
 
 exports.model = HighChartsData;

@@ -1,15 +1,8 @@
 <% layout('../layout') -%>
 <h3>Pokemon Overview</h3>
 
-<div class="chart-box half-chart">
-    <h4>Sweet Stats</h4>
-    <ul>
-        <li><%= shinyPercentage %>% were Shiny</li>
-        <li><%= pokerusPercentage %>% had PokeRus</li>
-        <li><%= hiddenAbilityPercentage %>% had Hidden Abilities</li>
-        <li><%= itemPercentage %>% were holding an item</li>
-    </ul>
-</div>
+
+<% include ../partials/_quick-stats.ejs %>
 <div class="chart-box half-chart">
     <h4>Review by Pokemon</h4>
     <form id="selectPokemon" class="center">

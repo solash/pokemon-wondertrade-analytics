@@ -34,9 +34,7 @@ exports.initController = function(app, dataStore) {
 
 	app.get('/data/pokemon', function(request, response){					
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
-			var highChartsData = new HighChartsData(result);
-
-
+			var highChartsData = new HighChartsData(result);			
 
 			response.render('data/pokemon', {
 				title: 'Wonder Trade Pokemon Analytics',
@@ -46,10 +44,7 @@ exports.initController = function(app, dataStore) {
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
 				topTenPokemon: highChartsData.getTopTenPokemon(),
 				pokemonList: PokemonList,
-				shinyPercentage: highChartsData.getShinyPercentage(),
-				hiddenAbilityPercentage: highChartsData.getHiddenAbilityPercentage(),
-				itemPercentage: highChartsData.getItemPercentage(),
-				pokerusPercentage: highChartsData.getPokerusPercentage()
+				quickstats: highChartsData.getQuickStats()
 			});
 		});
 	});
@@ -68,7 +63,8 @@ exports.initController = function(app, dataStore) {
 				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(highChartsDataByPokemonId)),
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByPokemonId)),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByPokemonId)),
-				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByPokemonId))
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByPokemonId)),
+				quickstats: highChartsData.getQuickStats(highChartsDataByPokemonId)
 			});
 		});
 	});
@@ -101,7 +97,8 @@ exports.initController = function(app, dataStore) {
 				regionName: CountryHash[regionId],
 				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByRegionId)),
 				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByRegionId)),
-				subregionChart: JSON.stringify(highChartsData.getCountsBySubRegions(highChartsDataByRegionId))
+				subregionChart: JSON.stringify(highChartsData.getCountsBySubRegions(highChartsDataByRegionId)),
+				quickstats: highChartsData.getQuickStats(highChartsDataByRegionId)
 			});
 		});
 	});
