@@ -48,6 +48,24 @@ HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
 	return countryChart;
 };
 
+HighChartsData.prototype.getRegionsTable = function(resultSet){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+
+	var trainerCountries = _.countBy(resultSet, 'trainerCountry'),
+		countryChart = [];
+	_.each(trainerCountries, function(countryCount, countryId) {
+		countryChart.push({id: countryId, name: CountryHash[countryId], count: countryCount});
+	});
+
+	countryChart = _.sortBy(countryChart, function(itr){
+		return itr.count;
+	});
+
+	return countryChart;
+}
+
 HighChartsData.prototype.getSortedCountsByPokemon = function(){
 	var pokemonByIds = _.countBy(this.deserializedResults, 'pokemonId'),
 		pokemonChart = [];
@@ -83,29 +101,21 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 		resultSet = this.deserializedResults;
 	}
 	var pokemonLevels = _.countBy(resultSet, 'level'),
-		levelsChart = [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		levelsChart = [],
 		levelsChartFormatted = [{
             name: 'Levels',
             data: []    
         }];	
 
-	_.each(pokemonLevels, function(levelCount, level){
-		var currentLevel = parseInt(level),
-			roundedLevel = Math.floor(currentLevel/10);
+    for(var i=1, max=100;i<=max;i++) {
+    	levelsChart.push([i, 0]);
+    }
 
-		if(roundedLevel >= 0 && roundedLevel < 10) {
-			levelsChart[roundedLevel]+=levelCount;
+	_.each(pokemonLevels, function(levelCount, level){
+		var currentLevel = parseInt(level);
+
+		if(currentLevel >= 1 && currentLevel <= 100) {
+			levelsChart[currentLevel-1][1]+=levelCount;
 		}
 	});
 

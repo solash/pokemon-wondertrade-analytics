@@ -74,11 +74,17 @@ exports.initController = function(app, dataStore) {
 	});
 
 	app.get('/data/regions', function(request, response){					
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
-			response.render('data/index', {
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var highChartsData = new HighChartsData(result),
+				regionsTable = highChartsData.getRegionsTable();
+
+			regionsTable.reverse();
+
+			response.render('data/regions', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
-				result: result
+				result: result,
+				regionsTable: regionsTable
 			});
 		});
 	});

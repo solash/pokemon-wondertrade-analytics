@@ -1,0 +1,41 @@
+<table class="wondertrade-list">
+	<thead>
+		<tr>
+			<td class="pokemon-details strong-divider" colspan="7">Pokemon Details</td>
+			<td class="trainer-details" colspan="3">Trainer Details</td>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<th class="pokemon-details">Pokemon</th>
+			<th class="pokemon-details">Level</th>
+			<th class="pokemon-details">Nickname</th>
+			<th class="pokemon-details">Item</th>
+			<th class="pokemon-details">Shiny</th>
+			<th class="pokemon-details">Pokerus</th>
+			<th class="pokemon-details strong-divider">Hidden<br />Ability</th>
+			<th class="trainer-details">Trainer<br />Gender</th>
+			<th class="trainer-details">Trainer<br />Country</th>
+			<th class="trainer-details">Trainer<br />Country Sub</th>
+			<th>User</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% wondertrades.forEach(function(wondertrade){ %>
+		<tr>
+    		<td><%= pokemonHash[wondertrade.pokemonId] %></td>
+    		<td><%= wondertrade.level %></td>
+    		<td><%= wondertrade.pokemonNickname %></td>    		
+    		<td><%= wondertrade.hasItem? 'x' : '' %></td>
+    		<td><%= wondertrade.isShiny? 'x' : '' %></td>
+    		<td><%= wondertrade.hasPokerus? 'x' : '' %></td>
+    		<td class="strong-divider"><%= wondertrade.hasHiddenAbility? 'x' : '' %></td>
+    		<td><span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male">&#9794;' : 'female">&#9792;' %></td></span>
+    		<td><%= countryHash[wondertrade.trainerCountry] %></td>
+    		<td><%= wondertrade.trainerCountrySub1 %></td>
+    		<td><%= wondertrade.userId %></td>
+    		<td><%= (new Date(wondertrade.date)).toDateString() %></td>
+    	</tr>
+  	<% }); %>
+  	</tbody>
+</table>

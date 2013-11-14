@@ -16,7 +16,7 @@ exports.initController =  function(app, dataStore, util) {
 
 
 	app.get('/wondertrade', function(request, response){
-		dataStore.lrange('wondertrade' ,0, 100, function(error, result){
+		dataStore.lrange('wondertrade' , 0, 100, function(error, result){
 			
 			var highChartsData = new HighChartsData(result);
 

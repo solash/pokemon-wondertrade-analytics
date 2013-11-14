@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+        	<th>Code</th>
+            <th>Country</th>
+            <th>Wonder Trades</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var region in regionsTable) { %>
+        <tr>
+        	<td><%= regionsTable[region].id %></td>
+            <td><%= regionsTable[region].name %></td>
+            <td><%= regionsTable[region].count %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
