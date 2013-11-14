@@ -1,10 +1,10 @@
 <div class="quick-stats">
 	<h4>Quick Stats</h4>
-	<ul>
-		<li><%= quickstats.resultCount %> Wonder Trades</li>
-        <li><%= quickstats.shinyPercentage %>% of the wonder trades were Shiny</li>
-        <li><%= quickstats.pokerusPercentage %>% of the wonder trades had PokeRus</li>
-        <li><%= quickstats.hiddenAbilityPercentage %>% of the wonder trades had Hidden Abilities</li>
-        <li><%= quickstats.itemPercentage %>% of the wonder trades were holding an item</li>
+	<div class="total-wondertrades"><%= quickstats.resultCount %> Wonder Trades</div>
+	<ul>		
+        <li class="shiny"><%= quickstats.shinyPercentage %>% Shiny</li>
+        <li class="hiddenAbility"><%= quickstats.hiddenAbilityPercentage %>% Hidden Abilities</li>        
+        <li class="item"><%= quickstats.itemPercentage %>% Held Item</li>
+        <li class="pokerus"><%= quickstats.pokerusPercentage %>% PokeRus</li>
     </ul>
 </div>
