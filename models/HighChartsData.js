@@ -83,6 +83,23 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
 	return pokemonChart;
 };
 
+HighChartsData.prototype.getSortedCountsByPokemonId = function(resultSet){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var pokemonByIds = _.countBy(resultSet, 'pokemonId'),
+		pokemonChart = [];
+	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
+		pokemonChart.push([pokemonId, pokemonByIdCount]);				
+	});
+
+	pokemonChart = _.sortBy(pokemonChart, function(itr){
+		return itr[1];
+	});
+
+	return pokemonChart;
+};
+
 HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 	pokemonId = parseInt(pokemonId);
 	if(pokemonId > 0 && pokemonId < 719) {
@@ -155,7 +172,8 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 	return levelsChartFormatted;
 };
 
-HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet){
+// @param pokemonSubSet: an array of pokemon we will filter on
+HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
 	var pokemonGroupedByDate = {},
 		trendingPokemonChart = [];
 
@@ -173,34 +191,44 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet){
 		pokemonGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date')
 	});
 
-	// And now.. we review each pokemon, and add their counts if available
+	// And now.. we review each pokemon, and add their date/counts
 	_.each(pokemonGroupedByDate, function(pokemonTradesByDate, pokemonId) {
 		// Generic Literal Object to hold pokemon data
 		var pokemonData = {
 			name: PokemonHash[pokemonId],
 			data: []
 		};
-		
-		// We only care about this past week
-		var today = new Date();
-		for(var i=0, max=7;i<max;i++) {
-			today.setDate(today.getDate()-1);
-			if(pokemonTradesByDate[today.customFormatDate()]) {
-				var dateField = Date.UTC(today.getFullYear(),  today.getMonth(), today.getDate()),
-					countField = pokemonTradesByDate[today.customFormatDate()];
-				pokemonData.data.push([dateField,countField]);
-			} 
+
+		// If there is a subset we want to filter on, then lets filter.
+		if(pokemonSubSet) {
+			if(_.contains(pokemonSubSet, pokemonId)) {
+				_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
+					var formattedDate = dateField.split('-'),
+						utcDate = Date.UTC(formattedDate[0], (parseInt(formattedDate[1])-1), formattedDate[2]);
+					
+					pokemonData.data.push([utcDate,dateFieldCount]);
+				});		
+				trendingPokemonChart.push(pokemonData);
+			}
+		} else {
+			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
+				var formattedDate = dateField.split('-'),
+					utcDate = Date.UTC(formattedDate[0], (parseInt(formattedDate[1])-1), formattedDate[2]);
+				
+				pokemonData.data.push([utcDate,dateFieldCount]);
+			});		
+			trendingPokemonChart.push(pokemonData);
 		}
-		trendingPokemonChart.push(pokemonData);
+		
 	});
 
 	return trendingPokemonChart;
 };
 
 HighChartsData.prototype.getTopTenPokemon = function(){
-	var countTrends = this.getSortedCountsByPokemon();
-	countTrends = countTrends.reverse();
-	return _.first(countTrends,5);
+	var countTrends = this.getSortedCountsByPokemonId();
+	countTrends = countTrends.reverse();	
+	return _.first(countTrends,10);
 };
 
 HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSet) {

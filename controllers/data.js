@@ -34,15 +34,18 @@ exports.initController = function(app, dataStore) {
 
 	app.get('/data/pokemon', function(request, response){					
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
-			var highChartsData = new HighChartsData(result);			
+			var highChartsData = new HighChartsData(result),
+				topTenPokemon = highChartsData.getTopTenPokemon(),
+				topTenPokemonIds = _.map(topTenPokemon, function(pkmn){return pkmn[0]});			
 
 			response.render('data/pokemon', {
 				title: 'Wonder Trade Pokemon Analytics',
 				pageState: '',
 				result: result,
-				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon()),
+				PokemonHash: PokemonHash,
+				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(false, topTenPokemonIds)),
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
-				topTenPokemon: highChartsData.getTopTenPokemon(),
+				topTenPokemon: topTenPokemon,
 				pokemonList: PokemonList,
 				quickstats: highChartsData.getQuickStats()
 			});

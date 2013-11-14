@@ -6,23 +6,13 @@ function fmtDate(date, offset) {
 	} 			
 	return newDate.customFormatDate();			
 }
-
-var dateCategories = [
-	fmtDate(today, -6),
-	fmtDate(today, -5),
-	fmtDate(today, -4),
-	fmtDate(today, -3),
-	fmtDate(today, -2),
-	fmtDate(today, -1),
-	fmtDate(today)
-];
 		
 $('#pokemon-chart').highcharts({
     chart: {
         type: 'spline'
     },
     title: {
-        text: 'Wonder Trades by Pokemon (past Week)'
+        text: 'Wonder Trade Trends by Top Ten Pokemon'
     },            
     xAxis: {
         type: 'datetime',
