@@ -66,8 +66,11 @@ HighChartsData.prototype.getRegionsTable = function(resultSet){
 	return countryChart;
 }
 
-HighChartsData.prototype.getSortedCountsByPokemon = function(){
-	var pokemonByIds = _.countBy(this.deserializedResults, 'pokemonId'),
+HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var pokemonByIds = _.countBy(resultSet, 'pokemonId'),
 		pokemonChart = [];
 	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
 		pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);				
@@ -86,7 +89,35 @@ HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 		return _.where(this.deserializedResults, {pokemonId: parseInt(pokemonId)});	
 	}
 	return [];	
-}
+};
+
+HighChartsData.prototype.getResultsByRegionId = function(regionId) {	
+	if(CountryHash[regionId]) {
+		return _.where(this.deserializedResults, {trainerCountry: regionId});	
+	}
+	return [];	
+};
+
+HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
+	var subRegions = _.countBy(regionSet, function(wonderTrade){
+		return wonderTrade.trainerCountrySub1;
+	});
+
+	var subRegionsChart = [];
+	_.each(subRegions, function(subregionCount, regionName){
+		if(regionName === '') {
+			subRegionsChart.push(["n/a", subregionCount]);			
+		} else {
+			subRegionsChart.push([regionName, subregionCount]);			
+		}		
+	});
+
+	subRegionsChart = _.sortBy(subRegionsChart, function(itr){
+		return itr[1];
+	});
+
+	return subRegionsChart;
+};
 
 HighChartsData.prototype.getCountsByGender = function(resultSet){
 	if(!resultSet) {

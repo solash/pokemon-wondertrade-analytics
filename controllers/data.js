@@ -56,8 +56,8 @@ exports.initController = function(app, dataStore) {
 
 	app.get('/data/pokemon/:pokemonId', function(request, response){					
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-			var pokemonId = request.params.pokemonId
-			var highChartsData = new HighChartsData(result),
+			var pokemonId = request.params.pokemonId,
+				highChartsData = new HighChartsData(result),
 				highChartsDataByPokemonId = highChartsData.getResultsByPokemonId(pokemonId);
 
 			response.render('data/pokemonById', {
@@ -83,18 +83,25 @@ exports.initController = function(app, dataStore) {
 			response.render('data/regions', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
-				result: result,
 				regionsTable: regionsTable
 			});
 		});
 	});
 
-	app.get('/data/regions/:code', function(request, response){					
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
-			response.render('data/index', {
+	app.get('/data/regions/:regionCode', function(request, response){					
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+
+			var regionId = request.params.regionCode,
+				highChartsData = new HighChartsData(result),
+				highChartsDataByRegionId = highChartsData.getResultsByRegionId(regionId);
+
+			response.render('data/regionById', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
-				result: result
+				regionName: CountryHash[regionId],
+				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByRegionId)),
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByRegionId)),
+				subregionChart: JSON.stringify(highChartsData.getCountsBySubRegions(highChartsDataByRegionId))
 			});
 		});
 	});
