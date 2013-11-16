@@ -46,6 +46,6 @@ Date.prototype.customFormatDate = function(){
 // 	dataStore.set('test', newValue);
 // });
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 5000, function(){
 	console.log('Listening on port 3000..');
 });
