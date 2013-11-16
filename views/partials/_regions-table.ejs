@@ -1,16 +1,14 @@
-<table>
+<table class="wondertrade-list">
     <thead>
         <tr>
-        	<th>Code</th>
             <th>Country</th>
-            <th>Wonder Trades</th>
+            <th>Wonder Traded</th>
         </tr>
     </thead>
     <tbody>
         <% for(var region in regionsTable) { %>
-        <tr>
-        	<td><%= regionsTable[region].id %></td>
-            <td><%= regionsTable[region].name %></td>
+        <tr>        	
+            <td><a href="/data/regions/<%= regionsTable[region].id %>"><%= regionsTable[region].name %></a></td>
             <td><%= regionsTable[region].count %></td>
         </tr>
         <% } %>

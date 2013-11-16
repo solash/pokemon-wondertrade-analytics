@@ -2,26 +2,21 @@
 <h3>Pokemon Overview</h3>
 
 
-<% include ../partials/_quick-stats.ejs %>
-<div class="chart-box half-chart" id="levels-chart"></div>
-<div class="chart-box half-chart">
+<div class="chart-box full-chart">
     <h4>Review by Pokemon</h4>
     <form id="selectPokemon" class="center">
         <select>
             <%- include ../partials/_pokemon-select-menu.ejs %>
         </select>
         <input type="submit" value="Go!">
-    </form>
-    <h4>Top Ten Wonder Traded Pokemon </h4>
-    <ol>
-        <% for(var pokemon in topTenPokemon) { %>
-            <li data-id="<%= topTenPokemon[pokemon][0] %>">
-                <%= PokemonHash[topTenPokemon[pokemon][0]] %> (<%= topTenPokemon[pokemon][1] %>)
-            </li>
-        <% } %>
-    </ol>    
+    </form>    
 </div>
+<% include ../partials/_quick-stats.ejs %>
+
 <div class="chart-box full-chart" id="pokemon-chart"></div>
+<div class="chart-box full-chart" id="levels-chart"></div>
+<% include ../partials/_pokemon-table.ejs %>
+
 
 <script>
 	$(document).ready(function(){

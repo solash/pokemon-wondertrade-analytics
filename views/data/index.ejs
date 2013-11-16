@@ -1,16 +1,20 @@
 <% layout('../layout') -%>
 <h3>Data Overview</h3>
 
-<p>There are a total of <%= result.length %> wonder trades recorded.</p>
 
-<div class="chart-box half-chart" id="gender-chart"></div>
-<div class="chart-box half-chart" id="region-chart"></div>
+<div class="quick-stats">
+	<p class="center">There are a total of <%= result.length %> wonder trades recorded.</p>
+	<ul>
+		<li><a href="/data/pokemon">Wonder Trades filtered by Pokemon</a></li>
+		<li><a href="/data/regions">Wonder Trades filtered by Regions</a></li>
+	</ul>
+</div>
+<div class="chart-box full-chart" id="region-chart"></div>
 <div class="chart-box full-chart" id="pokemon-chart"></div>
 
 <script>
 	$(document).ready(function(){
-		<% include ../partials/highcharts/_pokemon-chart.ejs %>
-	    <% include ../partials/highcharts/_gender-chart.ejs %>
+		<% include ../partials/highcharts/_pokemon-chart.ejs %>	    
 	    <% include ../partials/highcharts/_region-chart.ejs %>
 	});
 </script>

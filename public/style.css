@@ -55,6 +55,7 @@ a{color: #efef38}
 .wondertrade-list .strong-divider{border-right: 2px solid #000}
 .wondertrade-list .gender-male{color:blue;}
 .wondertrade-list .gender-female{color:#f0f;}
+.wondertrade-list a{color: #009;}
 
 /* Wondertrade new*/
 .input-columns{margin: 0 auto;overflow: hidden;width: 80%}

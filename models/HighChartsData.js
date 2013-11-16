@@ -66,6 +66,24 @@ HighChartsData.prototype.getRegionsTable = function(resultSet){
 	return countryChart;
 }
 
+HighChartsData.prototype.getPokemonTable = function(resultSet) {
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var pokemonResults = _.countBy(resultSet, 'pokemonId'),
+		pokemonTable = [];
+	_.each(pokemonResults, function(pokemonCount, pokemonId) {
+		pokemonTable.push({id:pokemonId, name: PokemonHash[pokemonId], count: pokemonCount});
+	});
+
+	pokemonTable = _.sortBy(pokemonTable, function(itr){
+		return itr.count;
+	});
+
+	return pokemonTable;
+}
+
+
 HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
