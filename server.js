@@ -2,18 +2,15 @@ var express = require('express'),
 	util = require('util'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),
-	redis = require('redis'),
+	redis,
 	dataStore,
 	app = express();
 
 if (process.env.REDISTOGO_URL) {	
-	var rtg = require("url"	).parse(process.env.REDISTOGOURL);
-	config.redis.port = rtg.port;
-	config.redis.host = rtg.hostname;
-	config.redis.password = rtg.auth.split(":")[1];
-
-	dataStore = require('redis-url').connect(process.env.REDISTOGO_URL);
-} else {
+	var rtg  = require("url").parse(process.env.REDISTOGO_URL);
+	dataStore = require("redis").createClient(rtg.port, rtg.hostname);
+	dataStore.auth(rtg.auth.split(":")[1]);
+} else {	
 	dataStore = require("redis").createClient();
 }
 
