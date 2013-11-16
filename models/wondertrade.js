@@ -13,8 +13,8 @@ function sanitizeParams(params) {
 	}
 
 	// Sanitize Gender values
-	if(params.trainerGender === "male" || params.trainerGender === "female") {
-		params.trainerGender = params.trainerGender;
+	if(params.gender === "male" || params.gender === "female") {
+		params.trainerGender = params.gender;
 	} else {
 		params.trainerGender = "";
 	}

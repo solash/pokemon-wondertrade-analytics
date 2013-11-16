@@ -10,6 +10,7 @@
 
 body{margin: 0;font-family: "helvetica"}
 h1,h2,h3,h4{text-align: center;color: #fff;text-shadow:1px 1px 1px #000;font-family: "Steelworks"}
+h4{margin: 0.5em;}
 table{border-collapse: collapse;}
 td, th{border:1px solid #000;padding: 0.1em;}
 tr{background: #C5DBF3;color:#000;}
@@ -92,7 +93,6 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .chart-box.half-chart{float:left;width: 50%;}
 
 .quick-stats{background: rgba(0,0,0,.3);padding:0.5em;overflow: hidden;text-shadow: 1px 1px 1px #333;}
-.quick-stats h4{margin: 0.5em;}
 .quick-stats ul{padding: 0;margin: 0;list-style: none;}
 .quick-stats ul li{padding:0.5em 0;width: 50%;float: left;text-align: center;}
 .quick-stats .shiny{background: rgba(255, 215, 0, 0.4);}

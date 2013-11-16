@@ -7,10 +7,12 @@
     </thead>
     <tbody>
         <% for(var pokemon in pokemonTable) { %>
-        <tr>        	
-            <td><a href="/data/pokemon/<%= pokemonTable[pokemon].id %>"><%= pokemonTable[pokemon].name %></a></td>
-            <td><%= pokemonTable[pokemon].count %></td>
-        </tr>
+            <% if(pokemonTable[pokemon].id){ %>
+                <tr>        	
+                    <td><a href="/data/pokemon/<%= pokemonTable[pokemon].id %>"><%= pokemonTable[pokemon].name %></a></td>
+                    <td><%= pokemonTable[pokemon].count %></td>
+                </tr>
+            <% } %>
         <% } %>
     </tbody>
 </table>

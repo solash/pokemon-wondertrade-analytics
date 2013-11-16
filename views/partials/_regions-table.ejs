@@ -7,10 +7,12 @@
     </thead>
     <tbody>
         <% for(var region in regionsTable) { %>
-        <tr>        	
-            <td><a href="/data/regions/<%= regionsTable[region].id %>"><%= regionsTable[region].name %></a></td>
-            <td><%= regionsTable[region].count %></td>
-        </tr>
+            <% if(regionsTable[region].id){ %>
+                <tr>        	
+                    <td><a href="/data/regions/<%= regionsTable[region].id %>"><%= regionsTable[region].name %></a></td>
+                    <td><%= regionsTable[region].count %></td>
+                </tr>
+            <% } %>
         <% } %>
     </tbody>
 </table>

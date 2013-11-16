@@ -60,7 +60,7 @@ exports.initController = function(app, dataStore) {
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
 			var pokemonId = request.params.pokemonId,
 				highChartsData = new HighChartsData(result),
-				highChartsDataByPokemonId = highChartsData.getResultsByPokemonId(pokemonId);
+				highChartsDataByPokemonId = highChartsData.getResultsByPokemonId(pokemonId);				
 
 			response.render('data/pokemonById', {
 				title: 'Wonder Trade Analytics',

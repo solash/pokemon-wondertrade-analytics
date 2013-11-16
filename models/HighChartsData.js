@@ -225,6 +225,10 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 						utcDate = Date.UTC(formattedDate[0], (parseInt(formattedDate[1])-1), formattedDate[2]);
 					
 					pokemonData.data.push([utcDate,dateFieldCount]);
+				});
+				
+				pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
+					return data[0];
 				});		
 				trendingPokemonChart.push(pokemonData);
 			}
@@ -235,7 +239,13 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 				
 				pokemonData.data.push([utcDate,dateFieldCount]);
 			});		
+
+			pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
+				return data[0];
+			});					
 			trendingPokemonChart.push(pokemonData);
+
+			
 		}
 		
 	});
