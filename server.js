@@ -7,9 +7,10 @@ var express = require('express'),
 	app = express();
 
 if (process.env.REDISTOGO_URL) {
-	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
-	dataStore = require("redis").createClient(rtg.port, rtg.hostname);
-	dataStore.auth(rtg.auth.split(":")[1]);
+	//var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+	dataStore = require('redis-url').connect(process.env.REDISTOGO_URL);
+
+	//dataStore.auth(rtg.auth.split(":")[1]);
 } else {
 	dataStore = require("redis").createClient();
 }
