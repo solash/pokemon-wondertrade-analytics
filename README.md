@@ -19,3 +19,6 @@ sudo npm install -g nodemon
 node server.js  
 
 ... even better, nodemon server.js (constantly updates)
+
+
+** Note, redis-server is a hard dependency (for now)
