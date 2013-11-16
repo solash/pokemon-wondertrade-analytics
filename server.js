@@ -45,7 +45,7 @@ Date.prototype.customFormatDate = function(){
 // 	res.send('the test field should reflect "'+newValue+'"');
 // 	dataStore.set('test', newValue);
 // });
-
-app.listen(process.env.PORT || 5000, function(){
-	console.log('Listening on port 3000..');
+var serverPort = process.env.PORT || 5000;
+app.listen(serverPort, function(){
+	console.log('Listening on port '+serverPort+'..');
 });
