@@ -6,11 +6,13 @@ var express = require('express'),
 	dataStore,
 	app = express();
 
-if (process.env.REDISTOGO_URL) {
-	//var rtg   = require("url").parse(process.env.REDISTOGO_URL);
-	dataStore = require('redis-url').connect(process.env.REDISTOGO_URL);
+if (process.env.REDISTOGO_URL) {	
+	var rtg = require(‘url’).parse(process.env.REDISTOGOURL);
+	config.redis.port = rtg.port;
+	config.redis.host = rtg.hostname;
+	config.redis.password = rtg.auth.split(“:”)[1];
 
-	//dataStore.auth(rtg.auth.split(":")[1]);
+	dataStore = require('redis-url').connect(process.env.REDISTOGO_URL);
 } else {
 	dataStore = require("redis").createClient();
 }
