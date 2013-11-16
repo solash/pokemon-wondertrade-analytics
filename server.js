@@ -7,7 +7,7 @@ var express = require('express'),
 	app = express();
 
 if (process.env.REDISTOGO_URL) {	
-	var rtg = require(‘url’).parse(process.env.REDISTOGOURL);
+	var rtg = require("url").parse(process.env.REDISTOGOURL);
 	config.redis.port = rtg.port;
 	config.redis.host = rtg.hostname;
 	config.redis.password = rtg.auth.split(“:”)[1];
