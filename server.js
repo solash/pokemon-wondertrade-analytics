@@ -3,7 +3,7 @@ var express = require('express'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),
 	redis = require('redis'),
-	dataStore;,
+	dataStore,
 	app = express();
 
 if (process.env.REDISTOGO_URL) {
