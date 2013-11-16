@@ -6,10 +6,10 @@ var express = require('express'),
 	dataStore,
 	app = express();
 
-if (process.env.REDISTOGO_URL) {		
+if (process.env.REDISTOGO_URL) {	
 	var redis = require('redis');
 	var url = require('url');
-	var redisURL = url.parse(process.env.REDISCLOUD_URL);
+	var redisURL = url.parse(process.env.REDISTOGO_URL);
 	dataStore = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
 	dataStore.auth(redisURL.auth.split(":")[1]);
 
