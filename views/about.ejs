@@ -1,14 +1,26 @@
 <% layout('layout') -%>
-<h3>About This Site</h3>
-<p>The project mission sure is some lorem ipsum right now.</p>
-<p>Talk about some technology</p>
-
+<h3>Motivation</h3>
+<p>After the success of <a href="http://www.pokewondertrade.com/">PokeWonderTrade.com</a>, I decided to build a new webapp that aggregates user submitted wonder trades. </p>
 
 <h3>Contributers</h3>
-<p> Highlight contributers, foreach them and show their # contributed.</p>
+<p>The plan is to make a call to the redis server and show each user and the number of contributions they have made.</p>
+<ul class="contributer-list">
+	<li class="contributer">
+		<div class="name">Person 1</div>
+		<div class="count">150 wonder trades recorded</div>
+	</li>
+	<li class="contributer">
+		<div class="name">Person 2</div>
+		<div class="count">120 wonder trades recorded</div>
+	</li>
+	<li class="contributer">
+		<div class="name">Person 3</div>
+		<div class="count">50 wonder trades recorded</div>
+	</li>
+</ul>
 
+<h3>Developing this App</h3>
 
-<h3>Team</h3>
 <div class="team-member">
 	<div class="avatar">
 		<img src="http://www.gravatar.com/avatar/ebc665be7acc34b9f4aaa990f5607401.png?s=120">		
@@ -19,8 +31,11 @@
 	</div>
 </div>
 
-<div class="team-member">
-	<div class="avatar">
-		<img src="http://www.gravatar.com/avatar/9ee7df9c2c810a88c1e5f7c0f7818230.png?s=120">		
-	</div>
-</div>
+
+<ul class="teck-stack">
+	<li class="teck">Node.js</li>
+	<li class="teck">Heroku</li>
+	<li class="teck">HighCharts</li>
+	<li class="teck">Express.js</li>
+	<li class="teck">Redis</li>
+</ul>

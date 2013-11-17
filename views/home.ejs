@@ -1,38 +1,15 @@
 <% layout('layout') -%>
-<h3>Welcome!</h3>
-<p> This page is very much in development still. Any data you enter here *will* be wiped. :x</p>
-
-<h4>TODO List</h4>
-<table style="margin:0 auto;width:80%;text-align:center;">
-	<thead>
-		<tr>
-			<th>Priority</th>
-			<th>Task</th>
-		</tr>
-	</thead>
-
-	<tr>
-		<td>p2</td>
-		<td>Import Google Docs/ CSV</td>
-	</tr>
-
-	<tr>
-		<td>p1</td>
-		<td>User authentication</td>
-	</tr>
-
-	<tr>
-		<td>p1</td>
-		<td>DNS Routing</td>
-	</tr>
-
-	<tr>
-		<td>p1</td>
-		<td>Cache Redis requests</td>
-	</tr>
-
-</table>
-
-<div>
-
+<h3>Welcome to the <br/>PokeWonderTrade Analytics Project</h3>
+<div class="center">
+	<p>This WebApp was built to help provide deeper insight into Pokemon X and Y's Wonder Trade System. <br/>All Wonder Trade data is user submitted. If your interested in submitting your own wonder trade data here, contact me <a href="">here</a>.</p>
 </div>
+
+<div class="chart-box full-chart" id="pokemon-chart"></div>
+
+<h4>TODO List (please disregard)</h4>
+Import Google Docs/ CSV, User authentication, DNS Routing, Cache Redis requests
+
+
+<script>
+	<% include partials/highcharts/_wondertrades-byDate-chart.ejs %>
+</script>

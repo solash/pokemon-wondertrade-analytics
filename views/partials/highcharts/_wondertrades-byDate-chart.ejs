@@ -3,7 +3,7 @@ $('#pokemon-chart').highcharts({
         type: 'spline'
     },
     title: {
-        text: 'Wonder Trade Trends'
+        text: 'Wonder Trade Trends Recorded'
     },            
     xAxis: {
         type: 'datetime',
@@ -13,7 +13,7 @@ $('#pokemon-chart').highcharts({
     },
     yAxis: {
         title: {
-            text: 'Wonder Trades'
+            text: 'Wonder Trades (Daily Count)'
         },
         min: 0
     },
@@ -22,5 +22,5 @@ $('#pokemon-chart').highcharts({
                 return '<b>'+ this.series.name +'</b><br/>'+ this.y;
         }
     },
-    series: <%- trendingPokemonChart %>
+    series: [<%- wondertradeTends %>]
 });

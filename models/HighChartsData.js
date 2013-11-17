@@ -193,7 +193,8 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 // @param pokemonSubSet: an array of pokemon we will filter on
 HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
 	var pokemonGroupedByDate = {},
-		trendingPokemonChart = [];
+		trendingPokemonChart = [],
+		context = this;
 
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
@@ -221,10 +222,7 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		if(pokemonSubSet) {
 			if(_.contains(pokemonSubSet, pokemonId)) {
 				_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-					var formattedDate = dateField.split('-'),
-						utcDate = Date.UTC(formattedDate[0], (parseInt(formattedDate[1])-1), formattedDate[2]);
-					
-					pokemonData.data.push([utcDate,dateFieldCount]);
+					pokemonData.data.push([context.formatDateFromString(dateField),dateFieldCount]);
 				});
 				
 				pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
@@ -233,11 +231,8 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 				trendingPokemonChart.push(pokemonData);
 			}
 		} else {
-			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-				var formattedDate = dateField.split('-'),
-					utcDate = Date.UTC(formattedDate[0], (parseInt(formattedDate[1])-1), formattedDate[2]);
-				
-				pokemonData.data.push([utcDate,dateFieldCount]);
+			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){								
+				pokemonData.data.push([context.formatDateFromString(dateField),dateFieldCount]);
 			});		
 
 			pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
@@ -251,6 +246,33 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 	});
 
 	return trendingPokemonChart;
+};
+
+HighChartsData.prototype.getTrendsByDate = function(resultSet) {
+	var trendChart = {
+			name: "Wonder Trades",
+			data: []
+		},
+		context = this;
+
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+
+	var wonderTradesByDate = _.groupBy(resultSet, function(wonderTrade){
+		return wonderTrade.date;
+	});
+
+	_.each(wonderTradesByDate, function(dateCount, dateString) {
+		var dateFieldCount = _.size(dateCount);
+		trendChart.data.push([context.formatDateFromString(dateString),dateFieldCount]);		
+	});
+
+	trendChart.data = _.sortBy(trendChart.data, function(data) {				
+		return data[0];
+	});
+
+	return trendChart;
 };
 
 HighChartsData.prototype.getTopTenPokemon = function(){
@@ -301,6 +323,12 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		itemPercentage: this.getItemPercentage(resultSet),
 		pokerusPercentage: this.getPokerusPercentage(resultSet)
 	};
+};
+
+HighChartsData.prototype.formatDateFromString = function(dateString){
+	var formattedDate = dateString.split('-'),
+		utcDate = Date.UTC(formattedDate[0], (parseInt(formattedDate[1])-1), formattedDate[2]);
+	return utcDate;
 };
 
 exports.model = HighChartsData;
