@@ -25,7 +25,8 @@ exports.initController =  function(app, dataStore, util) {
 				title: 'Wonder Trade List',
 				pokemonHash: PokemonHash,
 				countryHash: CountryHash,
-				pageState: ''
+				pageState: '',
+				user: request.user
 			});
 		});		
 		
@@ -36,6 +37,7 @@ exports.initController =  function(app, dataStore, util) {
 			title: 'New Wonder Trade',
 			pokemonList: PokemonList,
 			countryList: CountryList,
+			user: request.user,
 			pageState: '',
 			stateMessage:	''
 		});
@@ -55,6 +57,7 @@ exports.initController =  function(app, dataStore, util) {
 					title: 'New Wonder Trade',
 					pokemonList: PokemonList,
 					countryList: CountryList,
+					user: request.user,
 					pageState: 'success',
 					stateMessage:	'Your Wonder Trade was successfully added.'
 				});
@@ -65,6 +68,7 @@ exports.initController =  function(app, dataStore, util) {
 				title: 'New Wonder Trade',
 				pokemonList: PokemonList,
 				countryList: CountryList,
+				user: request.user,
 				pageState: 'error',
 				stateMessage:	'There was a problem adding your last wonder trade.'
 			});

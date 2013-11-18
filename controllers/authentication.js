@@ -11,6 +11,11 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 		});
 	});
 
+	app.get('/logout', function(request, response){
+		request.logout();
+  		request.redirect('/');
+	});
+
 	app.post('/login', passport.authenticate('local'), function(request, response) {
 		var newUser = request.user;
 		dataStore.lpush('userTable', JSON.stringify(newUser));	

@@ -25,8 +25,15 @@
   </head>
   <body>
     <div class="page-background">&nbsp;</div>
-    <header class="container">
+    <header class="container pageHead">
       <h1><%= title %></h1>
+      <div class="user">
+        <% if(user) { %>
+          Logged in as <%= user.username %>
+        <% } else { %>
+          Not logged in
+        <% } %>
+      </div>
     </header>
     <div class="wrapper">
       <% if(pageState) { %>

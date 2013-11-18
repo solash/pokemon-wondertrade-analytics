@@ -23,7 +23,8 @@ exports.initController = function(app, dataStore) {
 				pageState: '',
 				result: result,
 				PokemonHash: PokemonHash,
-				CountryHash: CountryHash,	
+				CountryHash: CountryHash,
+				user: request.user,
 				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon()),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender()),
 				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries())
@@ -50,6 +51,7 @@ exports.initController = function(app, dataStore) {
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
 				topTenPokemon: topTenPokemon,
 				pokemonList: PokemonList,
+				user: request.user,
 				pokemonTable: pokemonTable,
 				quickstats: highChartsData.getQuickStats()
 			});
@@ -67,6 +69,7 @@ exports.initController = function(app, dataStore) {
 				pageState: '',
 				result: result,
 				pokemonName: PokemonHash[pokemonId],
+				user: request.user,
 				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(highChartsDataByPokemonId)),
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByPokemonId)),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByPokemonId)),
@@ -86,7 +89,8 @@ exports.initController = function(app, dataStore) {
 			response.render('data/regions', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
-				regionsTable: regionsTable
+				regionsTable: regionsTable,
+				user: request.user,
 			});
 		});
 	});
@@ -105,15 +109,9 @@ exports.initController = function(app, dataStore) {
 				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByRegionId)),
 				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByRegionId)),
 				subregionChart: JSON.stringify(highChartsData.getCountsBySubRegions(highChartsDataByRegionId)),
-				quickstats: highChartsData.getQuickStats(highChartsDataByRegionId)
+				quickstats: highChartsData.getQuickStats(highChartsDataByRegionId),
+				user: request.user
 			});
 		});
 	});
-
-
-	// by Gender?
-	// by Pokemon
-	// by Date
-	// by Country
-	// by User	
 };

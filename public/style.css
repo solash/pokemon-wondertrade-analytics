@@ -32,6 +32,9 @@ a{color: #efef38}
 .page{position: relative;}
 .page-content{width:100%;}
 
+.pageHead{position: relative;}
+.pageHead .user{position: absolute;top:0em;right: 1em;background: rgba(0,0,0,.8);color: #fff;padding: 0.5em;}
+
 /* Sidebar */
 .page-sidebar{width:200px;position: absolute;top:-1em;right: 0;background: rgba(0,0,0,0.8);padding: 1em;}
 .page-sidebar h3{padding: 0;margin:0;}
