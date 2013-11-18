@@ -1,6 +1,8 @@
 exports.model = function(params) {
 	var userModel = {
-		"username" : params.username
+		"username" : params.username,
+		"password": params.password,
+		"id": params.id
 	};
 
 	if(!userModel.username) {
