@@ -4,6 +4,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	// http://stackoverflow.com/questions/15627358/node-js-express-using-passport-with-redis-getting-session-unauthorized
 
 	app.get('/login', function(request, response){
+		console.log(request.user);
 		response.render('auth/login', {
 			title: 'Wonder Trade Analytics',
 			pageState: ''		
@@ -11,8 +12,8 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	});
 
 	app.post('/login', passport.authenticate('local'), function(request, response) {
-		var newUser = JSON.stringify(request.user);
-		dataStore.lpush('userTable', newUser);	
+		var newUser = request.user;
+		dataStore.lpush('userTable', JSON.stringify(newUser));	
 		// If this function gets called, authentication was successful.
 		// `req.user` contains the authenticated user.
 		response.redirect('/users/' + newUser.id);

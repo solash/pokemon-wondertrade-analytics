@@ -1,4 +1,4 @@
-function sanitizeParams(params) {
+function sanitizeParams(params, userId) {
 	var currentDate;
 
 	// Sanitize Date
@@ -31,7 +31,11 @@ function sanitizeParams(params) {
 	var pokemonLevel = ( params.level ?  parseInt(params.level) : false );
 	if(!pokemonLevel  || pokemonLevel <= 0 || pokemonLevel > 100 ) {
 		pokemonLevel = '';		
-	}	
+	}
+
+	if(!userId) {
+		userId = 'anonymous'
+	}
 	
 
 	params.pokemonId = pokemonId;
@@ -45,15 +49,15 @@ function sanitizeParams(params) {
 	params.trainerCountry = params.trainerCountry || '';
 	params.trainerCountrySub1 = params.trainerCountrySub1  || '';
 	params.date = currentDate;
-	params.userId = params.userId || 'anonymous';
+	params.userId = userId;
 
 	return params;
 }
 
 
-exports.model = function(params) {
+exports.model = function(params, userId) {
 	
-	params = sanitizeParams(params);
+	params = sanitizeParams(params, userId);
 
 	var pokemonModel = {
 		"pokemonId" : params.pokemonId,

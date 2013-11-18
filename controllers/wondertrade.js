@@ -43,8 +43,11 @@ exports.initController =  function(app, dataStore, util) {
 
 	app.post('/wondertrade/new', function(request, response){		
 		var WondertradeParams = request.body,
-			wondertrade = WondertradeModel(WondertradeParams),
+			userId = (request.user ? request.user.id : 'anon'),
+			wondertrade = WondertradeModel(WondertradeParams, userId),
 			serializedWondertrade = JSON.stringify(wondertrade);
+
+		console.log("Current UserID: "+userId);
 
 		if(wondertrade) {
 			dataStore.lpush('wondertrade', serializedWondertrade, function(err, size) {			
