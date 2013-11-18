@@ -1,2 +1,18 @@
-UserTable here, foreach all users
-<%- userTable %>
+<% layout('../layout') -%>
+<h3>User Contributions</h3>
+<table>
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>WonderTrades</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for(var user in userTable) { %>
+			<tr>
+				<td><%= userTable[user].username %></td>
+				<td><%= 0 %></td>
+			</tr>
+		<% } %>
+	</tbody>
+</table>

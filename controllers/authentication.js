@@ -4,10 +4,10 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	// http://stackoverflow.com/questions/15627358/node-js-express-using-passport-with-redis-getting-session-unauthorized
 
 	app.get('/login', function(request, response){
-		console.log(request.user);
 		response.render('auth/login', {
 			title: 'Wonder Trade Analytics',
-			pageState: ''		
+			pageState: '',
+			user: request.user		
 		});
 	});
 
@@ -27,13 +27,17 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	app.get('/users', function(request, response){		
 		dataStore.lrange('userTable' , 0, -1, function(error, result){			
 
-			var userTable = result;
-			console.log(userTable);
-
+			var userTable = [];
+			for(var user in result) {
+				var parsedUser = JSON.parse(result[user]);
+				userTable.push({username: parsedUser.username, count: 0});
+			}
+			
 			response.render('auth/userTable', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
-				userTable: userTable		
+				userTable: userTable,
+				user: request.user
 			});
 		});
 
@@ -42,7 +46,8 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	app.get('/users/:id', function(request, response){
 		response.render('auth/user', {
 			title: 'Wonder Trade Analytics',
-			pageState: ''		
+			pageState: '',
+			user: request.user
 		});
 	});
 
