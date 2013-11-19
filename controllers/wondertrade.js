@@ -1,5 +1,6 @@
 exports.initController =  function(app, dataStore, util) {
 	var WondertradeModel = require('../models/wondertrade').model,
+		UserTableModel = require('../models/UserTable').model,
 		HighChartsData = require('../models/HighChartsData').model,
 		PokemonList = require('../data/pokemonList.json'),
 		CountryList = require('../data/countryList.json'),
@@ -16,19 +17,23 @@ exports.initController =  function(app, dataStore, util) {
 
 
 	app.get('/wondertrade', function(request, response){
-		dataStore.lrange('wondertrade' , 0, 100, function(error, result){
-			
-			var highChartsData = new HighChartsData(result);
+		dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTable = new UserTableModel(result);
 
-			response.render('wondertrade/index', {
-				wondertrades: highChartsData.deserializedResults,
-				title: 'Wonder Trade List',
-				pokemonHash: PokemonHash,
-				countryHash: CountryHash,
-				pageState: '',
-				user: request.user
+			dataStore.lrange('wondertrade' , 0, 100, function(error, result){
+				var highChartsData = new HighChartsData(result);
+
+				response.render('wondertrade/index', {
+					wondertrades: highChartsData.deserializedResults,
+					title: 'Wonder Trade List',
+					pokemonHash: PokemonHash,
+					countryHash: CountryHash,
+					pageState: '',
+					userTable: userTable,
+					user: request.user
+				});
 			});
-		});		
+		});
 		
 	});
 
@@ -48,8 +53,6 @@ exports.initController =  function(app, dataStore, util) {
 			userId = (request.user ? request.user.id : 'anon'),
 			wondertrade = WondertradeModel(WondertradeParams, userId),
 			serializedWondertrade = JSON.stringify(wondertrade);
-
-		console.log("Current UserID: "+userId);
 
 		if(wondertrade) {
 			dataStore.lpush('wondertrade', serializedWondertrade, function(err, size) {			

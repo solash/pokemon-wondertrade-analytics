@@ -33,7 +33,7 @@
     		<td><span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male">&#9794;' : 'female">&#9792;' %></td></span>
     		<td><%= countryHash[wondertrade.trainerCountry] %></td>
     		<td><%= wondertrade.trainerCountrySub1 %></td>
-    		<td><%= wondertrade.userId %></td>
+    		<td><a href="/users/<%= wondertrade.userId %>"><%= userTable[wondertrade.userId] %></a></td>
     		<td><%= (new Date(wondertrade.date)).toDateString() %></td>
     	</tr>
   	<% }); %>

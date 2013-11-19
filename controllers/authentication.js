@@ -111,9 +111,8 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	));
 
 	
-
+	//serialize by user id
 	passport.serializeUser(function(user, done) {
-	    //serialize by user id
 	    done(null, user.id)
 	});
 
