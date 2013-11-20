@@ -19,10 +19,29 @@ exports.initController = function(app, dataStore) {
 	});
 
 	app.get('/about', function(request, response){	
-		response.render('about', {
-			title: 'About this Project',
-			pageState: '',
-			user: request.user
+
+		dataStore.lrange('userTable' , 0, -1, function(error, result){			
+
+			var userTable = {};
+			for(var user in result) {
+				var parsedUser = JSON.parse(result[user]);
+				userTable[parsedUser.id] = {username: parsedUser.username, count: 0};
+			}
+
+			dataStore.lrange('wondertrade' , 0, 100, function(error, result){
+				var highChartsData = new HighChartsData(result),
+					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
+			
+				response.render('about', {
+					title: 'About this Project',
+					pageState: '',
+					user: request.user,
+					userTable: userTableWithCounts
+				});
+
+			});
+
+			
 		});		
 	});
 };

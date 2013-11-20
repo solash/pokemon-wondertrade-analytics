@@ -118,6 +118,28 @@ HighChartsData.prototype.getSortedCountsByPokemonId = function(resultSet){
 	return pokemonChart;
 };
 
+/* @param resultSet What is returned from the redis datastore
+ * @param userTable A Json table of valid users.
+ */
+
+HighChartsData.prototype.getCountsByUserIdAndUserTable = function(resultSet, userTable){
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var countsByUserId = _.countBy(resultSet, 'userId');
+	_.each(countsByUserId, function(userIdCount, userId){		
+		if(userTable[userId]) {
+			userTable[userId].count = userIdCount;
+		}
+	});
+
+	userTable = _.sortBy(userTable, 'count');
+	userTable.reverse();	
+
+	return userTable;
+
+}
+
 HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 	pokemonId = parseInt(pokemonId);
 	if(pokemonId > 0 && pokemonId < 719) {

@@ -35,25 +35,6 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 		});
 	});
 
-	// List all the users.
-	app.get('/users', function(request, response){		
-		dataStore.lrange('userTable' , 0, -1, function(error, result){			
-
-			var userTable = [];
-			for(var user in result) {
-				var parsedUser = JSON.parse(result[user]);
-				userTable.push({username: parsedUser.username, count: 0});
-			}
-			
-			response.render('auth/userTable', {
-				title: 'Wonder Trade Analytics',
-				pageState: '',
-				userTable: userTable,
-				user: request.user
-			});
-		});
-	});
-
 	// Show the individual user page.
 	app.get('/users/:id', function(request, response){
 		response.render('auth/user', {
@@ -93,7 +74,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 				console.log("A new user was added");
 				request.login(newUser, function(err) {
 				  if (err) { return next(err); }
-				  return response.redirect('/users/' + newUser.id);
+				  return response.redirect('/contributer');
 				});
 			}			
 		});

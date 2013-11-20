@@ -117,8 +117,12 @@ exports.initController =  function(app, dataStore, passport) {
 		response.send('Alright, the test data has been loaded!');
 	});
 
-	app.get('/wondertrade/digimonDatawipe', function(request, response){
+	app.get('/kill/killWondertrade', function(request, response){
 		dataStore.del('wondertrade');		
-		response.send('Alright, the test data has been loaded!');
+		response.send('Alright, wondertrades wiped');
+	});
+	app.get('/kill/killUsers', function(request, response){
+		dataStore.del('userTable');		
+		response.send('Alright, users wiped');
 	});
 };

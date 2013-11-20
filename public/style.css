@@ -90,13 +90,17 @@ button{border: none;display:block;margin: 0 auto;}
 button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .pokeball-submit{
 	/* hot linking while developing, I'll make a different version */
-	background: url(http://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG) no-repeat center center;
+	background: url(images/pokeball.PNG) no-repeat center center;
 	background-size: contain;
 	display:block;
 	height: 5em;
 	width: 5em;
 }
 
+.user-auth-form { padding: 1em;margin: 0 auto; width: 40%;background: rgba(0,0,0,.3);overflow: hidden;}
+.user-auth-form label {display: block;line-height: 2em;}
+.user-auth-form .user-auth-fields{float: left;}
+.user-auth-form .pokeball-submit {float: right;color:#fff;text-shadow: 1px 1px 1px #000;}
 
 /* Data */
 .chart-box{background: rgba(0,0,0,.3);margin: 1px 0}
