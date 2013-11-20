@@ -111,3 +111,7 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .hiddenAbility{background: rgba(0,0,255,0.4);}
 .quick-stats .item{background: rgba(255,0,0,0.4);}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
+
+.contributer-section{width: 80%;}
+.contributer-banner{float: left;width: 60%;}
+.contributer-links{float:right;text-align:center;list-style: none;background: rgba(0,0,0,.6);padding: 1em;margin:0;width: 40%;}

@@ -24,7 +24,15 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	app.post('/login', passport.authenticate('local'), function(request, response) {
 		// If we made it here, authentication was successful.
 		var newUser = request.user;				
-		response.redirect('/users/' + newUser.id);
+		response.redirect('/contributer');
+	});
+
+	app.get('/contributer', function(request, response){		
+		response.render('auth/contributer', {
+			title: 'Wonder Trade Analytics',
+			pageState: '',			
+			user: request.user
+		});
 	});
 
 	// List all the users.
