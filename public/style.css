@@ -90,7 +90,7 @@ button{border: none;display:block;margin: 0 auto;}
 button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .pokeball-submit{
 	/* hot linking while developing, I'll make a different version */
-	background: url(images/pokeball.PNG) no-repeat center center;
+	background: url(/images/pokeball.png) no-repeat center center;
 	background-size: contain;
 	display:block;
 	height: 5em;
