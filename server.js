@@ -43,7 +43,7 @@ Date.prototype.customFormatDate = function(){
 (require('./controllers/home')).initController(app, dataStore);
 
 // Init WonderTrade Controller
-(require('./controllers/wondertrade')).initController(app, dataStore, util);
+(require('./controllers/wondertrade')).initController(app, dataStore, passport);
 
 // Init Data Controller
 (require('./controllers/data')).initController(app, dataStore);
