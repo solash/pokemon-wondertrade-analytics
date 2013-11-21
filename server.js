@@ -51,6 +51,9 @@ Date.prototype.customFormatDate = function(){
 // Init User Authentication Controller
 (require('./controllers/authentication')).initController(app, dataStore, passport, LocalStrategy);
 
+// Init Admin Controller
+(require('./controllers/admin')).initController(app, dataStore);
+
 
 var serverPort = process.env.PORT || 5000;
 app.listen(serverPort, function(){
