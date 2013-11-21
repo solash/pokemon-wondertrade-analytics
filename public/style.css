@@ -122,5 +122,12 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
 
 .contributer-section{width: 80%;}
-.contributer-banner{float: left;width: 60%;}
-.contributer-links{float:right;text-align:center;list-style: none;background: rgba(0,0,0,.6);padding: 1em;margin:0;width: 40%;}
+.contributer-banner{float: left;width: 70%;}
+.contributer-section ul{list-style:none;padding: 0;}
+.contributer-section li{padding: 0.5em;background: rgba(100,100,200,.3);}
+.contributer-section li:nth-child(even){ background: rgba(0,0,0,.3);}
+.contributer-links{float:right;text-align:center;list-style: none;background: rgba(0,0,0,.6);padding: 1em;margin:0;width: 30%;}
+.contributer-links li{background: inherit;padding: 0;}
+.contributer-links li a{display: block;transition:all 0.5s ease;padding: 0.5em;}
+.contributer-links li a:hover{background: rgba(155,155,255,.3)}
+
