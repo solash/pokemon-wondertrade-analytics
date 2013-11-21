@@ -104,25 +104,4 @@ exports.initController =  function(app, dataStore, passport) {
 		})(request, response, next);
 				
 	});
-
-	// For development purposes only. Discard Afterward. Like 4srs.
-	app.get('/wondertrade/generateTestData', function(request, response){
-		var testArray = require('../data/test-data').testData;
-
-		dataStore.del('wondertrade');
-		for(var testWT in testArray) {
-			var stringifiedWT = JSON.stringify(testArray[testWT]);
-			dataStore.lpush('wondertrade', stringifiedWT);
-		}
-		response.send('Alright, the test data has been loaded!');
-	});
-
-	app.get('/kill/killWondertrade', function(request, response){
-		dataStore.del('wondertrade');		
-		response.send('Alright, wondertrades wiped');
-	});
-	app.get('/kill/killUsers', function(request, response){
-		dataStore.del('userTable');		
-		response.send('Alright, users wiped');
-	});
 };

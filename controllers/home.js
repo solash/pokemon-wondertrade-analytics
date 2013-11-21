@@ -9,9 +9,9 @@ exports.initController = function(app, dataStore) {
 
 			response.render('home', {
 				title: 'Homepage Title',
-				pageState: 'warning',
+				pageState: '',
 				user: request.user,
-				stateMessage: 'This app is very much in development still. Any data you enter here *will* be wiped. :x',
+				stateMessage: '',
 				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate()),
 				wondertradeCount: 70
 			});

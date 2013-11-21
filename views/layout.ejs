@@ -10,15 +10,21 @@
     <script type="text/javascript" src="/scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/scripts/highcharts.js"></script>
     <script type="text/javascript">
-      Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+      
+      Highcharts.setOptions({
+        credits: {
+          enabled: false
+        },
+        colors: Highcharts.map(Highcharts.getOptions().colors, function(color) {
           return {
               radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
               stops: [
                   [0, color],
                   [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
               ]
-          };
-      });
+            };
+        })
+      })
       Date.prototype.customFormatDate = function(){
         var year = this.getFullYear(),
           month = ('0'+(this.getMonth()+1)).slice(-2),
@@ -33,9 +39,9 @@
       <h1><%= title %></h1>
       <div class="user">
         <% if(user) { %>
-          Logged in as <%= user.username %>
+          Logged in as <%= user.username %>!
         <% } else { %>
-          Not logged in
+          <a href="/register">Register</a> or <a href="/login">Login</a>
         <% } %>
       </div>
     </header>
@@ -55,7 +61,10 @@
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
-                        
+            <% if(user) { %>              
+              <li><a href="/contributer">Contributer Corner</a></li>
+              <li><a href="/wondertrade/new">Add a wonder trade</a></li>
+            <% } %>              
             <li>&nbsp;</li>
             <li><a href="/wondertrade">Recent Wonder Trades</a></li>
             <li><a href="/data">Analytics Overview</a></li>

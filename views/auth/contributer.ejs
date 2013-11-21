@@ -2,15 +2,16 @@
 <h3>Welcome to the <br/>Contributer Corner</h3>
 <div class="contributer-section">
 	<ul class="contributer-links">
-		<li><a href="/register">Register</a></li>
-		<li><a href="/login">Login</a></li>
-		<li><a href="/logout">Logout</a></li>
-		<li><a href="/wondertrade/new">Add a wonder trade (must be logged in)</a></li>
+		<% if(user) { %>
+			<li><a href="/wondertrade/new">Add a wonder trade</a></li>
+			<li><a href="/logout">Logout</a></li>			
+		<% } else { %>
+			<li><a href="/register">Register</a> or <a href="/login">Login</a></li>
+		<% } %>		
 	</ul>
 	<div class="contributer-banner">
 		<p>If you are here that means you likely want to help out, which makes you awesome!</p>
-		<p>I have been working on this webapp for the past two weeks, so there are still a few nuts and bolts I am working out.</p>
-		<p>I ask that you not reveal this link to the public... right now this app is using Heroku's free hosting, and can't quite handle a reddit hug yet.</p>
+		<p>I have been working on this webapp for the past two weeks, so there are still a few nuts and bolts I am working out.</p>		
 		<p>If you have any feedback, feel free to let me know <a href="http://www.reddit.com/user/theirondeveloper/">on reddit!</a></p>
 	</div>
 </div>

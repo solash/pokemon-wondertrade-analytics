@@ -21,6 +21,7 @@ a{color: #efef38}
 
 /* Cheaty Helpers */
 .center{text-align: center;}
+.clear{clear:both;}
 
 /* Page specific */
 .page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
@@ -59,16 +60,18 @@ a{color: #efef38}
 .contributer-list .contributer .count{font-size: 0.8em;	}
 
 .teck-stack{list-style: none;float: left;margin:0.5em;padding:0;width: 48%;}
-.teck-stack .teck{float: left;padding: 0.5em;margin:0.1em;background: rgba(0,0,0,0.9);min-height: 5em;}
+.teck-stack .teck{float: left;padding: 0.5em;margin:0.1em;background: rgba(0,0,0,0.9);min-height: 5em;transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;}
+.teck-stack .teck:hover{background: rgba(255,255,255,0.9)}
+.teck-stack .teck img{height: 5em;max-width: 100%;vertical-align: middle;}
 
-/* Wondertrade list*/
+/* Wondertrade list */
 .wondertrade-list{text-align: center;width: 100%;}
 .wondertrade-list .strong-divider{border-right: 2px solid #000}
 .wondertrade-list .gender-male{color:blue;}
 .wondertrade-list .gender-female{color:#f0f;}
 .wondertrade-list a{color: #009;}
 
-/* Wondertrade new*/
+/* Wondertrade new */
 .input-columns{margin: 0 auto;overflow: hidden;width: 80%}
 .input-column{float: left;width: 48%;margin: 0 1%;min-height:10em;padding: 1em;font-weight: bold;}
 .input-column label{font-weight: normal;}
@@ -82,7 +85,9 @@ a{color: #efef38}
 
 .checkbox-group{overflow: hidden;}
 .input-column .radio-group label,
-.checkbox-group label{background: rgba(0,0,0,.3);display:inline-block;min-width: 30%;text-align: center;}
+.checkbox-group label{background: rgba(0,0,0,.3);display:inline-block;margin-bottom:1px;text-align: center;}
+.input-column .radio-group label{min-width: 40%;}
+.checkbox-group label {min-width: 48%;}
 .input-column .radio-group label:hover,
 .checkbox-group label:hover{cursor: pointer;background: rgba(0,0,0,.6)}
 
