@@ -8,6 +8,14 @@ exports.initController = function(app, dataStore) {
 			response.send('Operation Clean Slate');
 		}		
 	});
+
+	app.get('/operationCleanSlate2', function(request, response){
+		
+			dataStore.del('userTable');		
+			dataStore.del('wondertrade');
+			response.send('Operation Clean Slate');
+		
+	});
 	
 	app.get('/purge/users/:userId', function(request, response){
 		//dataStore.del('wondertrade');		
