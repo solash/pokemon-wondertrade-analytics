@@ -66,13 +66,22 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 		
 	});
 
+
 	app.post('/register', function(request, response, next){
 		var username = request.body.username,
 			password = request.body.password;
 		if(username && password) {
 			dataStore.lrange('userTable' , 0, -1, function(error, result) {
+
 				var userTableSize = result.length,
-					alreadyExists = false;
+					alreadyExists = false,
+					newestUserId;
+
+				if(userTableSize > 0) {
+					newestUserId = JSON.parse(result[0]).id;
+				} else {
+					newestUserId = 0;
+				}				
 
 				for(var user in result) {
 					var currentUser = JSON.parse(result[user]);
@@ -81,9 +90,9 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 					}
 				}
 				if(alreadyExists) {
-					response.redirect('/contributer');
+					return response.redirect('/contributer');
 				} else {
-					var newUser = new UserModel({username: username, password: password.hashCode(), id:(userTableSize+1)});
+					var newUser = new UserModel({username: username, password: password.hashCode(), id:(parseInt(newestUserId)+1)});
 					dataStore.lpush('userTable', JSON.stringify(newUser));
 					console.log("A new user was added");
 					request.login(newUser, function(err) {
