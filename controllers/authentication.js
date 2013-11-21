@@ -1,5 +1,16 @@
 var UserModel = require('../models/User').model;
 
+String.prototype.hashCode = function(){
+	var hash = 0;
+	if (this.length == 0) return hash;
+	for (i = 0; i < this.length; i++) {
+		char = this.charCodeAt(i);
+		hash = ((hash<<5)-hash)+char;
+		hash = hash & hash; // Convert to 32bit integer
+	}
+	return hash;
+}
+
 exports.initController = function(app, dataStore, passport, LocalStrategy) {
 
 	// Take the user to the login page.
@@ -72,7 +83,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 				if(alreadyExists) {
 					response.redirect('/contributer');
 				} else {
-					var newUser = new UserModel({username: username, password: password, id:(userTableSize+1)});
+					var newUser = new UserModel({username: username, password: password.hashCode(), id:(userTableSize+1)});
 					dataStore.lpush('userTable', JSON.stringify(newUser));
 					console.log("A new user was added");
 					request.login(newUser, function(err) {
@@ -92,7 +103,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 				for(var user in result) {
 					var currentUser = JSON.parse(result[user]);
 					if(currentUser.username && currentUser.password) {						
-						if(currentUser.username == username && currentUser.password == password) {
+						if(currentUser.username == username && currentUser.password == password.hashCode()) {
 							return done(null, currentUser);
 						} else if (currentUser.username == username) {
 							return done(null, false, { message: 'Incorrect password.' });
