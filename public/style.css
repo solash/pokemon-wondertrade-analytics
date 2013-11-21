@@ -52,16 +52,16 @@ a{color: #efef38}
 
 /* About page */
 .team-member{background: #efefef;color: #000;float: left;margin:1%;padding:0.5em;width: 48%;}
-.team-member .avatar{float: left;width: 30%;}
-.team-member .description{float: left;width: 70%;}
+.team-member .avatar{float: left;width: 23%;}
+.team-member .description{float: left;width: 70%;font-size: 0.9em;}
 
 .contributer-list{list-style: none;overflow: hidden;margin:0.5em;padding:0;}
 .contributer-list .contributer{background: #fff;color: #000;padding: 0.5em;float: left;margin: 0.1em;}
 .contributer-list .contributer .count{font-size: 0.8em;	}
 
 .teck-stack{list-style: none;float: left;margin:0.5em;padding:0;width: 48%;}
-.teck-stack .teck{float: left;padding: 0.5em;margin:0.1em;background: rgba(0,0,0,0.9);min-height: 5em;transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;}
-.teck-stack .teck:hover{background: rgba(255,255,255,0.9)}
+.teck-stack .teck{float: left;padding: 0.5em;margin:0.1em;background: rgba(0,0,0,0.9);min-height: 5em;text-align:center;transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;}
+.teck-stack .teck:hover{background: rgba(155,155,155,0.9)}
 .teck-stack .teck img{height: 5em;max-width: 100%;vertical-align: middle;}
 
 /* Wondertrade list */
