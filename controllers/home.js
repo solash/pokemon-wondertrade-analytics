@@ -44,4 +44,12 @@ exports.initController = function(app, dataStore) {
 			
 		});		
 	});
+
+	app.get('/contributer', function(request, response){		
+		response.render('auth/contributer', {
+			title: 'Wonder Trade Analytics',
+			pageState: '',			
+			user: request.user
+		});
+	});
 };

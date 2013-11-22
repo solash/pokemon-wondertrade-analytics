@@ -35,23 +35,6 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 		response.redirect('/contributer');
 	});
 
-	app.get('/contributer', function(request, response){		
-		response.render('auth/contributer', {
-			title: 'Wonder Trade Analytics',
-			pageState: '',			
-			user: request.user
-		});
-	});
-
-	// Show the individual user page.
-	app.get('/users/:id', function(request, response){
-		response.render('auth/user', {
-			title: 'Wonder Trade Analytics',
-			pageState: '',
-			user: request.user
-		});
-	});
-
 	// So... I need to make a register page.
 	app.get('/register', function(request, response){
 		if(!request.user) {

@@ -115,4 +115,29 @@ exports.initController = function(app, dataStore) {
 		});
 	});
 
+	// Show the individual user page.
+	app.get('/users/:userId', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+
+			var userId = request.params.userId,
+				highChartsData = new HighChartsData(result),
+				highChartsDataByUserId = highChartsData.getResultsByUserId(userId),
+				pokemonTable = highChartsData.getPokemonTable(highChartsDataByUserId);
+
+			pokemonTable.reverse();
+
+			response.render('data/user', {
+				title: 'Wonder Trade Analytics',
+				pageState: '',
+				user: request.user,
+				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataByUserId)),
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
+				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
+				pokemonTable: pokemonTable,
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
+			});
+		});		
+	});
+
 };

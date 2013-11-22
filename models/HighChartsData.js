@@ -155,6 +155,10 @@ HighChartsData.prototype.getResultsByRegionId = function(regionId) {
 	return [];	
 };
 
+HighChartsData.prototype.getResultsByUserId = function(userId) {
+	return _.where(this.deserializedResults, {userId: parseInt(userId)});
+};
+
 HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
 	var subRegions = _.countBy(regionSet, function(wonderTrade){
 		return wonderTrade.trainerCountrySub1;

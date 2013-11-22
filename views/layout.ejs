@@ -39,7 +39,7 @@
       <h1><%= title %></h1>
       <div class="user">
         <% if(user) { %>
-          Logged in as <%= user.username %>!
+          Logged in as <a href="/users/<%= user.id %>"><%= user.username %></a>
         <% } else { %>
           <a href="/register">Register</a> or <a href="/login">Login</a>
         <% } %>
