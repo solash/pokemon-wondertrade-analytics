@@ -25,7 +25,7 @@ exports.initController = function(app, dataStore) {
 			var userTable = {};
 			for(var user in result) {
 				var parsedUser = JSON.parse(result[user]);
-				userTable[parsedUser.id] = {username: parsedUser.username, count: 0};
+				userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
 			}
 
 			dataStore.lrange('wondertrade' , 0, -1, function(error, result){

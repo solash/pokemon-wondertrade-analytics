@@ -64,6 +64,7 @@ a{color: #efef38}
 
 .contributer-list{list-style: none;overflow: hidden;margin:0.5em;padding:0;}
 .contributer-list .contributer{background: #fff;color: #000;padding: 0.5em;float: left;margin: 0.1em;}
+.contributer-list .contributer a{color: #66f}
 .contributer-list .contributer .count{font-size: 0.8em;	}
 
 .teck-stack{list-style: none;float: left;margin:0.5em;padding:0;width: 48%;}
