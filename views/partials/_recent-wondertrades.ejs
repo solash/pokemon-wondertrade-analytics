@@ -23,15 +23,15 @@
 	<tbody>
 	<% wondertrades.forEach(function(wondertrade){ %>
 		<tr>
-    		<td><%= pokemonHash[wondertrade.pokemonId] %></td>
+    		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %></a></td>
     		<td><%= wondertrade.level %></td>
     		<td><%= wondertrade.pokemonNickname %></td>    		
-    		<td><%= wondertrade.hasItem? 'x' : '' %></td>
-    		<td><%= wondertrade.isShiny? 'x' : '' %></td>
-    		<td><%= wondertrade.hasPokerus? 'x' : '' %></td>
-    		<td class="strong-divider"><%= wondertrade.hasHiddenAbility? 'x' : '' %></td>
+    		<td class="checkArea"><%= wondertrade.hasItem? '&check;' : '' %></td>
+    		<td class="checkArea"><%= wondertrade.isShiny? '&check;' : '' %></td>
+    		<td class="checkArea"><%= wondertrade.hasPokerus? '&check;' : '' %></td>
+    		<td class="checkArea strong-divider"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
     		<td><span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male">&#9794;' : 'female">&#9792;' %></td></span>
-    		<td><%= countryHash[wondertrade.trainerCountry] %></td>
+    		<td><a href="/data/regions/<%= wondertrade.trainerCountry %>"><%= countryHash[wondertrade.trainerCountry] %></a></td>
     		<td><%= wondertrade.trainerCountrySub1 %></td>
     		<td><a href="/users/<%= wondertrade.userId %>"><%= userTable[wondertrade.userId] %></a></td>
     		<td><%= (new Date(wondertrade.date)).toDateString() %></td>
