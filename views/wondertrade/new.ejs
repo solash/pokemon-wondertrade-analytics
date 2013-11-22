@@ -3,29 +3,8 @@
 
 <form name="input" action="/wondertrade/new" method="post">
 	<div class="input-columns">
-		<div class="input-column pokemon-details">
-			<div class="input-row">
-			<label>
-				Pokemon Received:
-				<select name="pokemonId">
-					<%- include ../partials/_pokemon-select-menu.ejs %>			
-				</select>
-			</label>
-			</div>
-			<div class="input-row">
-				<label>Nickname (optional): <input type="text" name="pokemonNickname" /></label>
-			</div>
-			<div class="input-row">
-				<label>Level: <input type="number" name="level" min="1" max="100" value="1" /></label>
-			</div>
-			<div class="input-row checkbox-group">
-				<label><input type="checkbox" name="hasItem" />Item</label>
-				<label><input type="checkbox" name="hasHiddenAbility" />Hidden Ability</label>
-				<label><input type="checkbox" name="isShiny" />Shiny</label>
-				<label><input type="checkbox" name="hasPokerus" />Pokerus</label>
-			</div>
-		</div>
 		<div class="input-column trainer-details">
+			<h4>Trainer Information</h4>
 			<div class="input-row">
 				Trainer Gender:
 				<span class="radio-group">
@@ -47,6 +26,29 @@
 			<div class="input-row">
 				<label>Trainer Country Sub: <input type="text" name="trainerCountrySub1" /></label>
 			</div>				
+		</div>
+		<div class="input-column pokemon-details">
+			<h4>Pokemon Received</h4>
+			<div class="input-row">
+			<label>
+				Pokemon Received:
+				<select name="pokemonId">
+					<%- include ../partials/_pokemon-select-menu.ejs %>			
+				</select>
+			</label>
+			</div>
+			<div class="input-row">
+				<label>Nickname (optional): <input type="text" name="pokemonNickname" /></label>
+			</div>
+			<div class="input-row">
+				<label>Level: <input type="number" name="level" min="1" max="100" value="1" /></label>
+			</div>
+			<div class="input-row checkbox-group">
+				<label><input type="checkbox" name="hasItem" />Item</label>
+				<label><input type="checkbox" name="hasHiddenAbility" />Hidden Ability</label>
+				<label><input type="checkbox" name="isShiny" />Shiny</label>
+				<label><input type="checkbox" name="hasPokerus" />Pokerus</label>
+			</div>
 		</div>
 	</div>
 	<button><i class="pokeball-submit"></i>Submit</button>
