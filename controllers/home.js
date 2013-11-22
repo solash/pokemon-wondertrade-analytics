@@ -28,7 +28,7 @@ exports.initController = function(app, dataStore) {
 				userTable[parsedUser.id] = {username: parsedUser.username, count: 0};
 			}
 
-			dataStore.lrange('wondertrade' , 0, 100, function(error, result){
+			dataStore.lrange('wondertrade' , 0, -1, function(error, result){
 				var highChartsData = new HighChartsData(result),
 					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
 			
