@@ -27,7 +27,7 @@ a{color: #efef38}
 .page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
 .wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;width: 100%;}
 .wrapper:after{clear: both;content: '';display: block;}
-.container{width: 1020px;margin: 0 auto;}
+.container{margin: 0 auto;}
 
 /* Layout */
 .page{position: relative;}
@@ -40,7 +40,7 @@ a{color: #efef38}
 .page-sidebar{background: rgba(0,0,0,0.8);padding: 0.5em 0.2em;overflow: hidden;font-family: "Steelworks";}
 .page-sidebar h3{padding: 0;margin:0;float: left;}
 .page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;}
-.page-sidebar ul li{float: left;max-width: 15%;height: 3em;position:relative;}
+.page-sidebar ul li{float: left;height: 3em;position:relative;}
 .page-sidebar ul li a,
 .page-sidebar ul li span{display: table-cell;height: 3em;vertical-align: middle;padding:0 1em 0 0.5em;}
 
@@ -60,6 +60,7 @@ a{color: #efef38}
 /* About page */
 .team-member{background: #efefef;color: #000;float: left;margin:1%;padding:0.5em;width: 48%;}
 .team-member .avatar{float: left;width: 23%;}
+.team-member .avatar img{max-width: 100%;}
 .team-member .description{float: left;width: 70%;font-size: 0.9em;}
 
 .contributer-list{list-style: none;overflow: hidden;margin:0.5em;padding:0;}
@@ -67,7 +68,7 @@ a{color: #efef38}
 .contributer-list .contributer a{color: #66f}
 .contributer-list .contributer .count{font-size: 0.8em;	}
 
-.teck-stack{list-style: none;float: left;margin:0.5em;padding:0;width: 48%;}
+.teck-stack{list-style: none;float: left;margin:5px 0 0;padding:0;width: 48%;}
 .teck-stack .teck{float: left;padding: 0.5em;margin:0.1em;background: rgba(0,0,0,0.9);min-height: 5em;text-align:center;transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;}
 .teck-stack .teck:hover{background: rgba(155,155,155,0.9)}
 .teck-stack .teck img{height: 5em;max-width: 100%;vertical-align: middle;}
