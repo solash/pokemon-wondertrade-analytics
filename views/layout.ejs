@@ -52,25 +52,25 @@
         </div>
       <% } %>
 
-    	<div class="container page">	    
-  	     <div class="page-content">
-          <%- body %>
-        </div>
+    	<div class="container page">	      	     
         <div class="page-sidebar">
-          <h3>Site Nav ▼</h3>
+          
           <ul>
+            <li><span>Site<br/>Nav</span></li>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <% if(user) { %>              
               <li><a href="/contributer">Contributer Corner</a></li>
-              <li><a href="/wondertrade/new">Add a wonder trade</a></li>
+              <li><a href="/wondertrade/new">Add a<br/> wonder trade</a></li>
             <% } %>              
-            <li>&nbsp;</li>
-            <li><a href="/wondertrade">Recent Wonder Trades</a></li>
+            <li><a href="/wondertrade">Recent WonderTrades</a></li>
             <li><a href="/data">Analytics Overview</a></li>
-            <li><a href="/data/pokemon">Data By Pokemon</a></li>
-            <li><a href="/data/regions">Data By Region</a></li>
+            <li><a href="/data/pokemon">Data By<br/> Pokemon</a></li>
+            <li class="last"><a href="/data/regions">Data By<br/> Region</a></li>
           </ul>
+        </div>
+        <div class="page-content">
+          <%- body %>
         </div>
       </div>
     </div>

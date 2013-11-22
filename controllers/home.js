@@ -8,7 +8,7 @@ exports.initController = function(app, dataStore) {
 			var highChartsData = new HighChartsData(result);
 
 			response.render('home', {
-				title: 'Homepage Title',
+				title: 'Wonder Trade Analytics',
 				pageState: '',
 				user: request.user,
 				stateMessage: '',

@@ -25,7 +25,7 @@ a{color: #efef38}
 
 /* Page specific */
 .page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
-.wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;}
+.wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;width: 100%;}
 .wrapper:after{clear: both;content: '';display: block;}
 .container{width: 1020px;margin: 0 auto;}
 
@@ -37,13 +37,20 @@ a{color: #efef38}
 .pageHead .user{position: absolute;top:0em;right: 1em;background: rgba(0,0,0,.8);color: #fff;padding: 0.5em;}
 
 /* Sidebar */
-.page-sidebar{width:200px;position: absolute;top:-1em;right: 0;background: rgba(0,0,0,0.8);padding: 1em;}
-.page-sidebar h3{padding: 0;margin:0;}
-.page-sidebar ul{list-style: none;padding: 0;height: 0;margin:0;overflow: hidden;text-align: center;}
-.page-sidebar ul li a{display: block;}
+.page-sidebar{background: rgba(0,0,0,0.8);padding: 0.5em 0.2em;overflow: hidden;font-family: "Steelworks";}
+.page-sidebar h3{padding: 0;margin:0;float: left;}
+.page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;}
+.page-sidebar ul li{float: left;max-width: 15%;height: 3em;position:relative;}
+.page-sidebar ul li a,
+.page-sidebar ul li span{display: table-cell;height: 3em;vertical-align: middle;padding:0 1em 0 0.5em;}
 
-.page-sidebar:hover ul{height: auto;}
-.page-sidebar ul li a:hover{background: rgba(255,255,255,.2);}
+
+.page-sidebar ul li:before{border-left: 0.5em solid #000;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 1px;content: ' ';z-index: 2;}
+.page-sidebar ul li:after{border-left: 0.5em solid #efefef;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 0;content: ' ';}
+.page-sidebar ul li.last:before,
+.page-sidebar ul li.last:after{display: none;}
+
+.page-sidebar ul li a:hover{text-shadow:1px 1px 1px #66f;}
 
 .stateMessage{color:#000;padding:1em 0;text-align: center;}
 .stateMessage.warning{background: #ff6;}
@@ -121,7 +128,7 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .item{background: rgba(255,0,0,0.4);}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
 
-.contributer-section{width: 80%;}
+.contributer-section{}
 .contributer-banner{float: left;width: 70%;}
 .contributer-section ul{list-style:none;padding: 0;}
 .contributer-section li{padding: 0.5em;background: rgba(100,100,200,.3);}
