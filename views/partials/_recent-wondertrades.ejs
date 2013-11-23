@@ -30,10 +30,21 @@
     		<td class="checkArea"><%= wondertrade.isShiny? '&check;' : '' %></td>
     		<td class="checkArea"><%= wondertrade.hasPokerus? '&check;' : '' %></td>
     		<td class="checkArea strong-divider"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
-    		<td><span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male">&#9794;' : 'female">&#9792;' %></td></span>
-    		<td><a href="/data/regions/<%= wondertrade.trainerCountry %>"><%= countryHash[wondertrade.trainerCountry] %></a></td>
+    		<td>
+    			<span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male' : 'female' %>">
+    				<%- wondertrade.trainerGender === 'male' ? '&#9794;' : '&#9792;' %>
+    			</span>
+    		</td>
+    		<td>
+    			<% if(wondertrade.trainerCountry && countryHash[wondertrade.trainerCountry]) { %>
+    				<a href="/data/regions/<%= wondertrade.trainerCountry %>"><%= countryHash[wondertrade.trainerCountry] %></a>
+    			<% } %>
+    		</td>
     		<td><%= wondertrade.trainerCountrySub1 %></td>
-    		<td><a href="/users/<%= wondertrade.userId %>"><%= userTable[wondertrade.userId] %></a></td>
+    		<td><% if(wondertrade.userId && userTable[wondertrade.userId]) { %>
+    				<a href="/users/<%= wondertrade.userId %>"><%= userTable[wondertrade.userId] %></a>
+    			<% } %>
+    		</td>
     		<td><%= (new Date(wondertrade.date)).toDateString() %></td>
     	</tr>
   	<% }); %>

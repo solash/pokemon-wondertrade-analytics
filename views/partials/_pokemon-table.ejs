@@ -1,18 +1,11 @@
-<table class="wondertrade-list">
-    <thead>
-        <tr>
-            <th>Pokemon</th>
-            <th>Wonder Traded</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for(var pokemon in pokemonTable) { %>
-            <% if(pokemonTable[pokemon].id){ %>
-                <tr>        	
-                    <td><a href="/data/pokemon/<%= pokemonTable[pokemon].id %>"><%= pokemonTable[pokemon].name %></a></td>
-                    <td><%= pokemonTable[pokemon].count %></td>
-                </tr>
-            <% } %>
+<div class="pokemon-list chart-box" >
+    <h4>Wonder Traded Pokemon</h4>
+    <% for(var pokemon in pokemonTable) { %>
+        <% if(pokemonTable[pokemon].id){ %>
+            <a href="/data/pokemon/<%= pokemonTable[pokemon].id %>">
+                <%= pokemonTable[pokemon].name %> (<%= pokemonTable[pokemon].count %>)
+            </a>
         <% } %>
-    </tbody>
-</table>
+    <% } %>
+</div>
+
