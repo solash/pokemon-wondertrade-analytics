@@ -45,8 +45,36 @@ exports.initController = function(app, dataStore) {
 		});		
 	});
 
-	app.get('/contributer', function(request, response){		
-		response.render('auth/contributer', {
+	app.get('/contributers', function(request, response){	
+
+		dataStore.lrange('userTable' , 0, -1, function(error, result){			
+
+			var userTable = {};
+			for(var user in result) {
+				var parsedUser = JSON.parse(result[user]);
+				userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
+			}
+
+			dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+				var highChartsData = new HighChartsData(result),
+					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
+			
+				response.render('contributers', {
+					title: 'Project Contributers',
+					pageState: '',
+					user: request.user,
+					trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByUsers(false, userTable)),
+					userTable: userTableWithCounts
+				});
+
+			});
+
+			
+		});		
+	});
+
+	app.get('/help', function(request, response){		
+		response.render('help', {
 			title: 'Wonder Trade Analytics',
 			pageState: '',			
 			user: request.user

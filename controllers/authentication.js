@@ -32,7 +32,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 	app.post('/login', passport.authenticate('local'), function(request, response) {
 		// If we made it here, authentication was successful.
 		var newUser = request.user;				
-		response.redirect('/contributer');
+		response.redirect('/help');
 	});
 
 	// So... I need to make a register page.
@@ -44,7 +44,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 				user: request.user
 			});	
 		} else {
-			response.redirect('/contributer');
+			response.redirect('/help');
 		}
 		
 	});
@@ -73,14 +73,14 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 					}
 				}
 				if(alreadyExists) {
-					return response.redirect('/contributer');
+					return response.redirect('/help');
 				} else {
 					var newUser = new UserModel({username: username, password: password.hashCode(), id:(parseInt(newestUserId)+1)});
 					dataStore.lpush('userTable', JSON.stringify(newUser));
 					console.log("A new user was added");
 					request.login(newUser, function(err) {
 					  if (err) { return next(err); }
-					  return response.redirect('/contributer');
+					  return response.redirect('/help');
 					});
 				}			
 			});	
