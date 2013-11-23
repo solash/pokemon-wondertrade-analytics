@@ -365,7 +365,7 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		itemPercentage: this.getItemPercentage(resultSet),
 		pokerusPercentage: this.getPokerusPercentage(resultSet),
 		eggMovePercentage: this.getEggMovePercentage(resultSet),
-		noteableIvPercentage: this.getNoteableIVPercentage(resultSet)
+		noteableIvPercentage: this.getPerfectIVPercentage(resultSet)
 	};
 };
 
