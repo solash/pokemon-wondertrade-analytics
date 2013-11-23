@@ -19,6 +19,10 @@ tbody tr:hover{background: #ffa}
 thead tr{background: #333;color: #fff;text-shadow:1px 1px 1px #000;}
 a{color: #efef38}
 
+input:focus,
+select:focus{box-shadow: 0 0 15px #ff0}
+
+
 /* Cheaty Helpers */
 .center{text-align: center;}
 .clear{clear:both;}
@@ -87,7 +91,8 @@ a{color: #efef38}
 .checkArea{color: #0c0;text-shadow:1px 1px 1px #ccc;}
 
 /* Wondertrade new */
-.input-columns{margin: 0 auto;overflow: hidden;width: 80%}
+.input-columns{margin: 0 auto;width: 80%}
+.input-columns:after{clear: both;content: '';display: block;}
 .input-column{float: left;width: 48%;margin: 0 1%;min-height:10em;padding: 1em;font-weight: bold;}
 .input-column label{font-weight: normal;}
 .input-column .radio-group,
@@ -97,13 +102,14 @@ a{color: #efef38}
 .input-column .input-row{line-height: 1.5em;clear:both;margin: 1em 0;}
 .pokemon-details{background: rgba(100,150,100,.6);}
 .trainer-details{background: rgba(100,100,150,.6);}
-.clarify-inputs{font-weight:normal;text-align:center;}
+.clarify-inputs{font-weight:normal;text-align:center;font-size: 0.9em;}
 
-.checkbox-group{overflow: hidden;}
+.checkbox-group{}
 .input-column .radio-group label,
 .checkbox-group label{background: rgba(0,0,0,.3);display:inline-block;margin-bottom:1px;text-align: center;}
 .input-column .radio-group label{min-width: 40%;}
 .checkbox-group label {min-width: 48%;}
+.checkbox-group label.full{min-width: 96.75%}
 .input-column .radio-group label:hover,
 .checkbox-group label:hover{cursor: pointer;background: rgba(0,0,0,.6)}
 
@@ -135,6 +141,8 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .pokerus{background: rgba(160,32,240, 0.4);}
 .quick-stats .hiddenAbility{background: rgba(0,0,255,0.4);}
 .quick-stats .item{background: rgba(255,0,0,0.4);}
+.quick-stats .eggMove{background: rgba(255,255,255,0.4);}
+.quick-stats .notableIV{background: rgba(100,200,100,0.4);}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
 
 .contributer-section{}
@@ -152,7 +160,8 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 	.clarify-inputs{display: none;}
 }
 
-@media (max-width: 400px) {
-	.checkbox-group label{width: 100%;}
+@media (max-width: 600px) {
+	.checkbox-group label,
+	.checkbox-group label.full{width: 100%;}
 }
 

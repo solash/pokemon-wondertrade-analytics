@@ -346,6 +346,14 @@ HighChartsData.prototype.getHiddenAbilityPercentage = function(resultSet) {
 	return this.getPercentageByAttribute('hasHiddenAbility', resultSet);
 };
 
+HighChartsData.prototype.getNoteableIVPercentage = function(resultSet) {
+	return this.getPercentageByAttribute('hasNotableIV', resultSet);
+};
+
+HighChartsData.prototype.getEggMovePercentage = function(resultSet) {
+	return this.getPercentageByAttribute('hasEggMove', resultSet);
+};
+
 HighChartsData.prototype.getQuickStats = function(resultSet) {	
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
@@ -355,7 +363,9 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		shinyPercentage: this.getShinyPercentage(resultSet),
 		hiddenAbilityPercentage: this.getHiddenAbilityPercentage(resultSet),
 		itemPercentage: this.getItemPercentage(resultSet),
-		pokerusPercentage: this.getPokerusPercentage(resultSet)
+		pokerusPercentage: this.getPokerusPercentage(resultSet),
+		eggMovePercentage: this.getEggMovePercentage(resultSet),
+		noteableIvPercentage: this.getNoteableIVPercentage(resultSet)
 	};
 };
 

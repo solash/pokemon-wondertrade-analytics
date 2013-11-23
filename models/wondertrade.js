@@ -42,6 +42,8 @@ function sanitizeParams(params, userId) {
 	params.pokemonNickname = params.pokemonNickname || '';
 	params.hasItem = (params.hasItem ? true : false);
 	params.hasHiddenAbility = (params.hasHiddenAbility ? true : false);
+	params.hasEggMove = (params.hasEggMove ? true : false);
+	params.hasNotableIV = (params.hasNotableIV ? true : false);
 	params.hasPokerus = (params.hasPokerus ? true : false);	
 	params.isShiny = (params.isShiny ? true : false);
 	params.level = pokemonLevel;
@@ -64,7 +66,9 @@ exports.model = function(params, userId) {
 		"pokemonNickname" : params.pokemonNickname,
 		"hasItem" : params.hasItem,
 		"hasHiddenAbility" : params.hasHiddenAbility,
+		"hasEggMove": params.hasEggMove,
 		"hasPokerus" : params.hasPokerus,
+		"hasNotableIV": params.hasNotableIV,
 		"isShiny" : params.isShiny,
 		"level" : params.level,
 		"trainerGender" : params.trainerGender,
