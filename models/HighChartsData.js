@@ -346,7 +346,7 @@ HighChartsData.prototype.getHiddenAbilityPercentage = function(resultSet) {
 	return this.getPercentageByAttribute('hasHiddenAbility', resultSet);
 };
 
-HighChartsData.prototype.getNoteableIVPercentage = function(resultSet) {
+HighChartsData.prototype.getPerfectIVPercentage = function(resultSet) {
 	return this.getPercentageByAttribute('hasNotableIV', resultSet);
 };
 
@@ -365,7 +365,7 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		itemPercentage: this.getItemPercentage(resultSet),
 		pokerusPercentage: this.getPokerusPercentage(resultSet),
 		eggMovePercentage: this.getEggMovePercentage(resultSet),
-		noteableIvPercentage: this.getPerfectIVPercentage(resultSet)
+		perfectIvPercentage: this.getPerfectIVPercentage(resultSet)
 	};
 };
 
