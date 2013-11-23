@@ -97,6 +97,7 @@ a{color: #efef38}
 .input-column .input-row{line-height: 1.5em;clear:both;margin: 1em 0;}
 .pokemon-details{background: rgba(100,150,100,.6);}
 .trainer-details{background: rgba(100,100,150,.6);}
+.clarify-inputs{font-weight:normal;text-align:center;}
 
 .checkbox-group{overflow: hidden;}
 .input-column .radio-group label,
@@ -145,4 +146,13 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .contributer-links li{background: inherit;padding: 0;}
 .contributer-links li a{display: block;transition:all 0.5s ease;padding: 0.5em;}
 .contributer-links li a:hover{background: rgba(155,155,255,.3)}
+
+@media (max-width: 800px) {
+	.input-column{width: 100%;}
+	.clarify-inputs{display: none;}
+}
+
+@media (max-width: 400px) {
+	.checkbox-group label{width: 100%;}
+}
 
