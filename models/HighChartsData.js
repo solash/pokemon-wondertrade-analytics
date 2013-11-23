@@ -66,6 +66,14 @@ HighChartsData.prototype.getRegionsTable = function(resultSet){
 	return countryChart;
 }
 
+HighChartsData.prototype.getNicknamesTable = function() {
+	return _.filter(this.deserializedResults, function(wonderTrade){		
+		if(wonderTrade.pokemonNickname) {
+			return wonderTrade;
+		}
+	});	
+}
+
 HighChartsData.prototype.getPokemonTable = function(resultSet) {
 	if(!resultSet) {
 		resultSet = this.deserializedResults;

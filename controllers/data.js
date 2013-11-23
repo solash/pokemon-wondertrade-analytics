@@ -2,6 +2,7 @@ var _ = require('underscore'),
 	HighChartsData = require('../models/HighChartsData').model,
 	PokemonList = require('../data/pokemonList.json'),
 	CountryList = require('../data/countryList.json'),
+	UserTableModel = require('../models/UserTable').model,
 	PokemonHash = {},
 	CountryHash = {};
 
@@ -93,6 +94,30 @@ exports.initController = function(app, dataStore) {
 				user: request.user,
 			});
 		});
+	});
+
+	app.get('/data/nicknames', function(request, response){
+
+		dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTable = new UserTableModel(result);
+
+			dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+				var highChartsData = new HighChartsData(result),
+					highChartsDataWithNicknames = highChartsData.getNicknamesTable();
+
+				response.render('data/nicknames', {
+					title: 'Wonder Trade Analytics',
+					pageState: '',
+					wondertradeTable: highChartsDataWithNicknames,
+					pokemonHash: PokemonHash,
+					userTable: userTable,
+					user: request.user,
+				});
+			});
+
+		});
+
+		
 	});
 
 	app.get('/data/regions/:regionCode', function(request, response){					

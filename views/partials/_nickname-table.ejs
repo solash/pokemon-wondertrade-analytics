@@ -1,0 +1,20 @@
+<table class="wondertrade-list">
+    <thead>
+        <tr>
+            <th>Pokemon</th>
+            <th>Nickname</th>
+            <th>Received By:</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var wondertrade in wondertradeTable) { %>            
+            <tr>        	
+                <td><a href="/data/pokemon/<%= wondertradeTable[wondertrade].pokemonId %>"><%= pokemonHash[wondertradeTable[wondertrade].pokemonId] %></a></td>
+                <td><%= wondertradeTable[wondertrade].pokemonNickname %></td>
+                <td><a href="/users/<%= wondertrade.userId %>"><%= userTable[wondertradeTable[wondertrade].userId] %></a></td>
+                <td><%= (new Date(wondertradeTable[wondertrade].date)).toDateString() %></td>
+            </tr>            
+        <% } %>
+    </tbody>
+</table>
