@@ -1,7 +1,7 @@
 <% layout('../layout') -%>
 <h2>Submit a new Wonder Trade</h2>
 
-<form name="input" action="/wondertrade/new" method="post">
+<form id="new-wondertrade" name="input" action="/wondertrade/new" method="post">
 	<div class="input-columns">
 		<div class="input-column trainer-details">
 			<h4>Trainer Information</h4>
@@ -57,6 +57,32 @@
 			</div>
 		</div>
 	</div>
+	<div class="requiredMessage">Trainer Country, Pokemon, and Pokemon Level are required fields.</div>
 	<button><i class="pokeball-submit"></i>Submit</button>
-
 </form>
+
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$('#new-wondertrade').on('submit', function(){
+			var $form = $(this),
+				$pokemonId = $form.find('select[name=pokemonId]'),
+				$pokemonLevel = $form.find('input[name=level]'),
+				$trainerCountry = $form.find('select[name=trainerCountry]'),
+				$requiredMessage = $form.find('.requiredMessage');
+
+			if(!$pokemonId.val() ||
+				!$pokemonLevel.val() ||
+				!$trainerCountry.val() ) {
+
+				$pokemonLevel.parents('.input-row').addClass('requiredField');
+				$pokemonId.parents('.input-row').addClass('requiredField');
+				$trainerCountry.parents('.input-row').addClass('requiredField');
+
+				$requiredMessage.show();
+
+				return false;
+			} 
+			
+		});
+	});
+</script>

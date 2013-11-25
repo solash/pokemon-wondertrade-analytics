@@ -22,10 +22,10 @@ a{color: #efef38}
 input:focus,
 select:focus{box-shadow: 0 0 15px #ff0}
 
-
 /* Cheaty Helpers */
 .center{text-align: center;}
 .clear{clear:both;}
+.requiredField{background: rgba(255,0,0,.5);}
 
 /* Page specific */
 .page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
@@ -60,6 +60,8 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .stateMessage.warning{background: #ff6;}
 .stateMessage.error{background: #f00;color: #fff;text-shadow: 1px 1px 1px #000;}
 .stateMessage.success{background: #0f0;}
+
+.requiredMessage{color: #f00;text-align: center;text-shadow:1px 1px 1px #111;padding: 0.5em 0;background: rgba(0,0,0,.2);display: none;}
 
 /* About page */
 .team-member{background: #efefef;color: #000;float: left;margin:1%;padding:0.5em;width: 48%;}
