@@ -75,7 +75,15 @@ exports.initController = function(app, dataStore) {
 
 	app.get('/help', function(request, response){		
 		response.render('help', {
-			title: 'Wonder Trade Analytics',
+			title: 'Wonder Trade Contributers',
+			pageState: '',			
+			user: request.user
+		});
+	});
+
+	app.get('/faq', function(request, response){		
+		response.render('faq', {
+			title: 'Frequently Asked Questions',
 			pageState: '',			
 			user: request.user
 		});

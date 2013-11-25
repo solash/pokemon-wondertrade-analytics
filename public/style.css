@@ -35,7 +35,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 
 /* Layout */
 .page{position: relative;}
-.page-content{width:100%;}
+.page-content{width:100%;max-width: 960px;margin: 0 auto;}
 
 .pageHead{position: relative;}
 .pageHead .user{position: absolute;top:0em;right: 1em;background: rgba(0,0,0,.8);color: #fff;padding: 0.5em;}
