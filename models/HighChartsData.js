@@ -156,6 +156,14 @@ HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 	return [];	
 };
 
+HighChartsData.prototype.getResultsByPokemonLevel = function(pokemonLevel) {
+	pokemonLevel = parseInt(pokemonLevel);
+	if(pokemonLevel > 0 && pokemonLevel <= 100) {
+		return _.where(this.deserializedResults, {level: pokemonLevel});	
+	}
+	return [];	
+};
+
 HighChartsData.prototype.getResultsByRegionId = function(regionId) {	
 	if(CountryHash[regionId]) {
 		return _.where(this.deserializedResults, {trainerCountry: regionId});	

@@ -38,7 +38,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 /* Layout */
 .page{position: relative;}
 .page-content{width:100%;}
-.page-content-wrapper{max-width: 960px;margin: 0 auto;}
+.page-content-inner{max-width: 960px;margin: 0 auto;}
 
 .pageHead{position: relative;}
 .pageHead .user{position: absolute;top:0em;right: 1em;background: rgba(0,0,0,.8);color: #fff;padding: 0.5em;}
@@ -150,6 +150,11 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .eggMove{background: rgba(255,255,255,0.4);}
 .quick-stats .notableIV{background: rgba(100,200,100,0.4);}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
+
+.select-level-options{width: 100%;max-width:500px;margin: 0 auto;}
+.select-level-options:after{clear: both;content: ' ';display: block;}
+.select-level-options form,
+.select-level-options a{float: left;width: 30%;}
 
 .contributer-section{}
 .contributer-banner{float: left;width: 70%;}

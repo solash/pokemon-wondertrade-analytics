@@ -120,6 +120,46 @@ exports.initController = function(app, dataStore) {
 		
 	});
 
+	app.get('/data/levels', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var highChartsData = new HighChartsData(result);			
+
+			response.render('data/levels', {
+				title: 'Wonder Trade Analytics',
+				pageState: '',
+				result: result,
+				PokemonHash: PokemonHash,
+				CountryHash: CountryHash,
+				user: request.user,
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),				
+			});
+		});
+		
+	});
+
+	app.get('/data/levels/:pokemonLevel', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var pokemonLevel = request.params.pokemonLevel,
+				highChartsData = new HighChartsData(result),
+				highChartsDataByLevel = highChartsData.getResultsByPokemonLevel(pokemonLevel);				
+
+			response.render('data/byLevel', {
+				title: 'Wonder Trade Analytics',
+				pageState: '',
+				result: result,
+				pokemonLevel: pokemonLevel,
+				user: request.user,
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByLevel)),
+				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByLevel)),
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByLevel)),
+				quickstats: highChartsData.getQuickStats(highChartsDataByLevel)
+			});
+		});
+		
+	});
+
 	app.get('/data/regions/:regionCode', function(request, response){					
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
 

@@ -1,0 +1,30 @@
+<% layout('../layout') -%>
+<h3>Level Distribution</h3>
+
+<div class="chart-box">	
+	<div class="page-content-inner">		
+		<div class="center select-level-options">
+	    	<a class="left" href="/data/levels/1">Egg<br/>Pokemon</a>
+			<a class="left" href="/data/levels/30">Friend Safari<br/>Pokemon</a>
+			<form id="selectLevel" class="center">	        
+	        	<label>Level: <input type="number" min="1" max="100" name="level" /></label><br/>
+	        	<input type="submit" value="Go!">
+	    	</form>
+		</div>
+	</div>	
+</div>
+<div class="chart-box full-chart" id="levels-chart"></div>
+
+<script>
+	$(document).ready(function(){
+		$('#selectLevel').on('submit', function(){            
+            var pokemonLevel = $(this).find('input').val();
+            if(pokemonLevel > 0 && pokemonLevel <= 100) {
+                window.location = '/data/levels/'+pokemonLevel;
+            }            
+            return false;
+        });
+
+		<% include ../partials/highcharts/_levels-chart.ejs %>
+	});
+</script>
