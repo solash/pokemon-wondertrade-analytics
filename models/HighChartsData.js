@@ -396,7 +396,7 @@ HighChartsData.prototype.getHiddenAbilityPercentage = function(resultSet) {
 };
 
 HighChartsData.prototype.getPerfectIVPercentage = function(resultSet) {
-	return this.getPercentageByAttribute('hasNotableIV', resultSet);
+	return this.getPercentageByAttribute('hasPerfectIV', resultSet);
 };
 
 HighChartsData.prototype.getEggMovePercentage = function(resultSet) {
