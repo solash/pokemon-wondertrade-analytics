@@ -1,4 +1,11 @@
 <% layout('../layout') -%>
 <h3>Region Overview</h3>
 
+<div class="chart-box full-chart" id="region-chart"></div>
 <% include ../partials/_regions-table.ejs %>
+
+<script>
+	$(document).ready(function(){
+	    <% include ../partials/highcharts/_region-chart.ejs %>
+	});
+</script>

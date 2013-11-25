@@ -54,6 +54,7 @@ exports.initController = function(app, dataStore) {
 				pokemonList: PokemonList,
 				user: request.user,
 				pokemonTable: pokemonTable,
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon()),
 				quickstats: highChartsData.getQuickStats()
 			});
 		});
@@ -92,6 +93,8 @@ exports.initController = function(app, dataStore) {
 				pageState: '',
 				regionsTable: regionsTable,
 				user: request.user,
+				totalCount: result.length,
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries())
 			});
 		});
 	});
@@ -111,7 +114,7 @@ exports.initController = function(app, dataStore) {
 					wondertradeTable: highChartsDataWithNicknames,
 					pokemonHash: PokemonHash,
 					userTable: userTable,
-					user: request.user,
+					user: request.user
 				});
 			});
 
