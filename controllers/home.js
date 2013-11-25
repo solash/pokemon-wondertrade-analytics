@@ -13,7 +13,7 @@ exports.initController = function(app, dataStore) {
 				user: request.user,
 				stateMessage: '',
 				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate()),
-				wondertradeCount: 70
+				wondertradeCount: result.length
 			});
 		});	
 	});
