@@ -1,3 +1,18 @@
+var UserTableModel = require('../models/UserTable').model,
+	HighChartsData = require('../models/HighChartsData').model,
+	PokemonList = require('../data/pokemonList.json'),
+	CountryList = require('../data/countryList.json'),
+	PokemonHash = {},
+	CountryHash = {};
+
+	for(var pokemon in PokemonList) {
+		PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
+	}
+
+	for(var country in CountryList) {
+		CountryHash[CountryList[country].id] = CountryList[country].name;
+	};
+
 exports.initController = function(app, dataStore) {
 	// Admin Related Stuff.
 	app.get('/operationCleanSlate', function(request, response){
@@ -6,6 +21,36 @@ exports.initController = function(app, dataStore) {
 			dataStore.del('userTable');		
 			dataStore.del('wondertrade');
 			response.send('Operation Clean Slate');
+		}		
+	});
+
+	app.get('/fullLogs', function(request, response){
+		var currentUser = request.user;
+		if(currentUser &&
+			(currentUser.username == "TheIronDeveloper" || currentUser.username == "JoJo") ) {
+			
+
+			dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTable = new UserTableModel(result);
+
+				dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+					var highChartsData = new HighChartsData(result);
+
+					response.render('wondertrade/index', {
+						wondertrades: highChartsData.deserializedResults,
+						title: 'Wonder Trade Full List',
+						pokemonHash: PokemonHash,
+						countryHash: CountryHash,
+						pageState: '',
+						userTable: userTable,
+						user: request.user
+					});
+				});
+			});
+
+			
+		} else {
+			response.send('Forbidden.');
 		}		
 	});
 	
