@@ -151,6 +151,14 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .notableIV{background: rgba(100,200,100,0.4);}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
 
+.gender-sides{overflow: hidden;text-align: center;}
+.gender-sides .gender-side{float: left;width: 50%;}
+.gender-sides .male-side{background: rgba(0,0,255,.3);}
+.gender-sides .female-side{background: rgba(255,0,255,.3);}
+.gender-sides .top-ten{padding: 0;}
+.gender-sides .top-ten li:nth-child(odd){background: rgba(0,0,0,.2)}
+
+
 .select-level-options{width: 100%;max-width:500px;margin: 0 auto;}
 .select-level-options:after{clear: both;content: ' ';display: block;}
 .select-level-options form,

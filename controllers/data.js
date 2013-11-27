@@ -141,25 +141,6 @@ exports.initController = function(app, dataStore) {
 			});
 
 		});
-
-		
-	});
-
-	app.get('/data/levels', function(request, response){
-
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-			var highChartsData = new HighChartsData(result);			
-
-			response.render('data/levels', {
-				title: 'Level Analytics',
-				pageState: '',
-				result: result,
-				PokemonHash: PokemonHash,
-				CountryHash: CountryHash,
-				user: request.user,
-				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),				
-			});
-		});
 		
 	});
 
@@ -177,7 +158,7 @@ exports.initController = function(app, dataStore) {
 				title: 'Pokemon with Hidden Abilities',
 				pageState: '',
 				result: result,
-				PokemonHash: PokemonHash,				
+				PokemonHash: PokemonHash,
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataWithHiddenAbilities)),
 				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataWithHiddenAbilities)),
 				pokemonList: PokemonList,
@@ -185,6 +166,59 @@ exports.initController = function(app, dataStore) {
 				pokemonTable: pokemonTable,
 				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataWithHiddenAbilities)),
 				quickstats: highChartsData.getQuickStats(highChartsDataWithHiddenAbilities)
+			});
+		});
+		
+	});
+
+	app.get('/data/gender', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
+			var highChartsData = new HighChartsData(result),
+				maleResults = highChartsData.getResultsByGender('male'),
+				femaleResults = highChartsData.getResultsByGender('female'),
+				maleSortedSet = highChartsData.getSortedCountsByPokemon(maleResults),
+				femaleSortedSet = highChartsData.getSortedCountsByPokemon(femaleResults);
+
+			maleSortedSet = maleSortedSet.reverse();	
+			maleSortedSet =  _.first(maleSortedSet,10);
+
+			femaleSortedSet = femaleSortedSet.reverse();	
+			femaleSortedSet =  _.first(femaleSortedSet,10);
+
+
+			response.render('data/gender', {
+				title: 'Wonder Trade Analytics',
+				pageState: '',
+				result: result,
+				PokemonHash: PokemonHash,
+				maleQuickstats: highChartsData.getQuickStats(maleResults),
+				femaleQuickstats: highChartsData.getQuickStats(femaleResults),
+				user: request.user,
+				malePokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(maleResults)),				
+				maleCountryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(maleResults)),
+				maleTopTenPokemon: maleSortedSet,
+				femalePokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(femaleResults)),				
+				femaleCountryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(femaleResults)),				
+				femaleTopTenPokemon: femaleSortedSet
+			});
+		});
+		
+	});
+
+	app.get('/data/levels', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var highChartsData = new HighChartsData(result);			
+
+			response.render('data/levels', {
+				title: 'Level Analytics',
+				pageState: '',
+				result: result,
+				PokemonHash: PokemonHash,
+				CountryHash: CountryHash,
+				user: request.user,
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),				
 			});
 		});
 		
