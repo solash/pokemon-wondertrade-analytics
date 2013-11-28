@@ -1,15 +1,13 @@
 <% layout('../layout') -%>
-<h3><%= username %> Results</h3>
+<h3><%= username %> Results for <%= submissionDate %></h3>
 
 <% include ../partials/_quick-stats.ejs %>
-<div class="chart-box full-chart" id="date-trend-chart"></div>
 <div class="chart-box full-chart" id="pokemon-chart"></div>
 <% include ../partials/_pokemon-table.ejs %>
 <div class="chart-box full-chart" id="region-chart"></div>
 
 <script>
 	$(document).ready(function(){
-		<% include ../partials/highcharts/_wondertrades-byDate-chart.ejs %>
 		<% include ../partials/highcharts/_pokemon-chart.ejs %>	    
 	    <% include ../partials/highcharts/_region-chart.ejs %>
 	});

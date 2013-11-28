@@ -8,6 +8,8 @@ var express = require('express'),
 	redis,
 	dataStore;
 
+process.env.TZ = 'America/Chicago';
+
 // If REDIS_TOGO is available (Heroku box)
 if (process.env.REDISTOGO_URL) {
 	var redis = require('redis');
