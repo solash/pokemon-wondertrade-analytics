@@ -295,6 +295,7 @@ exports.initController = function(app, dataStore) {
 					title: ' Analytics for '+userName,
 					pageState: '',
 					user: request.user,
+					username: userName,
 					wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataByUserId)),
 					pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
 					genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
