@@ -420,7 +420,9 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		resultSet = this.deserializedResults;
 	}
 	return {
-		resultCount: _.size(resultSet), 		
+		resultCount: _.size(resultSet),
+		totalCount: _.size(this.deserializedResults),
+		resultPercent: (_.size(resultSet)/_.size(this.deserializedResults)*100).toFixed(2),  		
 		shinyPercentage: this.getShinyPercentage(resultSet),
 		hiddenAbilityPercentage: this.getHiddenAbilityPercentage(resultSet),
 		itemPercentage: this.getItemPercentage(resultSet),
