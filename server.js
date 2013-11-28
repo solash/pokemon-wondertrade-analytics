@@ -55,6 +55,12 @@ Date.prototype.customFormatDate = function(){
 (require('./controllers/admin')).initController(app, dataStore);
 
 
+// After all other routes are init, we can now check for 404s.
+app.use(function(req, res, next){  
+  res.render('404', { status: 404, url: req.url, title: 'Page Not Found', user: req.user, stateMessage: '', pageState: '' });
+});
+
+
 var serverPort = process.env.PORT || 5000;
 app.listen(serverPort, function(){
 	console.log('Listening on port '+serverPort+'..');
