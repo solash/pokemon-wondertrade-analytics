@@ -160,6 +160,10 @@ HighChartsData.prototype.getResultsWithHiddenAbilities = function() {
 	return _.where(this.deserializedResults, {hasHiddenAbility: true});
 };
 
+HighChartsData.prototype.getResultsWithPerfectIV = function() {
+	return _.where(this.deserializedResults, {hasPerfectIV: true});
+};
+
 HighChartsData.prototype.getResultsByPokemonLevel = function(pokemonLevel) {
 	pokemonLevel = parseInt(pokemonLevel);
 	if(pokemonLevel > 0 && pokemonLevel <= 100) {

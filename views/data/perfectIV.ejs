@@ -1,0 +1,26 @@
+<% layout('../layout') -%>
+<h3>Perfect IV Overview</h3>
+
+<p class="center">These Pokemon have been recorded as having at least one Perfect IV.</p>
+
+<% include ../partials/_quick-stats.ejs %>
+<div class="chart-box full-chart" id="pokemon-chart"></div>
+<div class="chart-box full-chart" id="region-chart"></div>
+<div class="chart-box full-chart" id="levels-chart"></div>
+<% include ../partials/_pokemon-table.ejs %>
+
+<script>
+	$(document).ready(function(){
+        $('#selectPokemon').on('submit', function(){            
+            var pokemonId = $(this).find('option:selected').val();
+            if(pokemonId > 0 && pokemonId < 719) {
+                window.location = '/data/pokemon/'+pokemonId;
+            }            
+            return false;
+        });
+
+        <% include ../partials/highcharts/_levels-chart.ejs %>
+        <% include ../partials/highcharts/_pokemon-chart.ejs %>
+        <% include ../partials/highcharts/_region-chart.ejs %>
+	});
+</script>

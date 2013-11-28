@@ -171,6 +171,33 @@ exports.initController = function(app, dataStore) {
 		
 	});
 
+	app.get('/data/perfectIV', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
+			var highChartsData = new HighChartsData(result),
+				highChartsDataWithPerfectIV = highChartsData.getResultsWithPerfectIV(),
+				pokemonTable = highChartsData.getPokemonTable(highChartsDataWithPerfectIV);
+				
+			
+			pokemonTable.reverse();
+
+			response.render('data/perfectIV', {
+				title: 'Pokemon with Hidden Abilities',
+				pageState: '',
+				result: result,
+				PokemonHash: PokemonHash,
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataWithPerfectIV)),
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataWithPerfectIV)),
+				pokemonList: PokemonList,
+				user: request.user,
+				pokemonTable: pokemonTable,
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataWithPerfectIV)),
+				quickstats: highChartsData.getQuickStats(highChartsDataWithPerfectIV)
+			});
+		});
+		
+	});
+
 	app.get('/data/gender', function(request, response){
 
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){			
