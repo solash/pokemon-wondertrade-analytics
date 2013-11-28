@@ -309,7 +309,7 @@ exports.initController = function(app, dataStore) {
 	});
 
 	// Show the individual user page.
-	app.get('/users/:userId/data/:submissionDate', function(request, response){
+	app.get('/users/:userId/date/:submissionDate', function(request, response){
 
 		dataStore.lrange('userTable' , 0, -1, function(error, result){
 			var userTable = new UserTableModel(result);
