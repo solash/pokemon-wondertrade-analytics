@@ -330,12 +330,14 @@ HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable){
 		// Generic Literal Object to hold pokemon data
 		var pokemonData = {
 			name: userTable[userId].username,
-			data: []
+			data: [],
+			fullCount: 0
 		};
 
 		// If there is a subset we want to filter on, then lets filter!
 		_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
 			pokemonData.data.push([context.formatDateFromString(dateField),dateFieldCount]);
+			pokemonData.fullCount += dateFieldCount;
 		});
 		
 		pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
@@ -345,6 +347,35 @@ HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable){
 	});
 
 	return trendingPokemonChart;
+};
+
+HighChartsData.prototype.getSubmissionDates = function(resultSet) {
+	var submissionDates = [],
+		context = this;
+
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+
+	var wonderTradesByDate = _.groupBy(resultSet, function(wonderTrade){
+		return wonderTrade.date;
+	});
+
+	_.each(wonderTradesByDate, function(dateCount, dateString) {		
+		var dateFieldCount = _.size(dateCount),
+			submission = {
+				dateString: dateString,
+				formattedDate: context.formatDateFromString(dateString),
+				count: dateFieldCount
+			};
+		submissionDates.push(submission);
+	});
+
+	submissionDates = _.sortBy(submissionDates, function(data) {				
+		return data.formattedDate;
+	});
+
+	return submissionDates;
 };
 
 HighChartsData.prototype.getTrendsByDate = function(resultSet) {

@@ -287,6 +287,8 @@ exports.initController = function(app, dataStore) {
 					highChartsData = new HighChartsData(result),
 					highChartsDataByUserId = highChartsData.getResultsByUserId(userId),
 					pokemonTable = highChartsData.getPokemonTable(highChartsDataByUserId),
+					trendsByDate = highChartsData.getTrendsByDate(highChartsDataByUserId),
+					submissionDates = highChartsData.getSubmissionDates(highChartsDataByUserId),
 					userName = userTable[userId];
 
 				pokemonTable.reverse();
@@ -296,7 +298,9 @@ exports.initController = function(app, dataStore) {
 					pageState: '',
 					user: request.user,
 					username: userName,
-					wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataByUserId)),
+					userId: userId,
+					wondertradeTends: JSON.stringify(trendsByDate),
+					submissionDates: submissionDates,
 					pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
 					genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
 					pokemonTable: pokemonTable,

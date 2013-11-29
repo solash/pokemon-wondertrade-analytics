@@ -1,6 +1,7 @@
 exports.initController = function(app, dataStore) {
 	var WondertradeModel = require('../models/wondertrade').model,
-		HighChartsData = require('../models/HighChartsData').model;
+		HighChartsData = require('../models/HighChartsData').model,
+		_ = require('underscore');
 
 	app.get('/', function(request, response){					
 		dataStore.lrange('wondertrade' , 0, -1, function(error, result){
@@ -57,13 +58,19 @@ exports.initController = function(app, dataStore) {
 
 			dataStore.lrange('wondertrade' , 0, -1, function(error, result){
 				var highChartsData = new HighChartsData(result),
-					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
+					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable),
+					trendingPokemonChart = highChartsData.getCountTrendsByUsers(false, userTable);
+
+				
+				trendingPokemonChart = _.sortBy(trendingPokemonChart, 'fullCount');
+				trendingPokemonChart.reverse();
+				trendingPokemonChart = _.first(trendingPokemonChart, 10);
 			
 				response.render('contributers', {
 					title: 'Project Contributers',
 					pageState: '',
 					user: request.user,
-					trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByUsers(false, userTable)),
+					trendingPokemonChart: JSON.stringify(trendingPokemonChart),
 					userTable: userTableWithCounts
 				});
 

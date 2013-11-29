@@ -1,0 +1,12 @@
+<div class="quick-stats">
+	<h4>User Submissions by Date</h4>
+	<ul class="userSubmissionsByDate">
+		<% for(var submission in submissionDates) { %>
+			<li>
+				<a href="/users/<%=userId%>/date/<%= submissionDates[submission].dateString %>">
+					Wonder Trades on<br/> <%= submissionDates[submission].dateString %> (<%= submissionDates[submission].count %>)
+				</a>
+			</li>
+		<% } %>
+	</ul>
+</div>
