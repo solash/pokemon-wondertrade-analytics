@@ -53,9 +53,9 @@ exports.initController = function(app, dataStore) {
 			response.send('Forbidden.');
 		}		
 	});
-	
+
 	app.get('/purge/users/:userId', function(request, response){
-		//dataStore.del('wondertrade');		
+		//dataStore.del('wondertrade');
 		var userId = request.params.userId,
 			currentUser = request.user,
 			tempUser,
@@ -84,6 +84,15 @@ exports.initController = function(app, dataStore) {
 						}
 					}
 				});
+
+                dataStore.lrange('redditUser' , 0, -1, function(error, result){
+                    for(var user in result) {
+                        tempUser = JSON.parse(result[user]);
+                        if(tempUser.userId == userId) {
+                            dataStore.lrem('redditUser', 0, result[user]);
+                        }
+                    }
+                });
 				
 				response.send('Alright, '+userId+' has officially been removed!');
 				

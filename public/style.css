@@ -24,6 +24,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 
 /* Cheaty Helpers */
 .center{text-align: center;}
+.left{float:left;}
 .clear{clear:both;}
 .requiredField{background: rgba(255,0,0,.5);}
 
@@ -168,6 +169,11 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .select-level-options:after{clear: both;content: ' ';display: block;}
 .select-level-options form,
 .select-level-options a{float: left;width: 30%;}
+
+.dashboardArea{background: rgba(0,0,0,.3);padding:0.5em;overflow: hidden;text-shadow: 1px 1px 1px #333;margin-bottom: 0.5em;}
+
+.redditUsername{background: rgba(0,255,0,.5);padding: 0.5em;text-align: center}
+.redditUsername .username{color: #000;text-shadow: 1px 1px 1px #ccc;}
 
 .contributer-section{}
 .contributer-banner{float: left;width: 70%;}

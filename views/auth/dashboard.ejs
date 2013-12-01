@@ -1,0 +1,48 @@
+<% layout('../layout') %>
+<h3>User Dashboard</h3>
+<div class="page-content-inner">
+    <div class="input-columns dashboardArea">
+        <h4>Linking to Reddit</h4>
+        <% if(redditUserName) { %>
+            <div class="redditUsername">
+                You're Reddit username is saved as: <span class="username"><%= redditUserName %></span>
+            </div>
+        <% } %>
+        <div class="input-column">
+            <p>Posts to /r/WonderTrade will be displayed on your WonderTrade submission page. (still in development)</p>
+        </div>
+        <div class="input-column">
+            <h4>Update</h4>
+            <form id="userReddit" action="/user/updateReddit" method="post">
+                <label class="left">Reddit Username:<br/> <input type="text" name="redditUsername" placeholder="Reddit Username" /></label>
+                <button><i class="pokeball-submit"></i>Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="input-columns dashboardArea">
+        <h4>Link /r/WonderTrade Posts</h4>
+        <div class="input-column">
+            <p>Lets say you sent out 30 Protean Froakie on November 25th. You both post on /r/WonderTrade <u>and</u> submit your findings here.</p>
+            <p>This provides a way to link back your /r/WonderTrade post.</p>
+        </div>
+        <div class="input-column">
+            <form action="/wondertrade/link" method="post">
+                <label>/r/WonderTrade URL: <input size="50" type="text" name="" placeholder="/r/WonderTrade/_________" /></label>
+                <label>
+                    WonderTrade Date:
+                    <select>
+                        <% for(var submission in submissionDates) { %>
+                            <option value="<%= submissionDates[submission].dateString %>">
+                                <%= submissionDates[submission].dateString %>
+                            </option>
+                        <% } %>
+                    </select>
+                </label>
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,4 +1,7 @@
-var UserModel = require('../models/User').model;
+var UserModel = require('../models/User').model,
+    RedditUser = require('../models/RedditUser').model,
+    UserTableModel = require('../models/UserTable').model,
+    HighChartsData = require('../models/HighChartsData').model;
 
 String.prototype.hashCode = function(){
 	var hash = 0;
@@ -88,6 +91,69 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 			return response.redirect('/register');
 		}		
 	});
+
+    // Dashboard
+    app.get('/dashboard', function(request, response){
+        if(request.user) {
+
+            dataStore.lrange('userTable' , 0, -1, function(error, result){
+                var userTable = new UserTableModel(result);
+
+                dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+                    var userId = request.user.id,
+                        highChartsData = new HighChartsData(result),
+                        highChartsDataByUserId = highChartsData.getResultsByUserId(userId),
+                        submissionDates = highChartsData.getSubmissionDates(highChartsDataByUserId);
+                    dataStore.lrange('redditUser' ,0, -1, function(error, result){
+                        var redditUserName = '';
+                        for(var redditUser in result) {
+                            var parsedRedditUser = JSON.parse(result[redditUser]);
+                            if(parsedRedditUser.userId === userId) {
+                                redditUserName = parsedRedditUser.redditUserName;
+                            }
+                        }
+                        response.render('auth/dashboard', {
+                            title: 'Wonder Trade Analytics',
+                            pageState: '',
+                            user: request.user,
+                            submissionDates: submissionDates,
+                            redditUserName: redditUserName
+                        });
+                    });
+                });
+            });
+        } else {
+            response.redirect('/login');
+        }
+    });
+
+    // Update User Reddit Name
+    app.post('/user/updateReddit', function(request, response){
+        if (request.user) {
+            var userId = request.user.id,
+                redditUserName = request.body.redditUsername,
+                redditUser = new RedditUser({userId: userId, redditUserName: redditUserName});
+
+            dataStore.lrange('redditUser' , 0, -1, function(error, result){
+                for(var user in result) {
+                    tempUser = JSON.parse(result[user]);
+                    if(tempUser.userId == userId) {
+                        dataStore.lrem('redditUser', 0, result[user]);
+                    }
+                }
+                dataStore.lpush('redditUser', JSON.stringify(redditUser));
+                response.redirect('/dashboard');
+
+            });
+        } else {
+            response.redirect('/login');
+        }
+    });
+
+    // Add a Link to WonderTrade Date
+    app.post('/wondertrade/link', function(request, response){
+
+    });
 
 	passport.use(new LocalStrategy(
 		function(username, password, done) {
