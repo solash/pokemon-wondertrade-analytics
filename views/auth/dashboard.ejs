@@ -1,6 +1,7 @@
 <% layout('../layout') %>
-<h3>User Dashboard</h3>
 <div class="page-content-inner">
+    <h3>Welcome to your personal dashboard</h3>
+    <p>This page is a resource you can go to to update your account. This page is still in progress. I am still adding more features, and am definitely open to more suggestions.</p>
     <div class="input-columns dashboardArea">
         <h4>Linking to Reddit</h4>
         <% if(redditUserName) { %>
@@ -20,7 +21,7 @@
         </div>
 
     </div>
-
+    <% /* To be developed in the future  %>
     <div class="input-columns dashboardArea">
         <h4>Link /r/WonderTrade Posts</h4>
         <div class="input-column">
@@ -29,7 +30,8 @@
         </div>
         <div class="input-column">
             <form action="/wondertrade/link" method="post">
-                <label>/r/WonderTrade URL: <input size="50" type="text" name="" placeholder="/r/WonderTrade/_________" /></label>
+                <label>Reddit Link Title: <input size="50" type="text" name="title" placeholder="Title" /></label>
+                <label>Reddit Link: <input size="50" type="text" name="link" placeholder="/r/WonderTrade/_________" /></label>
                 <label>
                     WonderTrade Date:
                     <select>
@@ -40,9 +42,10 @@
                         <% } %>
                     </select>
                 </label>
-                <input type="submit" />
+                <button><i class="pokeball-submit"></i>Submit</button>
             </form>
         </div>
     </div>
+    <% */ %>
 </div>
 

@@ -2,7 +2,16 @@
 	<% for(var user in userTable) { %>
 		<% if(userTable[user].count > 0) {  %>
 			<li class="contributer">
-				<div class="name"><a href="/users/<%= userTable[user].id %>"><%= userTable[user].username %></a></div>
+				<div class="name">
+                    <a href="/users/<%= userTable[user].id %>">
+                        <%= userTable[user].username %>
+                    </a>
+                    <% if (redditUsers[userTable[user].id]) { %>
+                        <a href="http://www.reddit.com/user/<%= redditUsers[userTable[user].id].redditUserName %>">
+                            <img src="/images/reddit.gif" border="0" />
+                        </a>
+                    <% } %>
+                </div>
 				<div class="count"><%= userTable[user].count %> wonder trades recorded</div>
 			</li>
 		<% } %>

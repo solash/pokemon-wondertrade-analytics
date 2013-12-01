@@ -37,9 +37,11 @@
     <div class="page-background">&nbsp;</div>
     <header class="container pageHead">
       <h1><%= title %></h1>
-      <div class="user">
+      <div class="user center">
         <% if(user) { %>
           Logged in as <a href="/users/<%= user.id %>"><%= user.username %></a>
+          <br />
+          <a href="/dashboard">Your Dashboard</a>
         <% } else { %>
           <a href="/register">Register</a> or <a href="/login">Login</a>
         <% } %>
