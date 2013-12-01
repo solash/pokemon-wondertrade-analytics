@@ -1,8 +1,11 @@
 var _ = require('underscore'),
+    rest = require('restler'),
+    parseString = require('xml2js').parseString,
 	HighChartsData = require('../models/HighChartsData').model,
 	PokemonList = require('../data/pokemonList.json'),
 	CountryList = require('../data/countryList.json'),
 	UserTableModel = require('../models/UserTable').model,
+    RedditPostModel = require('../models/RedditPost').model,
 	PokemonHash = {},
 	CountryHash = {};
 
@@ -279,37 +282,67 @@ exports.initController = function(app, dataStore) {
 	// Show the individual user page.
 	app.get('/users/:userId', function(request, response){
 
-		dataStore.lrange('userTable' , 0, -1, function(error, result){
-			var userTable = new UserTableModel(result);
+        var userId = request.params.userId;
 
-			dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-				var userId = request.params.userId,
-					highChartsData = new HighChartsData(result),
-					highChartsDataByUserId = highChartsData.getResultsByUserId(userId),
-					pokemonTable = highChartsData.getPokemonTable(highChartsDataByUserId),
-					trendsByDate = highChartsData.getTrendsByDate(highChartsDataByUserId),
-					submissionDates = highChartsData.getSubmissionDates(highChartsDataByUserId),
-					userName = userTable[userId];
+        dataStore.lrange('redditUser' , 0, -1, function(error, result){
+            var redditUserName = '';
+            for(var user in result) {
+                var parsedUser = JSON.parse(result[user]);
+                if(parsedUser.userId == userId) {
+                    redditUserName = parsedUser.redditUserName;
+                }
+            }
 
-				pokemonTable.reverse();
+            dataStore.lrange('userTable' , 0, -1, function(error, result){
+                var userTable = new UserTableModel(result);
 
-				response.render('data/user', {
-					title: ' Analytics for '+userName,
-					pageState: '',
-					user: request.user,
-					username: userName,
-					userId: userId,
-					wondertradeTends: JSON.stringify(trendsByDate),
-					submissionDates: submissionDates,
-					pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
-					genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
-					pokemonTable: pokemonTable,
-					quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
-					countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
-				});
-			});
+                dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+                    var highChartsData = new HighChartsData(result),
+                        highChartsDataByUserId = highChartsData.getResultsByUserId(userId),
+                        pokemonTable = highChartsData.getPokemonTable(highChartsDataByUserId),
+                        trendsByDate = highChartsData.getTrendsByDate(highChartsDataByUserId),
+                        submissionDates = highChartsData.getSubmissionDates(highChartsDataByUserId),
+                        userName = userTable[userId];
 
-		});		
+                    pokemonTable.reverse();
+
+                    var mav = {
+                        title: ' Analytics for '+userName,
+                        pageState: '',
+                        user: request.user,
+                        username: userName,
+                        userId: userId,
+                        wondertradeTends: JSON.stringify(trendsByDate),
+                        submissionDates: submissionDates,
+                        pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
+                        genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
+                        pokemonTable: pokemonTable,
+                        quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
+                        countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
+                    };
+
+                    if (redditUserName) {
+                        rest.get('http://www.reddit.com/r/WonderTrade/search.rss?q=subreddit%3Awondertrade+author%3A'+redditUserName).on('complete', function(data) {
+                            parseString(data, function (err, result) {
+                                var redditPosts = [];
+                                for(var item in result.rss.channel[0].item) {
+                                    var redditItem = result.rss.channel[0].item[item],
+                                        redditPost = new RedditPostModel(redditItem);
+                                    redditPosts.push(redditPost);
+                                }
+                                mav.redditResults = redditPosts;
+                                response.render('data/user', mav);
+                            });
+                        });
+                    } else {
+                        response.render('data/user', mav);
+                    }
+                });
+
+            });
+        });
+
+
 	});
 
 	// Show the individual user page.

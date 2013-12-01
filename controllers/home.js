@@ -104,4 +104,12 @@ exports.initController = function(app, dataStore) {
 			user: request.user
 		});
 	});
+
+    app.get('/updates', function(request, response){
+        response.render('updates', {
+            title: 'Updates',
+            pageState: '',
+            user: request.user
+        });
+    });
 };

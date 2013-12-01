@@ -1,0 +1,15 @@
+<% if (redditResults) { %>
+    <div class="redditPosts-wrapper">
+        <h4>/r/WonderTrade Posts</h4>
+        <ul class="redditPosts">
+            <% for(var redditPost in redditResults) { %>
+                <li class="redditPost">
+                    <a href="<%= redditResults[redditPost].link %>">
+                        <img class="thumbnail" src="<%= redditResults[redditPost].thumbnail%>" />
+                        <span class="title"><%= redditResults[redditPost].title %></span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+<% } %>

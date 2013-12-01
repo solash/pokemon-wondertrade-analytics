@@ -1,5 +1,4 @@
 var express = require('express'),
-	util = require('util'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),
 	app = express(),
