@@ -37,9 +37,15 @@
 
     		<td class="checkArea strong-divider"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
     		<td>
-    			<span class="gender-<%- wondertrade.trainerGender === 'male' ? 'male' : 'female' %>">
-    				<%- wondertrade.trainerGender === 'male' ? '&#9794;' : '&#9792;' %>
-    			</span>
+                <% if(wondertrade.trainerGender === 'male') { %>
+                    <span class="gender-male">
+                        &#9794;
+                    </span>
+                <% } else if(wondertrade.trainerGender === 'female') { %>
+                    <span class="gender-female">
+                        &#9792;
+                    </span>
+                <% } %>
     		</td>
     		<td>
     			<% if(wondertrade.trainerCountry && countryHash[wondertrade.trainerCountry]) { %>
@@ -51,7 +57,7 @@
     				<a href="/users/<%= wondertrade.userId %>"><%= userTable[wondertrade.userId] %></a>
     			<% } %>
     		</td>
-    		<td><%= (new Date(wondertrade.date)).toDateString() %></td>
+    		<td><%= wondertrade.date %></td>
     	</tr>
   	<% }); %>
   	</tbody>
