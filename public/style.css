@@ -112,6 +112,18 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .trainer-details{background: rgba(100,100,150,.6);}
 .clarify-inputs{font-weight:normal;text-align:center;font-size: 0.9em;}
 
+.hiddenAbility-wrapper{position: relative;}
+.hiddenAbility-tooltip{background:rgba(200,0,0,.5);position: absolute;right: -160px;top:0;width: 150px;display: none;}
+.hiddenAbility-tooltip:before{
+    display: block;
+    content: ' ';
+    float: left;
+    margin-left: -1em;
+    border-right: 1em solid rgba(200,0,0,.5);
+    border-top: 0.75em solid transparent;
+    border-bottom: 0.75em solid transparent;
+}
+
 .checkbox-group{}
 .input-column .radio-group label,
 .checkbox-group label{background: rgba(0,0,0,.3);display:inline-block;margin-bottom:1px;text-align: center;}
