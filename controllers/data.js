@@ -318,7 +318,8 @@ exports.initController = function(app, dataStore) {
                         genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
                         pokemonTable: pokemonTable,
                         quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
-                        countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
+                        countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId)),
+                        redditResults: false
                     };
 
                     if (redditUserName) {
