@@ -7,7 +7,7 @@
 
 
 		<div class="quick-stats">
-			<div class="total-wondertrades"><%= maleQuickstats.resultCount %> Wonder Trades</div>
+			<div class="total-wondertrades"><%= maleQuickstats.resultCount %> Wonder Trades (<%= (maleQuickstats.resultPercent) %>%)</div>
 			<ul>		
 		        <li class="shiny"><%= maleQuickstats.shinyPercentage %>% Shiny</li>
 		        <li class="hiddenAbility"><%= maleQuickstats.hiddenAbilityPercentage %>% Hidden Abilities</li>        
@@ -34,7 +34,7 @@
 		<h4>Female Stats</h4>
 
 		<div class="quick-stats">
-			<div class="total-wondertrades"><%= femaleQuickstats.resultCount %> Wonder Trades</div>
+			<div class="total-wondertrades"><%= femaleQuickstats.resultCount %> Wonder Trades (<%= (femaleQuickstats.resultPercent) %>%)</div>
 			<ul>		
 		        <li class="shiny"><%= femaleQuickstats.shinyPercentage %>% Shiny</li>
 		        <li class="hiddenAbility"><%= femaleQuickstats.hiddenAbilityPercentage %>% Hidden Abilities</li>        

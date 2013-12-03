@@ -191,6 +191,10 @@ HighChartsData.prototype.getResultsByGender = function(gender) {
 	return _.where(this.deserializedResults, {trainerGender: gender});
 };
 
+HighChartsData.prototype.getResultsByDate = function(date){
+    return _.where(this.deserializedResults, {date: date});
+};
+
 HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
 	var subRegions = _.countBy(regionSet, function(wonderTrade){
 		return wonderTrade.trainerCountrySub1;
@@ -252,6 +256,7 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
 	var pokemonGroupedByDate = {},
 		trendingPokemonChart = [],
+        totalCountsByDate = {},
 		context = this;
 
 	if(!resultSet) {
@@ -280,7 +285,13 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		if(pokemonSubSet) {
 			if(_.contains(pokemonSubSet, pokemonId)) {
 				_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-					pokemonData.data.push([context.formatDateFromString(dateField),dateFieldCount]);
+                    if (!totalCountsByDate[dateField]) {
+                        totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
+                    }
+                    var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
+                    countPercent = parseFloat(countPercent.toFixed(2));
+
+					pokemonData.data.push([context.formatDateFromString(dateField),countPercent]);
 				});
 				
 				pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
@@ -289,8 +300,14 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 				trendingPokemonChart.push(pokemonData);
 			}
 		} else {
-			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){								
-				pokemonData.data.push([context.formatDateFromString(dateField),dateFieldCount]);
+			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
+                if (!totalCountsByDate[dateField]) {
+                    totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
+                }
+                var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
+                countPercent = parseFloat(countPercent.toFixed(2));
+
+                pokemonData.data.push([context.formatDateFromString(dateField),countPercent]);
 			});		
 
 			pokemonData.data = _.sortBy(pokemonData.data, function(data) {				

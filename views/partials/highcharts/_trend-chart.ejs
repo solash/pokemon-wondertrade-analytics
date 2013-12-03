@@ -13,13 +13,16 @@ $('#trend-chart').highcharts({
     },
     yAxis: {
         title: {
-            text: 'Wonder Trades'
+            text: 'Wonder Trades (% of day total)'
         },
-        min: 0
+        min: 0,
+        labels: {
+            format: '{value} %'
+        }
     },
     tooltip: {
         formatter: function() {
-                return '<b>'+ this.series.name +'</b><br/>'+ this.y;
+                return '<b>'+ this.series.name +'</b><br/>'+ this.y+'%';
         }
     },
     series: <%- trendingPokemonChart %>
