@@ -170,6 +170,14 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .userSubmissionsByDate li a{padding: 0.5em;display: block;transition:all .5s ease;}
 .quick-stats .userSubmissionsByDate li a:hover{background: rgba(255,255,255,.1)}
 
+.nicknames{ background: rgba(0,0,0,.3);padding:0.5em;overflow: hidden;text-shadow: 1px 1px 1px #333;margin-bottom: 0.5em; }
+.nicknames ul{list-style: none;padding: 0;}
+.nicknames ul li{float: left; padding: 0.5em;margin: 0.5em;background: rgba(0,100,250,.5);position: relative}
+.nicknames ul li:before,
+.nicknames ul li:after{content:' ';display: block;position: absolute;top:0;}
+.nicknames ul li:before{left:-0.5em;border-bottom: 2.5em solid rgba(0,100,250,.5);border-left: 0.5em solid transparent;}
+.nicknames ul li:after{right:-0.5em;border-top: 2.5em solid rgba(0,100,250,.5);border-right: 0.5em solid transparent;}
+
 .gender-sides{overflow: hidden;text-align: center;}
 .gender-sides .gender-side{float: left;width: 50%;}
 .gender-sides .male-side{background: rgba(0,0,255,.3);}

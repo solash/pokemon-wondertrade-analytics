@@ -195,6 +195,16 @@ HighChartsData.prototype.getResultsByDate = function(date){
     return _.where(this.deserializedResults, {date: date});
 };
 
+HighChartsData.prototype.getNicknamesByResultSet = function(resultSet){
+    if(!resultSet) {
+        resultSet = this.deserializedResults;
+    }
+    var reduced = _.filter(resultSet, function(pokemon){
+        return pokemon.pokemonNickname !== '';
+    });
+    return _.pluck(reduced, 'pokemonNickname');
+};
+
 HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
 	var subRegions = _.countBy(regionSet, function(wonderTrade){
 		return wonderTrade.trainerCountrySub1;

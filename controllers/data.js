@@ -68,6 +68,7 @@ exports.initController = function(app, dataStore) {
 			var pokemonId = request.params.pokemonId,
 				highChartsData = new HighChartsData(result),
 				highChartsDataByPokemonId = highChartsData.getResultsByPokemonId(pokemonId),
+                nicknames = highChartsData.getNicknamesByResultSet(highChartsDataByPokemonId),
 				pokemonName = PokemonHash[pokemonId];
 
 			response.render('data/pokemonById', {
@@ -76,6 +77,7 @@ exports.initController = function(app, dataStore) {
 				result: result,
 				pokemonName: pokemonName,
 				user: request.user,
+                nicknames: nicknames,
 				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(highChartsDataByPokemonId)),
 				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByPokemonId)),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByPokemonId)),
