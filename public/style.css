@@ -189,8 +189,8 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 
 .redditPosts-wrapper {background: rgba(255,255,255,.8);padding: 0.5em 0;margin-bottom: 0.5em;}
 .redditPosts {overflow: hidden;list-style: none;padding: 0.5em;}
-.redditPosts .redditPost {float: left;display: block;max-width: 25%;}
-.redditPosts .redditPost a{display: block;background: rgba(0,0,0,.8);box-shadow: 5px 5px 5px #999;margin: 1%;padding: 0.5em;overflow: hidden;transition: all 0.5s ease}
+.redditPosts .redditPost {float: left;display: block;width: 24.6%;height: 95px;margin: 0.2%;}
+.redditPosts .redditPost a{display: block;background: rgba(0,0,0,.8);box-shadow: 5px 5px 5px #999;height:100%;padding: 0.5em;overflow: hidden;transition: all 0.5s ease}
 .redditPosts .redditPost a:hover{background: rgba(255,255,255, 0.5);color: #009;}
 .redditPosts .redditPost .thumbnail{float: left;margin-right: 0.5em;}
 
@@ -207,12 +207,12 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 @media (max-width: 800px) {
 	.input-column{width: 100%;}
 	.clarify-inputs{display: none;}
-    .redditPosts .redditPost {max-width: 50%;}
+    .redditPosts .redditPost {width: 49.6%;}
 }
 
 @media (max-width: 600px) {
 	.checkbox-group label,
 	.checkbox-group label.full{width: 100%;}
-    .redditPosts .redditPost {max-width: 100%;width:100%;}
+    .redditPosts .redditPost {width:100%;}
 }
 
