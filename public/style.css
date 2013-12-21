@@ -95,7 +95,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .pokemon-list{text-align: center;clear: both; overflow: hidden;}
 .pokemon-list a{color: #fff;padding: 0.3em;float: left;}
 
-
+i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: middle;}
 .checkArea{color: #0c0;text-shadow:1px 1px 1px #ccc;}
 
 /* Wondertrade new */

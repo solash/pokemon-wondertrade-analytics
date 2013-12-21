@@ -76,6 +76,7 @@ exports.initController = function(app, dataStore) {
 				pageState: '',
 				result: result,
 				pokemonName: pokemonName,
+				pokemonId: pokemonId,
 				user: request.user,
                 nicknames: nicknames,
 				trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(highChartsDataByPokemonId)),

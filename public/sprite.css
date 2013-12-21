@@ -1,0 +1,3594 @@
+/* line 5778, thumbnails/*.png */
+.thumbnails-sprite, .thumbnails-pokemon-1, .thumbnails-pokemon-10, .thumbnails-pokemon-100, .thumbnails-pokemon-101, .thumbnails-pokemon-102, .thumbnails-pokemon-103, .thumbnails-pokemon-104, .thumbnails-pokemon-105, .thumbnails-pokemon-106, .thumbnails-pokemon-107, .thumbnails-pokemon-108, .thumbnails-pokemon-109, .thumbnails-pokemon-11, .thumbnails-pokemon-110, .thumbnails-pokemon-111, .thumbnails-pokemon-112, .thumbnails-pokemon-113, .thumbnails-pokemon-114, .thumbnails-pokemon-115, .thumbnails-pokemon-116, .thumbnails-pokemon-117, .thumbnails-pokemon-118, .thumbnails-pokemon-119, .thumbnails-pokemon-12, .thumbnails-pokemon-120, .thumbnails-pokemon-121, .thumbnails-pokemon-122, .thumbnails-pokemon-123, .thumbnails-pokemon-124, .thumbnails-pokemon-125, .thumbnails-pokemon-126, .thumbnails-pokemon-127, .thumbnails-pokemon-128, .thumbnails-pokemon-129, .thumbnails-pokemon-13, .thumbnails-pokemon-130, .thumbnails-pokemon-131, .thumbnails-pokemon-132, .thumbnails-pokemon-133, .thumbnails-pokemon-134, .thumbnails-pokemon-135, .thumbnails-pokemon-136, .thumbnails-pokemon-137, .thumbnails-pokemon-138, .thumbnails-pokemon-139, .thumbnails-pokemon-14, .thumbnails-pokemon-140, .thumbnails-pokemon-141, .thumbnails-pokemon-142, .thumbnails-pokemon-143, .thumbnails-pokemon-144, .thumbnails-pokemon-145, .thumbnails-pokemon-146, .thumbnails-pokemon-147, .thumbnails-pokemon-148, .thumbnails-pokemon-149, .thumbnails-pokemon-15, .thumbnails-pokemon-150, .thumbnails-pokemon-151, .thumbnails-pokemon-152, .thumbnails-pokemon-153, .thumbnails-pokemon-154, .thumbnails-pokemon-155, .thumbnails-pokemon-156, .thumbnails-pokemon-157, .thumbnails-pokemon-158, .thumbnails-pokemon-159, .thumbnails-pokemon-16, .thumbnails-pokemon-160, .thumbnails-pokemon-161, .thumbnails-pokemon-162, .thumbnails-pokemon-163, .thumbnails-pokemon-164, .thumbnails-pokemon-165, .thumbnails-pokemon-166, .thumbnails-pokemon-167, .thumbnails-pokemon-168, .thumbnails-pokemon-169, .thumbnails-pokemon-17, .thumbnails-pokemon-170, .thumbnails-pokemon-171, .thumbnails-pokemon-172, .thumbnails-pokemon-173, .thumbnails-pokemon-174, .thumbnails-pokemon-175, .thumbnails-pokemon-176, .thumbnails-pokemon-177, .thumbnails-pokemon-178, .thumbnails-pokemon-179, .thumbnails-pokemon-18, .thumbnails-pokemon-180, .thumbnails-pokemon-181, .thumbnails-pokemon-182, .thumbnails-pokemon-183, .thumbnails-pokemon-184, .thumbnails-pokemon-185, .thumbnails-pokemon-186, .thumbnails-pokemon-187, .thumbnails-pokemon-188, .thumbnails-pokemon-189, .thumbnails-pokemon-19, .thumbnails-pokemon-190, .thumbnails-pokemon-191, .thumbnails-pokemon-192, .thumbnails-pokemon-193, .thumbnails-pokemon-194, .thumbnails-pokemon-195, .thumbnails-pokemon-196, .thumbnails-pokemon-197, .thumbnails-pokemon-198, .thumbnails-pokemon-199, .thumbnails-pokemon-2, .thumbnails-pokemon-20, .thumbnails-pokemon-200, .thumbnails-pokemon-201, .thumbnails-pokemon-202, .thumbnails-pokemon-203, .thumbnails-pokemon-204, .thumbnails-pokemon-205, .thumbnails-pokemon-206, .thumbnails-pokemon-207, .thumbnails-pokemon-208, .thumbnails-pokemon-209, .thumbnails-pokemon-21, .thumbnails-pokemon-210, .thumbnails-pokemon-211, .thumbnails-pokemon-212, .thumbnails-pokemon-213, .thumbnails-pokemon-214, .thumbnails-pokemon-215, .thumbnails-pokemon-216, .thumbnails-pokemon-217, .thumbnails-pokemon-218, .thumbnails-pokemon-219, .thumbnails-pokemon-22, .thumbnails-pokemon-220, .thumbnails-pokemon-221, .thumbnails-pokemon-222, .thumbnails-pokemon-223, .thumbnails-pokemon-224, .thumbnails-pokemon-225, .thumbnails-pokemon-226, .thumbnails-pokemon-227, .thumbnails-pokemon-228, .thumbnails-pokemon-229, .thumbnails-pokemon-23, .thumbnails-pokemon-230, .thumbnails-pokemon-231, .thumbnails-pokemon-232, .thumbnails-pokemon-233, .thumbnails-pokemon-234, .thumbnails-pokemon-235, .thumbnails-pokemon-236, .thumbnails-pokemon-237, .thumbnails-pokemon-238, .thumbnails-pokemon-239, .thumbnails-pokemon-24, .thumbnails-pokemon-240, .thumbnails-pokemon-241, .thumbnails-pokemon-242, .thumbnails-pokemon-243, .thumbnails-pokemon-244, .thumbnails-pokemon-245, .thumbnails-pokemon-246, .thumbnails-pokemon-247, .thumbnails-pokemon-248, .thumbnails-pokemon-249, .thumbnails-pokemon-25, .thumbnails-pokemon-250, .thumbnails-pokemon-251, .thumbnails-pokemon-252, .thumbnails-pokemon-253, .thumbnails-pokemon-254, .thumbnails-pokemon-255, .thumbnails-pokemon-256, .thumbnails-pokemon-257, .thumbnails-pokemon-258, .thumbnails-pokemon-259, .thumbnails-pokemon-26, .thumbnails-pokemon-260, .thumbnails-pokemon-261, .thumbnails-pokemon-262, .thumbnails-pokemon-263, .thumbnails-pokemon-264, .thumbnails-pokemon-265, .thumbnails-pokemon-266, .thumbnails-pokemon-267, .thumbnails-pokemon-268, .thumbnails-pokemon-269, .thumbnails-pokemon-27, .thumbnails-pokemon-270, .thumbnails-pokemon-271, .thumbnails-pokemon-272, .thumbnails-pokemon-273, .thumbnails-pokemon-274, .thumbnails-pokemon-275, .thumbnails-pokemon-276, .thumbnails-pokemon-277, .thumbnails-pokemon-278, .thumbnails-pokemon-279, .thumbnails-pokemon-28, .thumbnails-pokemon-280, .thumbnails-pokemon-281, .thumbnails-pokemon-282, .thumbnails-pokemon-283, .thumbnails-pokemon-284, .thumbnails-pokemon-285, .thumbnails-pokemon-286, .thumbnails-pokemon-287, .thumbnails-pokemon-288, .thumbnails-pokemon-289, .thumbnails-pokemon-29, .thumbnails-pokemon-290, .thumbnails-pokemon-291, .thumbnails-pokemon-292, .thumbnails-pokemon-293, .thumbnails-pokemon-294, .thumbnails-pokemon-295, .thumbnails-pokemon-296, .thumbnails-pokemon-297, .thumbnails-pokemon-298, .thumbnails-pokemon-299, .thumbnails-pokemon-3, .thumbnails-pokemon-30, .thumbnails-pokemon-300, .thumbnails-pokemon-301, .thumbnails-pokemon-302, .thumbnails-pokemon-303, .thumbnails-pokemon-304, .thumbnails-pokemon-305, .thumbnails-pokemon-306, .thumbnails-pokemon-307, .thumbnails-pokemon-308, .thumbnails-pokemon-309, .thumbnails-pokemon-31, .thumbnails-pokemon-310, .thumbnails-pokemon-311, .thumbnails-pokemon-312, .thumbnails-pokemon-313, .thumbnails-pokemon-314, .thumbnails-pokemon-315, .thumbnails-pokemon-316, .thumbnails-pokemon-317, .thumbnails-pokemon-318, .thumbnails-pokemon-319, .thumbnails-pokemon-32, .thumbnails-pokemon-320, .thumbnails-pokemon-321, .thumbnails-pokemon-322, .thumbnails-pokemon-323, .thumbnails-pokemon-324, .thumbnails-pokemon-325, .thumbnails-pokemon-326, .thumbnails-pokemon-327, .thumbnails-pokemon-328, .thumbnails-pokemon-329, .thumbnails-pokemon-33, .thumbnails-pokemon-330, .thumbnails-pokemon-331, .thumbnails-pokemon-332, .thumbnails-pokemon-333, .thumbnails-pokemon-334, .thumbnails-pokemon-335, .thumbnails-pokemon-336, .thumbnails-pokemon-337, .thumbnails-pokemon-338, .thumbnails-pokemon-339, .thumbnails-pokemon-34, .thumbnails-pokemon-340, .thumbnails-pokemon-341, .thumbnails-pokemon-342, .thumbnails-pokemon-343, .thumbnails-pokemon-344, .thumbnails-pokemon-345, .thumbnails-pokemon-346, .thumbnails-pokemon-347, .thumbnails-pokemon-348, .thumbnails-pokemon-349, .thumbnails-pokemon-35, .thumbnails-pokemon-350, .thumbnails-pokemon-351, .thumbnails-pokemon-352, .thumbnails-pokemon-353, .thumbnails-pokemon-354, .thumbnails-pokemon-355, .thumbnails-pokemon-356, .thumbnails-pokemon-357, .thumbnails-pokemon-358, .thumbnails-pokemon-359, .thumbnails-pokemon-36, .thumbnails-pokemon-360, .thumbnails-pokemon-361, .thumbnails-pokemon-362, .thumbnails-pokemon-363, .thumbnails-pokemon-364, .thumbnails-pokemon-365, .thumbnails-pokemon-366, .thumbnails-pokemon-367, .thumbnails-pokemon-368, .thumbnails-pokemon-369, .thumbnails-pokemon-37, .thumbnails-pokemon-370, .thumbnails-pokemon-371, .thumbnails-pokemon-372, .thumbnails-pokemon-373, .thumbnails-pokemon-374, .thumbnails-pokemon-375, .thumbnails-pokemon-376, .thumbnails-pokemon-377, .thumbnails-pokemon-378, .thumbnails-pokemon-379, .thumbnails-pokemon-38, .thumbnails-pokemon-380, .thumbnails-pokemon-381, .thumbnails-pokemon-382, .thumbnails-pokemon-383, .thumbnails-pokemon-384, .thumbnails-pokemon-385, .thumbnails-pokemon-386, .thumbnails-pokemon-387, .thumbnails-pokemon-388, .thumbnails-pokemon-389, .thumbnails-pokemon-39, .thumbnails-pokemon-390, .thumbnails-pokemon-391, .thumbnails-pokemon-392, .thumbnails-pokemon-393, .thumbnails-pokemon-394, .thumbnails-pokemon-395, .thumbnails-pokemon-396, .thumbnails-pokemon-397, .thumbnails-pokemon-398, .thumbnails-pokemon-399, .thumbnails-pokemon-4, .thumbnails-pokemon-40, .thumbnails-pokemon-400, .thumbnails-pokemon-401, .thumbnails-pokemon-402, .thumbnails-pokemon-403, .thumbnails-pokemon-404, .thumbnails-pokemon-405, .thumbnails-pokemon-406, .thumbnails-pokemon-407, .thumbnails-pokemon-408, .thumbnails-pokemon-409, .thumbnails-pokemon-41, .thumbnails-pokemon-410, .thumbnails-pokemon-411, .thumbnails-pokemon-412, .thumbnails-pokemon-413, .thumbnails-pokemon-414, .thumbnails-pokemon-415, .thumbnails-pokemon-416, .thumbnails-pokemon-417, .thumbnails-pokemon-418, .thumbnails-pokemon-419, .thumbnails-pokemon-42, .thumbnails-pokemon-420, .thumbnails-pokemon-421, .thumbnails-pokemon-422, .thumbnails-pokemon-423, .thumbnails-pokemon-424, .thumbnails-pokemon-425, .thumbnails-pokemon-426, .thumbnails-pokemon-427, .thumbnails-pokemon-428, .thumbnails-pokemon-429, .thumbnails-pokemon-43, .thumbnails-pokemon-430, .thumbnails-pokemon-431, .thumbnails-pokemon-432, .thumbnails-pokemon-433, .thumbnails-pokemon-434, .thumbnails-pokemon-435, .thumbnails-pokemon-436, .thumbnails-pokemon-437, .thumbnails-pokemon-438, .thumbnails-pokemon-439, .thumbnails-pokemon-44, .thumbnails-pokemon-440, .thumbnails-pokemon-441, .thumbnails-pokemon-442, .thumbnails-pokemon-443, .thumbnails-pokemon-444, .thumbnails-pokemon-445, .thumbnails-pokemon-446, .thumbnails-pokemon-447, .thumbnails-pokemon-448, .thumbnails-pokemon-449, .thumbnails-pokemon-45, .thumbnails-pokemon-450, .thumbnails-pokemon-451, .thumbnails-pokemon-452, .thumbnails-pokemon-453, .thumbnails-pokemon-454, .thumbnails-pokemon-455, .thumbnails-pokemon-456, .thumbnails-pokemon-457, .thumbnails-pokemon-458, .thumbnails-pokemon-459, .thumbnails-pokemon-46, .thumbnails-pokemon-460, .thumbnails-pokemon-461, .thumbnails-pokemon-462, .thumbnails-pokemon-463, .thumbnails-pokemon-464, .thumbnails-pokemon-465, .thumbnails-pokemon-466, .thumbnails-pokemon-467, .thumbnails-pokemon-468, .thumbnails-pokemon-469, .thumbnails-pokemon-47, .thumbnails-pokemon-470, .thumbnails-pokemon-471, .thumbnails-pokemon-472, .thumbnails-pokemon-473, .thumbnails-pokemon-474, .thumbnails-pokemon-475, .thumbnails-pokemon-476, .thumbnails-pokemon-477, .thumbnails-pokemon-478, .thumbnails-pokemon-479, .thumbnails-pokemon-48, .thumbnails-pokemon-480, .thumbnails-pokemon-481, .thumbnails-pokemon-482, .thumbnails-pokemon-483, .thumbnails-pokemon-484, .thumbnails-pokemon-485, .thumbnails-pokemon-486, .thumbnails-pokemon-487, .thumbnails-pokemon-488, .thumbnails-pokemon-489, .thumbnails-pokemon-49, .thumbnails-pokemon-490, .thumbnails-pokemon-491, .thumbnails-pokemon-492, .thumbnails-pokemon-493, .thumbnails-pokemon-494, .thumbnails-pokemon-495, .thumbnails-pokemon-496, .thumbnails-pokemon-497, .thumbnails-pokemon-498, .thumbnails-pokemon-499, .thumbnails-pokemon-5, .thumbnails-pokemon-50, .thumbnails-pokemon-500, .thumbnails-pokemon-501, .thumbnails-pokemon-502, .thumbnails-pokemon-503, .thumbnails-pokemon-504, .thumbnails-pokemon-505, .thumbnails-pokemon-506, .thumbnails-pokemon-507, .thumbnails-pokemon-508, .thumbnails-pokemon-509, .thumbnails-pokemon-51, .thumbnails-pokemon-510, .thumbnails-pokemon-511, .thumbnails-pokemon-512, .thumbnails-pokemon-513, .thumbnails-pokemon-514, .thumbnails-pokemon-515, .thumbnails-pokemon-516, .thumbnails-pokemon-517, .thumbnails-pokemon-518, .thumbnails-pokemon-519, .thumbnails-pokemon-52, .thumbnails-pokemon-520, .thumbnails-pokemon-521, .thumbnails-pokemon-522, .thumbnails-pokemon-523, .thumbnails-pokemon-524, .thumbnails-pokemon-525, .thumbnails-pokemon-526, .thumbnails-pokemon-527, .thumbnails-pokemon-528, .thumbnails-pokemon-529, .thumbnails-pokemon-53, .thumbnails-pokemon-530, .thumbnails-pokemon-531, .thumbnails-pokemon-532, .thumbnails-pokemon-533, .thumbnails-pokemon-534, .thumbnails-pokemon-535, .thumbnails-pokemon-536, .thumbnails-pokemon-537, .thumbnails-pokemon-538, .thumbnails-pokemon-539, .thumbnails-pokemon-54, .thumbnails-pokemon-540, .thumbnails-pokemon-541, .thumbnails-pokemon-542, .thumbnails-pokemon-543, .thumbnails-pokemon-544, .thumbnails-pokemon-545, .thumbnails-pokemon-546, .thumbnails-pokemon-547, .thumbnails-pokemon-548, .thumbnails-pokemon-549, .thumbnails-pokemon-55, .thumbnails-pokemon-550, .thumbnails-pokemon-551, .thumbnails-pokemon-552, .thumbnails-pokemon-553, .thumbnails-pokemon-554, .thumbnails-pokemon-555, .thumbnails-pokemon-556, .thumbnails-pokemon-557, .thumbnails-pokemon-558, .thumbnails-pokemon-559, .thumbnails-pokemon-56, .thumbnails-pokemon-560, .thumbnails-pokemon-561, .thumbnails-pokemon-562, .thumbnails-pokemon-563, .thumbnails-pokemon-564, .thumbnails-pokemon-565, .thumbnails-pokemon-566, .thumbnails-pokemon-567, .thumbnails-pokemon-568, .thumbnails-pokemon-569, .thumbnails-pokemon-57, .thumbnails-pokemon-570, .thumbnails-pokemon-571, .thumbnails-pokemon-572, .thumbnails-pokemon-573, .thumbnails-pokemon-574, .thumbnails-pokemon-575, .thumbnails-pokemon-576, .thumbnails-pokemon-577, .thumbnails-pokemon-578, .thumbnails-pokemon-579, .thumbnails-pokemon-58, .thumbnails-pokemon-580, .thumbnails-pokemon-581, .thumbnails-pokemon-582, .thumbnails-pokemon-583, .thumbnails-pokemon-584, .thumbnails-pokemon-585, .thumbnails-pokemon-586, .thumbnails-pokemon-587, .thumbnails-pokemon-588, .thumbnails-pokemon-589, .thumbnails-pokemon-59, .thumbnails-pokemon-590, .thumbnails-pokemon-591, .thumbnails-pokemon-592, .thumbnails-pokemon-593, .thumbnails-pokemon-594, .thumbnails-pokemon-595, .thumbnails-pokemon-596, .thumbnails-pokemon-597, .thumbnails-pokemon-598, .thumbnails-pokemon-599, .thumbnails-pokemon-6, .thumbnails-pokemon-60, .thumbnails-pokemon-600, .thumbnails-pokemon-601, .thumbnails-pokemon-602, .thumbnails-pokemon-603, .thumbnails-pokemon-604, .thumbnails-pokemon-605, .thumbnails-pokemon-606, .thumbnails-pokemon-607, .thumbnails-pokemon-608, .thumbnails-pokemon-609, .thumbnails-pokemon-61, .thumbnails-pokemon-610, .thumbnails-pokemon-611, .thumbnails-pokemon-612, .thumbnails-pokemon-613, .thumbnails-pokemon-614, .thumbnails-pokemon-615, .thumbnails-pokemon-616, .thumbnails-pokemon-617, .thumbnails-pokemon-618, .thumbnails-pokemon-619, .thumbnails-pokemon-62, .thumbnails-pokemon-620, .thumbnails-pokemon-621, .thumbnails-pokemon-622, .thumbnails-pokemon-623, .thumbnails-pokemon-624, .thumbnails-pokemon-625, .thumbnails-pokemon-626, .thumbnails-pokemon-627, .thumbnails-pokemon-628, .thumbnails-pokemon-629, .thumbnails-pokemon-63, .thumbnails-pokemon-630, .thumbnails-pokemon-631, .thumbnails-pokemon-632, .thumbnails-pokemon-633, .thumbnails-pokemon-634, .thumbnails-pokemon-635, .thumbnails-pokemon-636, .thumbnails-pokemon-637, .thumbnails-pokemon-638, .thumbnails-pokemon-639, .thumbnails-pokemon-64, .thumbnails-pokemon-640, .thumbnails-pokemon-641, .thumbnails-pokemon-642, .thumbnails-pokemon-643, .thumbnails-pokemon-644, .thumbnails-pokemon-645, .thumbnails-pokemon-646, .thumbnails-pokemon-647, .thumbnails-pokemon-648, .thumbnails-pokemon-649, .thumbnails-pokemon-65, .thumbnails-pokemon-650, .thumbnails-pokemon-651, .thumbnails-pokemon-652, .thumbnails-pokemon-653, .thumbnails-pokemon-654, .thumbnails-pokemon-655, .thumbnails-pokemon-656, .thumbnails-pokemon-657, .thumbnails-pokemon-658, .thumbnails-pokemon-659, .thumbnails-pokemon-66, .thumbnails-pokemon-660, .thumbnails-pokemon-661, .thumbnails-pokemon-662, .thumbnails-pokemon-663, .thumbnails-pokemon-664, .thumbnails-pokemon-665, .thumbnails-pokemon-666, .thumbnails-pokemon-667, .thumbnails-pokemon-668, .thumbnails-pokemon-669, .thumbnails-pokemon-67, .thumbnails-pokemon-670, .thumbnails-pokemon-671, .thumbnails-pokemon-672, .thumbnails-pokemon-673, .thumbnails-pokemon-674, .thumbnails-pokemon-675, .thumbnails-pokemon-676, .thumbnails-pokemon-677, .thumbnails-pokemon-678, .thumbnails-pokemon-679, .thumbnails-pokemon-68, .thumbnails-pokemon-680, .thumbnails-pokemon-681, .thumbnails-pokemon-682, .thumbnails-pokemon-683, .thumbnails-pokemon-684, .thumbnails-pokemon-685, .thumbnails-pokemon-686, .thumbnails-pokemon-687, .thumbnails-pokemon-688, .thumbnails-pokemon-689, .thumbnails-pokemon-69, .thumbnails-pokemon-690, .thumbnails-pokemon-691, .thumbnails-pokemon-692, .thumbnails-pokemon-693, .thumbnails-pokemon-694, .thumbnails-pokemon-695, .thumbnails-pokemon-696, .thumbnails-pokemon-697, .thumbnails-pokemon-698, .thumbnails-pokemon-699, .thumbnails-pokemon-7, .thumbnails-pokemon-70, .thumbnails-pokemon-700, .thumbnails-pokemon-701, .thumbnails-pokemon-702, .thumbnails-pokemon-703, .thumbnails-pokemon-704, .thumbnails-pokemon-705, .thumbnails-pokemon-706, .thumbnails-pokemon-707, .thumbnails-pokemon-708, .thumbnails-pokemon-709, .thumbnails-pokemon-71, .thumbnails-pokemon-710, .thumbnails-pokemon-711, .thumbnails-pokemon-712, .thumbnails-pokemon-713, .thumbnails-pokemon-714, .thumbnails-pokemon-715, .thumbnails-pokemon-716, .thumbnails-pokemon-717, .thumbnails-pokemon-718, .thumbnails-pokemon-72, .thumbnails-pokemon-73, .thumbnails-pokemon-74, .thumbnails-pokemon-75, .thumbnails-pokemon-76, .thumbnails-pokemon-77, .thumbnails-pokemon-78, .thumbnails-pokemon-79, .thumbnails-pokemon-8, .thumbnails-pokemon-80, .thumbnails-pokemon-81, .thumbnails-pokemon-82, .thumbnails-pokemon-83, .thumbnails-pokemon-84, .thumbnails-pokemon-85, .thumbnails-pokemon-86, .thumbnails-pokemon-87, .thumbnails-pokemon-88, .thumbnails-pokemon-89, .thumbnails-pokemon-9, .thumbnails-pokemon-90, .thumbnails-pokemon-91, .thumbnails-pokemon-92, .thumbnails-pokemon-93, .thumbnails-pokemon-94, .thumbnails-pokemon-95, .thumbnails-pokemon-96, .thumbnails-pokemon-97, .thumbnails-pokemon-98, .thumbnails-pokemon-99 {
+  background: url('/images/thumbnails-sac6d26eb70.png') no-repeat;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-1 {
+  background-position: 0 -12640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-10 {
+  background-position: 0 -18848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-100 {
+  background-position: 0 -19360px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-101 {
+  background-position: 0 -19072px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-102 {
+  background-position: 0 -8640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-103 {
+  background-position: 0 -5984px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-104 {
+  background-position: 0 -15104px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-105 {
+  background-position: 0 -11584px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-106 {
+  background-position: 0 -14016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-107 {
+  background-position: 0 -14496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-108 {
+  background-position: 0 -8960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-109 {
+  background-position: 0 -21920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-11 {
+  background-position: 0 -19232px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-110 {
+  background-position: 0 -32px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-111 {
+  background-position: 0 -7328px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-112 {
+  background-position: 0 -3264px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-113 {
+  background-position: 0 -10304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-114 {
+  background-position: 0 -12160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-115 {
+  background-position: 0 -7232px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-116 {
+  background-position: 0 -17632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-117 {
+  background-position: 0 -7936px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-118 {
+  background-position: 0 -13728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-119 {
+  background-position: 0 -8832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-12 {
+  background-position: 0 -8768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-120 {
+  background-position: 0 -16928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-121 {
+  background-position: 0 -12416px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-122 {
+  background-position: 0 -14432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-123 {
+  background-position: 0 -9728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-124 {
+  background-position: 0 -7872px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-125 {
+  background-position: 0 -6304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-126 {
+  background-position: 0 -5248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-127 {
+  background-position: 0 -8896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-128 {
+  background-position: 0 -7552px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-129 {
+  background-position: 0 -5600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-13 {
+  background-position: 0 -18432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-130 {
+  background-position: 0 -512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-131 {
+  background-position: 0 -6752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-132 {
+  background-position: 0 -18944px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-133 {
+  background-position: 0 -14336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-134 {
+  background-position: 0 -6976px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-135 {
+  background-position: 0 -10112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-136 {
+  background-position: 0 -7968px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-137 {
+  background-position: 0 -13600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-138 {
+  background-position: 0 -13824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-139 {
+  background-position: 0 -5312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-14 {
+  background-position: 0 -18656px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-140 {
+  background-position: 0 -19040px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-141 {
+  background-position: 0 -12928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-142 {
+  background-position: 0 -5696px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-143 {
+  background-position: 0 -2560px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-144 {
+  background-position: 0 -8032px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-145 {
+  background-position: 0 -4992px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-146 {
+  background-position: 0 -7584px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-147 {
+  background-position: 0 -15520px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-148 {
+  background-position: 0 -9056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-149 {
+  background-position: 0 -3616px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-15 {
+  background-position: 0 -5760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-150 {
+  background-position: 0 -6336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-151 {
+  background-position: 0 -21376px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-152 {
+  background-position: 0 -21984px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-153 {
+  background-position: 0 -20800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-154 {
+  background-position: 0 -20032px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-155 {
+  background-position: 0 -21888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-156 {
+  background-position: 0 -20704px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-157 {
+  background-position: 0 -20672px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-158 {
+  background-position: 0 -21568px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-159 {
+  background-position: 0 -20992px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-16 {
+  background-position: 0 -15200px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-160 {
+  background-position: 0 -20192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-161 {
+  background-position: 0 -13504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-162 {
+  background-position: 0 -8448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-163 {
+  background-position: 0 -17184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-164 {
+  background-position: 0 -10016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-165 {
+  background-position: 0 -16352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-166 {
+  background-position: 0 -13088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-167 {
+  background-position: 0 -17088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-168 {
+  background-position: 0 -5920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-169 {
+  background-position: 0 -8160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-17 {
+  background-position: 0 -10432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-170 {
+  background-position: 0 -15872px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-171 {
+  background-position: 0 -5632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-172 {
+  background-position: 0 -17952px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-173 {
+  background-position: 0 -17408px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-174 {
+  background-position: 0 -18368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-175 {
+  background-position: 0 -16736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-176 {
+  background-position: 0 -18144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-177 {
+  background-position: 0 -17312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-178 {
+  background-position: 0 -13440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-179 {
+  background-position: 0 -8256px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-18 {
+  background-position: 0 -1024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-180 {
+  background-position: 0 -9376px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-181 {
+  background-position: 0 -10656px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-182 {
+  background-position: 0 -13408px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-183 {
+  background-position: 0 -13376px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-184 {
+  background-position: 0 -5824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-185 {
+  background-position: 0 -11232px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-186 {
+  background-position: 0 -7264px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-187 {
+  background-position: 0 -11200px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-188 {
+  background-position: 0 -14816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-189 {
+  background-position: 0 -10528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-19 {
+  background-position: 0 -21600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-190 {
+  background-position: 0 -8672px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-191 {
+  background-position: 0 -16416px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-192 {
+  background-position: 0 -6272px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-193 {
+  background-position: 0 -9856px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-194 {
+  background-position: 0 -16384px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-195 {
+  background-position: 0 -12096px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-196 {
+  background-position: 0 -11968px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-197 {
+  background-position: 0 -11808px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-198 {
+  background-position: 0 -14048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-199 {
+  background-position: 0 -5056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-2 {
+  background-position: 0 -9632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-20 {
+  background-position: 0 -20736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-200 {
+  background-position: 0 -20960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-201 {
+  background-position: 0 -22400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-202 {
+  background-position: 0 -11616px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-203 {
+  background-position: 0 -8416px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-204 {
+  background-position: 0 -13120px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-205 {
+  background-position: 0 -6688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-206 {
+  background-position: 0 -14720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-207 {
+  background-position: 0 -5568px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-208 {
+  background-position: 0 -608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-209 {
+  background-position: 0 -8064px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-21 {
+  background-position: 0 -15808px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-210 {
+  background-position: 0 -4672px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-211 {
+  background-position: 0 -9088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-212 {
+  background-position: 0 -2720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-213 {
+  background-position: 0 -12128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-214 {
+  background-position: 0 -9280px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-215 {
+  background-position: 0 -11840px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-216 {
+  background-position: 0 -13632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-217 {
+  background-position: 0 -6432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-218 {
+  background-position: 0 -12384px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-219 {
+  background-position: 0 -4960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-22 {
+  background-position: 0 -1856px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-220 {
+  background-position: 0 -18400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-221 {
+  background-position: 0 -10144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-222 {
+  background-position: 0 -11904px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-223 {
+  background-position: 0 -19008px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-224 {
+  background-position: 0 -10816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-225 {
+  background-position: 0 -12992px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-226 {
+  background-position: 0 -6464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-227 {
+  background-position: 0 -4512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-228 {
+  background-position: 0 -15360px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-229 {
+  background-position: 0 -12000px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-23 {
+  background-position: 0 -9888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-230 {
+  background-position: 0 -10496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-231 {
+  background-position: 0 -17248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-232 {
+  background-position: 0 -2080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-233 {
+  background-position: 0 -21408px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-234 {
+  background-position: 0 -21152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-235 {
+  background-position: 0 -7360px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-236 {
+  background-position: 0 -15552px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-237 {
+  background-position: 0 -4128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-238 {
+  background-position: 0 -15264px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-239 {
+  background-position: 0 -11520px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-24 {
+  background-position: 0 -6368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-240 {
+  background-position: 0 -14624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-241 {
+  background-position: 0 -6144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-242 {
+  background-position: 0 -5536px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-243 {
+  background-position: 0 -736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-244 {
+  background-position: 0 -20064px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-245 {
+  background-position: 0 -800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-246 {
+  background-position: 0 -16480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-247 {
+  background-position: 0 -14368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-248 {
+  background-position: 0 -3392px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-249 {
+  background-position: 0 -20288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-25 {
+  background-position: 0 -12800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-250 {
+  background-position: 0 -19904px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-251 {
+  background-position: 0 -22080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-252 {
+  background-position: 0 -21632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-253 {
+  background-position: 0 -20768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-254 {
+  background-position: 0 -20512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-255 {
+  background-position: 0 -18272px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-256 {
+  background-position: 0 -6720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-257 {
+  background-position: 0 -2208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-258 {
+  background-position: 0 -21664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-259 {
+  background-position: 0 -21216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-26 {
+  background-position: 0 -5504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-260 {
+  background-position: 0 -19680px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-261 {
+  background-position: 0 -13888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-262 {
+  background-position: 0 -7904px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-263 {
+  background-position: 0 -14080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-264 {
+  background-position: 0 -9664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-265 {
+  background-position: 0 -16448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-266 {
+  background-position: 0 -15584px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-267 {
+  background-position: 0 -5792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-268 {
+  background-position: 0 -12576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-269 {
+  background-position: 0 -3968px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-27 {
+  background-position: 0 -12672px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-270 {
+  background-position: 0 -16992px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-271 {
+  background-position: 0 -7712px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-272 {
+  background-position: 0 -1280px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-273 {
+  background-position: 0 -16768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-274 {
+  background-position: 0 -12288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-275 {
+  background-position: 0 -2016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-276 {
+  background-position: 0 -18208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-277 {
+  background-position: 0 -9152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-278 {
+  background-position: 0 -18624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-279 {
+  background-position: 0 -8480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-28 {
+  background-position: 0 -4064px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-280 {
+  background-position: 0 -18784px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-281 {
+  background-position: 0 -8224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-282 {
+  background-position: 0 -5152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-283 {
+  background-position: 0 -17600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-284 {
+  background-position: 0 -6624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-285 {
+  background-position: 0 -17568px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-286 {
+  background-position: 0 -2624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-287 {
+  background-position: 0 -22016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-288 {
+  background-position: 0 -21120px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-289 {
+  background-position: 0 -19744px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-29 {
+  background-position: 0 -13024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-290 {
+  background-position: 0 -15680px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-291 {
+  background-position: 0 -12896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-292 {
+  background-position: 0 -11392px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-293 {
+  background-position: 0 -16800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-294 {
+  background-position: 0 -3744px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-295 {
+  background-position: 0 -448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-296 {
+  background-position: 0 -15744px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-297 {
+  background-position: 0 -3104px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-298 {
+  background-position: 0 -16640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-299 {
+  background-position: 0 -14848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-3 {
+  background-position: 0 -704px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-30 {
+  background-position: 0 -8000px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-300 {
+  background-position: 0 -11744px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-301 {
+  background-position: 0 -7520px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-302 {
+  background-position: 0 -10464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-303 {
+  background-position: 0 -7648px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-304 {
+  background-position: 0 -19200px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-305 {
+  background-position: 0 -10784px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-306 {
+  background-position: 0 -3840px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-307 {
+  background-position: 0 -13920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-308 {
+  background-position: 0 -12320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-309 {
+  background-position: 0 -16160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-31 {
+  background-position: 0 -4832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-310 {
+  background-position: 0 -7616px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-311 {
+  background-position: 0 -16864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-312 {
+  background-position: 0 -16672px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-313 {
+  background-position: 0 -11648px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-314 {
+  background-position: 0 -13248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-315 {
+  background-position: 0 -5344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-316 {
+  background-position: 0 -17664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-317 {
+  background-position: 0 -14112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-318 {
+  background-position: 0 -12480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-319 {
+  background-position: 0 -12832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-32 {
+  background-position: 0 -14144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-320 {
+  background-position: 0 -10368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-321 {
+  background-position: 0 -3936px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-322 {
+  background-position: 0 -11712px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-323 {
+  background-position: 0 -1504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-324 {
+  background-position: 0 -9600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-325 {
+  background-position: 0 -17792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-326 {
+  background-position: 0 -12352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-327 {
+  background-position: 0 -11776px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-328 {
+  background-position: 0 -13344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-329 {
+  background-position: 0 -12064px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-33 {
+  background-position: 0 -8544px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-330 {
+  background-position: 0 -2400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-331 {
+  background-position: 0 -15392px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-332 {
+  background-position: 0 -11552px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-333 {
+  background-position: 0 -18336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-334 {
+  background-position: 0 -7776px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-335 {
+  background-position: 0 -11168px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-336 {
+  background-position: 0 -9760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-337 {
+  background-position: 0 -16224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-338 {
+  background-position: 0 -10176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-339 {
+  background-position: 0 -18240px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-34 {
+  background-position: 0 -256px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-340 {
+  background-position: 0 -5856px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-341 {
+  background-position: 0 -10848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-342 {
+  background-position: 0 -4352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-343 {
+  background-position: 0 -21792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-344 {
+  background-position: 0 -20864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-345 {
+  background-position: 0 -12032px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-346 {
+  background-position: 0 -1600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-347 {
+  background-position: 0 -6816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-348 {
+  background-position: 0 -3456px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-349 {
+  background-position: 0 -21440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-35 {
+  background-position: 0 -12960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-350 {
+  background-position: 0 -1056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-351 {
+  background-position: 0 -22432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-352 {
+  background-position: 0 -11424px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-353 {
+  background-position: 0 -15968px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-354 {
+  background-position: 0 -11296px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-355 {
+  background-position: 0 -14464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-356 {
+  background-position: 0 -7008px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-357 {
+  background-position: 0 -1344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-358 {
+  background-position: 0 -17728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-359 {
+  background-position: 0 -8096px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-36 {
+  background-position: 0 -6656px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-360 {
+  background-position: 0 -9344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-361 {
+  background-position: 0 -17440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-362 {
+  background-position: 0 -14752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-363 {
+  background-position: 0 -14880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-364 {
+  background-position: 0 -8352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-365 {
+  background-position: 0 -1440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-366 {
+  background-position: 0 -9184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-367 {
+  background-position: 0 -2816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-368 {
+  background-position: 0 -10976px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-369 {
+  background-position: 0 -3648px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-37 {
+  background-position: 0 -9024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-370 {
+  background-position: 0 -19168px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-371 {
+  background-position: 0 -15424px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-372 {
+  background-position: 0 -12512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-373 {
+  background-position: 0 -480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-374 {
+  background-position: 0 -15136px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-375 {
+  background-position: 0 -3200px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-376 {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-377 {
+  background-position: 0 -20928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-378 {
+  background-position: 0 -21472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-379 {
+  background-position: 0 -20896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-38 {
+  background-position: 0 -2144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-380 {
+  background-position: 0 -20352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-381 {
+  background-position: 0 -20416px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-382 {
+  background-position: 0 -20128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-383 {
+  background-position: 0 -20224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-384 {
+  background-position: 0 -19968px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-385 {
+  background-position: 0 -21248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-386 {
+  background-position: 0 -20160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-387 {
+  background-position: 0 -21024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-388 {
+  background-position: 0 -20448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-389 {
+  background-position: 0 -19776px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-39 {
+  background-position: 0 -12608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-390 {
+  background-position: 0 -21696px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-391 {
+  background-position: 0 -20576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-392 {
+  background-position: 0 -19552px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-393 {
+  background-position: 0 -22112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-394 {
+  background-position: 0 -21184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-395 {
+  background-position: 0 -20640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-396 {
+  background-position: 0 -15616px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-397 {
+  background-position: 0 -11680px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-398 {
+  background-position: 0 -4192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-399 {
+  background-position: 0 -14240px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-4 {
+  background-position: 0 -14688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-40 {
+  background-position: 0 -6560px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-400 {
+  background-position: 0 -5088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-401 {
+  background-position: 0 -21056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-402 {
+  background-position: 0 -20320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-403 {
+  background-position: 0 -8800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-404 {
+  background-position: 0 -4704px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-405 {
+  background-position: 0 -2592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-406 {
+  background-position: 0 -18496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-407 {
+  background-position: 0 -10208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-408 {
+  background-position: 0 -10912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-409 {
+  background-position: 0 -5472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-41 {
+  background-position: 0 -14976px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-410 {
+  background-position: 0 -13472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-411 {
+  background-position: 0 -4224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-412 {
+  background-position: 0 -14560px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-413 {
+  background-position: 0 -9216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-414 {
+  background-position: 0 -6880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-415 {
+  background-position: 0 -12736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-416 {
+  background-position: 0 -3776px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-417 {
+  background-position: 0 -11104px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-418 {
+  background-position: 0 -12256px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-419 {
+  background-position: 0 -6080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-42 {
+  background-position: 0 -8992px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-420 {
+  background-position: 0 -21344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-421 {
+  background-position: 0 -15456px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-422 {
+  background-position: 0 -13536px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-423 {
+  background-position: 0 -6848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-424 {
+  background-position: 0 -19872px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-425 {
+  background-position: 0 -18016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-426 {
+  background-position: 0 -5664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-427 {
+  background-position: 0 -12704px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-428 {
+  background-position: 0 -20608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-429 {
+  background-position: 0 -20384px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-43 {
+  background-position: 0 -16256px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-430 {
+  background-position: 0 -4576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-431 {
+  background-position: 0 -20544px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-432 {
+  background-position: 0 -20256px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-433 {
+  background-position: 0 -14592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-434 {
+  background-position: 0 -7680px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-435 {
+  background-position: 0 -1920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-436 {
+  background-position: 0 -18752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-437 {
+  background-position: 0 -6208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-438 {
+  background-position: 0 -17760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-439 {
+  background-position: 0 -16096px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-44 {
+  background-position: 0 -10400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-440 {
+  background-position: 0 -17472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-441 {
+  background-position: 0 -13856px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-442 {
+  background-position: 0 -6496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-443 {
+  background-position: 0 -13056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-444 {
+  background-position: 0 -5184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-445 {
+  background-position: 0 -2272px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-446 {
+  background-position: 0 -16832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-447 {
+  background-position: 0 -16704px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-448 {
+  background-position: 0 -15488px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-449 {
+  background-position: 0 -8928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-45 {
+  background-position: 0 -6240px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-450 {
+  background-position: 0 -4384px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-451 {
+  background-position: 0 -8736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-452 {
+  background-position: 0 -1376px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-453 {
+  background-position: 0 -16544px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-454 {
+  background-position: 0 -7424px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-455 {
+  background-position: 0 -4864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-456 {
+  background-position: 0 -21728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-457 {
+  background-position: 0 -20480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-458 {
+  background-position: 0 -17024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-459 {
+  background-position: 0 -15648px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-46 {
+  background-position: 0 -10048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-460 {
+  background-position: 0 -11328px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-461 {
+  background-position: 0 -7744px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-462 {
+  background-position: 0 -3296px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-463 {
+  background-position: 0 -7040px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-464 {
+  background-position: 0 -1408px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-465 {
+  background-position: 0 -2976px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-466 {
+  background-position: 0 -1952px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-467 {
+  background-position: 0 -2848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-468 {
+  background-position: 0 -6528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-469 {
+  background-position: 0 -4256px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-47 {
+  background-position: 0 -7104px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-470 {
+  background-position: 0 -5376px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-471 {
+  background-position: 0 -4608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-472 {
+  background-position: 0 -416px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-473 {
+  background-position: 0 -2304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-474 {
+  background-position: 0 -21280px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-475 {
+  background-position: 0 -6912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-476 {
+  background-position: 0 -4416px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-477 {
+  background-position: 0 -3872px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-478 {
+  background-position: 0 -13760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-479 {
+  background-position: 0 -10880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-48 {
+  background-position: 0 -8384px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-480 {
+  background-position: 0 -20000px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-481 {
+  background-position: 0 -19840px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-482 {
+  background-position: 0 -20096px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-483 {
+  background-position: 0 -19584px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-484 {
+  background-position: 0 -19648px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-485 {
+  background-position: 0 -19936px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-486 {
+  background-position: 0 -19488px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-487 {
+  background-position: 0 -19616px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-488 {
+  background-position: 0 -19808px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-489 {
+  background-position: 0 -21760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-49 {
+  background-position: 0 -3328px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-490 {
+  background-position: 0 -21088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-491 {
+  background-position: 0 -19712px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-492 {
+  background-position: 0 -21856px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-493 {
+  background-position: 0 -19520px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-494 {
+  background-position: 0 -22560px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-495 {
+  background-position: 0 -22656px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-496 {
+  background-position: 0 -22528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-497 {
+  background-position: 0 -22176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-498 {
+  background-position: 0 -22848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-499 {
+  background-position: 0 -22592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-5 {
+  background-position: 0 -8704px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-50 {
+  background-position: 0 -19104px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-500 {
+  background-position: 0 -22048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-501 {
+  background-position: 0 -22688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-502 {
+  background-position: 0 -22336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-503 {
+  background-position: 0 -21504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-504 {
+  background-position: 0 -13664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-505 {
+  background-position: 0 -9120px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-506 {
+  background-position: 0 -16064px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-507 {
+  background-position: 0 -8864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-508 {
+  background-position: 0 -1696px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-509 {
+  background-position: 0 -12448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-51 {
+  background-position: 0 -8576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-510 {
+  background-position: 0 -3680px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-511 {
+  background-position: 0 -10944px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-512 {
+  background-position: 0 -5952px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-513 {
+  background-position: 0 -14656px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-514 {
+  background-position: 0 -5024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-515 {
+  background-position: 0 -9536px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-516 {
+  background-position: 0 -4768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-517 {
+  background-position: 0 -18816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-518 {
+  background-position: 0 -4800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-519 {
+  background-position: 0 -18464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-52 {
+  background-position: 0 -21824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-520 {
+  background-position: 0 -15008px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-521 {
+  background-position: 0 -7072px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-522 {
+  background-position: 0 -16512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-523 {
+  background-position: 0 -7136px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-524 {
+  background-position: 0 -19264px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-525 {
+  background-position: 0 -8288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-526 {
+  background-position: 0 -1792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-527 {
+  background-position: 0 -17504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-528 {
+  background-position: 0 -10560px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-529 {
+  background-position: 0 -15168px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-53 {
+  background-position: 0 -20832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-530 {
+  background-position: 0 -2944px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-531 {
+  background-position: 0 -7200px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-532 {
+  background-position: 0 -12224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-533 {
+  background-position: 0 -3136px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-534 {
+  background-position: 0 -352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-535 {
+  background-position: 0 -19392px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-536 {
+  background-position: 0 -14208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-537 {
+  background-position: 0 -2464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-538 {
+  background-position: 0 -4736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-539 {
+  background-position: 0 -5280px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-54 {
+  background-position: 0 -10592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-540 {
+  background-position: 0 -17824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-541 {
+  background-position: 0 -17344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-542 {
+  background-position: 0 -16960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-543 {
+  background-position: 0 -17536px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-544 {
+  background-position: 0 -11136px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-545 {
+  background-position: 0 -3168px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-546 {
+  background-position: 0 -22784px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-547 {
+  background-position: 0 -4448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-548 {
+  background-position: 0 -18112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-549 {
+  background-position: 0 -8320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-55 {
+  background-position: 0 -6112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-550 {
+  background-position: 0 -16192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-551 {
+  background-position: 0 -15040px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-552 {
+  background-position: 0 -8512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-553 {
+  background-position: 0 -2368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-554 {
+  background-position: 0 -22880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-555 {
+  background-position: 0 -22464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-556 {
+  background-position: 0 -4928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-557 {
+  background-position: 0 -15296px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-558 {
+  background-position: 0 -928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-559 {
+  background-position: 0 -18976px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-56 {
+  background-position: 0 -9248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-560 {
+  background-position: 0 -10688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-561 {
+  background-position: 0 -6784px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-562 {
+  background-position: 0 -22912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-563 {
+  background-position: 0 -832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-564 {
+  background-position: 0 -14912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-565 {
+  background-position: 0 -2752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-566 {
+  background-position: 0 -15328px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-567 {
+  background-position: 0 -3808px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-568 {
+  background-position: 0 -16000px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-569 {
+  background-position: 0 -1824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-57 {
+  background-position: 0 -3904px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-570 {
+  background-position: 0 -17056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-571 {
+  background-position: 0 -3520px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-572 {
+  background-position: 0 -13216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-573 {
+  background-position: 0 -6176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-574 {
+  background-position: 0 -18688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-575 {
+  background-position: 0 -13792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-576 {
+  background-position: 0 -10080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-577 {
+  background-position: 0 -18592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-578 {
+  background-position: 0 -13152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-579 {
+  background-position: 0 -2432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-58 {
+  background-position: 0 -6944px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-580 {
+  background-position: 0 -16288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-581 {
+  background-position: 0 -10624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-582 {
+  background-position: 0 -19456px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-583 {
+  background-position: 0 -17696px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-584 {
+  background-position: 0 -8128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-585 {
+  background-position: 0 -11456px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-586 {
+  background-position: 0 -5728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-587 {
+  background-position: 0 -13280px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-588 {
+  background-position: 0 -19296px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-589 {
+  background-position: 0 -4096px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-59 {
+  background-position: 0 -288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-590 {
+  background-position: 0 -18720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-591 {
+  background-position: 0 -5408px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-592 {
+  background-position: 0 -22720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-593 {
+  background-position: 0 -6016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-594 {
+  background-position: 0 -15936px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-595 {
+  background-position: 0 -16128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-596 {
+  background-position: 0 -1664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-597 {
+  background-position: 0 -17888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-598 {
+  background-position: 0 -2496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-599 {
+  background-position: 0 -15232px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-6 {
+  background-position: 0 -544px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-60 {
+  background-position: 0 -15776px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-600 {
+  background-position: 0 -4288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-601 {
+  background-position: 0 -64px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-602 {
+  background-position: 0 -22944px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-603 {
+  background-position: 0 -13568px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-604 {
+  background-position: 0 -1120px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-605 {
+  background-position: 0 -17984px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-606 {
+  background-position: 0 -22816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-607 {
+  background-position: 0 -19424px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-608 {
+  background-position: 0 -17856px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-609 {
+  background-position: 0 -8608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-61 {
+  background-position: 0 -10240px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-610 {
+  background-position: 0 -17216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-611 {
+  background-position: 0 -11040px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-612 {
+  background-position: 0 -4000px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-613 {
+  background-position: 0 -17120px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-614 {
+  background-position: 0 -13952px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-615 {
+  background-position: 0 -9952px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-616 {
+  background-position: 0 -18560px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-617 {
+  background-position: 0 -7808px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-618 {
+  background-position: 0 -17152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-619 {
+  background-position: 0 -14944px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-62 {
+  background-position: 0 -3232px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-620 {
+  background-position: 0 -13184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-621 {
+  background-position: 0 -2656px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-622 {
+  background-position: 0 -14784px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-623 {
+  background-position: 0 -896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-624 {
+  background-position: 0 -15712px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-625 {
+  background-position: 0 -7168px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-626 {
+  background-position: 0 -5120px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-627 {
+  background-position: 0 -9984px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-628 {
+  background-position: 0 -4640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-629 {
+  background-position: 0 -14304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-63 {
+  background-position: 0 -9568px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-630 {
+  background-position: 0 -9312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-631 {
+  background-position: 0 -2880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-632 {
+  background-position: 0 -15840px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-633 {
+  background-position: 0 -16576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-634 {
+  background-position: 0 -3552px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-635 {
+  background-position: 0 -160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-636 {
+  background-position: 0 -14400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-637 {
+  background-position: 0 -1984px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-638 {
+  background-position: 0 -22272px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-639 {
+  background-position: 0 -22304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-64 {
+  background-position: 0 -960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-640 {
+  background-position: 0 -22368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-641 {
+  background-position: 0 -21312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-642 {
+  background-position: 0 -21952px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-643 {
+  background-position: 0 -22240px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-644 {
+  background-position: 0 -22496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-645 {
+  background-position: 0 -21536px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-646 {
+  background-position: 0 -22208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-647 {
+  background-position: 0 -22144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-648 {
+  background-position: 0 -22752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-649 {
+  background-position: 0 -22624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-65 {
+  background-position: 0 -192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-650 {
+  background-position: 0 -9792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-651 {
+  background-position: 0 -6592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-652 {
+  background-position: 0 -672px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-653 {
+  background-position: 0 -18048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-654 {
+  background-position: 0 -7456px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-655 {
+  background-position: 0 -2048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-656 {
+  background-position: 0 -11488px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-657 {
+  background-position: 0 -5888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-658 {
+  background-position: 0 -3072px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-659 {
+  background-position: 0 -12192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-66 {
+  background-position: 0 -16320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-660 {
+  background-position: 0 -1568px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-661 {
+  background-position: 0 -18304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-662 {
+  background-position: 0 -11264px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-663 {
+  background-position: 0 -2688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-664 {
+  background-position: 0 -18176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-665 {
+  background-position: 0 -17280px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-666 {
+  background-position: 0 -2784px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-667 {
+  background-position: 0 -11360px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-668 {
+  background-position: 0 -128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-669 {
+  background-position: 0 -17920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-67 {
+  background-position: 0 -3488px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-670 {
+  background-position: 0 -10720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-671 {
+  background-position: 0 -224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-672 {
+  background-position: 0 -13984px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-673 {
+  background-position: 0 -3424px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-674 {
+  background-position: 0 -15904px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-675 {
+  background-position: 0 -3360px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-676 {
+  background-position: 0 -1728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-677 {
+  background-position: 0 -16896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-678 {
+  background-position: 0 -19136px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-679 {
+  background-position: 0 -9920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-68 {
+  background-position: 0 -1312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-680 {
+  background-position: 0 -992px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-681 {
+  background-position: 0 -2912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-682 {
+  background-position: 0 -18528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-683 {
+  background-position: 0 -4320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-684 {
+  background-position: 0 -17376px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-685 {
+  background-position: 0 -7392px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-686 {
+  background-position: 0 -10752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-687 {
+  background-position: 0 -3040px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-688 {
+  background-position: 0 -6048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-689 {
+  background-position: 0 -96px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-69 {
+  background-position: 0 -18880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-690 {
+  background-position: 0 -11872px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-691 {
+  background-position: 0 -1536px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-692 {
+  background-position: 0 -12864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-693 {
+  background-position: 0 -1088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-694 {
+  background-position: 0 -16032px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-695 {
+  background-position: 0 -9696px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-696 {
+  background-position: 0 -13312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-697 {
+  background-position: 0 -640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-698 {
+  background-position: 0 -9504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-699 {
+  background-position: 0 -1248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-7 {
+  background-position: 0 -12768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-70 {
+  background-position: 0 -11072px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-700 {
+  background-position: 0 -5440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-701 {
+  background-position: 0 -9472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-702 {
+  background-position: 0 -13696px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-703 {
+  background-position: 0 -18912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-704 {
+  background-position: 0 -19328px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-705 {
+  background-position: 0 -15072px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-706 {
+  background-position: 0 -5216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-707 {
+  background-position: 0 -7296px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-708 {
+  background-position: 0 -7488px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-709 {
+  background-position: 0 -1152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-71 {
+  background-position: 0 -3584px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-710 {
+  background-position: 0 -16608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-711 {
+  background-position: 0 -9408px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-712 {
+  background-position: 0 -14528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-713 {
+  background-position: 0 -576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-714 {
+  background-position: 0 -11936px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-715 {
+  background-position: 0 -4160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-716 {
+  background-position: 0 -384px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-717 {
+  background-position: 0 -1760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-718 {
+  background-position: 0 -320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-72 {
+  background-position: 0 -9824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-73 {
+  background-position: 0 -1888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-74 {
+  background-position: 0 -14272px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-75 {
+  background-position: 0 -2336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-76 {
+  background-position: 0 -3712px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-77 {
+  background-position: 0 -4032px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-78 {
+  background-position: 0 -768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-79 {
+  background-position: 0 -10272px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-8 {
+  background-position: 0 -4480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-80 {
+  background-position: 0 -864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-81 {
+  background-position: 0 -18080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-82 {
+  background-position: 0 -8192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-83 {
+  background-position: 0 -6400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-84 {
+  background-position: 0 -14176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-85 {
+  background-position: 0 -1216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-86 {
+  background-position: 0 -9440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-87 {
+  background-position: 0 -12544px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-88 {
+  background-position: 0 -10336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-89 {
+  background-position: 0 -1472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-9 {
+  background-position: 0 -2112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-90 {
+  background-position: 0 -11008px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-91 {
+  background-position: 0 -2528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-92 {
+  background-position: 0 -7840px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-93 {
+  background-position: 0 -1184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-94 {
+  background-position: 0 -3008px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-95 {
+  background-position: 0 -1632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-96 {
+  background-position: 0 -4896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-97 {
+  background-position: 0 -2176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-98 {
+  background-position: 0 -4544px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.thumbnails-pokemon-99 {
+  background-position: 0 -2240px;
+}

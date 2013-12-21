@@ -26,7 +26,7 @@
 	<tbody>
 	<% wondertrades.forEach(function(wondertrade){ %>
 		<tr>
-    		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %></a></td>
+    		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %> <i class="pokemon-icon thumbnails-pokemon-<%= wondertrade.pokemonId %>"></i></a></td>
     		<td><%= wondertrade.level %></td>
     		<td><%= wondertrade.pokemonNickname %></td>    		
     		<td class="checkArea"><%= wondertrade.hasItem? '&check;' : '' %></td>
