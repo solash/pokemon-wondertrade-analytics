@@ -9,7 +9,8 @@ $('#date-trend-chart').highcharts({
         type: 'datetime',
         dateTimeLabelFormats: { // don't display the dummy year
             day: '%b, %e'
-        }
+        },
+        plotLines: <% include _eventPlotlines.ejs %>
     },
     yAxis: {
         title: {
