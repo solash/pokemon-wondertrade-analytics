@@ -301,7 +301,9 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
                     var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
                     countPercent = parseFloat(countPercent.toFixed(2));
 
-					pokemonData.data.push([context.formatDateFromString(dateField),countPercent]);
+					if(totalCountsByDate[dateField] > 15) {
+						pokemonData.data.push([context.formatDateFromString(dateField),countPercent]);
+					}
 				});
 				
 				pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
