@@ -45,6 +45,8 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .pageHead{position: relative;}
 .pageHead .user{position: absolute;top:0em;right: 1em;background: rgba(0,0,0,.8);color: #fff;padding: 0.5em;}
 
+.update{padding:0.5em;background: rgba(0,250,0,.6);color: #333;text-shadow: 1px 1px 1px #aaa;}
+
 /* Sidebar */
 .page-sidebar{background: rgba(0,0,0,0.8);padding: 0.5em 0.2em;overflow: hidden;font-family: "Steelworks";}
 .page-sidebar h3{padding: 0;margin:0;float: left;}
