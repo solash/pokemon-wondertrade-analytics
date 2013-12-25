@@ -1,0 +1,43 @@
+<% layout('../layout'); -%>
+<h3>Results by Date</h3>
+
+<div class="chart-box">
+    <div class="page-content-inner">
+        <form id="dateForm" class="center">
+            <input id="dateInput" type="date" min="2013-11-21" />
+            <input type="submit" value="Go!">
+        </form>
+    </div>
+</div>
+
+<div class="chart-box full-chart" id="date-trend-chart"></div>
+
+<script>
+    Date.prototype.customFormatDate = function(){
+        var year = this.getFullYear(),
+                month = ('0'+(this.getMonth()+1)).slice(-2),
+                day = ('0'+(this.getDate())).slice(-2);
+        return [year, month, day].join('-');
+    };
+
+    $(document).ready(function(){
+
+        var currentDate = new Date(),
+                startDate = new Date(2013, 10, 21),
+                $dayInput = $("#dateInput");
+
+        $dayInput.attr("max", currentDate.customFormatDate());
+
+        $("#dateForm").on("submit", function(event){
+            event.preventDefault();
+            var currentDate = $dayInput.val();
+
+            if(currentDate) {
+                window.location = "/data/dates/"+currentDate;
+            }
+            return;
+        });
+
+        <% include ../partials/highcharts/_wondertrades-byDate-chart.ejs %>
+    });
+</script>

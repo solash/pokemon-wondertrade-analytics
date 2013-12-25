@@ -187,6 +187,10 @@ HighChartsData.prototype.getResultsByUserIdAndSubmissionDate = function(userId, 
 	return _.where(this.deserializedResults, {userId: parseInt(userId), date: submissionDate});
 };
 
+HighChartsData.prototype.getResultsBySubmissionDate = function(submissionDate) {
+	return _.where(this.deserializedResults, {date: submissionDate});
+};
+
 HighChartsData.prototype.getResultsByGender = function(gender) {
 	return _.where(this.deserializedResults, {trainerGender: gender});
 };

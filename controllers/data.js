@@ -280,6 +280,48 @@ exports.initController = function(app, dataStore) {
 		
 	});
 
+	// Data by Dates
+	app.get('/data/dates', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var highChartsData = new HighChartsData(result);
+
+			response.render('data/dates', {
+				title: 'Wonder Trade Analytics',
+				pageState: '',
+				user: request.user,
+				stateMessage: '',
+				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate())
+			});
+		});
+	});
+
+	app.get('/data/dates/:submissionDate', function(request, response){
+
+		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+			var userId = request.params.userId,
+				submissionDate = request.params.submissionDate,
+				highChartsData = new HighChartsData(result),
+				highChartsDataByUserId = highChartsData.getResultsBySubmissionDate(submissionDate),
+				pokemonTable = highChartsData.getPokemonTable(highChartsDataByUserId);
+
+			pokemonTable.reverse();
+
+			response.render('data/datesByDay', {
+				title: ' Analytics for '+submissionDate,
+				pageState: '',
+				user: request.user,
+				submissionDate: submissionDate,
+				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataByUserId)),
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
+				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
+				pokemonTable: pokemonTable,
+				quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
+			});
+		});
+	});
+
 
 
 	// Show the individual user page.

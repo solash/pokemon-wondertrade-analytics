@@ -1,0 +1,14 @@
+<% layout('../layout') -%>
+<h3><%= submissionDate %> Overview</h3>
+
+<% include ../partials/_quick-stats.ejs %>
+<div class="chart-box full-chart" id="pokemon-chart"></div>
+<% include ../partials/_pokemon-table.ejs %>
+<div class="chart-box full-chart" id="region-chart"></div>
+
+<script>
+    $(document).ready(function(){
+        <% include ../partials/highcharts/_pokemon-chart.ejs %>
+        <% include ../partials/highcharts/_region-chart.ejs %>
+    });
+</script>
