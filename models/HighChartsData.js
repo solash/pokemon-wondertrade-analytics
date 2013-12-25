@@ -295,6 +295,14 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 			data: []
 		};
 
+		var startDate = new Date(2013, 10, 21),
+			endDate = new Date(),
+			fullDateRange = [];
+		while(startDate < endDate) {
+			fullDateRange.push([context.formatDateFromString(startDate.customFormatDate()), 0]);
+			startDate.setDate(startDate.getDate()+1);
+		}
+
 		// If there is a subset we want to filter on, then lets filter.
 		if(pokemonSubSet) {
 			if(_.contains(pokemonSubSet, pokemonId)) {
@@ -306,13 +314,15 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
                     countPercent = parseFloat(countPercent.toFixed(2));
 
 					if(totalCountsByDate[dateField] > 15) {
-						pokemonData.data.push([context.formatDateFromString(dateField),countPercent]);
+						_.each(fullDateRange, function(tempDate){
+							if(context.formatDateFromString(dateField) === tempDate[0]) {
+								tempDate[1] = countPercent;
+							}
+						});
 					}
 				});
 				
-				pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
-					return data[0];
-				});		
+				pokemonData.data = fullDateRange;
 				trendingPokemonChart.push(pokemonData);
 			}
 		} else {
@@ -323,15 +333,15 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
                 var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
                 countPercent = parseFloat(countPercent.toFixed(2));
 
-                pokemonData.data.push([context.formatDateFromString(dateField),countPercent]);
+				_.each(fullDateRange, function(tempDate){
+					if(context.formatDateFromString(dateField) === tempDate[0]) {
+						tempDate[1] = countPercent;
+					}
+				});
 			});		
 
-			pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
-				return data[0];
-			});					
+			pokemonData.data = fullDateRange;
 			trendingPokemonChart.push(pokemonData);
-
-			
 		}
 		
 	});
@@ -367,15 +377,25 @@ HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable){
 			fullCount: 0
 		};
 
+		var startDate = new Date(2013, 10, 21),
+			endDate = new Date(),
+			fullDateRange = [];
+		while(startDate < endDate) {
+			fullDateRange.push([context.formatDateFromString(startDate.customFormatDate()), 0]);
+			startDate.setDate(startDate.getDate()+1);
+		}
+
 		// If there is a subset we want to filter on, then lets filter!
 		_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-			pokemonData.data.push([context.formatDateFromString(dateField),dateFieldCount]);
+			_.each(fullDateRange, function(tempDate){
+				if(context.formatDateFromString(dateField) === tempDate[0]) {
+					tempDate[1] = dateFieldCount;
+				}
+			});
 			pokemonData.fullCount += dateFieldCount;
 		});
-		
-		pokemonData.data = _.sortBy(pokemonData.data, function(data) {				
-			return data[0];
-		});		
+
+		pokemonData.data = fullDateRange;
 		trendingPokemonChart.push(pokemonData);		
 	});
 
@@ -418,6 +438,14 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet) {
 		},
 		context = this;
 
+	var startDate = new Date(2013, 10, 21),
+		endDate = new Date(),
+		fullDateRange = [];
+	while(startDate < endDate) {
+		fullDateRange.push([context.formatDateFromString(startDate.customFormatDate()), 0]);
+		startDate.setDate(startDate.getDate()+1);
+	}
+
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
 	}
@@ -428,12 +456,14 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet) {
 
 	_.each(wonderTradesByDate, function(dateCount, dateString) {
 		var dateFieldCount = _.size(dateCount);
-		trendChart.data.push([context.formatDateFromString(dateString),dateFieldCount]);		
+		_.each(fullDateRange, function(tempDate){
+			if(context.formatDateFromString(dateString) === tempDate[0]) {
+				tempDate[1] = dateFieldCount;
+			}
+		});
 	});
 
-	trendChart.data = _.sortBy(trendChart.data, function(data) {				
-		return data[0];
-	});
+	trendChart.data = fullDateRange;
 
 	return trendChart;
 };
