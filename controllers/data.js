@@ -284,14 +284,15 @@ exports.initController = function(app, dataStore) {
 	app.get('/data/dates', function(request, response){
 
 		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-			var highChartsData = new HighChartsData(result);
+			var highChartsData = new HighChartsData(result),
+				statTrendsByDate = highChartsData.getQuickStatsTrendsByDates();
 
 			response.render('data/dates', {
 				title: 'Wonder Trade Analytics',
 				pageState: '',
 				user: request.user,
 				stateMessage: '',
-				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate())
+				quickStatTrends: JSON.stringify(statTrendsByDate)
 			});
 		});
 	});

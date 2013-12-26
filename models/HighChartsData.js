@@ -25,7 +25,7 @@ var HighChartsData = function(jsonResults){
 			deserializedResults.push(JSON.parse(currentWonderTrade));
 		}
 	}
-	
+	this.dailyThreshold = 15;
 	this.deserializedResults = deserializedResults;
 	this.pokemonList = PokemonList;
 };
@@ -313,7 +313,7 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
                     var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
                     countPercent = parseFloat(countPercent.toFixed(2));
 
-					if(totalCountsByDate[dateField] > 15) {
+					if(totalCountsByDate[dateField] > context.dailyThreshold) {
 						_.each(fullDateRange, function(tempDate){
 							if(context.formatDateFromString(dateField) === tempDate[0]) {
 								tempDate[1] = countPercent;
@@ -481,12 +481,12 @@ HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSe
 
 	var countsByAttribute = _.countBy(resultSet, attribute),
 		totalSize = _.size(resultSet);
-	if(!countsByAttribute.true) {
+	if(!countsByAttribute.true || countsByAttribute.true === "NaN") {
 		countsByAttribute.true = 0;
 	}		
 	var percentage = ((countsByAttribute.true)/totalSize*100).toFixed(2);
 	
-	return percentage;
+	return parseFloat(percentage);
 };
 
 HighChartsData.prototype.getShinyPercentage = function(resultSet) {	
@@ -528,6 +528,63 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		eggMovePercentage: this.getEggMovePercentage(resultSet),
 		perfectIvPercentage: this.getPerfectIVPercentage(resultSet)
 	};
+};
+
+/**
+ * Show percentages of hiddenAbilities, perfectIVs.. based on dates.
+ */
+HighChartsData.prototype.getQuickStatsTrendsByDates = function() {
+	var startDate = new Date(2013, 10, 21),
+		endDate = new Date(),
+		shinyJSON = {
+			name: "Shiny<br/> Pokemon",
+			shortName: "Shiny Pokemon",
+			data: []
+		},
+		hiddenAbilityJSON = {
+			name: "Pokemon with a<br/> Hidden Ability",
+			shortName: "Hidden Ability",
+			data: []
+		},
+		pokerusJSON = {
+			name: "Pokemon with <br/> Pokerus",
+			shortName: "PokeRus",
+			data: []
+		},
+		eggMoveJSON = {
+			name: "Pokemon with<br/> Egg Moves",
+			shortName: "Egg Moves",
+			data: []
+		},
+		perfectIvJSON = {
+			name: "Pokemon with at<br/> least one Perfect IV",
+			shortName: "Perfect IV",
+			data: []
+		},
+		highchartsTrendsChart;
+
+	while(startDate < endDate) {
+		var dateString = startDate.customFormatDate(),
+			formattedDateResults = this.getResultsByDate(dateString),
+			utcDateString = this.formatDateFromString(dateString),
+			quickStatsByDate = this.getQuickStats(formattedDateResults);
+
+		// Populate the Highcharts data
+		if(quickStatsByDate.resultCount > this.dailyThreshold) {
+			shinyJSON.data.push([utcDateString, quickStatsByDate.shinyPercentage]);
+			hiddenAbilityJSON.data.push([utcDateString, quickStatsByDate.hiddenAbilityPercentage]);
+			pokerusJSON.data.push([utcDateString, quickStatsByDate.pokerusPercentage]);
+			eggMoveJSON.data.push([utcDateString, quickStatsByDate.eggMovePercentage]);
+			perfectIvJSON.data.push([utcDateString, quickStatsByDate.perfectIvPercentage]);
+		}
+
+		startDate.setDate(startDate.getDate()+1);
+	}
+
+	highchartsTrendsChart = [shinyJSON, hiddenAbilityJSON, pokerusJSON, eggMoveJSON, perfectIvJSON];
+
+	return highchartsTrendsChart;
+
 };
 
 HighChartsData.prototype.formatDateFromString = function(dateString){

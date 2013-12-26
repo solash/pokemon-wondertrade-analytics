@@ -1,0 +1,30 @@
+$('#date-trend-chart').highcharts({
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: 'Pokemon Stats By Date'
+    },            
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+            day: '%b, %e'
+        },
+        plotLines: <% include _eventPlotlines.ejs %>
+    },
+    yAxis: {
+        title: {
+            text: 'Percentage'
+        },
+        labels: {
+            formatter: function(){return this.value+"%"}
+        },
+        min: 0
+    },
+    tooltip: {
+        formatter: function() {
+                return '<b>'+ this.series.options.shortName +'</b><br/>'+ this.y+'%';
+        }
+    },
+    series: <%- quickStatTrends %>
+});
