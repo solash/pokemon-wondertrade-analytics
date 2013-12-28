@@ -142,9 +142,30 @@ HighChartsData.prototype.getCountsByUserIdAndUserTable = function(resultSet, use
 	});
 
 	userTable = _.sortBy(userTable, 'count');
-	userTable.reverse();	
+	userTable.reverse();
 
 	return userTable;
+
+}
+
+HighChartsData.prototype.getCountsByUserIdAndUserTableFormatted = function(resultSet, userTable){
+    if(!resultSet) {
+        resultSet = this.deserializedResults;
+    }
+    var formattedResults = [];
+
+    var countsByUserId = _.countBy(resultSet, 'userId');
+    _.each(countsByUserId, function(userIdCount, userId){
+        if(userTable[userId] && userIdCount > 0) {
+            formattedResults.push([ userTable[userId], userIdCount ]);
+        }
+    });
+
+    formattedResults = _.sortBy(formattedResults, function(userResult){
+        return userResult[1];
+    });
+
+    return formattedResults;
 
 }
 

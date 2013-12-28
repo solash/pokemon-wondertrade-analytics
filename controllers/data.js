@@ -299,27 +299,35 @@ exports.initController = function(app, dataStore) {
 
 	app.get('/data/dates/:submissionDate', function(request, response){
 
-		dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-			var userId = request.params.userId,
-				submissionDate = request.params.submissionDate,
-				highChartsData = new HighChartsData(result),
-				highChartsDataByUserId = highChartsData.getResultsBySubmissionDate(submissionDate),
-				pokemonTable = highChartsData.getPokemonTable(highChartsDataByUserId);
 
-			pokemonTable.reverse();
+		dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTable = new UserTableModel(result);
 
-			response.render('data/datesByDay', {
-				title: ' Analytics for '+submissionDate,
-				pageState: '',
-				user: request.user,
-				submissionDate: submissionDate,
-				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataByUserId)),
-				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
-				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
-				pokemonTable: pokemonTable,
-				quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
-				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
+			dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+				var userId = request.params.userId,
+					submissionDate = request.params.submissionDate,
+					highChartsData = new HighChartsData(result),
+					highChartsDataBySubmissionDate = highChartsData.getResultsBySubmissionDate(submissionDate),
+					pokemonTable = highChartsData.getPokemonTable(highChartsDataBySubmissionDate),
+					userChart = highChartsData.getCountsByUserIdAndUserTableFormatted(highChartsDataBySubmissionDate, userTable);
+
+				pokemonTable.reverse();
+
+				response.render('data/datesByDay', {
+					title: ' Analytics for '+submissionDate,
+					pageState: '',
+					user: request.user,
+					submissionDate: submissionDate,
+					userChart: JSON.stringify(userChart),
+					wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataBySubmissionDate)),
+					pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataBySubmissionDate)),
+					genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataBySubmissionDate)),
+					pokemonTable: pokemonTable,
+					quickstats: highChartsData.getQuickStats(highChartsDataBySubmissionDate),
+					countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataBySubmissionDate))
+				});
 			});
+
 		});
 	});
 

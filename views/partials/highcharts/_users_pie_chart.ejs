@@ -1,9 +1,10 @@
-$('#pokemon-chart').highcharts({
+$('#users-chart').highcharts({
     title: {
-        text: 'Wonder Trades by Pokemon'
+        text: 'Wonder Trades by Contributers'
     },
+    color: ['#fff00', '#000fff'],
     tooltip: {
-	    pointFormat: '{series.name} : <b>{point.y} ({point.percentage:.1f}%)</b>'
+        pointFormat: '<b>{point.y}</b>'
     },
     plotOptions: {
         pie: {
@@ -13,13 +14,13 @@ $('#pokemon-chart').highcharts({
                 enabled: true,
                 color: '#000000',
                 connectorColor: '#000000',
-                format: '<b>{point.name}</b>: {point.y}'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
             }
         }
     },
     series: [{
         type: 'pie',
-        name: 'Pokemon',
-        data: <%- pokemonChart %>
+        name: 'Country',
+        data: <%- userChart %>
     }]
 });
