@@ -89,7 +89,44 @@ exports.initController = function(app, dataStore) {
         });
 	});
 
-	app.get('/help', function(request, response){		
+    app.get('/contest', function(request, response){
+
+        dataStore.lrange('userTable' , 0, -1, function(error, result){
+
+            var userTable = {};
+            for(var user in result) {
+                var parsedUser = JSON.parse(result[user]);
+                userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
+            }
+
+            dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+                var highChartsData = new HighChartsData(result),
+                    dataByDateRange = highChartsData.getResultsByDateRange("2013-12-23", "2014-1-3"),
+                    startDateOverride = new Date(2013, 11, 22),
+                    endDateOverride = new Date(2014, 0, 3),
+                    userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(dataByDateRange, userTable),
+                    trendingPokemonChart = highChartsData.getCountTrendsByUsers(dataByDateRange, userTable, startDateOverride, endDateOverride);
+
+
+                trendingPokemonChart = _.sortBy(trendingPokemonChart, 'fullCount');
+                trendingPokemonChart.reverse();
+                trendingPokemonChart = _.first(trendingPokemonChart, 10);
+
+                response.render('contest', {
+                    title: 'Project Contributers',
+                    pageState: '',
+                    user: request.user,
+                    trendingPokemonChart: JSON.stringify(trendingPokemonChart),
+                    userTable: userTableWithCounts,
+                    redditUsers: ""
+                });
+
+            });
+
+        });
+    });
+
+    app.get('/help', function(request, response){
 		response.render('help', {
 			title: 'Wonder Trade Contributers',
 			pageState: '',			

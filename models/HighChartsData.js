@@ -220,6 +220,13 @@ HighChartsData.prototype.getResultsByDate = function(date){
     return _.where(this.deserializedResults, {date: date});
 };
 
+HighChartsData.prototype.getResultsByDateRange = function(startDate, endDate){
+    return _.filter(this.deserializedResults, function(result){
+        var resultDate =result.date;
+        return (resultDate >= startDate && resultDate <= endDate);
+    });
+};
+
 HighChartsData.prototype.getNicknamesByResultSet = function(resultSet){
     if(!resultSet) {
         resultSet = this.deserializedResults;
@@ -370,7 +377,7 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 	return trendingPokemonChart;
 };
 
-HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable){
+HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable, startDateOverride, endDateOverride){
 	var usersGroupedByDate = {},
 		trendingPokemonChart = [],
 		context = this;
@@ -398,8 +405,8 @@ HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable){
 			fullCount: 0
 		};
 
-		var startDate = new Date(2013, 10, 21),
-			endDate = new Date(),
+		var startDate = (startDateOverride ? new Date(startDateOverride) : new Date(2013, 10, 21) ),
+			endDate = (endDateOverride ? new Date(endDateOverride) : new Date() ),
 			fullDateRange = [];
 		while(startDate < endDate) {
 			fullDateRange.push([context.formatDateFromString(startDate.customFormatDate()), 0]);

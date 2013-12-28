@@ -1,0 +1,11 @@
+<% layout('layout') -%>
+<h3>Holiday Contest</h3>
+<p class="update center">In light of the Holiday Season and Pokebank being released soon, I'm giving away pokemon to the top contributers.<br> <a href="http://www.reddit.com/r/WonderTrade/comments/1tkxwa/wondertrade_analytics_giveaway/">Check here</a> for more details.<br/> The contest spans from December 23rd, 2013 to January 3rd, 2014.</p>
+<% include partials/_user-table.ejs %>
+<div class="chart-box full-chart" id="trend-chart"></div>
+
+<script>
+    $(document).ready(function(){
+        <% include /partials/highcharts/_trend-chart-nonPercent.ejs %>
+    });
+</script>

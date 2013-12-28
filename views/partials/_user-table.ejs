@@ -6,7 +6,7 @@
                     <a href="/users/<%= userTable[user].id %>">
                         <%= userTable[user].username %>
                     </a>
-                    <% if (redditUsers[userTable[user].id] && redditUsers[userTable[user].id].redditUserName) { %>
+                    <% if (redditUsers && redditUsers[userTable[user].id] && redditUsers[userTable[user].id].redditUserName) { %>
                         <a href="http://www.reddit.com/user/<%= redditUsers[userTable[user].id].redditUserName %>">
                             <img src="/images/reddit.gif" border="0" />
                         </a>
