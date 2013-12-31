@@ -86,7 +86,7 @@ exports.initController =  function(app, dataStore, passport) {
 							pageState: 'success',
 							stateMessage:	'Your Wonder Trade was successfully added.'
 						});
-						console.log('A new wondertrade was added');
+						console.log('A new wondertrade was added by user:'+userId);
 					});	
 				} else {
 					response.render('wondertrade/new', {

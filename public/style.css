@@ -135,6 +135,9 @@ i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: mi
 .input-column .radio-group label:hover,
 .checkbox-group label:hover{cursor: pointer;background: rgba(0,0,0,.6)}
 
+.sentiment{text-align: center;border:1px solid rgba(0,0,250,.3);padding: 0.5em 0;}
+.sentiment label{background: rgba(0,0,0,.1);padding: 5px;}
+
 button{border: none;display:block;margin: 0 auto;}
 button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .pokeball-submit{

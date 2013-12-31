@@ -1,15 +1,18 @@
 function sanitizeParams(params, userId) {
-	var currentDate;
+	var currentDate,
+        currentTime;
 
 	// Sanitize Date
-	if(params.date) {
+	if(params.date && params.time) {
 		currentDate = params.date;
+        currentTime = params.time;
 	} else {
 		var now = new Date(),
 			year = now.getFullYear(),
 			month = ('0'+(now.getMonth()+1)).slice(-2),
 			day = ('0'+(now.getDate())).slice(-2);
 		currentDate = [year, month, day].join('-');
+        currentTime = (now.getSeconds())+(now.getMinutes()*60)+(now.getHours()*60*60);
 	}
 
 	// Sanitize Gender values
@@ -18,6 +21,11 @@ function sanitizeParams(params, userId) {
 	} else {
 		params.trainerGender = "";
 	}
+
+    // Sanitize Likes
+    if(params.liked !== "like" && params.liked !== "dislike") {
+        params.liked = "";
+    }
 
 	// Sanitize pokemonId
 	var pokemonId = parseInt(params.pokemonId, 10);
@@ -33,11 +41,6 @@ function sanitizeParams(params, userId) {
 		pokemonLevel = '';		
 	}
 
-	if(!userId) {
-		userId = 'anonymous'
-	}
-	
-
 	params.pokemonId = pokemonId;
 	params.pokemonNickname = params.pokemonNickname || '';
 	params.hasItem = (params.hasItem ? true : false);
@@ -48,10 +51,11 @@ function sanitizeParams(params, userId) {
 	params.isShiny = (params.isShiny ? true : false);
 	params.level = pokemonLevel;
 	params.trainerGender = params.trainerGender || '';
-	params.trainerCountry = params.trainerCountry || '';
+	params.trainerCountry = params.trainerCountry || false;
 	params.trainerCountrySub1 = params.trainerCountrySub1  || '';
 	params.date = currentDate;
-	params.userId = userId;
+    params.time = currentTime;
+	params.userId = userId || false;
 
 	return params;
 }
@@ -75,10 +79,14 @@ exports.model = function(params, userId) {
 		"trainerCountry" : params.trainerCountry,
 		"trainerCountrySub1" : params.trainerCountrySub1,
 		"date" : params.date,
-		"userId" : params.userId
+        "time" : params.time,
+		"userId" : params.userId,
+        "liked" : params.liked
 	};
 
-	if(!pokemonModel.pokemonId) {
+	if(!pokemonModel.pokemonId ||
+        !pokemonModel.userId ||
+        !pokemonModel.trainerCountry) {
 		return false;
 	} else {
 		return pokemonModel;

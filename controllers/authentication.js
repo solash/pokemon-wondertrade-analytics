@@ -80,7 +80,7 @@ exports.initController = function(app, dataStore, passport, LocalStrategy) {
 				} else {
 					var newUser = new UserModel({username: username, password: password.hashCode(), id:(parseInt(newestUserId)+1)});
 					dataStore.lpush('userTable', JSON.stringify(newUser));
-					console.log("A new user was added");
+					console.log("New user "+username+" was added");
 					request.login(newUser, function(err) {
 					  if (err) { return next(err); }
 					  return response.redirect('/help');
