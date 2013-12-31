@@ -502,6 +502,42 @@ HighChartsData.prototype.getTopTenPokemon = function(){
 	return _.first(countTrends,10);
 };
 
+HighChartsData.prototype.getCommunityLikes = function(resultSet){
+    var communityOpinion = [];
+    if(!resultSet) {
+        resultSet = this.deserializedResults;
+    }
+
+    var wonderTradesByPokemon = _.groupBy(resultSet, function(wonderTrade){
+        return wonderTrade.pokemonId;
+    });
+
+    _.each(wonderTradesByPokemon, function(pokemonList, pokemonId){
+        var likedCounts = _.countBy(pokemonList, function(pokemon){
+            if(pokemon.liked === "like" || pokemon.liked === "dislike"){
+                return pokemon.liked;
+            }
+        });
+
+        // Preset 0 likes and dislikes
+        likedCounts = _.extend({like: 0, dislike: 0}, likedCounts);
+
+        var likes = likedCounts.like,
+            dislikes = likedCounts.dislike;
+
+        if(likes || dislikes) {
+            var likePercentage = (likes / (likes+dislikes)*100).toFixed(2);
+            communityOpinion.push([PokemonHash[pokemonId], likePercentage]);
+        }
+    });
+
+    communityOpinion = _.sortBy(communityOpinion, function(pokemonData){
+        return pokemonData[1]*-1
+    });
+
+    return communityOpinion;
+}
+
 HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSet) {
 	if(!resultSet) {
 		resultSet = this.deserializedResults;

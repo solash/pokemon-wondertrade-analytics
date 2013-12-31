@@ -1,0 +1,8 @@
+<% layout('../layout') %>
+<h3>Liked to Dislike Percentage</h3>
+
+<ul>
+    <% for(var pokemonData in pokemonLikenessList ) { %>
+        <li><%= pokemonLikenessList[pokemonData][0] %>: <%= pokemonLikenessList[pokemonData][1] %>%</li>
+    <% } %>
+</ul>

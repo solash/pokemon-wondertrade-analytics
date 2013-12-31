@@ -331,7 +331,22 @@ exports.initController = function(app, dataStore) {
 		});
 	});
 
+    app.get('/data/likes', function(request, response){
 
+        dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+            var highChartsData = new HighChartsData(result),
+                pokemonLikenessList = highChartsData.getCommunityLikes();
+
+
+            response.render('data/likes', {
+                title: 'Wonder Trade Sentiment',
+                pageState: '',
+                user: request.user,
+                pokemonLikenessList: pokemonLikenessList
+            });
+        });
+
+    });
 
 	// Show the individual user page.
 	app.get('/users/:userId', function(request, response){
