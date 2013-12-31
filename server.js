@@ -4,8 +4,7 @@ var express = require('express'),
 	app = express(),
 	passport = require("passport"),
 	LocalStrategy = require('passport-local').Strategy,
-	redis,
-    RedisStore = require('connect-redis')(express),
+    HerokuRedisStore = require('connect-heroku-redis')(express),
 	dataStore;
 
 process.env.TZ = 'America/Chicago';
@@ -27,7 +26,7 @@ app.configure(function() {
 	app.use(express.cookieParser());
 	app.set('view engine', 'ejs');
 	app.set('views', __dirname + '/views');
-	app.use(express.session({ secret: 'keyboard cat times eleven',store: new RedisStore() }));
+	app.use(express.session({ secret: 'keyboard cat times eleven',store: new HerokuRedisStore() }));
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(express.static(__dirname + '/public'));
