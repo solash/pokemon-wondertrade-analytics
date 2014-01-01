@@ -1,8 +1,15 @@
 <% layout('../layout') %>
-<h3>Liked to Dislike Percentage</h3>
+<h3>Liked Pokemon</h3>
+<ul class="pokemon-like-list">
+    <% (pokemonLikenessList.likes).forEach(function(pokemon){ %>
+        <% include ../partials/_pokemon-like-data.ejs %>
+    <% }); %>
+</ul>
 
-<ul>
-    <% for(var pokemonData in pokemonLikenessList ) { %>
-        <li><%= pokemonLikenessList[pokemonData][0] %>: <%= pokemonLikenessList[pokemonData][1] %>%</li>
-    <% } %>
+<h3>Disliked Pokemon</h3>
+
+<ul class="pokemon-like-list">
+    <% (pokemonLikenessList.dislikes).forEach(function(pokemon){ %>
+        <% include ../partials/_pokemon-like-data.ejs %>
+    <% }); %>
 </ul>

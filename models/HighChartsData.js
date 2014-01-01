@@ -503,7 +503,10 @@ HighChartsData.prototype.getTopTenPokemon = function(){
 };
 
 HighChartsData.prototype.getCommunityLikes = function(resultSet){
-    var communityOpinion = [];
+    var communityOpinion = {
+        likes: [],
+        dislikes: []
+    };
     if(!resultSet) {
         resultSet = this.deserializedResults;
     }
@@ -526,13 +529,31 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
             dislikes = likedCounts.dislike;
 
         if(likes || dislikes) {
-            var likePercentage = (likes / (likes+dislikes)*100).toFixed(2);
-            communityOpinion.push([PokemonHash[pokemonId], likePercentage]);
+            var totalOpinions = likes+dislikes,
+                likePercentage = (likes / (totalOpinions)*100).toFixed(2),
+                pokemonLikesObject = {
+                    name: PokemonHash[pokemonId],
+                    percentage: likePercentage,
+                    count: totalOpinions,
+                    likes: likes,
+                    dislikes: dislikes
+                };
+
+            if(pokemonLikesObject.count > 2) {
+                if(likePercentage > 50) {
+                    communityOpinion.likes.push(pokemonLikesObject);
+                } else {
+                    communityOpinion.dislikes.push(pokemonLikesObject);
+                }
+            }
         }
     });
 
-    communityOpinion = _.sortBy(communityOpinion, function(pokemonData){
-        return pokemonData[1]*-1
+    communityOpinion.likes = _.sortBy(communityOpinion.likes, function(pokemonData){
+        return parseInt(pokemonData.likes)*-1;
+    });
+    communityOpinion.dislikes = _.sortBy(communityOpinion.dislikes, function(pokemonData){
+        return parseInt(pokemonData.dislikes)*-1;
     });
 
     return communityOpinion;
