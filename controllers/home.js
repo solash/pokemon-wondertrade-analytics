@@ -103,7 +103,7 @@ exports.initController = function(app, dataStore) {
                 var highChartsData = new HighChartsData(result),
                     dataByDateRange = highChartsData.getResultsByDateRange("2013-12-23", "2014-1-3"),
                     startDateOverride = new Date(2013, 11, 22),
-                    endDateOverride = new Date(2014, 0, 3),
+                    endDateOverride = new Date(2014, 0, 4),
                     userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(dataByDateRange, userTable),
                     trendingPokemonChart = highChartsData.getCountTrendsByUsers(dataByDateRange, userTable, startDateOverride, endDateOverride);
 
