@@ -22,18 +22,3 @@ node server.js
 
 
 ** Note, redis-server is a hard dependency (for now)
-
-
-### Reddit people intererested in helping<
-https://docs.google.com/spreadsheet/ccc?key=0AoJVHM5p2TbTdFhtS0pWSUxRLXdmaE50Q2hQamFDb0E&usp=sharing
-
-	MindbogglerXD
-	psquared3524
-	Faranae
-	floresitabonita
-	bee-chain
-	Kaz3
-	KingofAces
-
-### Tumblr
- moonis
