@@ -48,12 +48,15 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .update{padding:0.5em;background: rgba(0,250,0,.6);color: #333;text-shadow: 1px 1px 1px #aaa;}
 
 /* Sidebar */
-.page-sidebar{background: rgba(0,0,0,0.8);padding: 0.5em 0.2em;overflow: hidden;font-family: "Steelworks";}
+.page-sidebar{background: rgba(0,0,0,0.8);padding: 0.2em;overflow: hidden;font-family: "Steelworks";}
 .page-sidebar h3{padding: 0;margin:0;float: left;}
-.page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;}
+.page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;clear: both;overflow: hidden;border: 1px solid #333;}
 .page-sidebar ul li{float: left;height: 3em;position:relative;}
 .page-sidebar ul li a,
 .page-sidebar ul li span{display: table-cell;height: 3em;vertical-align: middle;padding:0 1em 0 0.5em;}
+
+.page-sidebar .sidebar-overview{margin-bottom: 5px;}
+.page-sidebar .sidebar-data{}
 
 
 .page-sidebar ul li:before{border-left: 0.5em solid #000;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 1px;content: ' ';z-index: 2;}

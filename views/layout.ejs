@@ -58,24 +58,28 @@
     	<div class="container page">	      	     
         <div class="page-sidebar">
           
-          <ul>
-            <li><span>Site<br/>Nav</span></li>
+          <ul class="sidebar-overview">
+            <li><span>General:</span></li>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/contributers">Site<br/>Contributers</a></li>
+            <li><a href="/contributers">Contributers</a></li>
             <% if(user) { %>              
               <li><a href="/help">Helping<br/> Out</a></li>
               <li><a href="/wondertrade/new">Add a<br/> wonder trade</a></li>
             <% } %>              
             <li><a href="/wondertrade">Recent<br/> WonderTrades</a></li>
-            <li><a href="/data">Data<br/>Overview</a></li>
-            <li><a href="/data/pokemon">Data By<br/> Pokemon</a></li>
-            <li><a href="/data/regions">Data By<br/> Region</a></li>
-            <li><a href="/data/hiddenAbilities">Data By<br/> Hidden Abilities</a></li>
-            <li><a href="/data/perfectIV">Data By<br/> Perfect IV</a></li>
-            <li><a href="/data/gender">Data By<br/> Gender</a></li>
-            <li><a href="/data/levels">Data By<br/> Levels</a></li>
-            <li class="last"><a href="/data/dates">Data By<br/> Dates</a></li>
+            <li class="last"><a href="/data/likes">Liked<br/> Pokemon</a></li>
+          </ul>
+          <ul class="sidebar-data">
+              <li><span>Data:</span></li>
+            <li><a href="/data">Overview</a></li>
+            <li><a href="/data/pokemon">Pokemon</a></li>
+            <li><a href="/data/regions">Regions</a></li>
+            <li><a href="/data/hiddenAbilities">Hidden<br/>Abilities</a></li>
+            <li><a href="/data/perfectIV">Perfect<br/> IV</a></li>
+            <li><a href="/data/gender">Gender</a></li>
+            <li><a href="/data/levels">Levels</a></li>
+            <li class="last"><a href="/data/dates">Dates</a></li>
           </ul>
         </div>
         <div class="page-content">
