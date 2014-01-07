@@ -2,7 +2,7 @@ Pokemon Wonder Trade
 ===================
 
 This is the start of the pokemon wondertrade analytics page.
-
+The current build can be found at: http://www.wondertradeanalytics.com/
 
 Getting started
 ==============
