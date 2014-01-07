@@ -41,6 +41,17 @@ function sanitizeParams(params, userId) {
 		pokemonLevel = '';		
 	}
 
+    // Sanitize Trainer Id
+    // 65535 is the maximum value for a trainerID
+    var trainerId = "",
+        trainerName = "";
+    if(params.trainerId &&
+        (/^\d{5}$/).test(params.trainerId) &&
+        parseInt(params.trainerId, 10) <= 65535) {
+        trainerId = params.trainerId;
+        trainerName = params.trainerName;
+    }
+
 	params.pokemonId = pokemonId;
 	params.pokemonNickname = params.pokemonNickname || '';
 	params.hasItem = (params.hasItem ? true : false);
@@ -53,6 +64,8 @@ function sanitizeParams(params, userId) {
 	params.trainerGender = params.trainerGender || '';
 	params.trainerCountry = params.trainerCountry || false;
 	params.trainerCountrySub1 = params.trainerCountrySub1  || '';
+    params.trainerId = trainerId;
+    params.trainerName = trainerName;
 	params.date = currentDate;
     params.time = currentTime;
 	params.userId = userId || false;
@@ -81,7 +94,9 @@ exports.model = function(params, userId) {
 		"date" : params.date,
         "time" : params.time,
 		"userId" : params.userId,
-        "liked" : params.liked
+        "liked" : params.liked,
+        "trainerId" : params.trainerId,
+        "trainerName" : params.trainerName
 	};
 
 	if(!pokemonModel.pokemonId ||

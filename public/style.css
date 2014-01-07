@@ -106,7 +106,8 @@ i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: mi
 /* Wondertrade new */
 .input-columns{margin: 0 auto;width: 80%}
 .input-columns:after{clear: both;content: '';display: block;}
-.input-column{float: left;width: 48%;margin: 0 1%;min-height:10em;padding: 1em;font-weight: bold;}
+.input-column{float: left;width: 48%;margin: 0 1%;font-weight: bold;}
+.input-column-inner{min-height:10em;padding: 1em;}
 .input-column label{font-weight: normal;}
 .input-column .radio-group,
 .input-column select,
@@ -115,6 +116,7 @@ i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: mi
 .input-column .input-row{line-height: 1.5em;clear:both;margin: 1em 0;}
 .pokemon-details{background: rgba(100,150,100,.6);}
 .trainer-details{background: rgba(100,100,150,.6);}
+.ot-details{background: rgba(150,150,100,.6);}
 .clarify-inputs{font-weight:normal;text-align:center;font-size: 0.9em;}
 
 .hiddenAbility-wrapper{position: relative;}
@@ -137,6 +139,9 @@ i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: mi
 .checkbox-group label.full{min-width: 96.75%}
 .input-column .radio-group label:hover,
 .checkbox-group label:hover{cursor: pointer;background: rgba(0,0,0,.6)}
+
+.required{position: relative}
+.required:before{content:"*";color: #f00;position:absolute;left: -8px;}
 
 .sentiment{text-align: center;border:1px solid rgba(0,0,250,.3);padding: 0.5em 0;}
 .sentiment label{background: rgba(0,0,0,.1);padding: 5px;}
@@ -224,7 +229,8 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .pokemon-like-data{float: left;background: rgba(200,200,0,.1);box-shadow:2px 2px 2px #111;border:1px solid rgba(250,250,250,.1);padding: 0.5em;margin: 0.2em;}
 
 @media (max-width: 800px) {
-	.input-column{width: 100%;}
+    .input-columns,
+    .input-column{width: 100%;}
 	.clarify-inputs{display: none;}
     .redditPosts .redditPost {width: 49.6%;}
 }
