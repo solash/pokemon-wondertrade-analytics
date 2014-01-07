@@ -1,11 +1,10 @@
 function sanitizeParams(params, userId) {
-	var currentDate,
-        currentTime;
+	var currentTime = params.time || "",
+        currentDate;
 
 	// Sanitize Date
-	if(params.date && params.time) {
+	if(params.date) {
 		currentDate = params.date;
-        currentTime = params.time;
 	} else {
 		var now = new Date(),
 			year = now.getFullYear(),

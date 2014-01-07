@@ -1,8 +1,10 @@
 var UserTableModel = require('../models/UserTable').model,
 	HighChartsData = require('../models/HighChartsData').model,
+    WondertradeModel = require('../models/wondertrade').model,
 	PokemonList = require('../data/pokemonList.json'),
 	CountryList = require('../data/countryList.json'),
-	PokemonHash = {},
+    fs = require('fs'),
+    PokemonHash = {},
 	CountryHash = {};
 
 	for(var pokemon in PokemonList) {
@@ -14,15 +16,6 @@ var UserTableModel = require('../models/UserTable').model,
 	};
 
 exports.initController = function(app, dataStore) {
-	// Admin Related Stuff.
-	app.get('/operationCleanSlate', function(request, response){
-		var currentUser = request.user;
-		if(currentUser && currentUser.username == "TheIronDeveloper") {
-			dataStore.del('userTable');		
-			dataStore.del('wondertrade');
-			response.send('Operation Clean Slate');
-		}		
-	});
 
 	app.get('/fullLogs', function(request, response){
 		var currentUser = request.user;
@@ -101,4 +94,45 @@ exports.initController = function(app, dataStore) {
 			response.send('Forbidden.');
 		}
 	});
+
+    app.get('/massImport', function(req, resp){
+        var currentUser = req.user;
+        if(currentUser && currentUser.username == "TheIronDeveloper") {
+            resp.render('massImport/index', {
+                title: 'Wonder Trade Full List',
+                pageState: '',
+                user: req.user
+            });
+        } else {
+            response.send('Forbidden.');
+        }
+    });
+
+    app.post('/massImport', function(req, resp){
+        var currentUser = req.user;
+        if(currentUser && currentUser.username == "TheIronDeveloper") {
+            console.log('Mass Importing from File.');
+            fs.readFile(req.files.massImportFile.path, function (err, data) {
+                if(err) {
+                    resp.send('There was an error');
+                    return;
+                }
+                var parsedData = JSON.parse(data),// This could be system breaking... we need a better solution here.
+                    count = 0;
+                for(var wonderTradeJson in parsedData) {
+                    var wonderTradeParsedData = parsedData[wonderTradeJson],
+                        wonderTradeObject = new WondertradeModel(wonderTradeParsedData, wonderTradeParsedData.userId);
+
+                    if(wonderTradeObject) {
+                        dataStore.lpush('wondertrade', JSON.stringify(wonderTradeObject));
+                        count++;
+                    }
+                }
+                resp.send(count+' Wonder Trades Successfully Imported');
+
+            });
+        } else {
+            resp.send('Forbidden.');
+        }
+    });
 }

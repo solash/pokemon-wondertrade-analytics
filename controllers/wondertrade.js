@@ -73,7 +73,7 @@ exports.initController =  function(app, dataStore, passport) {
 			} else {
 				var WondertradeParams = request.body,
 					userId = currentUser.id,
-					wondertrade = WondertradeModel(WondertradeParams, userId),
+					wondertrade = new WondertradeModel(WondertradeParams, userId),
 					serializedWondertrade = JSON.stringify(wondertrade);
 
 				if(wondertrade) {
