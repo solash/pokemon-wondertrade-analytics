@@ -69,7 +69,7 @@ exports.initController = function(app, dataStore) {
 
 				dataStore.lrange('wondertrade' , 0, -1, function(error, result){
 					for(var wondertrade in result) {
-						tempWondertrade = JSON.parse(result[wondertrade]);
+						var tempWondertrade = JSON.parse(result[wondertrade]);
 						if(tempWondertrade.userId == userId) {											
 							dataStore.lrem('wondertrade', 0, result[wondertrade]);				
 							console.log('Removed: ');
@@ -94,6 +94,29 @@ exports.initController = function(app, dataStore) {
 			response.send('Forbidden.');
 		}
 	});
+
+    app.get('/cleanUpUndefined', function(req, resp){
+
+        var currentUser = req.user;
+        if(currentUser && currentUser.username == "TheIronDeveloper") {
+            dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+                var count = 0;
+                for(var wondertrade in result) {
+                    var currentWT = result[wondertrade];
+                    if(currentWT === "[object Object]" ||
+                        currentWT === "{}") {
+                        dataStore.lrem('wondertrade', 0, currentWT);
+                        console.log('Removed: ');
+                        console.log(currentWT);
+                        count++;
+                    }
+                }
+                resp.send('Success. ('+count+')');
+            });
+        } else {
+            resp.send('Forbidden.');
+        }
+    });
 
     app.get('/massImport', function(req, resp){
         var currentUser = req.user;
@@ -121,10 +144,11 @@ exports.initController = function(app, dataStore) {
                     count = 0;
                 for(var wonderTradeJson in parsedData) {
                     var wonderTradeParsedData = parsedData[wonderTradeJson],
-                        wonderTradeObject = new WondertradeModel(wonderTradeParsedData, wonderTradeParsedData.userId);
+                        wonderTradeObject = new WondertradeModel(wonderTradeParsedData, wonderTradeParsedData.userId),
+                        serializedWonderTrade = JSON.stringify(wonderTradeObject);
 
-                    if(wonderTradeObject) {
-                        dataStore.lpush('wondertrade', JSON.stringify(wonderTradeObject));
+                    if(serializedWonderTrade) {
+                        dataStore.lpush('wondertrade', serializedWonderTrade);
                         count++;
                     }
                 }
