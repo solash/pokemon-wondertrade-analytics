@@ -196,6 +196,28 @@ exports.initController = function(app, dataStore) {
         });
     }
 
+    function ShinyPage(req, resp){
+        var highChartsData = req.highChartsData,
+            highChartsDataWithPerfectIV = highChartsData.getResultsWithShinyPokemon(),
+            pokemonTable = highChartsData.getPokemonTable(highChartsDataWithPerfectIV);
+
+        pokemonTable.reverse();
+
+        resp.render('data/shiny', {
+            title: 'Shiny Pokemon',
+            pageState: '',
+            result: req.result,
+            PokemonHash: PokemonHash,
+            levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataWithPerfectIV)),
+            countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataWithPerfectIV)),
+            pokemonList: PokemonList,
+            user: req.user,
+            pokemonTable: pokemonTable,
+            pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataWithPerfectIV)),
+            quickstats: highChartsData.getQuickStats(highChartsDataWithPerfectIV)
+        });
+    }
+
     function GenderPage(req, resp){
         var highChartsData = req.highChartsData,
             maleResults = highChartsData.getResultsByGender('male'),
@@ -422,6 +444,7 @@ exports.initController = function(app, dataStore) {
 	app.get('/data/nicknames', NicknamesPage);
     app.get('/data/hiddenAbilities', HiddenAbilitiesPage);
 	app.get('/data/perfectIV', PerfectIVPage);
+    app.get('/data/shiny', ShinyPage);
 	app.get('/data/gender', GenderPage);
 	app.get('/data/levels', LevelsPage);
 	app.get('/data/levels/:pokemonLevel', LevelPage);

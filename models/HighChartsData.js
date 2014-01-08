@@ -185,6 +185,10 @@ HighChartsData.prototype.getResultsWithPerfectIV = function() {
 	return _.where(this.deserializedResults, {hasPerfectIV: true});
 };
 
+HighChartsData.prototype.getResultsWithShinyPokemon = function() {
+    return _.where(this.deserializedResults, {isShiny: true});
+};
+
 HighChartsData.prototype.getResultsByPokemonLevel = function(pokemonLevel) {
 	pokemonLevel = parseInt(pokemonLevel);
 	if(pokemonLevel > 0 && pokemonLevel <= 100) {
