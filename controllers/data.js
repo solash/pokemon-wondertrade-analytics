@@ -335,6 +335,31 @@ exports.initController = function(app, dataStore) {
         });
     }
 
+    function OTPage(req, resp){
+        var highChartsData = req.highChartsData,
+            originalTrainers = highChartsData.getOriginalTrainers();
+
+        resp.render('data/originalTrainers', {
+            title: 'Original Trainer\'s recorded',
+            pageState: '',
+            user: req.user,
+            originalTrainers: originalTrainers
+        });
+    }
+
+    function OTPageById(req, resp){
+        var highChartsData = req.highChartsData,
+            trainerId = req.params.trainerId,
+            originalTrainers = highChartsData.getOriginalTrainersById(trainerId);
+
+        resp.render('data/originalTrainersById', {
+            title: 'Wonder Trades By '+trainerId,
+            pageState: '',
+            user: req.user,
+            originalTrainers: originalTrainers
+        });
+    }
+
     function UserIdPage(req, resp){
 
         var userId = req.params.userId;
@@ -451,6 +476,10 @@ exports.initController = function(app, dataStore) {
 	app.get('/data/dates', DatesPage);
 	app.get('/data/dates/:submissionDate', DatePage);
     app.get('/data/likes', LikesPage);
+
+
+    app.get('/originalTrainers', setupHighChartsData, OTPage);
+    app.get('/originalTrainers/:trainerId', setupHighChartsData, OTPageById);
 
     // TODO: setupUserTableData, and consider moving this to a separate controller?
     app.get('/users/*', setupHighChartsData);

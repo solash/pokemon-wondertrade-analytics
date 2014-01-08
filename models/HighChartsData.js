@@ -563,6 +563,46 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
     return communityOpinion;
 }
 
+HighChartsData.prototype.getOriginalTrainers = function(resultSet){
+    if(!resultSet) {
+        resultSet = this.deserializedResults;
+    }
+    var originalTrainers = {};
+
+    var wonderTradesByTrainerId = _.groupBy(resultSet, function(wonderTrade){
+        return wonderTrade.trainerId;
+    });
+
+    _.each(wonderTradesByTrainerId, function(wonderTrades, key){
+        if(key && key !== "undefined"){
+            var wonderTradeNames = _.groupBy(wonderTrades, function(wondertrade){return wondertrade.trainerName});
+            originalTrainers[key] = {
+                "names": _.keys(wonderTradeNames),
+                "count": wonderTrades.length
+            };
+        }
+    });
+
+    return originalTrainers;
+}
+
+HighChartsData.prototype.getOriginalTrainersById = function(trainerId){
+    var resultSet = _.where(this.deserializedResults, {"trainerId": trainerId}),
+        originalTrainers = {};
+
+    var wonderTradesByTrainerName = _.groupBy(resultSet, function(wonderTrade){
+        return wonderTrade.trainerName;
+    });
+
+    _.each(wonderTradesByTrainerName, function(wonderTrades, key){
+        if(key && key !== "undefined"){
+            originalTrainers[key] = wonderTrades;
+        }
+    });
+
+    return originalTrainers;
+}
+
 HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSet) {
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
