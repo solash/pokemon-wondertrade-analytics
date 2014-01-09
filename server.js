@@ -7,6 +7,9 @@ var express = require('express'),
     HerokuRedisStore = require('connect-heroku-redis')(express),
 	dataStore;
 
+// Useful debugger:
+// var webkitDevtoolsAgent = require("webkit-devtools-agent");
+
 process.env.TZ = 'America/Chicago';
 process.setMaxListeners(0);
 

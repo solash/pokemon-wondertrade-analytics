@@ -402,7 +402,8 @@ exports.initController = function(app, dataStore) {
                 };
 
                 if (redditUserName && redditUserName != '') {
-                    rest.get('http://www.reddit.com/r/WonderTrade/search.rss?q=subreddit%3Awondertrade+author%3A'+redditUserName).on('complete', function(data) {
+                    var redditPostsRequest = rest.get('http://www.reddit.com/r/WonderTrade/search.rss?q=subreddit%3Awondertrade+author%3A'+redditUserName);
+                    redditPostsRequest.once('complete', function(data) {
                         parseString(data, function (err, result) {
 
                             if(result && result.rss && result.rss.channel && result.rss.channel[0]) {
@@ -418,6 +419,7 @@ exports.initController = function(app, dataStore) {
                             }
                             resp.render('data/user', mav);
 
+                            redditPostsRequest.removeAllListeners('error');
                         });
                     });
                 } else {
