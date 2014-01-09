@@ -1,12 +1,14 @@
 <div class="quick-stats">
 	<h4>Quick Stats</h4>
-	<div class="total-wondertrades"><%= quickstats.resultCount %> Wonder Trades (<%= (quickstats.resultPercent) %>%)</div>
-	<ul>		
+
+	<ul>
+        <li class="total-wondertrades"><%= quickstats.resultCount %> Wonder Trades (<%= (quickstats.resultPercent) %>%)</li>
+        <li class="likes"><%= quickstats.likePercentage %>% Approval</li>
         <li class="shiny"><%= quickstats.shinyPercentage %>% Shiny</li>
         <li class="hiddenAbility"><%= quickstats.hiddenAbilityPercentage %>% Hidden Abilities</li>        
         <li class="item"><%= quickstats.itemPercentage %>% Held Item</li>
         <li class="pokerus"><%= quickstats.pokerusPercentage %>% PokeRus</li>
         <li class="eggMove"><%= quickstats.eggMovePercentage %>% With Egg Moves</li>
-        <li class="notableIV"><%= quickstats.perfectIvPercentage %>% With At least One Perfect IV</li>
+        <li class="notableIV"><%= quickstats.perfectIvPercentage %>% With a Perfect IV</li>
     </ul>
 </div>

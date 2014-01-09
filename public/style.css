@@ -169,7 +169,7 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 
 .quick-stats{background: rgba(0,0,0,.3);padding:0.5em;overflow: hidden;text-shadow: 1px 1px 1px #333;margin-bottom: 0.5em;}
 .quick-stats ul{padding: 0;margin: 0;list-style: none;}
-.quick-stats ul li{padding:0.5em 0;width: 50%;float: left;text-align: center;}
+.quick-stats ul li{padding:0.5em 0;width: 25%;float: left;text-align: center;}
 .quick-stats .shiny{background: rgba(255, 215, 0, 0.4);}
 .quick-stats .pokerus{background: rgba(160,32,240, 0.4);}
 .quick-stats .hiddenAbility{background: rgba(0,0,255,0.4);}
@@ -177,6 +177,7 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .quick-stats .eggMove{background: rgba(255,255,255,0.4);}
 .quick-stats .notableIV{background: rgba(100,200,100,0.4);}
 .quick-stats .total-wondertrades{background:rgba(0,128,0,0.4);padding:0.5em; text-align: center;}
+.quick-stats .likes{background: rgba(0,0,0,0.8);}
 
 .quick-stats .userSubmissionsByDate{overflow: hidden;}
 .quick-stats .userSubmissionsByDate li{float: left;width: auto;margin: 0.5em;}
@@ -195,8 +196,10 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .gender-sides .gender-side{float: left;width: 50%;}
 .gender-sides .male-side{background: rgba(0,0,255,.3);}
 .gender-sides .female-side{background: rgba(255,0,255,.3);}
-.gender-sides .top-ten{padding: 0;}
+.gender-sides .top-ten{padding: 0;list-style: none;}
 .gender-sides .top-ten li:nth-child(odd){background: rgba(0,0,0,.2)}
+.gender-sides .quick-stats h4{display: none;}
+.gender-sides .quick-stats li{width:50%;}
 
 .select-level-options{width: 100%;max-width:500px;margin: 0 auto;}
 .select-level-options:after{clear: both;content: ' ';display: block;}
@@ -242,11 +245,16 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
     .input-column{width: 100%;}
 	.clarify-inputs{display: none;}
     .redditPosts .redditPost {width: 49.6%;}
+
+    .quick-stats ul li{width: 50%;}
+    .gender-sides .quick-stats li{width:100%;}
 }
 
 @media (max-width: 600px) {
+    .quick-stats ul li,
 	.checkbox-group label,
 	.checkbox-group label.full{width: 100%;}
     .redditPosts .redditPost {width:100%;}
+
 }
 

@@ -5,20 +5,10 @@
 	<div class="male-side gender-side">
 		<h4>Male Stats</h4>
 
+        <% var quickstats = maleQuickstats; %>
+        <% include ../partials/_quick-stats.ejs %>
 
-		<div class="quick-stats">
-			<div class="total-wondertrades"><%= maleQuickstats.resultCount %> Wonder Trades (<%= (maleQuickstats.resultPercent) %>%)</div>
-			<ul>		
-		        <li class="shiny"><%= maleQuickstats.shinyPercentage %>% Shiny</li>
-		        <li class="hiddenAbility"><%= maleQuickstats.hiddenAbilityPercentage %>% Hidden Abilities</li>        
-		        <li class="item"><%= maleQuickstats.itemPercentage %>% Held Item</li>
-		        <li class="pokerus"><%= maleQuickstats.pokerusPercentage %>% PokeRus</li>
-		        <li class="eggMove"><%= maleQuickstats.eggMovePercentage %>% With Egg Moves</li>
-		        <li class="notableIV"><%= maleQuickstats.perfectIvPercentage %>% With At least One Perfect IV</li>
-		    </ul>
-		</div>
-
-		<div class="quick-stats">
+		<div class="chart-box">
 			<h4>Top Ten Traded</h4>
 			<ol class="top-ten">
 				<% maleTopTenPokemon.forEach(function(pokemon){ %>
@@ -33,19 +23,10 @@
 	<div class="female-side gender-side">
 		<h4>Female Stats</h4>
 
-		<div class="quick-stats">
-			<div class="total-wondertrades"><%= femaleQuickstats.resultCount %> Wonder Trades (<%= (femaleQuickstats.resultPercent) %>%)</div>
-			<ul>		
-		        <li class="shiny"><%= femaleQuickstats.shinyPercentage %>% Shiny</li>
-		        <li class="hiddenAbility"><%= femaleQuickstats.hiddenAbilityPercentage %>% Hidden Abilities</li>        
-		        <li class="item"><%= femaleQuickstats.itemPercentage %>% Held Item</li>
-		        <li class="pokerus"><%= femaleQuickstats.pokerusPercentage %>% PokeRus</li>
-		        <li class="eggMove"><%= femaleQuickstats.eggMovePercentage %>% With Egg Moves</li>
-		        <li class="notableIV"><%= femaleQuickstats.perfectIvPercentage %>% With At least One Perfect IV</li>
-		    </ul>
-		</div>
+        <% var quickstats = femaleQuickstats; %>
+        <% include ../partials/_quick-stats.ejs %>
 
-		<div class="quick-stats">
+		<div class="chart-box">
 			<h4>Top Ten Traded</h4>
 			<ol class="top-ten">
 				<% femaleTopTenPokemon.forEach(function(pokemon){ %>

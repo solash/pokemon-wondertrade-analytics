@@ -642,6 +642,22 @@ HighChartsData.prototype.getEggMovePercentage = function(resultSet) {
 	return this.getPercentageByAttribute('hasEggMove', resultSet);
 };
 
+HighChartsData.prototype.getLikePercentage = function(resultSet){
+    var likeCounts = _.countBy(resultSet, function(wonderTrade){
+            return wonderTrade.liked;
+        }),
+        likes = likeCounts.like || 0,
+        dislikes = likeCounts.dislike || 0,
+        total = likes+dislikes;
+
+    if(total > 0) {
+        var percentage = (likes/(total)*100).toFixed(2);
+        return parseFloat(percentage);
+    }
+
+    return 0;
+}
+
 HighChartsData.prototype.getQuickStats = function(resultSet) {	
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
@@ -655,7 +671,8 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 		itemPercentage: this.getItemPercentage(resultSet),
 		pokerusPercentage: this.getPokerusPercentage(resultSet),
 		eggMovePercentage: this.getEggMovePercentage(resultSet),
-		perfectIvPercentage: this.getPerfectIVPercentage(resultSet)
+		perfectIvPercentage: this.getPerfectIVPercentage(resultSet),
+        likePercentage: this.getLikePercentage(resultSet)
 	};
 };
 
