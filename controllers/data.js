@@ -58,13 +58,12 @@ exports.initController = function(app, dataStore) {
         pokemonTable.reverse();
 
         resp.render('data/pokemon', {
-            title: 'Wonder Trade Pokemon Analytics',
+            title: 'Pokemon Overview',
             pageState: '',
             result: req.result,
             PokemonHash: PokemonHash,
             trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(false, topTenPokemonIds)),
             levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
-            topTenPokemon: topTenPokemon,
             pokemonList: PokemonList,
             user: req.user,
             pokemonTable: pokemonTable,
@@ -460,6 +459,54 @@ exports.initController = function(app, dataStore) {
         });
     }
 
+    function GroupsPage(req, resp) {
+        resp.render('data/groups', {
+            title: 'Pokemon Data Sorted by Custom Groups',
+            pageState: '',
+            user: req.user
+        });
+    }
+
+    function GroupsPage_Eevee(req, resp, next) {
+        req.groupName = "Eeveelutions";
+        req.pokemonGroupArray = [134, 135, 136, 196, 197, 470, 471, 700];
+        next();
+    }
+    function GroupsPage_Starters(req, resp, next) {
+        req.groupName = "Starters";
+        req.pokemonGroupArray = [1,4,7, 152, 155, 158, 252, 255, 258, 387, 390, 393, 495, 498, 501, 650, 653, 656];
+        next();
+    }
+    function GroupsPage_TradeEvos(req, resp, next) {
+        req.groupName = "Trade Evolutions";
+        req.pokemonGroupArray = [64, 67, 75, 93, 525, 533];
+        next();
+    }
+
+    function RenderGroupData(req, resp) {
+        var highChartsData = req.highChartsData,
+            pokemonGroupArray = req.pokemonGroupArray,
+            filterdResults = highChartsData.filterGroupsOfPokemon(pokemonGroupArray),
+            pokemonTable = highChartsData.getPokemonTable(filterdResults);
+
+        pokemonTable.reverse();
+
+        resp.render('data/groupsData', {
+            title: req.groupName,
+            pageState: '',
+            result: req.result,
+            pokemonGroupArray: pokemonGroupArray,
+            PokemonHash: PokemonHash,
+            trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(filterdResults)),
+            levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(filterdResults)),
+            pokemonList: PokemonList,
+            user: req.user,
+            pokemonTable: pokemonTable,
+            pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(filterdResults)),
+            quickstats: highChartsData.getQuickStats(filterdResults)
+        });
+    }
+
 	app.get('/data', setupHighChartsData, OverviewPage);
 
     // Setup the highcharts Object before each /data/* request
@@ -478,6 +525,12 @@ exports.initController = function(app, dataStore) {
 	app.get('/data/dates', DatesPage);
 	app.get('/data/dates/:submissionDate', DatePage);
     app.get('/data/likes', LikesPage);
+
+    app.get('/groups', GroupsPage);
+    app.get('/groups/*', setupHighChartsData);
+    app.get('/groups/eeveelutions', GroupsPage_Eevee, RenderGroupData);
+    app.get('/groups/starters', GroupsPage_Starters, RenderGroupData);
+    app.get('/groups/trade-evos', GroupsPage_TradeEvos, RenderGroupData);
 
 
     app.get('/originalTrainers', setupHighChartsData, OTPage);

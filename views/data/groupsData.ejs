@@ -1,0 +1,22 @@
+<% layout('../layout') -%>
+<h3><%= title %></h3>
+<div class="pokemon-icons">
+<% for( var pokemonId in pokemonGroupArray) { %>
+    <i class="pokemon-icon thumbnails-pokemon-<%= pokemonGroupArray[pokemonId] %>"></i>
+<% } %>
+</div>
+
+<% include ../partials/_quick-stats.ejs %>
+<% include ../partials/_pokemon-table.ejs %>
+<div class="chart-box full-chart" id="trend-chart"></div>
+<div class="chart-box full-chart" id="pokemon-chart"></div>
+<div class="chart-box full-chart" id="levels-chart"></div>
+
+
+<script>
+	$(document).ready(function(){
+		<% include ../partials/highcharts/_trend-chart.ejs %>
+        <% include ../partials/highcharts/_levels-chart.ejs %>
+        <% include ../partials/highcharts/_pokemon-chart.ejs %>
+	});
+</script>

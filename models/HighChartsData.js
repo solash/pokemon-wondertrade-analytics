@@ -676,6 +676,12 @@ HighChartsData.prototype.getQuickStats = function(resultSet) {
 	};
 };
 
+HighChartsData.prototype.filterGroupsOfPokemon = function(pokemonGroupArray) {
+    return _.filter(this.deserializedResults, function(wonderTrade){
+        return _.contains(pokemonGroupArray, parseInt(wonderTrade.pokemonId));
+    });
+};
+
 /**
  * Show percentages of hiddenAbilities, perfectIVs.. based on dates.
  */
