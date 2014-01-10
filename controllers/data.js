@@ -474,12 +474,18 @@ exports.initController = function(app, dataStore) {
     }
     function GroupsPage_Starters(req, resp, next) {
         req.groupName = "Starters";
-        req.pokemonGroupArray = [1,4,7, 152, 155, 158, 252, 255, 258, 387, 390, 393, 495, 498, 501, 650, 653, 656];
+        req.pokemonGroupArray = [1, 4, 7, 152, 155, 158, 252, 255, 258, 387, 390, 393, 495, 498, 501, 650, 653, 656];
         next();
     }
     function GroupsPage_TradeEvos(req, resp, next) {
         req.groupName = "Trade Evolutions";
-        req.pokemonGroupArray = [64, 67, 75, 93, 525, 533];
+        req.pokemonGroupArray = [64, 67, 75, 93, 525, 533, 708, 711];
+        next();
+    }
+
+    function GroupsPage_TrioLegendary(req, resp, next) {
+        req.groupName = "Trio Legendarys";
+        req.pokemonGroupArray = [144, 145, 146, 243, 244, 245, 377, 378, 379, 480, 481, 482, 638, 639, 640];
         next();
     }
 
@@ -531,6 +537,7 @@ exports.initController = function(app, dataStore) {
     app.get('/groups/eeveelutions', GroupsPage_Eevee, RenderGroupData);
     app.get('/groups/starters', GroupsPage_Starters, RenderGroupData);
     app.get('/groups/trade-evos', GroupsPage_TradeEvos, RenderGroupData);
+    app.get('/groups/trio-legendarys', GroupsPage_TrioLegendary, RenderGroupData);
 
 
     app.get('/originalTrainers', setupHighChartsData, OTPage);
