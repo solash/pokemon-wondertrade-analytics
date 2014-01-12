@@ -489,6 +489,18 @@ exports.initController = function(app, dataStore) {
         next();
     }
 
+    function GroupsPage_VersionExclusive(req, resp, next) {
+        req.groupName = "Version Exclusives";
+        req.pokemonGroupArray = [120, 121, 127, 228, 229, 261, 262, 304, 305,306,345,346,347,348,539,684,685,692,693,716,90,91,138,139,140,141,214,246,247,248,309,310,509,510,538,682,683,690,691,717];
+        next();
+    }
+
+    function GroupsPage_PokeBank(req, resp, next) {
+        req.groupName = "PokeBank Only";
+        req.pokemonGroupArray = [19,20,52,53,109,110,137,151,152,153,154,155,156,157,158,159,160,200,201,233,234,243,244,245,249,250,251,252,253,254,258,259,260,287,288,289,343,344,349,350,351,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,401,402,420,421,427,428,429,431,432,456,457,474,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,546,547,554,555,562,563,592,593,602,603,604,605,606,626,638,639,640,641,642,643,644,645,646,647,648,649];
+        next();
+    }
+
     function RenderGroupData(req, resp) {
         var highChartsData = req.highChartsData,
             pokemonGroupArray = req.pokemonGroupArray,
@@ -538,6 +550,8 @@ exports.initController = function(app, dataStore) {
     app.get('/groups/starters', GroupsPage_Starters, RenderGroupData);
     app.get('/groups/trade-evos', GroupsPage_TradeEvos, RenderGroupData);
     app.get('/groups/trio-legendarys', GroupsPage_TrioLegendary, RenderGroupData);
+    app.get('/groups/version-exclusives', GroupsPage_VersionExclusive, RenderGroupData);
+    app.get('/groups/pokebanks', GroupsPage_PokeBank, RenderGroupData);
 
 
     app.get('/originalTrainers', setupHighChartsData, OTPage);
