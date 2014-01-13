@@ -1,0 +1,39 @@
+$('#date-trend-chart').highcharts({
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: 'Pokemon Data By Time (CST)'
+    },            
+    xAxis: {
+        labels: {
+            formatter: function() {
+                if(this.value == 0) {
+                    return "12 AM";
+                } if(this.value == 12) {
+                    return "12 PM";
+                } else if(this.value < 12) {
+                    return this.value+" AM";
+                }  else {
+                    return (this.value-12)+" PM";
+                }
+            }
+        },
+        plotLines: <% include _eventPlotlines.ejs %>
+    },
+    yAxis: {
+        title: {
+            text: 'Percentage'
+        },
+        labels: {
+            formatter: function(){return this.value+"%"}
+        },
+        min: 0
+    },
+    tooltip: {
+        formatter: function() {
+                return '<b>'+ this.series.options.shortName +'</b><br/>'+ this.y+'%';
+        }
+    },
+    series: <%- quickStatTrends %>
+});

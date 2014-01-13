@@ -322,6 +322,20 @@ exports.initController = function(app, dataStore) {
         });
     }
 
+    function TimePage(req, resp) {
+        var highChartsData = req.highChartsData,
+            dataSplitByTime = highChartsData.getDataSplitByTime(),
+            statTrendsByTime = highChartsData.getQuickStatsTrendsByTime(dataSplitByTime);
+
+        resp.render('data/times', {
+            title: 'WonderTrade Data by Submission Time',
+            pageState: '',
+            user: req.user,
+            stateMessage: '',
+            quickStatTrends: JSON.stringify(statTrendsByTime)
+        });
+    }
+
     function LikesPage(req, resp){
         var highChartsData = req.highChartsData,
             pokemonLikenessList = highChartsData.getCommunityLikes();
@@ -543,6 +557,7 @@ exports.initController = function(app, dataStore) {
 	app.get('/data/dates', DatesPage);
 	app.get('/data/dates/:submissionDate', DatePage);
     app.get('/data/likes', LikesPage);
+    app.get('/data/time', TimePage);
 
     app.get('/groups', GroupsPage);
     app.get('/groups/*', setupHighChartsData);

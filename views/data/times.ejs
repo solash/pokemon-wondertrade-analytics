@@ -1,0 +1,19 @@
+<% layout('../layout'); %>
+<h3>Results by Time</h3>
+
+<p class="center">This is a new attribute that was added December 30th, 2013.<br/>  As of January 17th, at 2:44am, there have been 5,882 recorded WonderTrades that have the time of submission built in as well.</p>
+
+<div class="chart-box full-chart" id="date-trend-chart"></div>
+
+<script>
+    Date.prototype.customFormatDate = function(){
+        var year = this.getFullYear(),
+                month = ('0'+(this.getMonth()+1)).slice(-2),
+                day = ('0'+(this.getDate())).slice(-2);
+        return [year, month, day].join('-');
+    };
+
+    $(document).ready(function(){
+        <% include ../partials/highcharts/_wondertrades-quickstats-byTime-chart.ejs %>
+    });
+</script>

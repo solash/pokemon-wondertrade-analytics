@@ -554,10 +554,10 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
     });
 
     communityOpinion.likes = _.sortBy(communityOpinion.likes, function(pokemonData){
-        return parseInt(pokemonData.likes)*-1;
+        return parseInt(pokemonData.dislikes)-parseInt(pokemonData.likes);
     });
     communityOpinion.dislikes = _.sortBy(communityOpinion.dislikes, function(pokemonData){
-        return parseInt(pokemonData.dislikes)*-1;
+        return parseInt(pokemonData.likes)-parseInt(pokemonData.dislikes);
     });
 
     return communityOpinion;
@@ -655,7 +655,7 @@ HighChartsData.prototype.getLikePercentage = function(resultSet){
         return parseFloat(percentage);
     }
 
-    return 0;
+    return "- ";
 }
 
 HighChartsData.prototype.getQuickStats = function(resultSet) {	
@@ -736,6 +736,69 @@ HighChartsData.prototype.getQuickStatsTrendsByDates = function() {
 	highchartsTrendsChart = [shinyJSON, hiddenAbilityJSON, pokerusJSON, eggMoveJSON, perfectIvJSON];
 
 	return highchartsTrendsChart;
+
+};
+
+HighChartsData.prototype.getDataSplitByTime = function(resultSet) {
+    if(!resultSet) {
+        resultSet = this.deserializedResults;
+    }
+    var grouping = _.groupBy(resultSet, function(wonderTrade){
+        if(wonderTrade.time) {
+            return Math.floor(parseInt(wonderTrade.time)/3600);
+        }
+    });
+
+    delete grouping["undefined"];
+
+    return grouping;
+};
+
+HighChartsData.prototype.getQuickStatsTrendsByTime = function(timeGrouping) {
+    // TODO: Dry these JSONs up.
+    var shinyJSON = {
+            name: "Shiny<br/> Pokemon",
+            shortName: "Shiny Pokemon",
+            data: []
+        },
+        hiddenAbilityJSON = {
+            name: "Pokemon with a<br/> Hidden Ability",
+            shortName: "Hidden Ability",
+            data: []
+        },
+        pokerusJSON = {
+            name: "Pokemon with <br/> Pokerus",
+            shortName: "PokeRus",
+            data: []
+        },
+        eggMoveJSON = {
+            name: "Pokemon with<br/> Egg Moves",
+            shortName: "Egg Moves",
+            data: []
+        },
+        perfectIvJSON = {
+            name: "Pokemon with at<br/> least one Perfect IV",
+            shortName: "Perfect IV",
+            data: []
+        },
+        highchartsTrendsChart;
+
+    for (var hour=0;hour<24;hour++) {
+        var quickStatsByDate = this.getQuickStats(timeGrouping[hour]);
+
+        // Populate the Highcharts data
+        if(quickStatsByDate.resultCount > this.dailyThreshold) {
+            shinyJSON.data.push([hour, quickStatsByDate.shinyPercentage]);
+            hiddenAbilityJSON.data.push([hour, quickStatsByDate.hiddenAbilityPercentage]);
+            pokerusJSON.data.push([hour, quickStatsByDate.pokerusPercentage]);
+            eggMoveJSON.data.push([hour, quickStatsByDate.eggMovePercentage]);
+            perfectIvJSON.data.push([hour, quickStatsByDate.perfectIvPercentage]);
+        }
+    }
+
+    highchartsTrendsChart = [shinyJSON, hiddenAbilityJSON, pokerusJSON, eggMoveJSON, perfectIvJSON];
+
+    return highchartsTrendsChart;
 
 };
 
