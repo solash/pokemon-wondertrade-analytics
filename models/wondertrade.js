@@ -73,7 +73,7 @@ function sanitizeParams(params, userId) {
 }
 
 
-exports.model = function(params, userId) {
+module.exports = function(params, userId) {
 	
 	params = sanitizeParams(params, userId);
 

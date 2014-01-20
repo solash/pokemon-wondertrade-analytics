@@ -1,4 +1,4 @@
-exports.model = function(params) {
+module.exports = function(params) {
 	var userModel = {
 		"username" : params.username,
 		"password": params.password,

@@ -1,5 +1,3 @@
-var _ = require('underscore');
-
 var RedditUser = function(params) {
     var redditUserModel = {
         userId: params.userId,
@@ -8,4 +6,4 @@ var RedditUser = function(params) {
     return redditUserModel;
 };
 
-exports.model = RedditUser;
+module.exports = RedditUser;

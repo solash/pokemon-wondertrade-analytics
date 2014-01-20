@@ -1,11 +1,11 @@
 var _ = require('underscore'),
     rest = require('restler'),
     parseString = require('xml2js').parseString,
-	HighChartsData = require('../models/HighChartsData').model,
+	HighChartsData = require('../models/HighChartsData'),
 	PokemonList = require('../data/pokemonList.json'),
 	CountryList = require('../data/countryList.json'),
-	UserTableModel = require('../models/UserTable').model,
-    RedditPostModel = require('../models/RedditPost').model,
+	UserTableModel = require('../models/UserTable'),
+    RedditPostModel = require('../models/RedditPost'),
 	PokemonHash = {},
 	CountryHash = {};
 
@@ -19,7 +19,7 @@ for(var country in CountryList) {
 
 
 
-exports.initController = function(app, dataStore) {
+module.exports = function(app, dataStore) {
 
     function setupHighChartsData(req, resp, next){
         dataStore.lrange('wondertrade' ,0, -1, function(error, result){

@@ -1,5 +1,3 @@
-var _ = require('underscore');
-
 var UserTable = function(result) {
 	var userHash = {};
 	for(var user in result) {
@@ -9,4 +7,4 @@ var UserTable = function(result) {
 	return userHash;
 };
 
-exports.model = UserTable;
+module.exports = UserTable;

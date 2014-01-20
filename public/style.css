@@ -25,6 +25,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 /* Cheaty Helpers */
 .center{text-align: center;}
 .left{float:left;}
+.right{float:right;}
 .clear{clear:both;}
 .requiredField{background: rgba(255,0,0,.5);}
 
@@ -50,10 +51,16 @@ select:focus{box-shadow: 0 0 15px #ff0}
 /* Sidebar */
 .page-sidebar{background: rgba(0,0,0,0.8);padding: 0.2em;overflow: hidden;font-family: "Steelworks", "Arial";}
 .page-sidebar h3{padding: 0;margin:0;float: left;}
-.page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;clear: both;overflow: hidden;border: 1px solid #333;}
+.page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;clear: both;overflow: hidden;border: 1px solid #333;line-height: 1.2em;}
 .page-sidebar ul li{float: left;height: 3em;position:relative;}
 .page-sidebar ul li a,
 .page-sidebar ul li span{display: table-cell;height: 3em;vertical-align: middle;padding:0 1em 0 0.5em;}
+
+.page-sidebar ul .addTrade {float: right;background: rgba(250,100,0,.5);}
+.page-sidebar ul .addTrade:after,
+.page-sidebar ul .addTrade:before{display: none;}
+.page-sidebar ul .addTrade,
+.page-sidebar ul .addTrade a {padding: 0 1em;color: #fff;}
 
 .page-sidebar .sidebar-overview{margin-bottom: 5px;}
 .page-sidebar .sidebar-data{}
@@ -242,7 +249,11 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .trainers{list-style: none;padding: 0;}
 .trainers .trainer{padding:0.5em;background: rgba(0,0,0,.1);margin: 0.5em 0;}
 .trainer-wondertrades{list-style: none;padding: 5px 0;overflow: hidden;text-align: center;}
-.trainer-pokemon{background: #fff;color:#000;float: left;padding: 2px;box-shadow: 3px 3px 3px #000;height: 3.5em;min-width: 4em;margin-right: 5px;}
+.trainer-pokemon{background: #fff;color:#000;float: left;padding: 2px;box-shadow: 3px 3px 3px #000;height: 3.5em;min-width: 4em;margin: 0 5px 5px 0;}
+
+.updates{position: relative}
+.updates h4{background: rgba(0,0,0,.3);padding: 0.3em;margin: 0;}
+.updates .commits{position: absolute; right: 0;}
 
 @media (max-width: 800px) {
     .input-columns,

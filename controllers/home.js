@@ -1,12 +1,22 @@
-exports.initController = function(app, dataStore) {
-	var WondertradeModel = require('../models/wondertrade').model,
-		HighChartsData = require('../models/HighChartsData').model,
-		_ = require('underscore');
+module.exports = function(app, dataStore) {
+	var WondertradeModel = require('../models/wondertrade'),
+		HighChartsData = require('../models/HighChartsData'),
+		_ = require('underscore'),
+        formatNumber = function(number, n,x) {
+
+            // http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
+            var re = '(\\d)(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+            return number.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$1,');
+        };
+
+
 
 	app.get('/', function(request, response){					
 		dataStore.lrange('wondertrade' , 0, -1, function(error, result){
 			
-			var highChartsData = new HighChartsData(result);
+			var highChartsData = new HighChartsData(result),
+                totalCount = result.length,
+                formattedCount = formatNumber(totalCount, 0, 3);
 
 			response.render('home', {
 				title: 'Wonder Trade Analytics',
@@ -14,7 +24,7 @@ exports.initController = function(app, dataStore) {
 				user: request.user,
 				stateMessage: '',
 				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate()),
-				wondertradeCount: result.length
+				wondertradeCount: formattedCount
 			});
 		});	
 	});

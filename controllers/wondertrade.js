@@ -1,7 +1,7 @@
-exports.initController =  function(app, dataStore, passport) {
-	var WondertradeModel = require('../models/wondertrade').model,
-		UserTableModel = require('../models/UserTable').model,
-		HighChartsData = require('../models/HighChartsData').model,
+module.exports =  function(app, dataStore, passport) {
+	var WondertradeModel = require('../models/wondertrade'),
+		UserTableModel = require('../models/UserTable'),
+		HighChartsData = require('../models/HighChartsData'),
 		PokemonList = require('../data/pokemonList.json'),
 		CountryList = require('../data/countryList.json'),
 		PokemonHash = {},

@@ -1,7 +1,7 @@
-var UserModel = require('../models/User').model,
-    RedditUser = require('../models/RedditUser').model,
-    UserTableModel = require('../models/UserTable').model,
-    HighChartsData = require('../models/HighChartsData').model;
+var UserModel = require('../models/User'),
+    RedditUser = require('../models/RedditUser'),
+    UserTableModel = require('../models/UserTable'),
+    HighChartsData = require('../models/HighChartsData');
 
 String.prototype.hashCode = function(){
 	var hash = 0;
@@ -14,7 +14,7 @@ String.prototype.hashCode = function(){
 	return hash;
 }
 
-exports.initController = function(app, dataStore, passport, LocalStrategy) {
+module.exports = function(app, dataStore, passport, LocalStrategy) {
 
 	// Take the user to the login page.
 	app.get('/login', function(request, response){

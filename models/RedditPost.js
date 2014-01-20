@@ -1,7 +1,6 @@
-var _ = require('underscore');
-
 var RedditPost = function(item) {
-    var thumbnail = '';
+    var thumbnail = '',
+        title = (item.title).toString().substring(0, 80);
     if(item &&
         item['media:thumbnail'] &&
         item['media:thumbnail'][0] &&
@@ -9,8 +8,11 @@ var RedditPost = function(item) {
         item['media:thumbnail'][0]['$']['url']) {
         thumbnail = item['media:thumbnail'][0]['$']['url'];
     }
+    if(title.length === 80) {
+        title += " ...";
+    }
     var redditPostModel = {
-        title: item.title,
+        title: title,
         link: item.link,
         pubDate: item.pubDate,
         thumbnail: thumbnail
@@ -18,4 +20,4 @@ var RedditPost = function(item) {
     return redditPostModel;
 };
 
-exports.model = RedditPost;
+module.exports = RedditPost;

@@ -808,4 +808,4 @@ HighChartsData.prototype.formatDateFromString = function(dateString){
 	return utcDate;
 };
 
-exports.model = HighChartsData;
+module.exports = HighChartsData;

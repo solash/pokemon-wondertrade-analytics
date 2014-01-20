@@ -45,19 +45,19 @@ Date.prototype.customFormatDate = function(){
 };
 
 // Init Home Controller
-(require('./controllers/home')).initController(app, dataStore);
+(require('./controllers/home'))(app, dataStore);
 
 // Init WonderTrade Controller
-(require('./controllers/wondertrade')).initController(app, dataStore, passport);
+(require('./controllers/wondertrade'))(app, dataStore, passport);
 
 // Init Data Controller
-(require('./controllers/data')).initController(app, dataStore);
+(require('./controllers/data'))(app, dataStore);
 
 // Init User Authentication Controller
-(require('./controllers/authentication')).initController(app, dataStore, passport, LocalStrategy);
+(require('./controllers/authentication'))(app, dataStore, passport, LocalStrategy);
 
 // Init Admin Controller
-(require('./controllers/admin')).initController(app, dataStore);
+(require('./controllers/admin'))(app, dataStore);
 
 
 // After all other routes are init, we can now check for 404s.
