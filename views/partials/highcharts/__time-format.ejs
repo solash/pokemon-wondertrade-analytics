@@ -1,0 +1,11 @@
+function() {
+    if(this.value == 0) {
+        return "12 AM";
+    } if(this.value == 12) {
+        return "12 PM";
+    } else if(this.value < 12) {
+        return this.value+" AM";
+    }  else {
+        return (this.value-12)+" PM";
+    }
+}

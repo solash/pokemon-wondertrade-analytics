@@ -115,6 +115,7 @@ module.exports = function(app, dataStore) {
         var regionId = req.params.regionCode,
             highChartsData = req.highChartsData,
             highChartsDataByRegionId = highChartsData.getResultsByRegionId(regionId),
+            timeTrends = highChartsData.getDataCountsSplitByTime(highChartsDataByRegionId),
             regionName = CountryHash[regionId];
 
         resp.render('data/regionById', {
@@ -124,6 +125,7 @@ module.exports = function(app, dataStore) {
             genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByRegionId)),
             pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByRegionId)),
             subregionChart: JSON.stringify(highChartsData.getCountsBySubRegions(highChartsDataByRegionId)),
+            timeTrends: JSON.stringify(timeTrends),
             quickstats: highChartsData.getQuickStats(highChartsDataByRegionId),
             user: req.user
         });

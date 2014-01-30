@@ -1,10 +1,10 @@
-$('#date-trend-chart').highcharts({
+$('#time-trend-chart').highcharts({
     chart: {
         type: 'spline'
     },
     title: {
-        text: 'Pokemon Data By Time (CST)'
-    },            
+        text: 'WonderTrade Data By Time (CST)'
+    },
     xAxis: {
         labels: {
             formatter: <% include __time-format.ejs %>
@@ -12,17 +12,17 @@ $('#date-trend-chart').highcharts({
     },
     yAxis: {
         title: {
-            text: 'Percentage'
+            text: 'Percentage of total'
         },
         labels: {
-            formatter: function(){return this.value+"%"}
+            formatter: function(){return (this.value*100)+"%"}
         },
         min: 0
     },
     tooltip: {
         formatter: function() {
-                return '<b>'+ this.series.options.shortName +'</b><br/>'+ this.y+'%';
+            return '<b>'+ (this.y*100).toFixed(2)+'%</b>';
         }
     },
-    series: <%- quickStatTrends %>
+    series: [<%- timeTrends %>]
 });

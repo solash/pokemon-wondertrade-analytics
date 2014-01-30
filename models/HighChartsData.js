@@ -754,6 +754,25 @@ HighChartsData.prototype.getDataSplitByTime = function(resultSet) {
     return grouping;
 };
 
+HighChartsData.prototype.getDataCountsSplitByTime = function(resultSet) {
+    var getFilteredDataByTime = this.getDataSplitByTime(resultSet),
+        getFullDataByTime = this.getDataSplitByTime(),
+        filteredTimes = _.map(getFilteredDataByTime, function(hourGroup){
+            return hourGroup.length;
+        }),
+        fullTimes = _.map(getFullDataByTime, function(hourGroup){
+            return hourGroup.length;
+        }),
+        percentageTimes = _.map(filteredTimes, function(hourGroup, hourName){
+            return (hourGroup / fullTimes[hourName]);
+        });
+
+    return {
+        name: "Time Trends",
+        data: percentageTimes
+    };
+};
+
 HighChartsData.prototype.getQuickStatsTrendsByTime = function(timeGrouping) {
     // TODO: Dry these JSONs up.
     var shinyJSON = {
