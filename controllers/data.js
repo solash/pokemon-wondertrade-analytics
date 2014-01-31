@@ -541,6 +541,17 @@ module.exports = function(app, dataStore) {
         });
     }
 
+    function getVisualizeData(req, resp){
+        var highChartsData = req.highChartsData,
+            pokemonIdList = highChartsData.getPokemonIds();
+
+        resp.render('visualize', {
+            title: 'Visualized Wonder Trades',
+            pageState: '',
+            pokemonIdList: pokemonIdList
+        });
+    }
+
 	app.get('/data', setupHighChartsData, OverviewPage);
 
     // Setup the highcharts Object before each /data/* request
@@ -579,4 +590,5 @@ module.exports = function(app, dataStore) {
 	app.get('/users/:userId', UserIdPage);
 	app.get('/users/:userId/date/:submissionDate', UserIdDatePage);
 
+    app.get('/visualize', setupHighChartsData, getVisualizeData);
 };

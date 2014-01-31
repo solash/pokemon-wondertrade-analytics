@@ -1,0 +1,30 @@
+*{box-sizing: border-box;-moz-box-sizing: border-box;}
+html, body{margin: 0;height: 100%;font-family: Helvetica, sans-serif}
+h1{text-align: center;margin: 5px;text-shadow: 1px 1px 1px #fff;}
+body:before,
+body:after {background: url(/images/water_sprite.jpg);content:" ";position: fixed;left:0;height: 25px;width: 100%;}
+body:before {top: 0;background-position: 0 -25px;}
+body:after {bottom: 0;}
+body {background: url(/images/grass_sprite.jpg);height: 100%;}
+
+section {height:100%;padding: 25px 0;}
+.pokemon-list {
+    cursor: pointer;
+}
+.pkmn{
+    display:block;
+    height: 30px;
+    width: 30px;
+    float: left;
+
+    -webkit-filter: drop-shadow(1px 1px 2px #999);
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+
+.pokemon-list .highlight {background-color: rgba(0,0,0,.3);border: 1px solid #f00;box-shadow: 0 0 10px #333;}
+
+.info{bottom:7px;position: fixed;z-index: 2;width: 100%;font-weight: bold;text-align: center;}
+.info .inner{background: rgba(255,255,255,.8);display: inline;padding: 5px;}
+
+.hover-msg{position: absolute;top: 1em;right: 1em;background: teal;color: #fff;padding: 5px;}

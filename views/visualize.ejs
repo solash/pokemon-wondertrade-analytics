@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wonder Trade Analytics</title>
+    <meta name="keywords" content="Pokemon, Wonder Trade, Tyler Stark, The Iron Developer">
+    <meta charset="UTF-8" />
+    <meta name="author" content="Tyler Stark">
+    <meta property="og:image" content="http://www.wondertradeanalytics.com/images/theIronPokeBall.png"/>
+    <link rel="stylesheet" href="/styles/visualize.css" />
+    <link rel="stylesheet" href="/styles/sprite.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-45892387-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        $(document).ready(function(){
+            $('.pokemon-list').on("mouseover", ".pkmn", function(){
+                var pokemonId = $(this).data("pokemonid");
+                $('.thumbnails-pokemon-'+pokemonId).addClass("highlight");
+            });
+
+            $('.pokemon-list').on("mouseout", ".pkmn", function(){
+                var pokemonId = $(this).data("pokemonid");
+                $('.thumbnails-pokemon-'+pokemonId).removeClass("highlight");
+            });
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <h1>Random Sampling of 1000 Wonder Trades</h1>
+        <p class="hover-msg">Hover Pokemon for more info</p>
+        <div class="pokemon-list">
+            <% pokemonIdList.forEach(function(pokemonId){ %>
+                <i data-pokemonId="<%= pokemonId %>" class="pkmn thumbnails-pokemon-<%= pokemonId %>"></i>
+            <% }); %>
+        </div>
+        <div class="info">
+            <div class="inner"><a href="/data/pokemon">Full Data Here.</a></div>
+        </div>
+    </section>
+</body>
+</html>

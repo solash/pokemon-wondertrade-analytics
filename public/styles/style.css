@@ -30,11 +30,11 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .requiredField{background: rgba(255,0,0,.5);}
 
 /* Page specific */
-.page-background{background: url(images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
+.page-background{background: url(../images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
 .wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;width: 100%;}
 .wrapper:after{clear: both;content: '';display: block;}
 .container{margin: 0 auto;}
-.espurr{background: url(images/espurr.png) no-repeat bottom right #8cd8dc;}
+.espurr{background: url(../images/espurr.png) no-repeat bottom right #8cd8dc;}
 
 .wondertradeCount{padding: 2px 10px; background: rgba(100,100,200,0.5);font-size: 1.5em;}
 

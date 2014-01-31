@@ -91,6 +91,14 @@ HighChartsData.prototype.getPokemonTable = function(resultSet) {
 	return pokemonTable;
 }
 
+HighChartsData.prototype.getPokemonIds = function(resultSet) {
+    if(!resultSet) {
+        resultSet = this.deserializedResults;
+    }
+    var pokemonResults = _.pluck(resultSet, 'pokemonId');
+
+    return _.sample(pokemonResults, 1000);
+}
 
 HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
 	if(!resultSet) {
