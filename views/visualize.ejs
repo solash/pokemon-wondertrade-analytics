@@ -24,12 +24,12 @@
         $(document).ready(function(){
             $('.pokemon-list').on("mouseover", ".pkmn", function(){
                 var pokemonId = $(this).data("pokemonid");
-                $('.thumbnails-pokemon-'+pokemonId).addClass("highlight");
+                $('.pkmn-'+pokemonId).addClass("highlight");
             });
 
             $('.pokemon-list').on("mouseout", ".pkmn", function(){
                 var pokemonId = $(this).data("pokemonid");
-                $('.thumbnails-pokemon-'+pokemonId).removeClass("highlight");
+                $('.pkmn-'+pokemonId).removeClass("highlight");
             });
         });
     </script>
@@ -40,7 +40,7 @@
         <p class="hover-msg">Hover Pokemon for more info</p>
         <div class="pokemon-list">
             <% pokemonIdList.forEach(function(pokemonId){ %>
-                <i data-pokemonId="<%= pokemonId %>" class="pkmn thumbnails-pokemon-<%= pokemonId %>"></i>
+                <i data-pokemonId="<%= pokemonId %>" class="pkmn pkmn-<%= pokemonId %>"></i>
             <% }); %>
         </div>
         <div class="info">
