@@ -22,9 +22,17 @@ for(var country in CountryList) {
 module.exports = function(app, dataStore) {
 
     function setupHighChartsData(req, resp, next){
+
+        var startDate = new Date();
         dataStore.lrange('wondertrade' ,0, -1, function(error, result){
+
+            var endDate = new Date(),
+                timeTaken = endDate - startDate;
+
             req.highChartsData = new HighChartsData(result);
             req.result= result;
+
+            console.log("Redis logging: "+timeTaken+"ms");
 
             next();
         });
