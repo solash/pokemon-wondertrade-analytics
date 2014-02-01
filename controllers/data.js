@@ -19,23 +19,13 @@ for(var country in CountryList) {
 
 
 
-module.exports = function(app, dataStore) {
+module.exports = function(app, dataStore, MemoryStore) {
 
     function setupHighChartsData(req, resp, next){
 
-        var startDate = new Date();
-        dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-
-            var endDate = new Date(),
-                timeTaken = endDate - startDate;
-
-            req.highChartsData = new HighChartsData(result);
-            req.result= result;
-
-            console.log("Redis logging: "+timeTaken+"ms");
-
-            next();
-        });
+        req.highChartsData = MemoryStore.store.highChartsData;
+        req.result= MemoryStore.store.highChartsResults;
+        next();
     }
 
     function setupUserTableData(req, resp, next) {
@@ -142,22 +132,18 @@ module.exports = function(app, dataStore) {
     function NicknamesPage(req, resp){
 
         dataStore.lrange('userTable' , 0, -1, function(error, result){
-            var userTable = new UserTableModel(result);
+            var userTable = new UserTableModel(result),
+                highChartsData = req.highChartsData,
+                highChartsDataWithNicknames = highChartsData.getNicknamesTable();
 
-            dataStore.lrange('wondertrade' ,0, -1, function(error, result){
-                var highChartsData = new HighChartsData(result),
-                    highChartsDataWithNicknames = highChartsData.getNicknamesTable();
-
-                resp.render('data/nicknames', {
-                    title: 'Nickname Analytics',
-                    pageState: '',
-                    wondertradeTable: highChartsDataWithNicknames,
-                    pokemonHash: PokemonHash,
-                    userTable: userTable,
-                    user: req.user
-                });
+            resp.render('data/nicknames', {
+                title: 'Nickname Analytics',
+                pageState: '',
+                wondertradeTable: highChartsDataWithNicknames,
+                pokemonHash: PokemonHash,
+                userTable: userTable,
+                user: req.user
             });
-
         });
     }
 

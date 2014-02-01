@@ -14,21 +14,35 @@ for(var country in CountryList) {
 
 var HighChartsData = function(jsonResults){
 
-	this.jsonResults = jsonResults;
+    if(jsonResults) {
+        var deserializedResults = [];
+        for(var i = 0, max =  jsonResults.length;i<max;i++) {
+            var currentWonderTrade = jsonResults[i];
+            if(typeof currentWonderTrade === "string"
+                && currentWonderTrade.charAt(0) === '{'
+                && currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
+                deserializedResults.push(JSON.parse(currentWonderTrade));
+            }
+        }
+        this.deserializedResults = deserializedResults;
+    }
 
-	var deserializedResults = [];			
-	for(var i = 0, max =  jsonResults.length;i<max;i++) {				
-		var currentWonderTrade = jsonResults[i];
-		if(typeof currentWonderTrade === "string"
-			&& currentWonderTrade.charAt(0) === '{'
-			&& currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
-			deserializedResults.push(JSON.parse(currentWonderTrade));
-		}
-	}
 	this.dailyThreshold = 15;
-	this.deserializedResults = deserializedResults;
 	this.pokemonList = PokemonList;
 };
+
+HighChartsData.prototype.refreshData = function(jsonResults) {
+    var deserializedResults = [];
+    for(var i = 0, max =  jsonResults.length;i<max;i++) {
+        var currentWonderTrade = jsonResults[i];
+        if(typeof currentWonderTrade === "string"
+            && currentWonderTrade.charAt(0) === '{'
+            && currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
+            deserializedResults.push(JSON.parse(currentWonderTrade));
+        }
+    }
+    this.deserializedResults = deserializedResults;
+}
 
 HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
 	if(!resultSet) {

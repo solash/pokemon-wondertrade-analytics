@@ -1,8 +1,10 @@
-module.exports = function(app, dataStore) {
-	var WondertradeModel = require('../models/wondertrade'),
-		HighChartsData = require('../models/HighChartsData'),
-		_ = require('underscore'),
+module.exports = function(app, dataStore, MemoryStore) {
+	var _ = require('underscore'),
         formatNumber = function(number, n,x) {
+
+            if(!number){
+                return 0;
+            }
 
             // http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
             var re = '(\\d)(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
@@ -10,23 +12,21 @@ module.exports = function(app, dataStore) {
         };
 
 
-
 	app.get('/', function(request, response){					
-		dataStore.lrange('wondertrade' , 0, -1, function(error, result){
-			
-			var highChartsData = new HighChartsData(result),
-                totalCount = result.length,
-                formattedCount = formatNumber(totalCount, 0, 3);
 
-			response.render('home', {
-				title: 'Wonder Trade Analytics',
-				pageState: '',
-				user: request.user,
-				stateMessage: '',
-				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate()),
-				wondertradeCount: formattedCount
-			});
-		});	
+        var highChartsData = MemoryStore.store.highChartsData,
+            totalCount = MemoryStore.store.highChartsResults.length,
+            formattedCount = formatNumber(totalCount, 0, 3);
+
+        response.render('home', {
+            title: 'Wonder Trade Analytics',
+            pageState: '',
+            user: request.user,
+            stateMessage: '',
+            wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate()),
+            wondertradeCount: formattedCount
+        });
+
 	});
 
 	app.get('/about', function(request, response){	
@@ -39,20 +39,16 @@ module.exports = function(app, dataStore) {
 				userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
 			}
 
-			dataStore.lrange('wondertrade' , 0, -1, function(error, result){
-				var highChartsData = new HighChartsData(result),
-					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
-			
-				response.render('about', {
-					title: 'About this Project',
-					pageState: '',
-					user: request.user,
-					userTable: userTableWithCounts
-				});
 
-			});
+            var highChartsData = MemoryStore.store.highChartsData,
+                userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
 
-			
+            response.render('about', {
+                title: 'About this Project',
+                pageState: '',
+                user: request.user,
+                userTable: userTableWithCounts
+            });
 		});		
 	});
 
@@ -73,26 +69,26 @@ module.exports = function(app, dataStore) {
                     userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
                 }
 
-                dataStore.lrange('wondertrade' , 0, -1, function(error, result){
-                    var highChartsData = new HighChartsData(result),
-                        userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable),
-                        trendingPokemonChart = highChartsData.getCountTrendsByUsers(false, userTable);
+
+                var highChartsData = MemoryStore.store.highChartsData,
+                    userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable),
+                    trendingPokemonChart = highChartsData.getCountTrendsByUsers(false, userTable);
 
 
-                    trendingPokemonChart = _.sortBy(trendingPokemonChart, 'fullCount');
-                    trendingPokemonChart.reverse();
-                    trendingPokemonChart = _.first(trendingPokemonChart, 10);
+                trendingPokemonChart = _.sortBy(trendingPokemonChart, 'fullCount');
+                trendingPokemonChart.reverse();
+                trendingPokemonChart = _.first(trendingPokemonChart, 10);
 
-                    response.render('contributors', {
-                        title: 'Project Contributors',
-                        pageState: '',
-                        user: request.user,
-                        trendingPokemonChart: JSON.stringify(trendingPokemonChart),
-                        userTable: userTableWithCounts,
-                        redditUsers: redditUsers
-                    });
-
+                response.render('contributors', {
+                    title: 'Project Contributors',
+                    pageState: '',
+                    user: request.user,
+                    trendingPokemonChart: JSON.stringify(trendingPokemonChart),
+                    userTable: userTableWithCounts,
+                    redditUsers: redditUsers
                 });
+
+
 
             });
 

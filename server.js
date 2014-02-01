@@ -5,6 +5,8 @@ var express = require('express'),
 	passport = require("passport"),
 	LocalStrategy = require('passport-local').Strategy,
     HerokuRedisStore = require('connect-heroku-redis')(express),
+    MemoryStoreModel = require("./models/MemoryStore"),
+    MemoryStore,
 	dataStore;
 
 // Useful debugger:
@@ -23,6 +25,12 @@ if (process.env.REDISTOGO_URL) {
 } else {	
 	dataStore = require("redis").createClient();
 }
+
+MemoryStore = new MemoryStoreModel(dataStore);
+MemoryStore.refreshHighCharts();
+setInterval(function(){
+    MemoryStore.refreshHighCharts();
+}, 600000);
 
 app.configure(function() {
 	app.engine('ejs', engine);
@@ -45,13 +53,13 @@ Date.prototype.customFormatDate = function(){
 };
 
 // Init Home Controller
-(require('./controllers/home'))(app, dataStore);
+(require('./controllers/home'))(app, dataStore, MemoryStore);
 
 // Init WonderTrade Controller
 (require('./controllers/wondertrade'))(app, dataStore, passport);
 
 // Init Data Controller
-(require('./controllers/data'))(app, dataStore);
+(require('./controllers/data'))(app, dataStore, MemoryStore);
 
 // Init User Authentication Controller
 (require('./controllers/authentication'))(app, dataStore, passport, LocalStrategy);
