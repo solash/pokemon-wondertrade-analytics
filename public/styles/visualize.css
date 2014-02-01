@@ -16,10 +16,6 @@ section {height:100%;padding: 25px 0;}
     height: 30px;
     width: 30px;
     float: left;
-
-    -webkit-filter: drop-shadow(1px 1px 2px #999);
-    filter: url(#drop-shadow);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 .pokemon-list .highlight {background-color: rgba(0,0,0,.3);border: 1px solid #f00;box-shadow: 0 0 10px #333;}
