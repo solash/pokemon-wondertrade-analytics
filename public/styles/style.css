@@ -87,10 +87,10 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .team-member .description{float: left;width: 70%;font-size: 0.9em;}
 .team-member .description a{color: #66a;}
 
-.contributer-list{list-style: none;overflow: hidden;margin:0.5em;padding:0;}
-.contributer-list .contributer{background: #fff;color: #000;padding: 0.5em;float: left;margin: 0.1em;}
-.contributer-list .contributer a{color: #66f}
-.contributer-list .contributer .count{font-size: 0.8em;	}
+.contributor-list{list-style: none;overflow: hidden;margin:0.5em;padding:0;}
+.contributor-list .contributor{background: #fff;color: #000;padding: 0.5em;float: left;margin: 0.1em;}
+.contributor-list .contributor a{color: #66f}
+.contributor-list .contributor .count{font-size: 0.8em;	}
 
 .tech-stack{list-style: none;float: left;margin:5px 0 0;padding:0;width: 48%;}
 .tech-stack .tech{float: left;padding: 0.5em;margin:0.1em;background: rgba(0,0,0,0.9);min-height: 5em;text-align:center;transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;}
@@ -226,15 +226,15 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .redditPosts .redditPost a:hover{background: rgba(255,255,255, 0.5);color: #009;}
 .redditPosts .redditPost .thumbnail{float: left;margin-right: 0.5em;}
 
-.contributer-section{}
-.contributer-banner{float: left;width: 70%;}
-.contributer-section ul{list-style:none;padding: 0;}
-.contributer-section li{padding: 0.5em;background: rgba(100,100,200,.3);}
-.contributer-section li:nth-child(even){ background: rgba(0,0,0,.3);}
-.contributer-links{float:right;text-align:center;list-style: none;background: rgba(0,0,0,.6);padding: 1em;margin:0;width: 30%;}
-.contributer-links li{background: inherit;padding: 0;}
-.contributer-links li a{display: block;transition:all 0.5s ease;padding: 0.5em;}
-.contributer-links li a:hover{background: rgba(155,155,255,.3)}
+.contributor-section{}
+.contributor-banner{float: left;width: 70%;}
+.contributor-section ul{list-style:none;padding: 0;}
+.contributor-section li{padding: 0.5em;background: rgba(100,100,200,.3);}
+.contributor-section li:nth-child(even){ background: rgba(0,0,0,.3);}
+.contributor-links{float:right;text-align:center;list-style: none;background: rgba(0,0,0,.6);padding: 1em;margin:0;width: 30%;}
+.contributor-links li{background: inherit;padding: 0;}
+.contributor-links li a{display: block;transition:all 0.5s ease;padding: 0.5em;}
+.contributor-links li a:hover{background: rgba(155,155,255,.3)}
 
 .pokemon-like-list{padding: 1em;list-style: none;overflow: hidden}
 .pokemon-like-data{float: left;background: rgba(200,200,0,.1);box-shadow:2px 2px 2px #111;border:1px solid rgba(250,250,250,.1);padding: 0.5em;margin: 0.2em;}

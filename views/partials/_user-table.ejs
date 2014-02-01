@@ -1,7 +1,7 @@
-<ul class="contributer-list">
+<ul class="contributor-list">
 	<% for(var user in userTable) { %>
 		<% if(userTable[user].count > 0) {  %>
-			<li class="contributer">
+			<li class="contributor">
 				<div class="name">
                     <a href="/users/<%= userTable[user].id %>">
                         <%= userTable[user].username %>

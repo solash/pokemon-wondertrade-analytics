@@ -56,7 +56,7 @@ module.exports = function(app, dataStore) {
 		});		
 	});
 
-	app.get('/contributers', function(request, response){
+	app.get('/contributors', function(request, response){
 
         dataStore.lrange('redditUser' , 0, -1, function(error, result){
             var redditUsers = {};
@@ -83,8 +83,8 @@ module.exports = function(app, dataStore) {
                     trendingPokemonChart.reverse();
                     trendingPokemonChart = _.first(trendingPokemonChart, 10);
 
-                    response.render('contributers', {
-                        title: 'Project Contributers',
+                    response.render('contributors', {
+                        title: 'Project Contributors',
                         pageState: '',
                         user: request.user,
                         trendingPokemonChart: JSON.stringify(trendingPokemonChart),
@@ -99,46 +99,13 @@ module.exports = function(app, dataStore) {
         });
 	});
 
-    app.get('/contest', function(request, response){
-
-        dataStore.lrange('userTable' , 0, -1, function(error, result){
-
-            var userTable = {};
-            for(var user in result) {
-                var parsedUser = JSON.parse(result[user]);
-                userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
-            }
-
-            dataStore.lrange('wondertrade' , 0, -1, function(error, result){
-                var highChartsData = new HighChartsData(result),
-                    dataByDateRange = highChartsData.getResultsByDateRange("2013-12-23", "2014-1-3"),
-                    startDateOverride = new Date(2013, 11, 22),
-                    endDateOverride = new Date(2014, 0, 4),
-                    userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(dataByDateRange, userTable),
-                    trendingPokemonChart = highChartsData.getCountTrendsByUsers(dataByDateRange, userTable, startDateOverride, endDateOverride);
-
-
-                trendingPokemonChart = _.sortBy(trendingPokemonChart, 'fullCount');
-                trendingPokemonChart.reverse();
-                trendingPokemonChart = _.first(trendingPokemonChart, 10);
-
-                response.render('contest', {
-                    title: 'Project Contributers',
-                    pageState: '',
-                    user: request.user,
-                    trendingPokemonChart: JSON.stringify(trendingPokemonChart),
-                    userTable: userTableWithCounts,
-                    redditUsers: ""
-                });
-
-            });
-
-        });
+    app.get('/contest', function(req, resp){
+        resp.redirect('/');
     });
 
     app.get('/help', function(request, response){
 		response.render('help', {
-			title: 'Wonder Trade Contributers',
+			title: 'Wonder Trade Contributors',
 			pageState: '',			
 			user: request.user
 		});
