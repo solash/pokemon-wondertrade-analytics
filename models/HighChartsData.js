@@ -14,35 +14,36 @@ for(var country in CountryList) {
 
 var HighChartsData = function(jsonResults){
 
-    if(jsonResults) {
-        var deserializedResults = [];
-        for(var i = 0, max =  jsonResults.length;i<max;i++) {
-            var currentWonderTrade = jsonResults[i];
-            if(typeof currentWonderTrade === "string"
-                && currentWonderTrade.charAt(0) === '{'
-                && currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
-                deserializedResults.push(JSON.parse(currentWonderTrade));
-            }
-        }
-        this.deserializedResults = deserializedResults;
-    }
+	if(jsonResults) {
+		var deserializedResults = [];
+		for(var i = 0, max =  jsonResults.length;i<max;i++) {
+			var currentWonderTrade = jsonResults[i];
+			if(typeof currentWonderTrade === "string" &&
+				currentWonderTrade.charAt(0) === '{' &&
+				currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
+
+				deserializedResults.push(JSON.parse(currentWonderTrade));
+			}
+		}
+		this.deserializedResults = deserializedResults;
+	}
 
 	this.dailyThreshold = 15;
 	this.pokemonList = PokemonList;
 };
 
 HighChartsData.prototype.refreshData = function(jsonResults) {
-    var deserializedResults = [];
-    for(var i = 0, max =  jsonResults.length;i<max;i++) {
-        var currentWonderTrade = jsonResults[i];
-        if(typeof currentWonderTrade === "string"
-            && currentWonderTrade.charAt(0) === '{'
-            && currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
-            deserializedResults.push(JSON.parse(currentWonderTrade));
-        }
-    }
-    this.deserializedResults = deserializedResults;
-}
+	var deserializedResults = [];
+	for(var i = 0, max =  jsonResults.length;i<max;i++) {
+		var currentWonderTrade = jsonResults[i];
+		if(typeof currentWonderTrade === "string" &&
+			currentWonderTrade.charAt(0) === '{' &&
+			currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
+			deserializedResults.push(JSON.parse(currentWonderTrade));
+		}
+	}
+	this.deserializedResults = deserializedResults;
+};
 
 HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
 	if(!resultSet) {
@@ -78,15 +79,15 @@ HighChartsData.prototype.getRegionsTable = function(resultSet){
 	});
 
 	return countryChart;
-}
+};
 
 HighChartsData.prototype.getNicknamesTable = function() {
-	return _.filter(this.deserializedResults, function(wonderTrade){		
+	return _.filter(this.deserializedResults, function(wonderTrade){
 		if(wonderTrade.pokemonNickname) {
 			return wonderTrade;
 		}
-	});	
-}
+	});
+};
 
 HighChartsData.prototype.getPokemonTable = function(resultSet) {
 	if(!resultSet) {
@@ -103,16 +104,16 @@ HighChartsData.prototype.getPokemonTable = function(resultSet) {
 	});
 
 	return pokemonTable;
-}
+};
 
 HighChartsData.prototype.getPokemonIds = function(resultSet) {
-    if(!resultSet) {
-        resultSet = this.deserializedResults;
-    }
-    var pokemonResults = _.pluck(resultSet, 'pokemonId');
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var pokemonResults = _.pluck(resultSet, 'pokemonId');
 
-    return _.sample(pokemonResults, 1000);
-}
+	return _.sample(pokemonResults, 1000);
+};
 
 HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
 	if(!resultSet) {
@@ -121,7 +122,7 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
 	var pokemonByIds = _.countBy(resultSet, 'pokemonId'),
 		pokemonChart = [];
 	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
-		pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);				
+		pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);
 	});
 
 	pokemonChart = _.sortBy(pokemonChart, function(itr){
@@ -138,7 +139,7 @@ HighChartsData.prototype.getSortedCountsByPokemonId = function(resultSet){
 	var pokemonByIds = _.countBy(resultSet, 'pokemonId'),
 		pokemonChart = [];
 	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
-		pokemonChart.push([pokemonId, pokemonByIdCount]);				
+		pokemonChart.push([pokemonId, pokemonByIdCount]);
 	});
 
 	pokemonChart = _.sortBy(pokemonChart, function(itr){
@@ -157,7 +158,7 @@ HighChartsData.prototype.getCountsByUserIdAndUserTable = function(resultSet, use
 		resultSet = this.deserializedResults;
 	}
 	var countsByUserId = _.countBy(resultSet, 'userId');
-	_.each(countsByUserId, function(userIdCount, userId){		
+	_.each(countsByUserId, function(userIdCount, userId){
 		if(userTable[userId]) {
 			userTable[userId].count = userIdCount;
 		}
@@ -168,35 +169,35 @@ HighChartsData.prototype.getCountsByUserIdAndUserTable = function(resultSet, use
 
 	return userTable;
 
-}
+};
 
 HighChartsData.prototype.getCountsByUserIdAndUserTableFormatted = function(resultSet, userTable){
-    if(!resultSet) {
-        resultSet = this.deserializedResults;
-    }
-    var formattedResults = [];
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var formattedResults = [];
 
-    var countsByUserId = _.countBy(resultSet, 'userId');
-    _.each(countsByUserId, function(userIdCount, userId){
-        if(userTable[userId] && userIdCount > 0) {
-            formattedResults.push([ userTable[userId], userIdCount ]);
-        }
-    });
+	var countsByUserId = _.countBy(resultSet, 'userId');
+	_.each(countsByUserId, function(userIdCount, userId){
+		if(userTable[userId] && userIdCount > 0) {
+			formattedResults.push([ userTable[userId], userIdCount ]);
+		}
+	});
 
-    formattedResults = _.sortBy(formattedResults, function(userResult){
-        return userResult[1];
-    });
+	formattedResults = _.sortBy(formattedResults, function(userResult){
+		return userResult[1];
+	});
 
-    return formattedResults;
+	return formattedResults;
 
-}
+};
 
 HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 	pokemonId = parseInt(pokemonId);
 	if(pokemonId > 0 && pokemonId < 719) {
-		return _.where(this.deserializedResults, {pokemonId: parseInt(pokemonId)});	
+		return _.where(this.deserializedResults, {pokemonId: parseInt(pokemonId)});
 	}
-	return [];	
+	return [];
 };
 
 HighChartsData.prototype.getResultsWithHiddenAbilities = function() {
@@ -208,22 +209,22 @@ HighChartsData.prototype.getResultsWithPerfectIV = function() {
 };
 
 HighChartsData.prototype.getResultsWithShinyPokemon = function() {
-    return _.where(this.deserializedResults, {isShiny: true});
+	return _.where(this.deserializedResults, {isShiny: true});
 };
 
 HighChartsData.prototype.getResultsByPokemonLevel = function(pokemonLevel) {
 	pokemonLevel = parseInt(pokemonLevel);
 	if(pokemonLevel > 0 && pokemonLevel <= 100) {
-		return _.where(this.deserializedResults, {level: pokemonLevel});	
+		return _.where(this.deserializedResults, {level: pokemonLevel});
 	}
-	return [];	
+	return [];
 };
 
-HighChartsData.prototype.getResultsByRegionId = function(regionId) {	
+HighChartsData.prototype.getResultsByRegionId = function(regionId) {
 	if(CountryHash[regionId]) {
-		return _.where(this.deserializedResults, {trainerCountry: regionId});	
+		return _.where(this.deserializedResults, {trainerCountry: regionId});
 	}
-	return [];	
+	return [];
 };
 
 HighChartsData.prototype.getResultsByUserId = function(userId) {
@@ -243,24 +244,24 @@ HighChartsData.prototype.getResultsByGender = function(gender) {
 };
 
 HighChartsData.prototype.getResultsByDate = function(date){
-    return _.where(this.deserializedResults, {date: date});
+	return _.where(this.deserializedResults, {date: date});
 };
 
 HighChartsData.prototype.getResultsByDateRange = function(startDate, endDate){
-    return _.filter(this.deserializedResults, function(result){
-        var resultDate =result.date;
-        return (resultDate >= startDate && resultDate <= endDate);
-    });
+	return _.filter(this.deserializedResults, function(result){
+		var resultDate =result.date;
+		return (resultDate >= startDate && resultDate <= endDate);
+	});
 };
 
 HighChartsData.prototype.getNicknamesByResultSet = function(resultSet){
-    if(!resultSet) {
-        resultSet = this.deserializedResults;
-    }
-    var reduced = _.filter(resultSet, function(pokemon){
-        return pokemon.pokemonNickname !== '';
-    });
-    return _.pluck(reduced, 'pokemonNickname');
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var reduced = _.filter(resultSet, function(pokemon){
+		return pokemon.pokemonNickname !== '';
+	});
+	return _.pluck(reduced, 'pokemonNickname');
 };
 
 HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
@@ -271,10 +272,10 @@ HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
 	var subRegionsChart = [];
 	_.each(subRegions, function(subregionCount, regionName){
 		if(regionName === '') {
-			subRegionsChart.push(["n/a", subregionCount]);			
+			subRegionsChart.push(["n/a", subregionCount]);
 		} else {
-			subRegionsChart.push([regionName, subregionCount]);			
-		}		
+			subRegionsChart.push([regionName, subregionCount]);
+		}
 	});
 
 	subRegionsChart = _.sortBy(subRegionsChart, function(itr){
@@ -299,13 +300,13 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 	var pokemonLevels = _.countBy(resultSet, 'level'),
 		levelsChart = [],
 		levelsChartFormatted = [{
-            name: 'Levels',
-            data: []    
-        }];	
+			name: 'Levels',
+			data: []
+		}];
 
-    for(var i=1, max=100;i<=max;i++) {
-    	levelsChart.push([i, 0]);
-    }
+	for(var i=1, max=100;i<=max;i++) {
+		levelsChart.push([i, 0]);
+	}
 
 	_.each(pokemonLevels, function(levelCount, level){
 		var currentLevel = parseInt(level);
@@ -324,7 +325,7 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
 	var pokemonGroupedByDate = {},
 		trendingPokemonChart = [],
-        totalCountsByDate = {},
+		totalCountsByDate = {},
 		context = this;
 
 	if(!resultSet) {
@@ -338,7 +339,7 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 
 	// Then split those results by their dates.
 	_.each(wonderTradesByPokemon, function(wonderTradeByDate, wonderTradeDate){
-		pokemonGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date')
+		pokemonGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date');
 	});
 
 	// And now.. we review each pokemon, and add their date/counts
@@ -361,11 +362,11 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		if(pokemonSubSet) {
 			if(_.contains(pokemonSubSet, pokemonId)) {
 				_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-                    if (!totalCountsByDate[dateField]) {
-                        totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
-                    }
-                    var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
-                    countPercent = parseFloat(countPercent.toFixed(2));
+					if (!totalCountsByDate[dateField]) {
+						totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
+					}
+					var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
+					countPercent = parseFloat(countPercent.toFixed(2));
 
 					if(totalCountsByDate[dateField] > context.dailyThreshold) {
 						_.each(fullDateRange, function(tempDate){
@@ -375,29 +376,29 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 						});
 					}
 				});
-				
+
 				pokemonData.data = fullDateRange;
 				trendingPokemonChart.push(pokemonData);
 			}
 		} else {
 			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-                if (!totalCountsByDate[dateField]) {
-                    totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
-                }
-                var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
-                countPercent = parseFloat(countPercent.toFixed(2));
+				if (!totalCountsByDate[dateField]) {
+					totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
+				}
+				var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
+				countPercent = parseFloat(countPercent.toFixed(2));
 
 				_.each(fullDateRange, function(tempDate){
 					if(context.formatDateFromString(dateField) === tempDate[0]) {
 						tempDate[1] = countPercent;
 					}
 				});
-			});		
+			});
 
 			pokemonData.data = fullDateRange;
 			trendingPokemonChart.push(pokemonData);
 		}
-		
+
 	});
 
 	return trendingPokemonChart;
@@ -419,7 +420,7 @@ HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable, 
 
 	// Then split those results by their dates.
 	_.each(wonderTradesByUserId, function(wonderTradeByDate, wonderTradeDate){
-		usersGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date')
+		usersGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date');
 	});
 
 	// And now.. we review each pokemon, and add their date/counts
@@ -450,7 +451,7 @@ HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable, 
 		});
 
 		pokemonData.data = fullDateRange;
-		trendingPokemonChart.push(pokemonData);		
+		trendingPokemonChart.push(pokemonData);
 	});
 
 	return trendingPokemonChart;
@@ -468,7 +469,7 @@ HighChartsData.prototype.getSubmissionDates = function(resultSet) {
 		return wonderTrade.date;
 	});
 
-	_.each(wonderTradesByDate, function(dateCount, dateString) {		
+	_.each(wonderTradesByDate, function(dateCount, dateString) {
 		var dateFieldCount = _.size(dateCount),
 			submission = {
 				dateString: dateString,
@@ -478,7 +479,7 @@ HighChartsData.prototype.getSubmissionDates = function(resultSet) {
 		submissionDates.push(submission);
 	});
 
-	submissionDates = _.sortBy(submissionDates, function(data) {				
+	submissionDates = _.sortBy(submissionDates, function(data) {
 		return data.formattedDate;
 	});
 
@@ -524,106 +525,106 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet) {
 
 HighChartsData.prototype.getTopTenPokemon = function(){
 	var countTrends = this.getSortedCountsByPokemonId();
-	countTrends = countTrends.reverse();	
+	countTrends = countTrends.reverse();
 	return _.first(countTrends,10);
 };
 
 HighChartsData.prototype.getCommunityLikes = function(resultSet){
-    var communityOpinion = {
-        likes: [],
-        dislikes: []
-    };
-    if(!resultSet) {
-        resultSet = this.deserializedResults;
-    }
+	var communityOpinion = {
+		likes: [],
+		dislikes: []
+	};
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
 
-    var wonderTradesByPokemon = _.groupBy(resultSet, function(wonderTrade){
-        return wonderTrade.pokemonId;
-    });
+	var wonderTradesByPokemon = _.groupBy(resultSet, function(wonderTrade){
+		return wonderTrade.pokemonId;
+	});
 
-    _.each(wonderTradesByPokemon, function(pokemonList, pokemonId){
-        var likedCounts = _.countBy(pokemonList, function(pokemon){
-            if(pokemon.liked === "like" || pokemon.liked === "dislike"){
-                return pokemon.liked;
-            }
-        });
+	_.each(wonderTradesByPokemon, function(pokemonList, pokemonId){
+		var likedCounts = _.countBy(pokemonList, function(pokemon){
+			if(pokemon.liked === "like" || pokemon.liked === "dislike"){
+				return pokemon.liked;
+			}
+		});
 
-        // Preset 0 likes and dislikes
-        likedCounts = _.extend({like: 0, dislike: 0}, likedCounts);
+		// Preset 0 likes and dislikes
+		likedCounts = _.extend({like: 0, dislike: 0}, likedCounts);
 
-        var likes = likedCounts.like,
-            dislikes = likedCounts.dislike;
+		var likes = likedCounts.like,
+			dislikes = likedCounts.dislike;
 
-        if(likes || dislikes) {
-            var totalOpinions = likes+dislikes,
-                likePercentage = (likes / (totalOpinions)*100).toFixed(2),
-                pokemonLikesObject = {
-                    name: PokemonHash[pokemonId],
-                    percentage: likePercentage,
-                    count: totalOpinions,
-                    likes: likes,
-                    dislikes: dislikes
-                };
+		if(likes || dislikes) {
+			var totalOpinions = likes+dislikes,
+				likePercentage = (likes / (totalOpinions)*100).toFixed(2),
+				pokemonLikesObject = {
+					name: PokemonHash[pokemonId],
+					percentage: likePercentage,
+					count: totalOpinions,
+					likes: likes,
+					dislikes: dislikes
+				};
 
-            if(pokemonLikesObject.count > 2) {
-                if(likePercentage > 50) {
-                    communityOpinion.likes.push(pokemonLikesObject);
-                } else {
-                    communityOpinion.dislikes.push(pokemonLikesObject);
-                }
-            }
-        }
-    });
+			if(pokemonLikesObject.count > 2) {
+				if(likePercentage > 50) {
+					communityOpinion.likes.push(pokemonLikesObject);
+				} else {
+					communityOpinion.dislikes.push(pokemonLikesObject);
+				}
+			}
+		}
+	});
 
-    communityOpinion.likes = _.sortBy(communityOpinion.likes, function(pokemonData){
-        return parseInt(pokemonData.dislikes)-parseInt(pokemonData.likes);
-    });
-    communityOpinion.dislikes = _.sortBy(communityOpinion.dislikes, function(pokemonData){
-        return parseInt(pokemonData.likes)-parseInt(pokemonData.dislikes);
-    });
+	communityOpinion.likes = _.sortBy(communityOpinion.likes, function(pokemonData){
+		return parseInt(pokemonData.dislikes)-parseInt(pokemonData.likes);
+	});
+	communityOpinion.dislikes = _.sortBy(communityOpinion.dislikes, function(pokemonData){
+		return parseInt(pokemonData.likes)-parseInt(pokemonData.dislikes);
+	});
 
-    return communityOpinion;
-}
+	return communityOpinion;
+};
 
 HighChartsData.prototype.getOriginalTrainers = function(resultSet){
-    if(!resultSet) {
-        resultSet = this.deserializedResults;
-    }
-    var originalTrainers = {};
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var originalTrainers = {};
 
-    var wonderTradesByTrainerId = _.groupBy(resultSet, function(wonderTrade){
-        return wonderTrade.trainerId;
-    });
+	var wonderTradesByTrainerId = _.groupBy(resultSet, function(wonderTrade){
+		return wonderTrade.trainerId;
+	});
 
-    _.each(wonderTradesByTrainerId, function(wonderTrades, key){
-        if(key && key !== "undefined"){
-            var wonderTradeNames = _.groupBy(wonderTrades, function(wondertrade){return wondertrade.trainerName});
-            originalTrainers[key] = {
-                "names": _.keys(wonderTradeNames),
-                "count": wonderTrades.length
-            };
-        }
-    });
+	_.each(wonderTradesByTrainerId, function(wonderTrades, key){
+		if(key && key !== "undefined"){
+			var wonderTradeNames = _.groupBy(wonderTrades, function(wondertrade){return wondertrade.trainerName;});
+			originalTrainers[key] = {
+				"names": _.keys(wonderTradeNames),
+				"count": wonderTrades.length
+			};
+		}
+	});
 
-    return originalTrainers;
-}
+	return originalTrainers;
+};
 
 HighChartsData.prototype.getOriginalTrainersById = function(trainerId){
-    var resultSet = _.where(this.deserializedResults, {"trainerId": trainerId}),
-        originalTrainers = {};
+	var resultSet = _.where(this.deserializedResults, {"trainerId": trainerId}),
+		originalTrainers = {};
 
-    var wonderTradesByTrainerName = _.groupBy(resultSet, function(wonderTrade){
-        return wonderTrade.trainerName;
-    });
+	var wonderTradesByTrainerName = _.groupBy(resultSet, function(wonderTrade){
+		return wonderTrade.trainerName;
+	});
 
-    _.each(wonderTradesByTrainerName, function(wonderTrades, key){
-        if(key && key !== "undefined"){
-            originalTrainers[key] = wonderTrades;
-        }
-    });
+	_.each(wonderTradesByTrainerName, function(wonderTrades, key){
+		if(key && key !== "undefined"){
+			originalTrainers[key] = wonderTrades;
+		}
+	});
 
-    return originalTrainers;
-}
+	return originalTrainers;
+};
 
 HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSet) {
 	if(!resultSet) {
@@ -634,13 +635,13 @@ HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSe
 		totalSize = _.size(resultSet);
 	if(!countsByAttribute.true || countsByAttribute.true === "NaN") {
 		countsByAttribute.true = 0;
-	}		
+	}
 	var percentage = ((countsByAttribute.true)/totalSize*100).toFixed(2);
-	
+
 	return parseFloat(percentage);
 };
 
-HighChartsData.prototype.getShinyPercentage = function(resultSet) {	
+HighChartsData.prototype.getShinyPercentage = function(resultSet) {
 	return this.getPercentageByAttribute('isShiny', resultSet);
 };
 
@@ -665,43 +666,43 @@ HighChartsData.prototype.getEggMovePercentage = function(resultSet) {
 };
 
 HighChartsData.prototype.getLikePercentage = function(resultSet){
-    var likeCounts = _.countBy(resultSet, function(wonderTrade){
-            return wonderTrade.liked;
-        }),
-        likes = likeCounts.like || 0,
-        dislikes = likeCounts.dislike || 0,
-        total = likes+dislikes;
+	var likeCounts = _.countBy(resultSet, function(wonderTrade){
+			return wonderTrade.liked;
+		}),
+		likes = likeCounts.like || 0,
+		dislikes = likeCounts.dislike || 0,
+		total = likes+dislikes;
 
-    if(total > 0) {
-        var percentage = (likes/(total)*100).toFixed(2);
-        return parseFloat(percentage);
-    }
+	if(total > 0) {
+		var percentage = (likes/(total)*100).toFixed(2);
+		return parseFloat(percentage);
+	}
 
-    return "- ";
-}
+	return "- ";
+};
 
-HighChartsData.prototype.getQuickStats = function(resultSet) {	
+HighChartsData.prototype.getQuickStats = function(resultSet) {
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
 	}
 	return {
 		resultCount: _.size(resultSet),
 		totalCount: _.size(this.deserializedResults),
-		resultPercent: (_.size(resultSet)/_.size(this.deserializedResults)*100).toFixed(2),  		
+		resultPercent: (_.size(resultSet)/_.size(this.deserializedResults)*100).toFixed(2),
 		shinyPercentage: this.getShinyPercentage(resultSet),
 		hiddenAbilityPercentage: this.getHiddenAbilityPercentage(resultSet),
 		itemPercentage: this.getItemPercentage(resultSet),
 		pokerusPercentage: this.getPokerusPercentage(resultSet),
 		eggMovePercentage: this.getEggMovePercentage(resultSet),
 		perfectIvPercentage: this.getPerfectIVPercentage(resultSet),
-        likePercentage: this.getLikePercentage(resultSet)
+		likePercentage: this.getLikePercentage(resultSet)
 	};
 };
 
 HighChartsData.prototype.filterGroupsOfPokemon = function(pokemonGroupArray) {
-    return _.filter(this.deserializedResults, function(wonderTrade){
-        return _.contains(pokemonGroupArray, parseInt(wonderTrade.pokemonId));
-    });
+	return _.filter(this.deserializedResults, function(wonderTrade){
+		return _.contains(pokemonGroupArray, parseInt(wonderTrade.pokemonId));
+	});
 };
 
 /**
@@ -762,84 +763,84 @@ HighChartsData.prototype.getQuickStatsTrendsByDates = function() {
 };
 
 HighChartsData.prototype.getDataSplitByTime = function(resultSet) {
-    if(!resultSet) {
-        resultSet = this.deserializedResults;
-    }
-    var grouping = _.groupBy(resultSet, function(wonderTrade){
-        if(wonderTrade.time) {
-            return Math.floor(parseInt(wonderTrade.time)/3600);
-        }
-    });
+	if(!resultSet) {
+		resultSet = this.deserializedResults;
+	}
+	var grouping = _.groupBy(resultSet, function(wonderTrade){
+		if(wonderTrade.time) {
+			return Math.floor(parseInt(wonderTrade.time)/3600);
+		}
+	});
 
-    delete grouping["undefined"];
+	delete grouping["undefined"];
 
-    return grouping;
+	return grouping;
 };
 
 HighChartsData.prototype.getDataCountsSplitByTime = function(resultSet) {
-    var getFilteredDataByTime = this.getDataSplitByTime(resultSet),
-        getFullDataByTime = this.getDataSplitByTime(),
-        filteredTimes = _.map(getFilteredDataByTime, function(hourGroup){
-            return hourGroup.length;
-        }),
-        fullTimes = _.map(getFullDataByTime, function(hourGroup){
-            return hourGroup.length;
-        }),
-        percentageTimes = _.map(filteredTimes, function(hourGroup, hourName){
-            return (hourGroup / fullTimes[hourName]);
-        });
+	var getFilteredDataByTime = this.getDataSplitByTime(resultSet),
+		getFullDataByTime = this.getDataSplitByTime(),
+		filteredTimes = _.map(getFilteredDataByTime, function(hourGroup){
+			return hourGroup.length;
+		}),
+		fullTimes = _.map(getFullDataByTime, function(hourGroup){
+			return hourGroup.length;
+		}),
+		percentageTimes = _.map(filteredTimes, function(hourGroup, hourName){
+			return (hourGroup / fullTimes[hourName]);
+		});
 
-    return {
-        name: "Time Trends",
-        data: percentageTimes
-    };
+	return {
+		name: "Time Trends",
+		data: percentageTimes
+	};
 };
 
 HighChartsData.prototype.getQuickStatsTrendsByTime = function(timeGrouping) {
-    // TODO: Dry these JSONs up.
-    var shinyJSON = {
-            name: "Shiny<br/> Pokemon",
-            shortName: "Shiny Pokemon",
-            data: []
-        },
-        hiddenAbilityJSON = {
-            name: "Pokemon with a<br/> Hidden Ability",
-            shortName: "Hidden Ability",
-            data: []
-        },
-        pokerusJSON = {
-            name: "Pokemon with <br/> Pokerus",
-            shortName: "PokeRus",
-            data: []
-        },
-        eggMoveJSON = {
-            name: "Pokemon with<br/> Egg Moves",
-            shortName: "Egg Moves",
-            data: []
-        },
-        perfectIvJSON = {
-            name: "Pokemon with at<br/> least one Perfect IV",
-            shortName: "Perfect IV",
-            data: []
-        },
-        highchartsTrendsChart;
+	// TODO: Dry these JSONs up.
+	var shinyJSON = {
+			name: "Shiny<br/> Pokemon",
+			shortName: "Shiny Pokemon",
+			data: []
+		},
+		hiddenAbilityJSON = {
+			name: "Pokemon with a<br/> Hidden Ability",
+			shortName: "Hidden Ability",
+			data: []
+		},
+		pokerusJSON = {
+			name: "Pokemon with <br/> Pokerus",
+			shortName: "PokeRus",
+			data: []
+		},
+		eggMoveJSON = {
+			name: "Pokemon with<br/> Egg Moves",
+			shortName: "Egg Moves",
+			data: []
+		},
+		perfectIvJSON = {
+			name: "Pokemon with at<br/> least one Perfect IV",
+			shortName: "Perfect IV",
+			data: []
+		},
+		highchartsTrendsChart;
 
-    for (var hour=0;hour<24;hour++) {
-        var quickStatsByDate = this.getQuickStats(timeGrouping[hour]);
+	for (var hour=0;hour<24;hour++) {
+		var quickStatsByDate = this.getQuickStats(timeGrouping[hour]);
 
-        // Populate the Highcharts data
-        if(quickStatsByDate.resultCount > this.dailyThreshold) {
-            shinyJSON.data.push([hour, quickStatsByDate.shinyPercentage]);
-            hiddenAbilityJSON.data.push([hour, quickStatsByDate.hiddenAbilityPercentage]);
-            pokerusJSON.data.push([hour, quickStatsByDate.pokerusPercentage]);
-            eggMoveJSON.data.push([hour, quickStatsByDate.eggMovePercentage]);
-            perfectIvJSON.data.push([hour, quickStatsByDate.perfectIvPercentage]);
-        }
-    }
+		// Populate the Highcharts data
+		if(quickStatsByDate.resultCount > this.dailyThreshold) {
+			shinyJSON.data.push([hour, quickStatsByDate.shinyPercentage]);
+			hiddenAbilityJSON.data.push([hour, quickStatsByDate.hiddenAbilityPercentage]);
+			pokerusJSON.data.push([hour, quickStatsByDate.pokerusPercentage]);
+			eggMoveJSON.data.push([hour, quickStatsByDate.eggMovePercentage]);
+			perfectIvJSON.data.push([hour, quickStatsByDate.perfectIvPercentage]);
+		}
+	}
 
-    highchartsTrendsChart = [shinyJSON, hiddenAbilityJSON, pokerusJSON, eggMoveJSON, perfectIvJSON];
+	highchartsTrendsChart = [shinyJSON, hiddenAbilityJSON, pokerusJSON, eggMoveJSON, perfectIvJSON];
 
-    return highchartsTrendsChart;
+	return highchartsTrendsChart;
 
 };
 
