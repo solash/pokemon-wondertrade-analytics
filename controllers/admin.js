@@ -47,7 +47,6 @@ module.exports = function(app, dataStore) {
 	}
 
 	function purgeUser(req, resp) {
-		//dataStore.del('wondertrade');
 		var userId = req.params.userId,
 			tempUser;
 
@@ -84,6 +83,32 @@ module.exports = function(app, dataStore) {
 
 			resp.send('Alright, '+userId+' has officially been removed!');
 		});
+	}
+
+	/**
+	 * Some users made the mistake of thinking the OT field was their own field.
+	 * We still want to maintain the recorded WonderTrades, but we want to remove the OT ids.
+	 **/
+	function purgeOT(req, resp) {
+		var OTId = req.params.OTId;
+
+		console.log('Removing OT ID: '+OTId);
+		dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+
+			for(var wondertrade in result) {
+				var tempWondertrade = JSON.parse(result[wondertrade]);
+				if(tempWondertrade.trainerId == OTId) {
+
+					tempWondertrade.trainerId = "";
+					tempWondertrade.trainerName = "";
+
+					dataStore.lrem('wondertrade', 0, result[wondertrade]);
+					dataStore.lpush('wondertrade', JSON.stringify(tempWondertrade));
+				}
+			}
+			resp.send(' Wonder Trades Successfully Removed OT From: '+OTId);
+		});
+
 	}
 
 	function cleanUpUndefined(req, resp) {
@@ -138,6 +163,7 @@ module.exports = function(app, dataStore) {
 	app.get('/admin/*', adminVerification);
 	app.get('/admin/fullLogs', getFullLogs);
 	app.get('/admin/purge/users/:userId', purgeUser);
+	app.get('/admin/purge/OT/:OTId', purgeOT);
 	app.get('/admin/cleanUpUndefined', cleanUpUndefined);
 	app.get('/admin/massImport', getMassImport);
 
