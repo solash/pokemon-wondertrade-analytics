@@ -148,7 +148,7 @@ module.exports = function(app, dataStore) {
 			for(var wonderTradeJson in parsedData) {
 				var wonderTradeParsedData = parsedData[wonderTradeJson],
 					wonderTradeObject = new WondertradeModel(wonderTradeParsedData, wonderTradeParsedData.userId),
-					serializedWonderTrade = JSON.stringify(wonderTradeObject);
+					serializedWonderTrade = JSON.stringify(wonderTradeObject.toJSON());
 
 				if(serializedWonderTrade) {
 					dataStore.lpush('wondertrade', serializedWonderTrade);

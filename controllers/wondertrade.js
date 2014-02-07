@@ -74,9 +74,9 @@ module.exports =  function(app, dataStore, passport) {
 				var WondertradeParams = request.body,
 					userId = currentUser.id,
 					wondertrade = new WondertradeModel(WondertradeParams, userId),
-					serializedWondertrade = JSON.stringify(wondertrade);
+					serializedWondertrade = JSON.stringify(wondertrade.toJSON());
 
-				if(wondertrade) {
+				if(wondertrade.validate()) {
 					dataStore.lpush('wondertrade', serializedWondertrade, function(err, size) {
 						response.render('wondertrade/new', {
 							title: 'New Wonder Trade',

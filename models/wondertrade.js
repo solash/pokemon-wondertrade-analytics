@@ -72,12 +72,11 @@ function sanitizeParams(params, userId) {
 	return params;
 }
 
-
-module.exports = function(params, userId) {
+var WonderTradeModel = function(params, userId) {
 
 	params = sanitizeParams(params, userId);
 
-	var pokemonModel = {
+	this.attributes = {
 		"pokemonId" : params.pokemonId,
 		"pokemonNickname" : params.pokemonNickname,
 		"hasItem" : params.hasItem,
@@ -98,11 +97,50 @@ module.exports = function(params, userId) {
 		"trainerName" : params.trainerName
 	};
 
-	if(!pokemonModel.pokemonId ||
-		!pokemonModel.userId ||
-		!pokemonModel.trainerCountry) {
+};
+
+WonderTradeModel.prototype.toJSON = function() {
+	return this.attributes;
+};
+
+WonderTradeModel.prototype.equals = function(otherWonderTrade) {
+	var attributes = this.toJSON(),
+		otherAttributes = otherWonderTrade.toJSON(),
+		timeDifference = Math.abs(otherAttributes.time-attributes.time);
+
+	if (attributes.pokemonId === otherAttributes.pokemonId &&
+		attributes.pokemonNickname === otherAttributes.pokemonNickname &&
+		attributes.hasItem === otherAttributes.hasItem &&
+		attributes.hasHiddenAbility === otherAttributes.hasHiddenAbility &&
+		attributes.hasEggMove === otherAttributes.hasEggMove &&
+		attributes.hasPokerus === otherAttributes.hasPokerus &&
+		attributes.hasPerfectIV === otherAttributes.hasPerfectIV &&
+		attributes.isShiny === otherAttributes.isShiny &&
+		attributes.level === otherAttributes.level &&
+		attributes.trainerGender === otherAttributes.trainerGender &&
+		attributes.trainerCountry === otherAttributes.trainerCountry &&
+		attributes.trainerCountrySub1 === otherAttributes.trainerCountrySub1 &&
+		attributes.userId === otherAttributes.userId &&
+		attributes.liked === otherAttributes.liked &&
+		attributes.trainerId === otherAttributes.trainerId &&
+		attributes.trainerName === otherAttributes.trainerName &&
+		timeDifference < 60) {
+
+		return true;
+	}
+	return false;
+};
+
+WonderTradeModel.prototype.validate = function() {
+	var attributes = this.toJSON();
+
+	if(!attributes.pokemonId ||
+		!attributes.userId ||
+		!attributes.trainerCountry) {
 		return false;
 	} else {
-		return pokemonModel;
+		return true;
 	}
 };
+
+module.exports = WonderTradeModel;
