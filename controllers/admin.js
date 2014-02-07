@@ -160,8 +160,40 @@ module.exports = function(app, dataStore) {
 		});
 	}
 
+	/**
+	 * Clears duplicate wondertrades.
+	 *  Notable problems:
+	 *    > This only checks wonder trades that are next to eachother.
+	 *    > Across two different days, duplicate enteries are not found.
+	 * @param req
+	 * @param resp
+	 */
+	function clearDuplicates(req, resp) {
+		dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+
+			var i = result.length- 1,
+				count = 0;
+
+			while(i>0) {
+
+				var currentWT = new WondertradeModel( JSON.parse(result[i]) ),
+					nextWT = new WondertradeModel( JSON.parse(result[i-1]) );
+
+				if( currentWT.equals(nextWT) ) {
+					dataStore.lrem('wondertrade', 0, result[i] );
+					count++;
+				}
+
+				i--;
+			}
+
+			resp.send('Success, '+count+ ' wonder trades have been removed');
+		});
+	}
+
 	app.get('/admin/*', adminVerification);
 	app.get('/admin/fullLogs', getFullLogs);
+	app.get('/admin/clearDuplicates', clearDuplicates);
 	app.get('/admin/purge/users/:userId', purgeUser);
 	app.get('/admin/purge/OT/:OTId', purgeOT);
 	app.get('/admin/cleanUpUndefined', cleanUpUndefined);

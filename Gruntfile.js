@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
-			all: ['Gruntfile.js', 'controllers/*.js', 'models/*.js']
+			all: ['Gruntfile.js', 'server.js', 'controllers/*.js', 'models/*.js']
 		}
 	});
 

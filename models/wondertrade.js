@@ -124,7 +124,7 @@ WonderTradeModel.prototype.equals = function(otherWonderTrade) {
 		attributes.liked === otherAttributes.liked &&
 		attributes.trainerId === otherAttributes.trainerId &&
 		attributes.trainerName === otherAttributes.trainerName &&
-		timeDifference < 60) {
+		timeDifference < 300) {
 
 		return true;
 	}
