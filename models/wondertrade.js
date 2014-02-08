@@ -45,10 +45,15 @@ function sanitizeParams(params, userId) {
 	var trainerId = "",
 		trainerName = "";
 	if(params.trainerId &&
+		params.trainerName &&
 		(/^\d{5}$/).test(params.trainerId) &&
 		parseInt(params.trainerId, 10) <= 65535) {
+
 		trainerId = params.trainerId;
 		trainerName = params.trainerName;
+	} else {
+		trainerId = "";
+		trainerName = "";
 	}
 
 	params.pokemonId = pokemonId;

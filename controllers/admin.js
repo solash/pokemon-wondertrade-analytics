@@ -191,9 +191,38 @@ module.exports = function(app, dataStore) {
 		});
 	}
 
+	/**
+	 * WonderTrades with trainerIds should also have trainerNames.
+	 *  This function parses through the list and updates any bad results.
+	 * @param req
+	 * @param resp
+	 */
+	function cleanNamelessTrainers(req, resp) {
+		dataStore.lrange('wondertrade' , 0, -1, function(error, result){
+
+			var count = 0;
+
+			for(var wonderTrade in result) {
+
+				var attributes = JSON.parse(result[wonderTrade]);
+
+				// If the wondertrade has a trainerId, but no name, update the wonderTrade.
+				if( attributes.trainerName === "" && attributes.trainerId ) {
+					attributes.trainerId = "";
+					dataStore.lpush('wondertrade', JSON.stringify(attributes) );
+					dataStore.lrem('wondertrade', 0, result[wonderTrade] );
+					count++;
+				}
+			}
+
+			resp.send('Success, '+count+ ' wonder trades have been updated');
+		});
+	}
+
 	app.get('/admin/*', adminVerification);
 	app.get('/admin/fullLogs', getFullLogs);
 	app.get('/admin/clearDuplicates', clearDuplicates);
+	app.get('/admin/cleanNamelessTrainerIds', cleanNamelessTrainers);
 	app.get('/admin/purge/users/:userId', purgeUser);
 	app.get('/admin/purge/OT/:OTId', purgeOT);
 	app.get('/admin/cleanUpUndefined', cleanUpUndefined);
