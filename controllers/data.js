@@ -318,6 +318,38 @@ module.exports = function(app, dataStore, MemoryStore) {
 		});
 	}
 
+
+	function DateRangePage (req, resp) {
+		dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTable = new UserTableModel(result),
+				startDate = req.params.startDate,
+				endDate = req.params.endDate || 'Now',
+				highChartsData = req.highChartsData,
+				highChartsDataBySubmissionDate = highChartsData.getResultsByDateRange(startDate, endDate),
+				pokemonTable = highChartsData.getPokemonTable(highChartsDataBySubmissionDate),
+				userChart = highChartsData.getCountsByUserIdAndUserTableFormatted(highChartsDataBySubmissionDate, userTable);
+
+			pokemonTable.reverse();
+
+			resp.render('data/dateRange', {
+				title: ' Analytics for ' + startDate + ' - ' + endDate,
+				pageState: '',
+				user: req.user,
+				startDate: startDate,
+				endDate: endDate,
+				userChart: JSON.stringify(userChart),
+				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataBySubmissionDate)),
+				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataBySubmissionDate)),
+				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataBySubmissionDate)),
+				pokemonTable: pokemonTable,
+				quickstats: highChartsData.getQuickStats(highChartsDataBySubmissionDate),
+				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataBySubmissionDate))
+			});
+
+		});
+	}
+
+
 	function TimePage(req, resp) {
 		var highChartsData = req.highChartsData,
 			dataSplitByTime = highChartsData.getDataSplitByTime(),
@@ -563,6 +595,8 @@ module.exports = function(app, dataStore, MemoryStore) {
 	app.get('/data/levels/:pokemonLevel', LevelPage);
 	app.get('/data/dates', DatesPage);
 	app.get('/data/dates/:submissionDate', DatePage);
+	app.get('/data/daterange/:startDate/now', DateRangePage);
+	app.get('/data/daterange/:startDate/:endDate', DateRangePage);
 	app.get('/data/likes', LikesPage);
 	app.get('/data/time', TimePage);
 

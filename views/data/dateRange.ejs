@@ -1,0 +1,13 @@
+<% layout('../layout') -%>
+<h3><%= startDate %> -> <%= endDate %> Overview</h3>
+
+<% include ../partials/_quick-stats.ejs %>
+<div class="chart-box half-chart" id="pokemon-chart"></div>
+<div class="chart-box half-chart" id="users-chart"></div>
+
+<script>
+    $(document).ready(function(){
+        <% include ../partials/highcharts/_pokemon-chart.ejs %>
+        <% include ../partials/highcharts/_users_pie_chart.ejs %>
+    });
+</script>

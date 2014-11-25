@@ -248,6 +248,10 @@ HighChartsData.prototype.getResultsByDate = function(date){
 };
 
 HighChartsData.prototype.getResultsByDateRange = function(startDate, endDate){
+	if (!endDate || endDate === 'Now') {
+		var tempDate = new Date();
+		endDate = tempDate.getFullYear()+'-'+tempDate.getMonth()+'-'+tempDate.getDate();
+	}
 	return _.filter(this.deserializedResults, function(result){
 		var resultDate =result.date;
 		return (resultDate >= startDate && resultDate <= endDate);
