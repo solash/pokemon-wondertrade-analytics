@@ -25,7 +25,7 @@
 	</thead>
 	<tbody>
 	<% wondertrades.forEach(function(wondertrade){ %>
-		<tr>
+		<tr data-unique='<%= wondertrade.userId %>/<%= wondertrade.date %>/<%= wondertrade.time %>'>
     		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %> <i class="pokemon-icon pkmn-<%= wondertrade.pokemonId %>"></i></a></td>
     		<td><%= wondertrade.level %></td>
     		<td><%= wondertrade.pokemonNickname %></td>    		
