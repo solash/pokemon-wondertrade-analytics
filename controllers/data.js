@@ -436,6 +436,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 					submissionDates: submissionDates,
 					pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
 					genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
+					levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByUserId)),
 					pokemonTable: pokemonTable,
 					quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
 					countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId)),
@@ -493,6 +494,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 				wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate(highChartsDataByUserId)),
 				pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon(highChartsDataByUserId)),
 				genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByUserId)),
+				levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByUserId)),
 				pokemonTable: pokemonTable,
 				quickstats: highChartsData.getQuickStats(highChartsDataByUserId),
 				countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByUserId))
