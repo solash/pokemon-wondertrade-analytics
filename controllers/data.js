@@ -580,6 +580,23 @@ module.exports = function(app, dataStore, MemoryStore) {
 		});
 	}
 
+	function RecentWonderTradesPage(req, res) {
+		dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTable = new UserTableModel(result),
+				highChartsData = req.highChartsData;
+
+			res.render('wondertrade/index', {
+				wondertrades: highChartsData.deserializedResults.slice(0, 100),
+				title: 'Wonder Trade List',
+				pokemonHash: PokemonHash,
+				countryHash: CountryHash,
+				pageState: '',
+				userTable: userTable,
+				user: req.user
+			});
+		});
+	}
+
 	app.get('/data', setupHighChartsData, OverviewPage);
 
 	// Setup the highcharts Object before each /data/* request
@@ -601,6 +618,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 	app.get('/data/daterange/:startDate/:endDate', DateRangePage);
 	app.get('/data/likes', LikesPage);
 	app.get('/data/time', TimePage);
+	app.get('/data/recent', RecentWonderTradesPage);
 
 	app.get('/groups', GroupsPage);
 	app.get('/groups/*', setupHighChartsData);

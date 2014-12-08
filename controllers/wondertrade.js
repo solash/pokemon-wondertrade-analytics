@@ -16,25 +16,8 @@ module.exports =  function(app, dataStore, passport) {
 	}
 
 
-	app.get('/wondertrade', function(request, response){
-		dataStore.lrange('userTable' , 0, -1, function(error, result){
-			var userTable = new UserTableModel(result);
-
-			dataStore.lrange('wondertrade' , 0, 100, function(error, result){
-				var highChartsData = new HighChartsData(result);
-
-				response.render('wondertrade/index', {
-					wondertrades: highChartsData.deserializedResults,
-					title: 'Wonder Trade List',
-					pokemonHash: PokemonHash,
-					countryHash: CountryHash,
-					pageState: '',
-					userTable: userTable,
-					user: request.user
-				});
-			});
-		});
-
+	app.get('/wondertrade', function(request, res){
+		res.redirect('data/recent');
 	});
 
 	app.get('/wondertrade/new', function(request, response, next){
