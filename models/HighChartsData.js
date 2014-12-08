@@ -16,29 +16,20 @@ for(var country in CountryList) {
 var HighChartsData = function(jsonResults){
 
 	if(jsonResults) {
-		var deserializedResults = [],
-			currentWonderTrade;
-
-		lupus(0, jsonResults.length, function(n) {
-			currentWonderTrade = jsonResults[n];
-			if(typeof currentWonderTrade === "string" &&
-				currentWonderTrade.charAt(0) === '{' &&
-				currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
-
-				deserializedResults.push(JSON.parse(currentWonderTrade));
-			}
-		});
-
-		this.deserializedResults = deserializedResults;
+		this.refreshData(jsonResults);
 	}
-
+	this.deserializedResults = [];
 	this.dailyThreshold = 15;
 	this.pokemonList = PokemonList;
 };
 
 HighChartsData.prototype.refreshData = function(jsonResults) {
 	var deserializedResults = [],
-		currentWonderTrade;
+		currentWonderTrade,
+		self = this;
+
+	console.log('Refreshing HighCharts Data: ' + (new Date()));
+	console.time('Finished Refreshing HighCharts Data');
 
 	lupus(0, jsonResults.length, function(n) {
 		currentWonderTrade = jsonResults[n];
@@ -48,9 +39,11 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 
 			deserializedResults.push(JSON.parse(currentWonderTrade));
 		}
+	}, function(){
+		self.deserializedResults = deserializedResults;
+		console.timeEnd('Finished Refreshing HighCharts Data');
 	});
 
-	this.deserializedResults = deserializedResults;
 };
 
 HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){

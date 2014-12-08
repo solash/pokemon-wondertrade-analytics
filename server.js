@@ -30,7 +30,7 @@ MemoryStore = new MemoryStoreModel(dataStore);
 MemoryStore.refreshHighCharts();
 setInterval(function(){
     MemoryStore.refreshHighCharts();
-}, 300000);
+}, 600000);
 
 app.configure(function() {
 	app.engine('ejs', engine);
