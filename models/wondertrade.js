@@ -1,3 +1,5 @@
+var profanityList = require('../data/profanityList');
+
 function sanitizeParams(params, userId) {
 	var currentTime = params.time || "",
 		currentDate;
@@ -137,11 +139,11 @@ WonderTradeModel.prototype.equals = function(otherWonderTrade) {
 };
 
 WonderTradeModel.prototype.validate = function() {
-	var attributes = this.toJSON();
+	var attributes = this.toJSON(),
+		nickname = (attributes.pokemonNickname || '').toLowerCase();
 
-	if(!attributes.pokemonId ||
-		!attributes.userId ||
-		!attributes.trainerCountry) {
+	if(!(attributes.pokemonId && attributes.userId && attributes.trainerCountry) ||
+		profanityList.indexOf(nickname) !== -1) {
 		return false;
 	} else {
 		return true;
