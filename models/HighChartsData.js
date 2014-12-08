@@ -1,4 +1,5 @@
 var _ = require('underscore'),
+	lupus = require('lupus'),
 	PokemonList = require('../data/pokemonList.json'),
 	CountryList = require('../data/countryList.json'),
 	PokemonHash = {},
@@ -15,16 +16,19 @@ for(var country in CountryList) {
 var HighChartsData = function(jsonResults){
 
 	if(jsonResults) {
-		var deserializedResults = [];
-		for(var i = 0, max =  jsonResults.length;i<max;i++) {
-			var currentWonderTrade = jsonResults[i];
+		var deserializedResults = [],
+			currentWonderTrade;
+
+		lupus(0, jsonResults.length, function(n) {
+			currentWonderTrade = jsonResults[n];
 			if(typeof currentWonderTrade === "string" &&
 				currentWonderTrade.charAt(0) === '{' &&
 				currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
 
 				deserializedResults.push(JSON.parse(currentWonderTrade));
 			}
-		}
+		});
+
 		this.deserializedResults = deserializedResults;
 	}
 
@@ -33,15 +37,19 @@ var HighChartsData = function(jsonResults){
 };
 
 HighChartsData.prototype.refreshData = function(jsonResults) {
-	var deserializedResults = [];
-	for(var i = 0, max =  jsonResults.length;i<max;i++) {
-		var currentWonderTrade = jsonResults[i];
+	var deserializedResults = [],
+		currentWonderTrade;
+
+	lupus(0, jsonResults.length, function(n) {
+		currentWonderTrade = jsonResults[n];
 		if(typeof currentWonderTrade === "string" &&
 			currentWonderTrade.charAt(0) === '{' &&
 			currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
+
 			deserializedResults.push(JSON.parse(currentWonderTrade));
 		}
-	}
+	});
+
 	this.deserializedResults = deserializedResults;
 };
 
