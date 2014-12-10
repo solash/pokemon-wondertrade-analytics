@@ -14,11 +14,22 @@ for(var country in CountryList) {
 }
 
 var HighChartsData = function(jsonResults){
+	var deserializedResults = [];
 
 	if(jsonResults) {
-		this.refreshData(jsonResults);
+
+		//this.refreshData(jsonResults);
+		for(var i = 0, max =  jsonResults.length;i<max;i++) {
+			currentWonderTrade = jsonResults[i];
+			if(typeof currentWonderTrade === "string" &&
+				currentWonderTrade.charAt(0) === '{' &&
+				currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
+
+				deserializedResults.push(JSON.parse(currentWonderTrade));
+			}
+		}
 	}
-	this.deserializedResults = [];
+	this.deserializedResults = deserializedResults;
 	this.dailyThreshold = 15;
 	this.pokemonList = PokemonList;
 };
