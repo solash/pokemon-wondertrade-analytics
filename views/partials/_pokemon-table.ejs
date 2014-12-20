@@ -2,9 +2,7 @@
     <h4>Wonder Traded Pokemon</h4>
     <% for(var pokemon in pokemonTable) { %>
         <% if(pokemonTable[pokemon].id){ %>
-            <a href="/data/pokemon/<%= pokemonTable[pokemon].id %>">
-                <%= pokemonTable[pokemon].name %> (<%= pokemonTable[pokemon].count %>)
-            </a>
+            <a href="/data/pokemon/<%= pokemonTable[pokemon].id %>"><%= pokemonTable[pokemon].name %> (<%= pokemonTable[pokemon].count %>)</a>
         <% } %>
     <% } %>
 </div>

@@ -48,12 +48,10 @@ module.exports = function(app, dataStore, MemoryStore) {
 	}
 
 	function PokemonPage(req, resp){
-		var highChartsData = req.highChartsData,
-			pokemonTable = highChartsData.getPokemonTable(),
-			topTenPokemon = highChartsData.getTopTenPokemon(),
-			topTenPokemonIds = _.map(topTenPokemon, function(pkmn){return pkmn[0];});
 
-		pokemonTable.reverse();
+		var highChartsData = req.highChartsData,
+			topTenPokemon = highChartsData.getTopTenForLastMonthPokemon(),
+			topTenPokemonIds = _.map(topTenPokemon, function(pkmn){return pkmn[0];});
 
 		resp.render('data/pokemon', {
 			title: 'Pokemon Overview',
@@ -64,7 +62,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 			levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
 			pokemonList: PokemonList,
 			user: req.user,
-			pokemonTable: pokemonTable,
 			pokemonChart: JSON.stringify(highChartsData.getSortedCountsByPokemon()),
 			quickstats: highChartsData.getQuickStats()
 		});

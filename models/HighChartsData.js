@@ -33,12 +33,13 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 
 	lupus(0, jsonResults.length, function(n) {
 		currentWonderTrade = jsonResults[n];
-		if(typeof currentWonderTrade === "string" &&
-			currentWonderTrade.charAt(0) === '{' &&
-			currentWonderTrade.charAt(currentWonderTrade.length-1) === '}') {
 
+		try {
 			deserializedResults.push(JSON.parse(currentWonderTrade));
+		} catch (e) {
+			console.log('There was a problem with WonderTrade: ', currentWonderTrade);
 		}
+
 	}, function(){
 		self.deserializedResults = deserializedResults;
 		console.timeEnd('Finished Refreshing HighCharts Data');
@@ -337,15 +338,20 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		resultSet = this.deserializedResults;
 	}
 
-	// Split the results by Pokemon
-	var wonderTradesByPokemon = _.groupBy(resultSet, function(wonderTrade){
-		return wonderTrade.pokemonId;
-	});
+	var currentWT,
+		currentPkmn,
+		currentDate;
+	for(var wonderTrade in resultSet) {
+		currentWT = resultSet[wonderTrade];
+		currentPkmn = currentWT.pokemonId;
+		currentDate = currentWT.date;
 
-	// Then split those results by their dates.
-	_.each(wonderTradesByPokemon, function(wonderTradeByDate, wonderTradeDate){
-		pokemonGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date');
-	});
+		if (!pokemonGroupedByDate[currentPkmn]) {
+			pokemonGroupedByDate[currentPkmn] = {};
+		}
+		pokemonGroupedByDate[currentPkmn][currentDate] = pokemonGroupedByDate[currentPkmn][currentDate] ?
+			(pokemonGroupedByDate[currentPkmn][currentDate] + 1) : 1;
+	}
 
 	// And now.. we review each pokemon, and add their date/counts
 	_.each(pokemonGroupedByDate, function(pokemonTradesByDate, pokemonId) {
@@ -355,9 +361,11 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 			data: []
 		};
 
-		var startDate = new Date(2013, 10, 21),
+		var startDate = new Date(),
 			endDate = new Date(),
 			fullDateRange = [];
+
+		startDate.setMonth(startDate.getMonth()-1);
 		while(startDate < endDate) {
 			fullDateRange.push([context.formatDateFromString(startDate.customFormatDate()), 0]);
 			startDate.setDate(startDate.getDate()+1);
@@ -528,8 +536,15 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet) {
 	return trendChart;
 };
 
-HighChartsData.prototype.getTopTenPokemon = function(){
-	var countTrends = this.getSortedCountsByPokemonId();
+HighChartsData.prototype.getTopTenForLastMonthPokemon = function(){
+
+	var startDate = new Date(),
+		endDate = new Date();
+
+	startDate.setMonth(startDate.getMonth()-1);
+
+	var lastMonthsResults = this.getResultsByDateRange(startDate.customFormatDate(), endDate.customFormatDate()),
+		countTrends = this.getSortedCountsByPokemonId(lastMonthsResults);
 	countTrends = countTrends.reverse();
 	return _.first(countTrends,10);
 };
