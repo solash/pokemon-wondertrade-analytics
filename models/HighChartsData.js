@@ -329,6 +329,7 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 
 // @param pokemonSubSet: an array of pokemon we will filter on
 HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
+
 	var pokemonGroupedByDate = {},
 		trendingPokemonChart = [],
 		totalCountsByDate = {},
@@ -346,24 +347,35 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		currentPkmn = currentWT.pokemonId;
 		currentDate = currentWT.date;
 
-		if (!pokemonGroupedByDate[currentPkmn]) {
-			pokemonGroupedByDate[currentPkmn] = {};
+		// If there pokemon is within the subset, or we aren't filtering by subset, add the wondertrade data
+		if ((pokemonSubSet && pokemonSubSet.indexOf(currentPkmn) !== -1 ) || !pokemonSubSet ) {
+			if (!pokemonGroupedByDate[currentPkmn]) {
+				pokemonGroupedByDate[currentPkmn] = {};
+			}
+			pokemonGroupedByDate[currentPkmn][currentDate] = pokemonGroupedByDate[currentPkmn][currentDate] ?
+				(pokemonGroupedByDate[currentPkmn][currentDate] + 1) : 1;
 		}
-		pokemonGroupedByDate[currentPkmn][currentDate] = pokemonGroupedByDate[currentPkmn][currentDate] ?
-			(pokemonGroupedByDate[currentPkmn][currentDate] + 1) : 1;
 	}
+
+	// Generic Literal Object to hold pokemon data
+	var pokemonData;
+
+	var startDate = new Date(),
+		endDate = new Date(),
+		fullDateRange = [],
+		countPercent;
 
 	// And now.. we review each pokemon, and add their date/counts
 	_.each(pokemonGroupedByDate, function(pokemonTradesByDate, pokemonId) {
 		// Generic Literal Object to hold pokemon data
-		var pokemonData = {
+		pokemonData = {
 			name: PokemonHash[pokemonId],
 			data: []
 		};
 
-		var startDate = new Date(),
-			endDate = new Date(),
-			fullDateRange = [];
+		startDate = new Date();
+		endDate = new Date();
+		fullDateRange = [];
 
 		startDate.setMonth(startDate.getMonth()-1);
 		while(startDate < endDate) {
@@ -371,49 +383,24 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 			startDate.setDate(startDate.getDate()+1);
 		}
 
-		// If there is a subset we want to filter on, then lets filter.
-		if(pokemonSubSet) {
-			if(_.contains(pokemonSubSet, pokemonId)) {
-				_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-					if (!totalCountsByDate[dateField]) {
-						totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
-					}
-					var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
-					countPercent = parseFloat(countPercent.toFixed(2));
-
-					if(totalCountsByDate[dateField] > context.dailyThreshold) {
-						_.each(fullDateRange, function(tempDate){
-							if(context.formatDateFromString(dateField) === tempDate[0]) {
-								tempDate[1] = countPercent;
-							}
-						});
-					}
-				});
-
-				pokemonData.data = fullDateRange;
-				trendingPokemonChart.push(pokemonData);
+		_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
+			if (!totalCountsByDate[dateField]) {
+				totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
 			}
-		} else {
-			_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-				if (!totalCountsByDate[dateField]) {
-					totalCountsByDate[dateField] = (context.getResultsByDate(dateField)).length;
+
+			countPercent = parseFloat((dateFieldCount/totalCountsByDate[dateField]*100).toFixed(2));
+
+			_.each(fullDateRange, function(tempDate){
+				if(context.formatDateFromString(dateField) === tempDate[0]) {
+					tempDate[1] = countPercent;
 				}
-				var countPercent = (dateFieldCount/totalCountsByDate[dateField]*100);
-				countPercent = parseFloat(countPercent.toFixed(2));
-
-				_.each(fullDateRange, function(tempDate){
-					if(context.formatDateFromString(dateField) === tempDate[0]) {
-						tempDate[1] = countPercent;
-					}
-				});
 			});
+		});
 
-			pokemonData.data = fullDateRange;
-			trendingPokemonChart.push(pokemonData);
-		}
+		pokemonData.data = fullDateRange;
+		trendingPokemonChart.push(pokemonData);
 
 	});
-
 	return trendingPokemonChart;
 };
 

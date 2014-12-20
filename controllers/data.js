@@ -51,7 +51,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 
 		var highChartsData = req.highChartsData,
 			topTenPokemon = highChartsData.getTopTenForLastMonthPokemon(),
-			topTenPokemonIds = _.map(topTenPokemon, function(pkmn){return pkmn[0];});
+			topTenPokemonIds = _.map(topTenPokemon, function(pkmn){return parseInt(pkmn[0], 10);});
 
 		resp.render('data/pokemon', {
 			title: 'Pokemon Overview',
