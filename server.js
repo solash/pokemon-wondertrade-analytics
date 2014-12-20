@@ -56,7 +56,7 @@ Date.prototype.customFormatDate = function(){
 (require('./controllers/home'))(app, dataStore, MemoryStore);
 
 // Init WonderTrade Controller
-(require('./controllers/wondertrade'))(app, dataStore, passport);
+(require('./controllers/wondertrade'))(app, dataStore, passport, MemoryStore);
 
 // Init Data Controller
 (require('./controllers/data'))(app, dataStore, MemoryStore);

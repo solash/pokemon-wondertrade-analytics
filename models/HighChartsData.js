@@ -1,27 +1,13 @@
 var _ = require('underscore'),
-	lupus = require('lupus'),
-	PokemonList = require('../data/pokemonList.json'),
-	CountryList = require('../data/countryList.json'),
-	PokemonHash = {},
-	CountryHash = {};
+	lupus = require('lupus');
 
-for(var pokemon in PokemonList) {
-	PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
-}
+var HighChartsData = function(pokemonHash, countryHash) {
 
-for(var country in CountryList) {
-	CountryHash[CountryList[country].id] = CountryList[country].name;
-}
-
-var HighChartsData = function(jsonResults){
-
-	if(jsonResults) {
-		this.refreshData(jsonResults);
-	}
 	this.deserializedResults = [];
 	this.cachedData = {};
 	this.dailyThreshold = 15;
-	this.pokemonList = PokemonList;
+	this.pokemonHash = pokemonHash;
+	this.countryHash = countryHash;
 };
 
 HighChartsData.prototype.refreshData = function(jsonResults) {
@@ -72,9 +58,10 @@ HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
 	}
 
 	var trainerCountries = _.countBy(resultSet, 'trainerCountry'),
-		countryChart = [];
+		countryChart = [],
+		countryHash = this.countryHash;
 	_.each(trainerCountries, function(countryCount, countryId) {
-		countryChart.push([CountryHash[countryId], countryCount]);
+		countryChart.push([countryHash[countryId], countryCount]);
 	});
 
 	countryChart = _.sortBy(countryChart, function(itr){
@@ -90,9 +77,10 @@ HighChartsData.prototype.getRegionsTable = function(resultSet){
 	}
 
 	var trainerCountries = _.countBy(resultSet, 'trainerCountry'),
-		countryChart = [];
+		countryChart = [],
+		countryHash = this.countryHash;
 	_.each(trainerCountries, function(countryCount, countryId) {
-		countryChart.push({id: countryId, name: CountryHash[countryId], count: countryCount});
+		countryChart.push({id: countryId, name: countryHash[countryId], count: countryCount});
 	});
 
 	countryChart = _.sortBy(countryChart, function(itr){
@@ -115,9 +103,10 @@ HighChartsData.prototype.getPokemonTable = function(resultSet) {
 		resultSet = this.deserializedResults;
 	}
 	var pokemonResults = _.countBy(resultSet, 'pokemonId'),
-		pokemonTable = [];
+		pokemonTable = [],
+		pokemonHash = this.pokemonHash;
 	_.each(pokemonResults, function(pokemonCount, pokemonId) {
-		pokemonTable.push({id:pokemonId, name: PokemonHash[pokemonId], count: pokemonCount});
+		pokemonTable.push({id:pokemonId, name: pokemonHash[pokemonId], count: pokemonCount});
 	});
 
 	pokemonTable = _.sortBy(pokemonTable, function(itr){
@@ -141,9 +130,10 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet){
 		resultSet = this.deserializedResults;
 	}
 	var pokemonByIds = _.countBy(resultSet, 'pokemonId'),
-		pokemonChart = [];
+		pokemonChart = [],
+		pokemonHash = this.pokemonHash;
 	_.each(pokemonByIds, function(pokemonByIdCount, pokemonId) {
-		pokemonChart.push([PokemonHash[pokemonId], pokemonByIdCount]);
+		pokemonChart.push([pokemonHash[pokemonId], pokemonByIdCount]);
 	});
 
 	pokemonChart = _.sortBy(pokemonChart, function(itr){
@@ -242,7 +232,7 @@ HighChartsData.prototype.getResultsByPokemonLevel = function(pokemonLevel) {
 };
 
 HighChartsData.prototype.getResultsByRegionId = function(regionId) {
-	if(CountryHash[regionId]) {
+	if(this.countryHash[regionId]) {
 		return _.where(this.deserializedResults, {trainerCountry: regionId});
 	}
 	return [];
@@ -296,9 +286,7 @@ HighChartsData.prototype.getCountsBySubRegions = function(regionSet) {
 
 	var subRegionsChart = [];
 	_.each(subRegions, function(subregionCount, regionName){
-		if(regionName === '') {
-			subRegionsChart.push(["n/a", subregionCount]);
-		} else {
+		if(regionName) {
 			subRegionsChart.push([regionName, subregionCount]);
 		}
 	});
@@ -349,7 +337,8 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 // @param pokemonSubSet: an array of pokemon we will filter on
 HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
 
-	var pokemonGroupedByDate = {},
+	var pokemonHash = this.pokemonHash,
+		pokemonGroupedByDate = {},
 		trendingPokemonChart = [],
 		totalCountsByDate = {},
 		cacheThis = false,
@@ -394,7 +383,7 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 	_.each(pokemonGroupedByDate, function(pokemonTradesByDate, pokemonId) {
 		// Generic Literal Object to hold pokemon data
 		pokemonData = {
-			name: PokemonHash[pokemonId],
+			name: pokemonHash[pokemonId],
 			data: []
 		};
 
@@ -577,7 +566,8 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
 
 	var wonderTradesByPokemon = _.groupBy(resultSet, function(wonderTrade){
 		return wonderTrade.pokemonId;
-	});
+	}),
+		pokemonHash = this.pokemonHash;
 
 	_.each(wonderTradesByPokemon, function(pokemonList, pokemonId){
 		var likedCounts = _.countBy(pokemonList, function(pokemon){
@@ -596,7 +586,7 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
 			var totalOpinions = likes+dislikes,
 				likePercentage = (likes / (totalOpinions)*100).toFixed(2),
 				pokemonLikesObject = {
-					name: PokemonHash[pokemonId],
+					name: pokemonHash[pokemonId],
 					percentage: likePercentage,
 					count: totalOpinions,
 					likes: likes,

@@ -1,19 +1,6 @@
-var UserTableModel = require('../models/UserTable'),
-	HighChartsData = require('../models/HighChartsData'),
+var HighChartsData = require('../models/HighChartsData'),
 	WondertradeModel = require('../models/wondertrade'),
-	PokemonList = require('../data/pokemonList.json'),
-	CountryList = require('../data/countryList.json'),
-	fs = require('fs'),
-	PokemonHash = {},
-	CountryHash = {};
-
-for(var pokemon in PokemonList) {
-	PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
-}
-
-for(var country in CountryList) {
-	CountryHash[CountryList[country].id] = CountryList[country].name;
-}
+	fs = require('fs');
 
 module.exports = function(app, dataStore) {
 
@@ -24,26 +11,6 @@ module.exports = function(app, dataStore) {
 		} else {
 			resp.send('Forbidden.');
 		}
-	}
-
-	function getFullLogs(req, resp, next) {
-		dataStore.lrange('userTable' , 0, -1, function(error, result){
-			var userTable = new UserTableModel(result);
-
-			dataStore.lrange('wondertrade' , 0, -1, function(error, result){
-				var highChartsData = new HighChartsData(result);
-
-				resp.render('wondertrade/index', {
-					wondertrades: highChartsData.deserializedResults,
-					title: 'Wonder Trade Full List',
-					pokemonHash: PokemonHash,
-					countryHash: CountryHash,
-					pageState: '',
-					userTable: userTable,
-					user: req.user
-				});
-			});
-		});
 	}
 
 	function purgeUser(req, resp) {
@@ -250,16 +217,12 @@ module.exports = function(app, dataStore) {
 		});
 	}
 
-	app.get('/admin/*', adminVerification);
-	app.get('/admin/fullLogs', getFullLogs);
-	app.get('/admin/clearDuplicates', clearDuplicates);
-	app.get('/admin/cleanNamelessTrainerIds', cleanNamelessTrainers);
-	app.get('/admin/purge/users/:userId', purgeUser);
-	app.get('/admin/purge/OT/:OTId', purgeOT);
-	app.get('/admin/cleanUpUndefined', cleanUpUndefined);
-	app.get('/admin/massImport', getMassImport);
-
-	app.get('/admin/deleteWonderTrade/:userId/:date/:time', deleteWonderTrade);
-
+	app.get('/admin/clearDuplicates', adminVerification, clearDuplicates);
+	app.get('/admin/cleanNamelessTrainerIds', adminVerification, cleanNamelessTrainers);
+	app.get('/admin/purge/users/:userId', adminVerification, purgeUser);
+	app.get('/admin/purge/OT/:OTId', adminVerification, purgeOT);
+	app.get('/admin/cleanUpUndefined', adminVerification, cleanUpUndefined);
+	app.get('/admin/massImport', adminVerification, getMassImport);
+	app.get('/admin/deleteWonderTrade/:userId/:date/:time', adminVerification, deleteWonderTrade);
 	app.post('/admin/massImport', adminVerification, postMassImport);
 };

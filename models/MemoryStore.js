@@ -20,7 +20,7 @@ for(var country in CountryList) {
 var MemoryStore = function(redisStore) {
 	this.redisStore = redisStore;
 	this.store = {
-		"highChartsData": new HighChartsData(),
+		"highChartsData": new HighChartsData(PokemonHash, CountryHash),
 		"highChartsResults": {},
 		"PokemonList": PokemonList,
 		"CountryList": CountryList,

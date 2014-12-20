@@ -2,24 +2,14 @@ var _ = require('underscore'),
 	rest = require('restler'),
 	parseString = require('xml2js').parseString,
 	HighChartsData = require('../models/HighChartsData'),
-	PokemonList = require('../data/pokemonList.json'),
-	CountryList = require('../data/countryList.json'),
 	UserTableModel = require('../models/UserTable'),
-	RedditPostModel = require('../models/RedditPost'),
-	PokemonHash = {},
-	CountryHash = {};
-
-for(var pokemon in PokemonList) {
-	PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
-}
-
-for(var country in CountryList) {
-	CountryHash[CountryList[country].id] = CountryList[country].name;
-}
-
-
+	RedditPostModel = require('../models/RedditPost');
 
 module.exports = function(app, dataStore, MemoryStore) {
+
+	var PokemonList = MemoryStore.store.PokemonList,
+		PokemonHash = MemoryStore.store.PokemonHash,
+		CountryHash = MemoryStore.store.CountryHash;
 
 	function setupHighChartsData(req, resp, next){
 

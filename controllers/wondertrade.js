@@ -1,19 +1,8 @@
-module.exports =  function(app, dataStore, passport) {
+module.exports =  function(app, dataStore, passport, memoryStore) {
 	var WondertradeModel = require('../models/wondertrade'),
-		UserTableModel = require('../models/UserTable'),
 		HighChartsData = require('../models/HighChartsData'),
-		PokemonList = require('../data/pokemonList.json'),
-		CountryList = require('../data/countryList.json'),
-		PokemonHash = {},
-		CountryHash = {};
-
-	for(var pokemon in PokemonList) {
-		PokemonHash[PokemonList[pokemon].id] = PokemonList[pokemon].name;
-	}
-
-	for(var country in CountryList) {
-		CountryHash[CountryList[country].id] = CountryList[country].name;
-	}
+		PokemonList = memoryStore.store.PokemonList,
+		CountryList = memoryStore.store.CountryList;
 
 
 	app.get('/wondertrade', function(request, res){
