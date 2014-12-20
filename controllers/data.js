@@ -50,15 +50,16 @@ module.exports = function(app, dataStore, MemoryStore) {
 	function PokemonPage(req, resp){
 
 		var highChartsData = req.highChartsData,
-			topTenPokemon = highChartsData.getTopTenForLastMonthPokemon(),
-			topTenPokemonIds = _.map(topTenPokemon, function(pkmn){return parseInt(pkmn[0], 10);});
+			topPokemon = highChartsData.getTopPokemon(5),
+			topPokemonIds = _.map(topPokemon, function(pkmn){return parseInt(pkmn[0], 10);}),
+			trendingChart = JSON.stringify(highChartsData.getCountTrendsByPokemon(false, topPokemonIds));
 
 		resp.render('data/pokemon', {
 			title: 'Pokemon Overview',
 			pageState: '',
 			result: req.result,
 			PokemonHash: PokemonHash,
-			trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(false, topTenPokemonIds)),
+			trendingPokemonChart: trendingChart,
 			levelBarChart: JSON.stringify(highChartsData.getCountsByLevels()),
 			pokemonList: PokemonList,
 			user: req.user,

@@ -19,32 +19,51 @@ var HighChartsData = function(jsonResults){
 		this.refreshData(jsonResults);
 	}
 	this.deserializedResults = [];
+	this.cachedData = {};
 	this.dailyThreshold = 15;
 	this.pokemonList = PokemonList;
 };
 
 HighChartsData.prototype.refreshData = function(jsonResults) {
-	var deserializedResults = [],
-		currentWonderTrade,
-		self = this;
 
 	console.log('Refreshing HighCharts Data: ' + (new Date()));
 	console.time('Finished Refreshing HighCharts Data');
+	try {
+		var jsonString = '[' + jsonResults + ']';
+		jsonString = jsonString.replace('\'', '');
 
-	lupus(0, jsonResults.length, function(n) {
-		currentWonderTrade = jsonResults[n];
-
-		try {
-			deserializedResults.push(JSON.parse(currentWonderTrade));
-		} catch (e) {
-			console.log('There was a problem with WonderTrade: ', currentWonderTrade);
-		}
-
-	}, function(){
-		self.deserializedResults = deserializedResults;
+		this.deserializedResults = JSON.parse(jsonString);
 		console.timeEnd('Finished Refreshing HighCharts Data');
-	});
 
+		this.cachePageResults();
+	} catch (e) {
+
+		console.log('There was an error parsing the redis results. Falling back to the previous version.');
+
+		var deserializedResults = [],
+			self = this;
+
+		lupus(0, jsonResults.length, function(n) {
+			currentWonderTrade = jsonResults[n];
+
+			try {
+				deserializedResults.push(JSON.parse(currentWonderTrade));
+			} catch (e) {
+				console.log('There was a problem with WonderTrade: ', currentWonderTrade);
+			}
+
+		}, function(){
+			self.deserializedResults = deserializedResults;
+			console.timeEnd('Finished Refreshing HighCharts Data');
+
+			self.cachePageResults();
+		});
+	}
+};
+
+HighChartsData.prototype.cachePageResults = function () {
+	this.cachedData = {};
+	console.log('Highcharts Page Cache has been reset');
 };
 
 HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
@@ -333,10 +352,16 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 	var pokemonGroupedByDate = {},
 		trendingPokemonChart = [],
 		totalCountsByDate = {},
+		cacheThis = false,
 		context = this;
 
 	if(!resultSet) {
 		resultSet = this.deserializedResults;
+		if (this.cachedData.pokemonTrends) {
+			return this.cachedData.pokemonTrends;
+		} else {
+			cacheThis = true;
+		}
 	}
 
 	var currentWT,
@@ -401,6 +426,11 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		trendingPokemonChart.push(pokemonData);
 
 	});
+
+	if (!this.cachedData.pokemonTrends && cacheThis) {
+		this.cachedData.pokemonTrends = trendingPokemonChart;
+	}
+
 	return trendingPokemonChart;
 };
 
@@ -523,7 +553,7 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet) {
 	return trendChart;
 };
 
-HighChartsData.prototype.getTopTenForLastMonthPokemon = function(){
+HighChartsData.prototype.getTopPokemon = function(limit){
 
 	var startDate = new Date(),
 		endDate = new Date();
@@ -533,7 +563,7 @@ HighChartsData.prototype.getTopTenForLastMonthPokemon = function(){
 	var lastMonthsResults = this.getResultsByDateRange(startDate.customFormatDate(), endDate.customFormatDate()),
 		countTrends = this.getSortedCountsByPokemonId(lastMonthsResults);
 	countTrends = countTrends.reverse();
-	return _.first(countTrends,10);
+	return _.first(countTrends,limit);
 };
 
 HighChartsData.prototype.getCommunityLikes = function(resultSet){
