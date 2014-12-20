@@ -1,3 +1,4 @@
+require('newrelic');
 var express = require('express'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),

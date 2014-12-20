@@ -4,6 +4,7 @@
   "description": "Node/Express Webapp designed to show wonder trade analytics",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +17,7 @@
     "Pokemon",
     "HighCharts"
   ],
-  "author": "Tyler Stark (front end)",
+  "author": "Tyler Stark",
   "license": "BSD",
   "dependencies": {
     "express": "3.x",
@@ -32,7 +33,8 @@
     "xml2js": "~0.4.0",
     "connect-redis": "~1.4.6",
     "connect-heroku-redis": "~0.1.5",
-    "lupus": "0.0.1"
+    "lupus": "0.0.1",
+    "newrelic": "~1.14.3"
   },
   "engines": {
     "node": "0.10.x",
