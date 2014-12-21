@@ -366,7 +366,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 
 	function OTPage(req, resp){
 		var highChartsData = req.highChartsData,
-			originalTrainers = highChartsData.getOriginalTrainers();
+			originalTrainers = highChartsData.getCachedOriginalTrainers();
 
 		resp.render('data/originalTrainers', {
 			title: 'Original Trainer\'s recorded',

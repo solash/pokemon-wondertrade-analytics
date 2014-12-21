@@ -49,6 +49,7 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 
 HighChartsData.prototype.cachePageResults = function () {
 	this.cachedData.pokemonTrends = this.getCountTrendsByPokemon();
+	this.cachedData.originalTrainers = this.getOriginalTrainers();
 	console.log('Highcharts Page Cache has been reset');
 };
 
@@ -624,11 +625,10 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
 	return communityOpinion;
 };
 
-HighChartsData.prototype.getOriginalTrainers = function(resultSet){
-	if(!resultSet) {
-		resultSet = this.deserializedResults;
-	}
-	var originalTrainers = {};
+HighChartsData.prototype.getOriginalTrainers = function(){
+
+	var resultSet = this.deserializedResults,
+		originalTrainers = {};
 
 	var wonderTradesByTrainerId = _.groupBy(resultSet, function(wonderTrade){
 		return wonderTrade.trainerId;
@@ -645,6 +645,10 @@ HighChartsData.prototype.getOriginalTrainers = function(resultSet){
 	});
 
 	return originalTrainers;
+};
+
+HighChartsData.prototype.getCachedOriginalTrainers = function(){
+	return this.cachedData.originalTrainers;
 };
 
 HighChartsData.prototype.getOriginalTrainersById = function(trainerId){
