@@ -69,29 +69,17 @@ module.exports = function(app, dataStore, MemoryStore) {
 					userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
 				}
 
-
 				var highChartsData = MemoryStore.store.highChartsData,
-					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable),
-					trendingPokemonChart = highChartsData.getCountTrendsByUsers(false, userTable);
-
-
-				trendingPokemonChart = _.sortBy(trendingPokemonChart, 'fullCount');
-				trendingPokemonChart.reverse();
-				trendingPokemonChart = _.first(trendingPokemonChart, 10);
+					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
 
 				response.render('contributors', {
 					title: 'Project Contributors',
 					pageState: '',
 					user: request.user,
-					trendingPokemonChart: JSON.stringify(trendingPokemonChart),
 					userTable: userTableWithCounts,
 					redditUsers: redditUsers
 				});
-
-
-
 			});
-
 		});
 	});
 

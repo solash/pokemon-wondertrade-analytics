@@ -96,24 +96,20 @@ module.exports = function(app, dataStore, passport, LocalStrategy) {
 	app.get('/dashboard', function(request, response){
 		if(request.user) {
 
-			dataStore.lrange('userTable' , 0, -1, function(error, result){
-				var userTable = new UserTableModel(result);
-
-				dataStore.lrange('redditUser' ,0, -1, function(error, result){
-					var userId = request.user.id,
-						redditUserName = '';
-					for(var redditUser in result) {
-						var parsedRedditUser = JSON.parse(result[redditUser]);
-						if(parsedRedditUser.userId === userId) {
-							redditUserName = parsedRedditUser.redditUserName;
-						}
+			dataStore.lrange('redditUser' ,0, -1, function(error, result){
+				var userId = request.user.id,
+					redditUserName = '';
+				for(var redditUser in result) {
+					var parsedRedditUser = JSON.parse(result[redditUser]);
+					if(parsedRedditUser.userId === userId) {
+						redditUserName = parsedRedditUser.redditUserName;
 					}
-					response.render('auth/dashboard', {
-						title: 'Wonder Trade Analytics',
-						pageState: '',
-						user: request.user,
-						redditUserName: redditUserName
-					});
+				}
+				response.render('auth/dashboard', {
+					title: 'Wonder Trade Analytics',
+					pageState: '',
+					user: request.user,
+					redditUserName: redditUserName
 				});
 			});
 		} else {

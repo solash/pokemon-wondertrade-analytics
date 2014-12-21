@@ -48,11 +48,12 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 };
 
 HighChartsData.prototype.cachePageResults = function () {
+	console.time('Highcharts Page Cache has been reset');
 	this.cachedData.pokemonTrends = this.getCountTrendsByPokemon();
 	this.cachedData.originalTrainers = this.getOriginalTrainers();
 	this.cachedData.dateTrend = this.getTrendsByDate();
 	this.cachedData.dateTrendQuickstats = this.getQuickStatsTrendsByDates();
-	console.log('Highcharts Page Cache has been reset');
+	console.timeEnd('Highcharts Page Cache has been reset');
 };
 
 HighChartsData.prototype.getSortedCountsByCountries = function(resultSet){
@@ -435,59 +436,6 @@ HighChartsData.prototype.getCachedTrendByPokemonIds = function(pokemonIdArray) {
 		})
 	}
 	return trends;
-};
-
-HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable, startDateOverride, endDateOverride){
-	var usersGroupedByDate = {},
-		trendingPokemonChart = [],
-		context = this;
-
-	if(!resultSet) {
-		resultSet = this.deserializedResults;
-	}
-
-	// Split the results by UserId
-	var wonderTradesByUserId = _.groupBy(resultSet, function(wonderTrade){
-		return wonderTrade.userId;
-	});
-
-	// Then split those results by their dates.
-	_.each(wonderTradesByUserId, function(wonderTradeByDate, wonderTradeDate){
-		usersGroupedByDate[wonderTradeDate] = _.countBy(wonderTradeByDate, 'date');
-	});
-
-	// And now.. we review each pokemon, and add their date/counts
-	_.each(usersGroupedByDate, function(pokemonTradesByDate, userId) {
-		// Generic Literal Object to hold pokemon data
-		var pokemonData = {
-			name: userTable[userId].username,
-			data: [],
-			fullCount: 0
-		};
-
-		var startDate = (startDateOverride ? new Date(startDateOverride) : new Date(2013, 10, 21) ),
-			endDate = (endDateOverride ? new Date(endDateOverride) : new Date() ),
-			fullDateRange = [];
-		while(startDate < endDate) {
-			fullDateRange.push([context.formatDateFromString(startDate.customFormatDate()), 0]);
-			startDate.setDate(startDate.getDate()+1);
-		}
-
-		// If there is a subset we want to filter on, then lets filter!
-		_.each(pokemonTradesByDate, function(dateFieldCount, dateField){
-			_.each(fullDateRange, function(tempDate){
-				if(context.formatDateFromString(dateField) === tempDate[0]) {
-					tempDate[1] = dateFieldCount;
-				}
-			});
-			pokemonData.fullCount += dateFieldCount;
-		});
-
-		pokemonData.data = fullDateRange;
-		trendingPokemonChart.push(pokemonData);
-	});
-
-	return trendingPokemonChart;
 };
 
 HighChartsData.prototype.getSubmissionDates = function(resultSet) {
