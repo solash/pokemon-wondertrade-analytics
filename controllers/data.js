@@ -267,7 +267,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 
 	function DatesPage(req, resp){
 		var highChartsData = req.highChartsData,
-			statTrendsByDate = highChartsData.getQuickStatsTrendsByDates();
+			statTrendsByDate = highChartsData.getCachedQuickStatsTrendsByDates();
 
 		resp.render('data/dates', {
 			title: 'Wonder Trade Analytics',
