@@ -1,4 +1,6 @@
-require('newrelic');
+if(process.env.NODE_ENV !== 'DEVELOPMENT') {
+	require('newrelic');
+}
 var express = require('express'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),

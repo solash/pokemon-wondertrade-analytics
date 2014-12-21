@@ -1,3 +1,4 @@
 node_modules/
 .idea/
 newrelic_agent.log
+npm-debug.log

@@ -48,7 +48,7 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 };
 
 HighChartsData.prototype.cachePageResults = function () {
-	this.cachedData = {};
+	this.cachedData.pokemonTrends = this.getCountTrendsByPokemon();
 	console.log('Highcharts Page Cache has been reset');
 };
 
@@ -334,24 +334,19 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet){
 	return levelsChartFormatted;
 };
 
-// @param pokemonSubSet: an array of pokemon we will filter on
-HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSubSet){
+/**
+ * Retrieve the countTrend data for all pokemon.
+ * @returns {1: [...], 2: []}, where 1/2 are pokemon ids, and the arrays are formatted highchart objects
+ */
+HighChartsData.prototype.getCountTrendsByPokemon = function(){
 
-	var pokemonHash = this.pokemonHash,
+	var resultSet = this.deserializedResults,
+		pokemonHash = this.pokemonHash,
 		pokemonGroupedByDate = {},
-		trendingPokemonChart = [],
+		trendingPokemonChart = {},
 		totalCountsByDate = {},
-		cacheThis = false,
 		context = this;
 
-	if(!resultSet) {
-		resultSet = this.deserializedResults;
-		if (this.cachedData.pokemonTrends) {
-			return this.cachedData.pokemonTrends;
-		} else {
-			cacheThis = true;
-		}
-	}
 
 	var currentWT,
 		currentPkmn,
@@ -361,14 +356,11 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 		currentPkmn = currentWT.pokemonId;
 		currentDate = currentWT.date;
 
-		// If there pokemon is within the subset, or we aren't filtering by subset, add the wondertrade data
-		if ((pokemonSubSet && pokemonSubSet.indexOf(currentPkmn) !== -1 ) || !pokemonSubSet ) {
-			if (!pokemonGroupedByDate[currentPkmn]) {
-				pokemonGroupedByDate[currentPkmn] = {};
-			}
-			pokemonGroupedByDate[currentPkmn][currentDate] = pokemonGroupedByDate[currentPkmn][currentDate] ?
-				(pokemonGroupedByDate[currentPkmn][currentDate] + 1) : 1;
+		if (!pokemonGroupedByDate[currentPkmn]) {
+			pokemonGroupedByDate[currentPkmn] = {};
 		}
+		pokemonGroupedByDate[currentPkmn][currentDate] = pokemonGroupedByDate[currentPkmn][currentDate] ?
+			(pokemonGroupedByDate[currentPkmn][currentDate] + 1) : 1;
 	}
 
 	// Generic Literal Object to hold pokemon data
@@ -411,16 +403,35 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(resultSet, pokemonSu
 			});
 		});
 
-		pokemonData.data = fullDateRange;
-		trendingPokemonChart.push(pokemonData);
+		trendingPokemonChart[pokemonId] = fullDateRange;
 
 	});
 
-	if (!this.cachedData.pokemonTrends && cacheThis) {
-		this.cachedData.pokemonTrends = trendingPokemonChart;
-	}
-
 	return trendingPokemonChart;
+};
+
+// Go back to the cache to retrieve the highchart data for an individual pokemon
+HighChartsData.prototype.getCachedTrendByPokemonId = function(pokemonId) {
+
+	return [{
+		name: this.pokemonHash[pokemonId],
+		data: this.cachedData.pokemonTrends[pokemonId]
+	}];
+};
+
+// Go back to the cache to retrieve the highchart data for a set of pokemon
+HighChartsData.prototype.getCachedTrendByPokemonIds = function(pokemonIdArray) {
+	var trends = [],
+		currentId;
+	for(var i= 0,max=pokemonIdArray.length;i<max;i++) {
+		currentId = pokemonIdArray[i];
+
+		trends.push({
+			name: this.pokemonHash[currentId],
+			data: this.cachedData.pokemonTrends[currentId]
+		})
+	}
+	return trends;
 };
 
 HighChartsData.prototype.getCountTrendsByUsers = function(resultSet, userTable, startDateOverride, endDateOverride){

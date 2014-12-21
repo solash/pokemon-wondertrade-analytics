@@ -42,7 +42,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 		var highChartsData = req.highChartsData,
 			topPokemon = highChartsData.getTopPokemon(5),
 			topPokemonIds = _.map(topPokemon, function(pkmn){return parseInt(pkmn[0], 10);}),
-			trendingChart = JSON.stringify(highChartsData.getCountTrendsByPokemon(false, topPokemonIds));
+			trendingChart = JSON.stringify(highChartsData.getCachedTrendByPokemonIds(topPokemonIds));
 
 		resp.render('data/pokemon', {
 			title: 'Pokemon Overview',
@@ -73,7 +73,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 			pokemonId: pokemonId,
 			user: req.user,
 			nicknames: nicknames,
-			trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(highChartsDataByPokemonId)),
+			trendingPokemonChart: JSON.stringify(highChartsData.getCachedTrendByPokemonId(pokemonId)),
 			levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(highChartsDataByPokemonId)),
 			genderChart: JSON.stringify(highChartsData.getCountsByGender(highChartsDataByPokemonId)),
 			countryChart: JSON.stringify(highChartsData.getSortedCountsByCountries(highChartsDataByPokemonId)),
@@ -547,7 +547,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 			result: req.result,
 			pokemonGroupArray: pokemonGroupArray,
 			PokemonHash: PokemonHash,
-			trendingPokemonChart: JSON.stringify(highChartsData.getCountTrendsByPokemon(filterdResults)),
+			trendingPokemonChart: JSON.stringify(highChartsData.getCachedTrendByPokemonIds(pokemonGroupArray)),
 			levelBarChart: JSON.stringify(highChartsData.getCountsByLevels(filterdResults)),
 			pokemonList: PokemonList,
 			user: req.user,
