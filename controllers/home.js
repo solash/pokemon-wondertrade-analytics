@@ -23,7 +23,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 			pageState: '',
 			user: request.user,
 			stateMessage: '',
-			wondertradeTends: JSON.stringify(highChartsData.getTrendsByDate()),
+			wondertradeTends: JSON.stringify(highChartsData.getCachedTrendsByDate()),
 			wondertradeCount: formattedCount
 		});
 

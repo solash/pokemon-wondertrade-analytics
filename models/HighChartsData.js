@@ -50,6 +50,7 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 HighChartsData.prototype.cachePageResults = function () {
 	this.cachedData.pokemonTrends = this.getCountTrendsByPokemon();
 	this.cachedData.originalTrainers = this.getOriginalTrainers();
+	this.cachedData.dateTrend = this.getTrendsByDate();
 	console.log('Highcharts Page Cache has been reset');
 };
 
@@ -552,6 +553,10 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet) {
 	trendChart.data = fullDateRange;
 
 	return trendChart;
+};
+
+HighChartsData.prototype.getCachedTrendsByDate = function() {
+	return this.cachedData.dateTrend;
 };
 
 HighChartsData.prototype.getTopPokemon = function(limit){
