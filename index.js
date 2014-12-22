@@ -9,6 +9,7 @@ var express = require('express'),
 	LocalStrategy = require('passport-local').Strategy,
     HerokuRedisStore = require('connect-heroku-redis')(express),
     MemoryStoreModel = require("./models/MemoryStore"),
+	REFRESH_CHARTS_RATE = 1800000, // 30 minutes
     MemoryStore,
 	dataStore;
 
@@ -33,7 +34,7 @@ MemoryStore = new MemoryStoreModel(dataStore);
 MemoryStore.refreshHighCharts();
 setInterval(function(){
     MemoryStore.refreshHighCharts();
-}, 600000);
+}, REFRESH_CHARTS_RATE);
 
 app.configure(function() {
 	app.engine('ejs', engine);
