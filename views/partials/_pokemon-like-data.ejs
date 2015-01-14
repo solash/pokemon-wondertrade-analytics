@@ -1,7 +1,9 @@
 <li class="pokemon-like-data">
-    <div><%= pokemon.name %>: <%= pokemon.percentage %>%</div>
-    <div>
-        Likes: <%= pokemon.likes%>
-        Dislikes: <%= pokemon.dislikes%>
+    <i class="pokemon-icon pkmn-<%= pokemon.id %>"></i>
+    <div class="center"><%= pokemon.name %></div>
+    <div class="center"><%= pokemon.percentage %>%</div>
+    <div class="clear like-texts">
+        <span class="like-text">Likes:</span> <%= pokemon.likes%>
+        <span class="dislike-text">Dislikes:</span> <%= pokemon.dislikes%>
     </div>
 </li>

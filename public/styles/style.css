@@ -21,6 +21,9 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .clear{clear:both;}
 .requiredField{background: rgba(255,0,0,.5);}
 
+/* Responsive Helper */
+.mobile-only {display: none;}
+
 /* Page specific */
 .page-background{background: url(../images/background.jpg) no-repeat bottom right #8cd8dc;height:100%;position: fixed;width: 100%;top:0;z-index: -1;}
 .wrapper{background: rgba(0,0,0,0.8);color:#efefef;padding: 1em;width: 100%;}
@@ -41,29 +44,29 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .update{padding:0.5em;background: rgba(0,250,0,.6);color: #333;text-shadow: 1px 1px 1px #aaa;}
 
 /* Sidebar */
-.page-sidebar{background: rgba(0,0,0,0.8);padding: 0.2em;overflow: hidden;font-family: "Steelworks", "Arial";}
-.page-sidebar h3{padding: 0;margin:0;float: left;}
-.page-sidebar ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;clear: both;overflow: hidden;border: 1px solid #333;line-height: 1.2em;}
-.page-sidebar ul li{float: left;height: 3em;position:relative;}
-.page-sidebar ul li a,
-.page-sidebar ul li span{display: table-cell;height: 3em;vertical-align: middle;padding:0 1em 0 0.5em;}
+.page-navigation{background: rgba(0,0,0,0.8);padding: 0.2em;overflow: hidden;}
+.page-navigation h3{padding: 0;margin:0;float: left;}
+.page-navigation ul{list-style: none;margin:0;padding:0;text-align: center;font-size: 0.9em;clear: both;overflow: hidden;border: 1px solid #333;line-height: 1.2em;}
+.page-navigation ul li{float: left;height: 3em;position:relative;}
+.page-navigation ul li a,
+.page-navigation ul li span{display: table-cell;height: 3em;vertical-align: middle;padding:0 1em 0 0.5em;}
 
-.page-sidebar ul .addTrade {float: right;background: rgba(250,100,0,.5);}
-.page-sidebar ul .addTrade:after,
-.page-sidebar ul .addTrade:before{display: none;}
-.page-sidebar ul .addTrade,
-.page-sidebar ul .addTrade a {padding: 0 1em;color: #fff;}
+.page-navigation ul .addTrade {float: right;background: rgba(250,100,0,.5);}
+.page-navigation ul .addTrade:after,
+.page-navigation ul .addTrade:before{display: none;}
+.page-navigation ul .addTrade,
+.page-navigation ul .addTrade a {padding: 0 1em;color: #fff;}
 
-.page-sidebar .sidebar-overview{margin-bottom: 5px;}
-.page-sidebar .sidebar-data{}
+.page-navigation .sidebar-overview{margin-bottom: 5px;}
+.page-navigation .sidebar-data{}
 
 
-.page-sidebar ul li:before{border-left: 0.5em solid #000;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 1px;content: ' ';z-index: 2;}
-.page-sidebar ul li:after{border-left: 0.5em solid #efefef;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 0;content: ' ';}
-.page-sidebar ul li.last:before,
-.page-sidebar ul li.last:after{display: none;}
+.page-navigation ul li:before{border-left: 0.5em solid #000;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 1px;content: ' ';z-index: 2;}
+.page-navigation ul li:after{border-left: 0.5em solid #efefef;border-top: 1.5em solid transparent;border-bottom: 1.5em solid transparent;display: block;position: absolute;top: 0;right: 0;content: ' ';}
+.page-navigation ul li.last:before,
+.page-navigation ul li.last:after{display: none;}
 
-.page-sidebar ul li a:hover{text-shadow:1px 1px 1px #66f;}
+.page-navigation ul li a:hover{text-shadow:1px 1px 1px #66f;}
 
 .social{position: absolute;right: 0;}
 .social-btn{float: left;}
@@ -233,6 +236,10 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .contributor-links li a:hover{background: rgba(155,155,255,.3)}
 
 .pokemon-like-list{padding: 1em;list-style: none;overflow: hidden}
+.pokemon-like-list .pokemon-icon {float:left;}
+.like-texts {text-align: center;}
+.like-text {color: rgb(24, 139, 181)}
+.dislike-text {color: rgb(239, 151, 112);}
 .pokemon-like-data{float: left;background: rgba(200,200,0,.1);box-shadow:2px 2px 2px #111;border:1px solid rgba(250,250,250,.1);padding: 0.5em;margin: 0.2em;}
 
 .original-trainers,
@@ -264,8 +271,42 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 @media (max-width: 600px) {
     .quick-stats ul li,
 	.checkbox-group label,
-	.checkbox-group label.full{width: 100%;}
+	.checkbox-group label.full{width: 100%;text-align: left}
     .redditPosts .redditPost {width:100%;}
 
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+
+    .wrapper{padding: 5px;}
+
+    .page-navigation .mobile-only {padding: 5px;}
+    .page-navigation .mobile-only select,
+    .page-navigation .mobile-only .addTrade {display: block;margin: 0 auto;text-align: center}
+    .page-navigation .mobile-only .addTrade {margin-top: 0.5em;}
+    .addTrade {}
+    .input-column-inner {padding: 1px}
+
+    .user-auth-form,
+    .contributor-banner,
+    .chart-box.half-chart,
+    .pokemon-like-data,
+    .contributor-list .contributor {float: none;width: 100%;}
+
+    .pageHead .user {position: initial;padding: 5px 0;}
+    .original-trainers-id {float: none; width: 100%;}
+    .input-column select, .input-column input[type="number"], .input-column input[type="text"] {
+        width: 90%;
+        float: none;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .hiddenAbility-tooltip {
+        right: 0;
+    }
 }
 

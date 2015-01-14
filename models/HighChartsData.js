@@ -552,6 +552,7 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
 			var totalOpinions = likes+dislikes,
 				likePercentage = (likes / (totalOpinions)*100).toFixed(2),
 				pokemonLikesObject = {
+					id: pokemonId,
 					name: pokemonHash[pokemonId],
 					percentage: likePercentage,
 					count: totalOpinions,
@@ -560,9 +561,9 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet){
 				};
 
 			if(pokemonLikesObject.count > 2) {
-				if(likePercentage > 50) {
+				if(likePercentage > 80) {
 					communityOpinion.likes.push(pokemonLikesObject);
-				} else {
+				} else if (likePercentage < 20) {
 					communityOpinion.dislikes.push(pokemonLikesObject);
 				}
 			}

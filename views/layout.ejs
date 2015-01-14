@@ -5,6 +5,7 @@
 	<meta name="keywords" content="Pokemon, Wonder Trade, Tyler Stark, The Iron Developer">
 	<meta charset="UTF-8" />
 	<meta name="author" content="Tyler Stark">
+	<meta name="viewport" content="intial-scale=1.0, width=device-width" />
 	<meta property="og:image" content="http://www.wondertradeanalytics.com/images/theIronPokeBall.png"/>
 	<link rel="stylesheet" href="/styles/style.css" />
 	<link rel="stylesheet" href="/styles/sprite.css" />
@@ -66,8 +67,8 @@
 	<% } %>
 
 	<div class="container page">
-		<div class="page-sidebar">
-			<ul class="sidebar-overview">
+		<div class="page-navigation">
+			<ul class="sidebar-overview desktop-only">
 				<li><span>General:</span></li>
 				<li><a href="/">Home</a></li>
 				<li><a href="/about">About</a></li>
@@ -77,11 +78,9 @@
 				<li><a href="/data/likes">Liked<br/> Pokemon</a></li>
 				<li><a href="/groups">Grouped<br/> Pokemon</a></li>
 				<li class="last"><a href="/originalTrainers">Trainers<br/> Recorded</a></li>
-				<% if(user) { %>
-					<li class="addTrade"><a href="/wondertrade/new">Submit a<br/> wonder trade</a></li>
-				<% } %>
+				<li class="addTrade"><a href="/wondertrade/new">Submit a<br/> wonder trade</a></li>
 			</ul>
-			<ul class="sidebar-data">
+			<ul class="sidebar-data desktop-only">
 				<li><span>Data:</span></li>
 				<li><a href="/data">Overview</a></li>
 				<li><a href="/data/pokemon">Pokemon</a></li>
@@ -94,8 +93,35 @@
 				<li><a href="/data/dates">Dates</a></li>
 				<li class="last"><a href="/data/time">Time</a></li>
 			</ul>
+			<div class="mobile-only">
+				<select id="mobile-navigation">
+					<optgroup label="General">
+						<option value="/">Home</option>
+						<option value="/about">About</option>
+						<option value="/contributors">Contributers</option>
+						<option value="/help">Helping Out</option>
+						<option value="/data/recent">Recent WonderTrades</option>
+						<option value="/data/likes">Liked Pokemon</option>
+						<option value="/groups">Grouped Pokemon</option>
+						<option value="/originalTrainers">Trainers Recorded</option>
+					</optgroup>
+					<optgroup label="Data">
+						<option value="/data">Overview</option>
+						<option value="/data/pokemon">Pokemon</option>
+						<option value="/data/regions">Regions</option>
+						<option value="/data/hiddenAbilities">Hidden Abilities</option>
+						<option value="/data/perfectIV">Perfect IV</option>
+						<option value="/data/shiny">Shiny</option>
+						<option value="/data/gender">Gender</option>
+						<option value="/data/levels">Levels</option>
+						<option value="/data/dates">Dates</option>
+						<option value="/data/time">Time</option>
+					</optgroup>
+				</select>
+				<div class="addTrade"><a href="/wondertrade/new">Submit a wonder trade</a></div>
+			</div>
 		</div>
-		<div class="social">
+		<div class="social desktop-only">
 
 			<div class="social-btn fb-share-button" data-href="http://www.wondertradeanalytics.com/" data-type="button_count"></div>
 			<div class="social-btn"><a href="https://twitter.com/share" class="twitter-share-button" data-via="IronDevTyler">Tweet</a></div>
@@ -106,6 +132,16 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+
+	// Super simple mobile navigation
+	(function($mobileNav, pathname) {
+		$mobileNav.value = pathname;
+		$mobileNav.addEventListener('change',function(){
+			window.location = this.value;
+		});
+	})(document.getElementById('mobile-navigation'), document.location.pathname);
+</script>
 <script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-45892387-1']);
