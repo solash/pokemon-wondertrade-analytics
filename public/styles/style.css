@@ -150,7 +150,7 @@ i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: mi
 .required{position: relative}
 .required:before{content:"*";color: #f00;position:absolute;left: -8px;}
 
-.sentiment{text-align: center;border:1px solid rgba(0,0,250,.3);padding: 0.5em 0;}
+.sentiment{text-align: center;border:1px solid rgba(0,0,250,.3);padding: 0.5em 0;margin-top: 2em;}
 .sentiment label{background: rgba(0,0,0,.1);padding: 5px;}
 
 button{border: none;display:block;margin: 0 auto;}
