@@ -1,8 +1,8 @@
 <div class="pokemon-list chart-box" >
     <h4>Wonder Traded Pokemon</h4>
-    <% for(var pokemon in pokemonTable) { %>
-        <% if(pokemonTable[pokemon].id){ %>
-            <a href="/data/pokemon/<%= pokemonTable[pokemon].id %>"><%= pokemonTable[pokemon].name %> (<%= pokemonTable[pokemon].count %>)</a>
+    <% for(var pokemon = (pokemonTable.length-1), max = 0; pokemon >= max; pokemon--) { %>
+        <% if(pokemonTable[pokemon][2]){ %>
+            <a href="/data/pokemon/<%= pokemonTable[pokemon][2] %>"><%= pokemonTable[pokemon][0] %> (<%= pokemonTable[pokemon][1] %>)</a>
         <% } %>
     <% } %>
 </div>

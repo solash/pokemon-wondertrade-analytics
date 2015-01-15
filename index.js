@@ -79,7 +79,12 @@ Date.prototype.customFormatDate = function(){
 
 // After all other routes are init, we can now check for 404s.
 app.use(function(req, res, next){  
-  res.render('404', { status: 404, url: req.url, title: 'Page Not Found', user: req.user, stateMessage: '', pageState: '' });
+  res.render('404', { status: 404, url: req.url, title: '404, Page Not Found', user: req.user, stateMessage: '', pageState: '' });
+});
+
+app.use(function(error, req, res, next) {
+	console.log(req.originalUrl, ':', error.stack);
+	res.render('500', { status: 500, url: req.url, title: 'Something broke :(', user: req.user, stateMessage: '', pageState: '' });
 });
 
 

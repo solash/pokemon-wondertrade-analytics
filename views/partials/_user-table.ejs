@@ -1,18 +1,18 @@
 <ul class="contributor-list">
 	<% for(var user in userTable) { %>
-		<% if(userTable[user].count > 0) {  %>
+		<% if(userTable[user][1] > 0) {  %>
 			<li class="contributor">
 				<div class="name">
-                    <a href="/users/<%= userTable[user].id %>">
-                        <%= userTable[user].username %>
+                    <a href="/users/<%= userTable[user][2] %>">
+                        <%= userTable[user][0] %>
                     </a>
-                    <% if (redditUsers && redditUsers[userTable[user].id] && redditUsers[userTable[user].id].redditUserName) { %>
-                        <a href="http://www.reddit.com/user/<%= redditUsers[userTable[user].id].redditUserName %>">
+                    <% if (redditUsers && redditUsers[userTable[user][2]] && redditUsers[userTable[user][2]].redditUserName) { %>
+                        <a href="http://www.reddit.com/user/<%= redditUsers[userTable[user][2]].redditUserName %>">
                             <img src="/images/reddit.gif" border="0" />
                         </a>
                     <% } %>
                 </div>
-				<div class="count"><%= userTable[user].count %> wonder trades recorded</div>
+				<div class="count"><%= userTable[user][1] %> wonder trades recorded</div>
 			</li>
 		<% } %>
 	<% } %>

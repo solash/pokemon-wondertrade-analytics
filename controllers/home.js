@@ -1,3 +1,6 @@
+var HighCharts = require('./highCharts'),
+	UserTableModel = require('../models/UserTable');
+
 module.exports = function(app, dataStore, MemoryStore) {
 	var _ = require('underscore'),
 		formatNumber = function(number, n,x) {
@@ -11,48 +14,49 @@ module.exports = function(app, dataStore, MemoryStore) {
 			return number.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$1,');
 		};
 
+	function setupHighChartsData(req, resp, next){
 
-	app.get('/', function(request, response){
+		req.highChartsData = MemoryStore.store.highChartsData;
+		req.result= MemoryStore.store.highChartsResults;
+		req.data = {};
+		next();
+	}
 
-		var highChartsData = MemoryStore.store.highChartsData,
-			totalCount = MemoryStore.store.highChartsResults.length,
+	function setupUserTableData(req, res, next) {
+
+		dataStore.lrange('userTable' , 0, -1, function(error, result){
+			req.userTable = new UserTableModel(result);
+			next();
+		});
+	}
+
+
+	app.get('/', setupHighChartsData, HighCharts.getCachedTrendsByDate, function(req, res){
+
+		var totalCount = MemoryStore.store.highChartsResults.length,
 			formattedCount = formatNumber(totalCount, 0, 3);
 
-		response.render('home', {
+		res.render('home', {
 			title: 'Wonder Trade Analytics',
 			pageState: '',
-			user: request.user,
+			user: req.user,
 			stateMessage: '',
-			wondertradeTends: JSON.stringify(highChartsData.getCachedTrendsByDate()),
+			wondertradeTrends: JSON.stringify(req.data.cachedTrendsByDate),
 			wondertradeCount: formattedCount
 		});
 
 	});
 
-	app.get('/about', function(request, response){
+	app.get('/about', function(req, res){
 
-		dataStore.lrange('userTable' , 0, -1, function(error, result){
-
-			var userTable = {};
-			for(var user in result) {
-				var parsedUser = JSON.parse(result[user]);
-				userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
-			}
-
-
-			var highChartsData = MemoryStore.store.highChartsData,
-				userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
-
-			response.render('about', {
-				title: 'About this Project',
-				pageState: '',
-				user: request.user,
-				userTable: userTableWithCounts
-			});
+		res.render('about', {
+			title: 'About this Project',
+			pageState: '',
+			user: req.user
 		});
 	});
 
-	app.get('/contributors', function(request, response){
+	app.get('/contributors', setupHighChartsData, setupUserTableData, HighCharts.getCountsByUserIdAndUserTableFormatted, function(req, res){
 
 		dataStore.lrange('redditUser' , 0, -1, function(error, result){
 			var redditUsers = {};
@@ -61,25 +65,16 @@ module.exports = function(app, dataStore, MemoryStore) {
 				redditUsers[parsedUser.userId] = {redditUserName: parsedUser.redditUserName};
 			}
 
-			dataStore.lrange('userTable' , 0, -1, function(error, result){
+			var userTableWithCounts = req.data.countsByUserIdAndUserTableFormatted;
 
-				var userTable = {};
-				for(var user in result) {
-					var parsedUser = JSON.parse(result[user]);
-					userTable[parsedUser.id] = {username: parsedUser.username, count: 0, id: parsedUser.id};
-				}
-
-				var highChartsData = MemoryStore.store.highChartsData,
-					userTableWithCounts = highChartsData.getCountsByUserIdAndUserTable(false, userTable);
-
-				response.render('contributors', {
-					title: 'Project Contributors',
-					pageState: '',
-					user: request.user,
-					userTable: userTableWithCounts,
-					redditUsers: redditUsers
-				});
+			res.render('contributors', {
+				title: 'Project Contributors',
+				pageState: '',
+				user: req.user,
+				userTable: userTableWithCounts,
+				redditUsers: redditUsers
 			});
+
 		});
 	});
 

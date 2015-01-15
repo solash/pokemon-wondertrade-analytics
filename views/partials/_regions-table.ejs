@@ -6,11 +6,11 @@
         </tr>
     </thead>
     <tbody>
-        <% for(var region in regionsTable) { %>
-            <% if(regionsTable[region].id){ %>
+        <% for(var region = countryList.length - 1, min = 0;region >= min; region--) { %>
+            <% if(countryList[region][2]){ %>
                 <tr>        	
-                    <td><a href="/data/regions/<%= regionsTable[region].id %>"><%= regionsTable[region].name %></a></td>
-                    <td><%= regionsTable[region].count %></td>
+                    <td><a href="/data/regions/<%= countryList[region][2] %>"><%= countryList[region][0] %></a></td>
+                    <td><%= countryList[region][1] %></td>
                 </tr>
             <% } %>
         <% } %>
