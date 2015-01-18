@@ -9,7 +9,7 @@ var express = require('express'),
 	LocalStrategy = require('passport-local').Strategy,
     HerokuRedisStore = require('connect-heroku-redis')(express),
     MemoryStoreModel = require("./models/MemoryStore"),
-	redisEnvUrl = process.env.REDISCLOUD_URL || process.env.REDISTOGO_URL,
+	redisEnvUrl = process.env.REDISCLOUD_URL,
 	REFRESH_CHARTS_RATE = 1800000, // 30 minutes
     MemoryStore,
 	dataStore;
