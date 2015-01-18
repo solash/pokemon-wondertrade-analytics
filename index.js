@@ -9,6 +9,7 @@ var express = require('express'),
 	LocalStrategy = require('passport-local').Strategy,
     HerokuRedisStore = require('connect-heroku-redis')(express),
     MemoryStoreModel = require("./models/MemoryStore"),
+	redisEnvUrl = process.env.REDISCLOUD_URL || process.env.REDISTOGO_URL,
 	REFRESH_CHARTS_RATE = 1800000, // 30 minutes
     MemoryStore,
 	dataStore;
@@ -20,10 +21,10 @@ process.env.TZ = 'America/Chicago';
 process.setMaxListeners(0);
 
 // If REDIS_TOGO is available (Heroku box)
-if (process.env.REDISTOGO_URL) {
+if (redisEnvUrl) {
 	var redis = require('redis');
 	var url = require('url');
-	var redisURL = url.parse(process.env.REDISTOGO_URL);
+	var redisURL = url.parse(redisEnvUrl);
 	dataStore = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
 	dataStore.auth(redisURL.auth.split(":")[1]);
 } else {	
