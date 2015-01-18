@@ -2,29 +2,23 @@ if(process.env.NODE_ENV !== 'DEVELOPMENT') {
 	require('newrelic');
 }
 
-// Super cheaty patch
-process.env.REDISTOGO_URL = process.env.REDISCLOUD_URL;
-
 var express = require('express'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),
 	app = express(),
 	passport = require("passport"),
 	LocalStrategy = require('passport-local').Strategy,
-    HerokuRedisStore = require('connect-heroku-redis')(express),
+	RedisStore = require('connect-redis')(express),
     MemoryStoreModel = require("./models/MemoryStore"),
 	redisEnvUrl = process.env.REDISCLOUD_URL,
 	REFRESH_CHARTS_RATE = 1800000, // 30 minutes
     MemoryStore,
 	dataStore;
 
-// Useful debugger:
-// var webkitDevtoolsAgent = require("webkit-devtools-agent");
-
 process.env.TZ = 'America/Chicago';
 process.setMaxListeners(0);
 
-// If REDIS_TOGO is available (Heroku box)
+// If REDISCLOUD_URL is available (Heroku box)
 if (redisEnvUrl) {
 	var redis = require('redis');
 	var url = require('url');
@@ -47,7 +41,7 @@ app.configure(function() {
 	app.use(express.cookieParser());
 	app.set('view engine', 'ejs');
 	app.set('views', __dirname + '/views');
-	app.use(express.session({ secret: 'keyboard cat times eleven',store: new HerokuRedisStore() }));
+	app.use(express.session({ secret: 'keyboard cat times eleven',store: new RedisStore() }));
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(express.static(__dirname + '/public'));
