@@ -20,7 +20,7 @@
   "author": "Tyler Stark",
   "license": "BSD",
   "dependencies": {
-    "connect-redis": "^1.4.7",
+    "connect-redis": "1.4.7",
     "ejs": "~0.8.4",
     "ejs-locals": "~1.0.2",
     "express": "3.x",
