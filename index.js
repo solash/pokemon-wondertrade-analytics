@@ -1,6 +1,10 @@
 if(process.env.NODE_ENV !== 'DEVELOPMENT') {
 	require('newrelic');
 }
+
+// Super cheaty patch
+process.env.REDISTOGO_URL = process.env.REDISCLOUD_URL;
+
 var express = require('express'),
 	ejs = require('ejs'),
 	engine = require('ejs-locals'),
