@@ -30,7 +30,7 @@ function sanitizeParams(params, userId) {
 
 	// Sanitize pokemonId
 	var pokemonId = parseInt(params.pokemonId, 10);
-	if(!(pokemonId >=1 && pokemonId <=718)) {
+	if(!(pokemonId >=1 && pokemonId <=719)) {
 		pokemonId = false;
 	}
 

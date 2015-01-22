@@ -209,7 +209,7 @@ HighChartsData.prototype.getCountsByUserIdAndUserTableFormatted = function(resul
 
 HighChartsData.prototype.getResultsByPokemonId = function(pokemonId) {
 	pokemonId = parseInt(pokemonId);
-	if(pokemonId > 0 && pokemonId < 719) {
+	if(pokemonId > 0 && pokemonId <= 719) {
 		return _.where(this.deserializedResults, {pokemonId: parseInt(pokemonId)});
 	}
 	return [];
