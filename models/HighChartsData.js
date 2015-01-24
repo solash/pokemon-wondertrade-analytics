@@ -1,4 +1,5 @@
-var async = require('async');
+var async = require('async'),
+	TOTAL_POKEMON_COUNT = 719;
 
 function formatDateFromString(dateString){
 	var formattedDate = dateString.split('-'),
@@ -25,7 +26,7 @@ function EmptyCountsByPokemonByDate () {
 			endDate = new Date();
 
 		startDate.setMonth(startDate.getMonth()-1);
-		while(startDate < endDate) {
+		while(startDate <= endDate) {
 			this[startDate.customFormatDate()] = 0;
 			startDate.setDate(startDate.getDate()+1);
 		}
@@ -33,7 +34,7 @@ function EmptyCountsByPokemonByDate () {
 	};
 
 
-	for (i = 0;i<=718;i++) {
+	for (i = 0;i<=TOTAL_POKEMON_COUNT;i++) {
 		pokemonList[i] = new PokemonList();
 	}
 
@@ -241,7 +242,7 @@ HighChartsData.prototype.getCountsByUserIdAndUserTableFormatted = function(resul
 HighChartsData.prototype.getResultsByPokemonId = function(pokemonId, callback) {
 
 	pokemonId = parseInt(pokemonId, 10);
-	if(pokemonId > 0 && pokemonId <= 719) {
+	if(pokemonId > 0 && pokemonId <= TOTAL_POKEMON_COUNT) {
 		return async.filter(this.deserializedResults, function(wonderTrade, filterBack){
 			filterBack(parseInt(wonderTrade.pokemonId, 10) === pokemonId);
 		}, callback);
@@ -490,7 +491,7 @@ HighChartsData.prototype.formatCountTrendsByPokemon = function(result, callback)
 	}
 
 	// Fill the key list with pokemon ids
-	for(var i =1; i<=718;i++) {
+	for(var i =1; i<=TOTAL_POKEMON_COUNT;i++) {
 		keys.push(i);
 	}
 
@@ -684,7 +685,7 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet, callback){
 		pokemonId,
 		opinionCount;
 
-	for(var i=0;i<719;i++){
+	for(var i=0;i<=TOTAL_POKEMON_COUNT;i++){
 		pokemonIds.push(i);
 	}
 
