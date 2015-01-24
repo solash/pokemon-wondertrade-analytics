@@ -21,6 +21,13 @@ $('#date-trend-chart').highcharts({
         },
         min: 0
     },
+    plotOptions: {
+        series: {
+            marker: {
+                enabled: false
+            }
+        }
+    },
     tooltip: {
         formatter: function() {
                 return '<b>'+ this.series.options.shortName +'</b><br/>'+ this.y+'%';
