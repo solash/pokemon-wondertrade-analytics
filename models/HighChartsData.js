@@ -463,7 +463,9 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(callback){
 		var currentPokemon = countsByDate[wonderTrade.pokemonId];
 		currentDate = wonderTrade.date;
 
-		if ( typeof totalPokemon[currentDate] !== "undefined" ) {
+		if ( typeof totalPokemon[currentDate] !== "undefined" &&
+			typeof currentPokemon[currentDate] !== "undefined") {
+
 			currentPokemon[currentDate]++;
 			totalPokemon[currentDate]++;
 		}
@@ -548,11 +550,16 @@ HighChartsData.prototype.getCachedTrendByPokemonId = function(pokemonId, callbac
 // Go back to the cache to retrieve the highchart data for a set of pokemon
 HighChartsData.prototype.getCachedTrendByPokemonIds = function(pokemonIdArray, callback) {
 
-	var self = this;
+	var self = this,
+		pokemonData;
 	async.map(pokemonIdArray, function(pokemonId, pokemonCallback){
+		pokemonData = (self.cachedData &&
+			self.cachedData.pokemonTrends &&
+			self.cachedData.pokemonTrends[pokemonId - 1] &&
+			self.cachedData.pokemonTrends[pokemonId - 1].data ) || [];
 		pokemonCallback(null, {
 			name: self.pokemonHash[pokemonId],
-			data: self.cachedData.pokemonTrends[pokemonId - 1].data
+			data: pokemonData
 		})
 	}, callback);
 };
