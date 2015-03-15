@@ -30,6 +30,20 @@ describe('Parsed Wonder Trade Counts', function(){
 		});
 	});
 
+	it('should have other attribute data', function (done){
+		// 0 is the default count. After parsing through 200, all of them should have incremented at least once
+		ParsedCounts(dummyData, function(err, result){
+			assert.notEqual(result.shinyCount, 0);
+			assert.notEqual(result.hiddenCount, 0);
+			assert.notEqual(result.eggCount, 0);
+			assert.notEqual(result.nicknameCount, 0);
+			assert.notEqual(result.itemCount, 0);
+			assert.notEqual(result.pokerusCount, 0);
+			assert.notEqual(result.sixIVCount, 0);
+			done();
+		});
+	});
+
 	it('should parse all a different array of wonder trades', function(done) {
 		// This is a much smaller subset of wonder trades.
 		ParsedCounts(dummyData.slice(0,10), function(err, result){

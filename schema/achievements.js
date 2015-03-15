@@ -3,31 +3,45 @@
 module.exports = {
 	'Poke Ball': {
 		description: '10 Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.count >= 10);
+		}
 	},
 	'Great Ball': {
 		description: '50 Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.count >= 50);
+		}
 	},
 	'Ultra Ball': {
 		description: '500 Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.count >= 500);
+		}
 	},
 	'Master Ball': {
 		description: '1000 Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.count >= 1000);
+		}
 	},
 	'Premier Ball': {
 		description: '10 Shiny Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.shinyCount >= 10);
+		}
 	},
 	'Silver Ball': {
 		description: '100 Shiny Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.shinyCount >= 100);
+		}
 	},
 	'Gold Ball': {
 		description: '1000 Shiny Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.shinyCount >= 1000);
+		}
 	},
 	'Quick Ball': {
 		description: 'Report 30 WTs in a day',
@@ -55,35 +69,51 @@ module.exports = {
 	},
 	'Nest Ball': {
 		description: '100 Level 1 Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.levels['1'] >= 100);
+		}
 	},
 	'Level Ball': {
 		description: '100 Level 100 Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.levels['100'] >= 100);
+		}
 	},
 	'Dream Ball': {
 		description: '100 Hidden Ability Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.hiddenCount >= 100);
+		}
 	},
 	'Heavy Ball': {
 		description: '100 Egg Move Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.eggCount >= 100);
+		}
 	},
 	'Love Ball': {
 		description: '100 Nicknamed Pokemon',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.nicknameCount >= 100);
+		}
 	},
 	'Luxury Ball': {
 		description: '100 Item Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.itemCount >= 100);
+		}
 	},
 	'Moon Ball': {
 		description: '100 PKRS Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.pokerusCount >= 100);
+		}
 	},
 	'Sport Ball': {
 		description: '100 6 IV Acquisitions',
-		condition: function() {}
+		condition: function(parsedCounts) {
+			return (parsedCounts.sixIVCount >= 100);
+		}
 	},
 	'Safari Ball': {
 		description: '100 non-ENG Pokemon Acquisitions',
