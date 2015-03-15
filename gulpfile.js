@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	jshintStylish = require('jshint-stylish'),
-	gutil = require('gulp-util'),// Currently unused, but gulp strongly suggested I install...
+	gutil = require('gulp-util'),
+	mocha = require('gulp-mocha'),
 	jshint = require('gulp-jshint');
 
 gulp.task('lint', function() {
@@ -14,4 +15,10 @@ gulp.task('lint', function() {
 	}
 });
 
-gulp.task('default', ['lint']);
+gulp.task('test', function() {
+	var testGlob = './test/**/*.js';
+	gulp.src(testGlob, {read: false})
+		.pipe(mocha({reporter: 'spec'}));
+});
+
+gulp.task('default', ['lint', 'test']);

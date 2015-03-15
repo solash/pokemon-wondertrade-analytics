@@ -180,7 +180,7 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet, callback
 			pokemonCount = pokemonCountMap[wonderTrade.pokemonId];
 			pokemonCountMap[wonderTrade.pokemonId] = pokemonCount ? pokemonCount + 1 : 1;
 			wonderTradeCallback();
-		}, taskFinished)
+		}, taskFinished);
 	}
 
 	function createPokemonCountsArray (taskFinished) {
@@ -339,7 +339,7 @@ HighChartsData.prototype.getNicknamesByResultSet = function(resultSet, callback)
 				cb(null, wonderTrade.pokemonNickname);
 			}, callback);
 		}
-	], callback)
+	], callback);
 };
 
 HighChartsData.prototype.getCountsBySubRegions = function(regionSet, callback) {
@@ -390,7 +390,7 @@ HighChartsData.prototype.getCountsByGender = function(resultSet, callback) {
 		trainerGender[wonderTrade.trainerGender]++;
 		wonderTradeCallback();
 	}, function(err){
-		callback(err, [["Guys", trainerGender.male], ["Girls", trainerGender.female]])
+		callback(err, [["Guys", trainerGender.male], ["Girls", trainerGender.female]]);
 	});
 };
 
@@ -417,7 +417,7 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet, callback) {
 		wonderTradeCallback();
 	}, function(err){
 		levelsChartFormatted[0].data = levelsChart;
-		callback(err, levelsChartFormatted)
+		callback(err, levelsChartFormatted);
 	});
 };
 
@@ -515,7 +515,7 @@ HighChartsData.prototype.formatCountTrendsByPokemon = function(result, callback)
 			]);
 		}
 
-		formattedCountTrend(null, pokemonData)
+		formattedCountTrend(null, pokemonData);
 	}, callback);
 };
 
@@ -561,7 +561,7 @@ HighChartsData.prototype.getCachedTrendByPokemonIds = function(pokemonIdArray, c
 		pokemonCallback(null, {
 			name: self.pokemonHash[pokemonId],
 			data: pokemonData
-		})
+		});
 	}, callback);
 };
 
@@ -580,7 +580,7 @@ HighChartsData.prototype.getSubmissionDates = function(resultSet, callback) {
 			dateStringCount = dateStringMap[dateString];
 			dateStringMap[dateString] = dateStringCount ? dateStringCount + 1 : 1;
 			wondertradeCallback();
-		},taskFinished)
+		}, taskFinished);
 	}
 	function createSubmissionDatesArray(taskFinished) {
 		async.map(Object.keys(dateStringMap), function(dateString, arrayCallback){
@@ -594,7 +594,7 @@ HighChartsData.prototype.getSubmissionDates = function(resultSet, callback) {
 	function sortSubmissionDatesArray(submissionArray, taskFinished) {
 		async.sortBy(submissionArray, function(submission, sortCallback){
 			sortCallback(null, submission.formattedDate);
-		}, taskFinished)
+		}, taskFinished);
 	}
 
 	async.waterfall([
@@ -628,7 +628,7 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet, callback) {
 			dateStringCount = dateStringMap[dateString];
 			dateStringMap[dateString] = dateStringCount ? dateStringCount + 1 : 1;
 			wondertradeCallback();
-		},taskFinished)
+		},taskFinished);
 	}
 	function createDatesArray(taskFinished) {
 		async.map(fullDateRange, function(dateStringObject, arrayCallback){
@@ -730,7 +730,7 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet, callback){
 				likes: 0,
 				dislikes: 0
 			});
-		}, taskFinished)
+		}, taskFinished);
 	}
 
 	function sortPokemonLikesArray (pokemonMapArray, taskFinished) {
@@ -783,7 +783,7 @@ HighChartsData.prototype.getOriginalTrainers = function(callback){
 				originalTrainers[trainerId] = {
 					"names": [trainerName],
 					"count": 1
-				}
+				};
 			} else {
 				originalTrainer.names.push(trainerName);
 				originalTrainer.count++;
