@@ -33,7 +33,6 @@ function EmptyCountsByPokemonByDate () {
 		return this;
 	};
 
-
 	for (i = 0;i<=TOTAL_POKEMON_COUNT;i++) {
 		pokemonList[i] = new PokemonList();
 	}
@@ -535,22 +534,21 @@ HighChartsData.prototype.getCachedTrendByPokemonId = function(pokemonId, callbac
 		}]);
 	}
 
-	if (this.cachedData.pokemonTrends) {
-		return formattedCallback(callback);
+	if (!this.cachedData.pokemonTrends) {
+		return callback('Still Loading');
 	}
 
-	// fallback
-	this.getCountTrendsByPokemon(function(err, result) {
-		self.formatCountTrendsByPokemon(result, function(err, formattedResult){
-			self.cachedData.pokemonTrends = formattedResult;
-			formattedCallback(callback);
-		});
-	});
+	formattedCallback(callback);
 };
 
 // Go back to the cache to retrieve the highchart data for a set of pokemon
 HighChartsData.prototype.getCachedTrendByPokemonIds = function(pokemonIdArray, callback) {
-
+	if (!this.cachedData.pokemonTrends) {
+		return callback('Still Loading');
+	}
+	if (!(pokemonIdArray && pokemonIdArray.length)) {
+		return callback('Empty Pokemon Trend List');
+	}
 	var self = this,
 		pokemonData;
 	async.map(pokemonIdArray, function(pokemonId, pokemonCallback){
@@ -652,7 +650,10 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet, callback) {
 };
 
 HighChartsData.prototype.getCachedTrendsByDate = function(callback) {
-	callback(null, this.cachedData.dateTrend);
+	if (this.cachedData.dateTrend) {
+		return callback(null, this.cachedData.dateTrend);
+	}
+	callback('Still Loading');
 };
 
 HighChartsData.prototype.getTopPokemon = function(limit, callback){
@@ -797,7 +798,10 @@ HighChartsData.prototype.getOriginalTrainers = function(callback){
 };
 
 HighChartsData.prototype.getCachedOriginalTrainers = function(callback){
-	callback(null, this.cachedData.originalTrainers);
+	if (this.cachedData.originalTrainers) {
+		return callback(null, this.cachedData.originalTrainers);
+	}
+	callback('Still Loading');
 };
 
 HighChartsData.prototype.getOriginalTrainersById = function(trainerId, callback){
@@ -917,6 +921,9 @@ HighChartsData.prototype.getQuickStats = function(resultSet, callback) {
 };
 
 HighChartsData.prototype.filterGroupsOfPokemon = function(pokemonGroupArray, callback) {
+	if (!(pokemonGroupArray && pokemonGroupArray.length)) {
+		return callback('Empty Pokemon Group');
+	}
 	async.filter(this.deserializedResults, function(wondertrade, wondertradeCallback){
 		wondertradeCallback(pokemonGroupArray.indexOf(wondertrade.pokemonId) !== -1);
 	}, callback);
@@ -1169,7 +1176,7 @@ HighChartsData.prototype.getCachedGenderData = function(callback) {
 	if (this.cachedData.genderData) {
 		return callback(null, this.cachedData.genderData);
 	}
-	this.getGenderData(callback);
+	callback('Still Loading');
 };
 
 module.exports = HighChartsData;

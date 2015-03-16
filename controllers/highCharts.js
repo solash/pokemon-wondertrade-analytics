@@ -2,6 +2,8 @@
  * This controller handles returning high chart data asynchronously
  */
 
+var responses = require('../middleware/responses');
+
 function setSubsetByHiddenAbilities(req, res, next) {
 	req.highChartsData.getResultsWithHiddenAbilities(function(result){
 		req.currentSubset = result;
@@ -106,8 +108,8 @@ function setPokemonGroup (req, res, next) {
 		pokemonGroup = groupMap[groupName];
 
 	if (pokemonGroup) {
-		req.data.pokemonGroupName = pokemonGroup.name;
-		req.data.pokemonGroup = pokemonGroup.pokemon;
+		req.data.pokemonGroupName = pokemonGroup.name || '';
+		req.data.pokemonGroup = pokemonGroup.pokemon || [];
 		return next();
 	}
 
@@ -169,12 +171,18 @@ function getCountsByGender (req, res, next) {
 
 function getCachedTrendByPokemonId (req, res, next) {
 	req.highChartsData.getCachedTrendByPokemonId (req.params.pokemonId, function(err, result) {
+		if (err) {
+			return responses.renderError(req, res);
+		}
 		req.data.cachedTrendByPokemonId = result;
 		next();
 	});
 }
 function getCachedTrendByPokemonIds (req, res, next) {
 	req.highChartsData.getCachedTrendByPokemonIds (req.data.pokemonGroup, function(err, result) {
+		if (err) {
+			return responses.renderError(req, res);
+		}
 		req.data.cachedTrendByPokemonIds = result;
 		next();
 	});
@@ -182,6 +190,9 @@ function getCachedTrendByPokemonIds (req, res, next) {
 
 function getCachedTrendsByDate (req, res, next) {
 	req.highChartsData.getCachedTrendsByDate (function(err, result) {
+		if (err) {
+			return responses.renderError(req, res);
+		}
 		req.data.cachedTrendsByDate = result;
 		next();
 	});
@@ -203,6 +214,9 @@ function getCountsBySubRegions(req, res, next) {
 
 function getCachedQuickStatsTrendsByDates(req, res, next) {
 	req.highChartsData.getCachedQuickStatsTrendsByDates(function(err, result) {
+		if (err) {
+			return responses.renderError(req, res);
+		}
 		req.data.cachedQuickStatsTrendsByDates = result;
 		next();
 	});
@@ -245,6 +259,9 @@ function getCommunityLikes(req, res, next) {
 
 function getCachedOriginalTrainers(req, res, next) {
 	req.highChartsData.getCachedOriginalTrainers(function(err, result) {
+		if (err) {
+			return responses.renderError(req, res);
+		}
 		req.data.cachedOriginalTrainers = result;
 		next();
 	});
@@ -274,6 +291,9 @@ function getRandomSample(req, res, next){
 
 function getGenderData(req, res, next){
 	req.highChartsData.getCachedGenderData(function(err, result) {
+		if (err) {
+			return responses.renderError(req, res);
+		}
 		req.data.genderData = result;
 		next();
 	});
