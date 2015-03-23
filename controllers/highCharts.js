@@ -2,7 +2,9 @@
  * This controller handles returning high chart data asynchronously
  */
 
-var responses = require('../middleware/responses');
+var responses = require('../middleware/responses'),
+	parsedWTCounts = require('../models/parsedWonderTradeCounts'),
+	achievements = require('../models/Achievements');
 
 function setSubsetByHiddenAbilities(req, res, next) {
 	req.highChartsData.getResultsWithHiddenAbilities(function(result){
@@ -299,6 +301,18 @@ function getGenderData(req, res, next){
 	});
 }
 
+/**
+ * Transform the current subset into a parsedCountMap, then return an achievements map
+ */
+function getAchievements(req, res) {
+	parsedWTCounts(req.currentSubset, function(err, results) {
+		achievements(results, function(err, results){
+			req.data = results;
+			responses.renderJSON(req, res);
+		});
+	});
+}
+
 // es6 format
 module.exports = {
 	setSubsetByHiddenAbilities: setSubsetByHiddenAbilities,
@@ -338,5 +352,6 @@ module.exports = {
 	getSubmissionDates: getSubmissionDates,
 	getRandomSample: getRandomSample,
 	getGenderData: getGenderData,
+	getAchievements: getAchievements,
 	getCountsByUserIdAndUserTableFormatted: getCountsByUserIdAndUserTableFormatted
 };

@@ -14,5 +14,8 @@ module.exports = {
 	},
 	renderPage: function() {
 		// TODO: Implement
+	},
+	renderJSON: function(req, res) {
+		res.json(req.data);
 	}
 };

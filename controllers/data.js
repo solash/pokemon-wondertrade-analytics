@@ -460,6 +460,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 		HighCharts.getSortedCountsByPokemon, HighCharts.getSortedCountsByCountries, HighCharts.getCountsByGender,
 		HighCharts.getSubmissionDates, HighCharts.getTrendsByDate, HighCharts.getCountsByLevels,
 		HighCharts.getQuickStats, UserIdPage);
+	app.get('/users/:userId/achievements', findRedditUserName, HighCharts.setSubsetByUserId, HighCharts.getAchievements);
 	app.get('/users/:userId/date/:submissionDate', HighCharts.setSubsetByUserIdAndSubmissionDate,
 		HighCharts.getSortedCountsByPokemon, HighCharts.getSortedCountsByCountries, HighCharts.getCountsByGender,
 		HighCharts.getCountsByLevels, HighCharts.getQuickStats,
