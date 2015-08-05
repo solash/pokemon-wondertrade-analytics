@@ -14,7 +14,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 	function setupHighChartsData(req, res, next){
 
 		req.highChartsData = MemoryStore.store.highChartsData;
-		req.result= MemoryStore.store.highChartsResults;
+		req.resultSize = MemoryStore.store.highChartsSize;
 		req.data = {};
 		next();
 	}
@@ -44,13 +44,13 @@ module.exports = function(app, dataStore, MemoryStore) {
 		});
 	}
 
-	function OverviewPage(req, resp){
+	function OverviewPage(req, resp) {
 		resp.render('data/index', {
 			title: 'Wonder Trade Analytics',
+			totalCount: req.resultSize,
 			pageState: '',
 			PokemonHash: PokemonHash,
 			CountryHash: CountryHash,
-			result: req.result,
 			user: req.user,
 			pokemonChart: JSON.stringify(req.data.sortedCountsByPokemon),
 			countryChart: JSON.stringify(req.data.sortedCountsByCountries)
@@ -60,7 +60,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/pokemon', {
 			title: 'Pokemon Overview',
 			pageState: '',
-			result: req.result,
 			PokemonHash: PokemonHash,
 			trendingPokemonChart: JSON.stringify(req.data.cachedTrendByPokemonIds),
 			levelBarChart: JSON.stringify(req.data.countsByLevels),
@@ -81,7 +80,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		res.render('data/pokemonById', {
 			title: pokemonName+' Analytics',
 			pageState: '',
-			result: req.result,
 			pokemonName: pokemonName,
 			pokemonId: pokemonId,
 			user: req.user,
@@ -98,7 +96,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 			title: 'Wonder Trade Region Analytics',
 			pageState: '',
 			user: req.user,
-			totalCount: req.result.length,
+			totalCount: req.resultSize,
 			countryList: req.data.sortedCountsByCountries,
 			countryChart: JSON.stringify(req.data.sortedCountsByCountries)
 		});
@@ -123,7 +121,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/hiddenAbilities', {
 			title: 'Pokemon with Hidden Abilities',
 			pageState: '',
-			result: req.result,
 			PokemonHash: PokemonHash,
 			levelBarChart: JSON.stringify(req.data.countsByLevels),
 			countryChart: JSON.stringify(req.data.sortedCountsByCountries),
@@ -138,7 +135,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/perfectIV', {
 			title: 'Pokemon with Perfect IVs',
 			pageState: '',
-			result: req.result,
 			PokemonHash: PokemonHash,
 			levelBarChart: JSON.stringify(req.data.countsByLevels),
 			countryChart: JSON.stringify(req.data.sortedCountsByCountries),
@@ -153,7 +149,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/shiny', {
 			title: 'Shiny Pokemon',
 			pageState: '',
-			result: req.result,
 			PokemonHash: PokemonHash,
 			levelBarChart: JSON.stringify(req.data.countsByLevels),
 			countryChart: JSON.stringify(req.data.sortedCountsByCountries),
@@ -171,7 +166,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/gender', {
 			title: 'Wonder Trade Analytics',
 			pageState: '',
-			result: req.result,
 			PokemonHash: PokemonHash,
 			maleQuickstats: genderData.maleQuickstats,
 			femaleQuickstats: genderData.femaleQuickstats,
@@ -189,7 +183,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/levels', {
 			title: 'Level Analytics',
 			pageState: '',
-			result: req.result,
 			PokemonHash: PokemonHash,
 			CountryHash: CountryHash,
 			user: req.user,
@@ -203,7 +196,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/byLevel', {
 			title: 'Level '+integerPokemonLevel+' Pokemon Analytics',
 			pageState: '',
-			result: req.result,
 			pokemonLevel: integerPokemonLevel,
 			user: req.user,
 			pokemonChart: JSON.stringify(req.data.sortedCountsByPokemon),
@@ -371,7 +363,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/groupsData', {
 			title: req.data.pokemonGroupName,
 			pageState: '',
-			result: req.result,
 			pokemonGroupArray: req.data.pokemonGroup,
 			PokemonHash: PokemonHash,
 			trendingPokemonChart: JSON.stringify(req.data.cachedTrendByPokemonIds),

@@ -53,14 +53,6 @@ app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
 });
 
-
-Date.prototype.customFormatDate = function(){
-	var year = this.getFullYear(),
-		month = ('0'+(this.getMonth()+1)).slice(-2),
-		day = ('0'+(this.getDate())).slice(-2);
-	return [year, month, day].join('-');
-};
-
 // Init Home Controller
 (require('./controllers/home'))(app, dataStore, MemoryStore);
 

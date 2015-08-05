@@ -21,7 +21,7 @@ var MemoryStore = function(redisStore) {
 	this.redisStore = redisStore;
 	this.store = {
 		"highChartsData": new HighChartsData(PokemonHash, CountryHash),
-		"highChartsResults": {},
+		"highChartsSize": 0,
 		"PokemonList": PokemonList,
 		"CountryList": CountryList,
 		"PokemonHash": PokemonHash,
@@ -36,7 +36,7 @@ MemoryStore.prototype.refreshHighCharts = function() {
 	if(this.redisStore) {
 		this.redisStore.lrange('wondertrade' ,0, -1, function(error, result){
 			self.store.highChartsData.refreshData(result);
-			self.store.highChartsResults = result;
+			self.store.highChartsSize = result.length;
 		});
 	}
 };

@@ -1,4 +1,5 @@
 var async = require('async'),
+	customFormatDate = require('../lib/customFormatDate'),
 	TOTAL_POKEMON_COUNT = 719;
 
 function formatDateFromString(dateString){
@@ -27,7 +28,7 @@ function EmptyCountsByPokemonByDate () {
 
 		startDate.setMonth(startDate.getMonth()-1);
 		while(startDate <= endDate) {
-			this[startDate.customFormatDate()] = 0;
+			this[customFormatDate(startDate)] = 0;
 			startDate.setDate(startDate.getDate()+1);
 		}
 		return this;
@@ -485,7 +486,7 @@ HighChartsData.prototype.formatCountTrendsByPokemon = function(result, callback)
 
 	startDate.setMonth(startDate.getMonth()-1);
 	while(startDate < endDate) {
-		dateRange.push(startDate.customFormatDate());
+		dateRange.push(customFormatDate(startDate));
 		startDate.setDate(startDate.getDate()+1);
 	}
 
@@ -616,7 +617,7 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet, callback) {
 		dateStringCount;
 
 	while(startDate < endDate) {
-		fullDateRange.push([formatDateFromString(startDate.customFormatDate()), 0]);
+		fullDateRange.push([formatDateFromString(customFormatDate(startDate)), 0]);
 		startDate.setDate(startDate.getDate()+1);
 	}
 
@@ -664,7 +665,7 @@ HighChartsData.prototype.getTopPokemon = function(limit, callback){
 
 	startDate.setMonth(startDate.getMonth()-1);
 
-	this.getResultsByDateRange(startDate.customFormatDate(), endDate.customFormatDate(), function(lastMonthsResults) {
+	this.getResultsByDateRange(customFormatDate(startDate), customFormatDate(endDate), function(lastMonthsResults) {
 		self.getSortedCountsByPokemon(lastMonthsResults, function(err, countTrends) {
 			countTrends = countTrends.reverse();
 			callback(null, countTrends.slice(0, limit));
@@ -970,7 +971,7 @@ HighChartsData.prototype.getQuickStatsTrendsByDates = function(callback) {
 		},
 		function (dateCallback) {
 
-			var dateString = startDate.customFormatDate(),
+			var dateString = customFormatDate(startDate),
 				utcDateString = formatDateFromString(dateString);
 
 			self.getResultsBySubmissionDate(dateString, function(formattedDateResults){

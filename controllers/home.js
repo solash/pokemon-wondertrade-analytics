@@ -17,7 +17,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 	function setupHighChartsData(req, resp, next){
 
 		req.highChartsData = MemoryStore.store.highChartsData;
-		req.result= MemoryStore.store.highChartsResults;
 		req.data = {};
 		next();
 	}
@@ -33,7 +32,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 
 	app.get('/', setupHighChartsData, HighCharts.getCachedTrendsByDate, function(req, res){
 
-		var totalCount = MemoryStore.store.highChartsResults.length,
+		var totalCount = MemoryStore.store.highChartsSize,
 			formattedCount = formatNumber(totalCount, 0, 3);
 
 		res.render('home', {
