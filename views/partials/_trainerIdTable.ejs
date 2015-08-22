@@ -1,9 +1,0 @@
-<div class="page-content-inner">
-    <ul class="original-trainers">
-        <% for(var trainer in originalTrainers){ %>
-        <li class="original-trainers-id">
-            <a href="/originalTrainers/<%= trainer %>"><%= trainer %> (<%= originalTrainers[trainer].count %>)</a> : <%= originalTrainers[trainer].names.join(", ") %>
-        </li>
-        <% } %>
-    </ul>
-</div>

@@ -94,9 +94,6 @@ HighChartsData.prototype.cachePageResults = function () {
 			self.cachedData.pokemonTrends = formattedResult;
 		});
 	});
-	this.getOriginalTrainers(function(err, result){
-		self.cachedData.originalTrainers = result;
-	});
 	this.getTrendsByDate(null, function(err, result){
 		self.cachedData.dateTrend = result;
 	});
@@ -766,62 +763,6 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet, callback){
 		sortPokemonLikesArray,
 		formatOutput
 	], callback);
-};
-
-HighChartsData.prototype.getOriginalTrainers = function(callback){
-
-	var resultSet = this.deserializedResults,
-		originalTrainers = {},
-		originalTrainer,
-		trainerId,
-		trainerName;
-
-	async.each(resultSet, function(wondertrade, wondertradeCallback){
-		trainerId = wondertrade.trainerId;
-		trainerName = wondertrade.trainerName;
-		originalTrainer = originalTrainers[trainerId];
-		if (trainerId && trainerName) {
-			if (!originalTrainer) {
-				originalTrainers[trainerId] = {
-					"names": [trainerName],
-					"count": 1
-				};
-			} else {
-				originalTrainer.names.push(trainerName);
-				originalTrainer.count++;
-			}
-		}
-
-		wondertradeCallback();
-	}, function(err){
-		callback(err, originalTrainers);
-	});
-};
-
-HighChartsData.prototype.getCachedOriginalTrainers = function(callback){
-	if (this.cachedData.originalTrainers) {
-		return callback(null, this.cachedData.originalTrainers);
-	}
-	callback('Still Loading');
-};
-
-HighChartsData.prototype.getOriginalTrainersById = function(trainerId, callback){
-	var resultSet = this.deserializedResults,
-		originalTrainers = {},
-		trainerName;
-
-	async.each(resultSet, function(wondertrade, wondertradeCallback){
-		if(wondertrade.trainerId === trainerId) {
-			trainerName = wondertrade.trainerName;
-			if (!originalTrainers[trainerName]) {
-				originalTrainers[trainerName] = [];
-			}
-			originalTrainers[trainerName].push(wondertrade);
-		}
-		wondertradeCallback();
-	}, function(err){
-		callback(err, originalTrainers);
-	});
 };
 
 HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSet, callback) {

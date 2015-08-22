@@ -259,24 +259,6 @@ function getCommunityLikes(req, res, next) {
 	});
 }
 
-function getCachedOriginalTrainers(req, res, next) {
-	req.highChartsData.getCachedOriginalTrainers(function(err, result) {
-		if (err) {
-			return responses.renderError(req, res);
-		}
-		req.data.cachedOriginalTrainers = result;
-		next();
-	});
-}
-
-function getOriginalTrainersById(req, res, next) {
-	var trainerId = req.params.trainerId;
-	req.highChartsData.getOriginalTrainersById(trainerId, function(err, result) {
-		req.data.originalTrainersById = result;
-		next();
-	});
-}
-
 function getSubmissionDates(req, res, next) {
 	req.highChartsData.getSubmissionDates(req.currentSubset, function(err, result) {
 		req.data.submissionDates = result;
@@ -347,8 +329,6 @@ module.exports = {
 	getDataSplitByTime: getDataSplitByTime,
 	getQuickStatsTrendsByTime: getQuickStatsTrendsByTime,
 	getCommunityLikes: getCommunityLikes,
-	getCachedOriginalTrainers: getCachedOriginalTrainers,
-	getOriginalTrainersById: getOriginalTrainersById,
 	getSubmissionDates: getSubmissionDates,
 	getRandomSample: getRandomSample,
 	getGenderData: getGenderData,

@@ -269,18 +269,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 		resp.render('data/originalTrainers', {
 			title: 'Original Trainer\'s recorded',
 			pageState: '',
-			user: req.user,
-			originalTrainers: req.data.cachedOriginalTrainers
-		});
-	}
-	function OTPageById(req, resp){
-
-		var trainerId = req.params.trainerId;
-		resp.render('data/originalTrainersById', {
-			title: 'Wonder Trades By '+trainerId,
-			pageState: '',
-			user: req.user,
-			originalTrainers: req.data.originalTrainersById
+			user: req.user
 		});
 	}
 	function UserIdPage(req, resp){
@@ -443,8 +432,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 		HighCharts.getSortedCountsByPokemon, HighCharts.getCachedTrendByPokemonIds, HighCharts.getCountsByLevels,
 		HighCharts.getQuickStats, RenderGroupData);
 
-	app.get('/originalTrainers', setupHighChartsData, HighCharts.getCachedOriginalTrainers, OTPage);
-	app.get('/originalTrainers/:trainerId', setupHighChartsData, HighCharts.getOriginalTrainersById, OTPageById);
+	app.get('/originalTrainers', OTPage);
 
 	app.get('/users/*', setupHighChartsData, setupUserTableData);
 	app.get('/users/:userId', findRedditUserName, HighCharts.setSubsetByUserId,
