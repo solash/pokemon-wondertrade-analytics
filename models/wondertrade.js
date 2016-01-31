@@ -1,5 +1,9 @@
 var profanityList = require('../data/profanityList');
 
+var validPokeballList = ['pokeball', 'greatball', 'ultraball', 'masterball', 'safariball', 'levelball', 'lureball',
+	'moonball', 'friendball', 'loveball', 'heavyball', 'fastball','sportball', 'premierball', 'repeatball', 'timerball',
+	'nestball', 'netball', 'diveball', 'luxuryball', 'healball', 'quickball', 'duskball'];
+
 function sanitizeParams(params, userId) {
 	var currentTime = params.time || "",
 		currentDate;
@@ -40,6 +44,12 @@ function sanitizeParams(params, userId) {
 		pokemonLevel = '';
 	}
 
+	// Sanitize the pokeball type
+	var pokeballType = params.pokeballType;
+	if (validPokeballList.indexOf(pokeballType) === -1) {
+		pokeballType = '';
+	}
+
 	// Sanitize Trainer Id
 	// 65535 is the maximum value for a trainerID
 	var trainerId = "",
@@ -57,6 +67,7 @@ function sanitizeParams(params, userId) {
 	}
 
 	params.pokemonId = pokemonId;
+	params.pokeballType = pokeballType || '';
 	params.pokemonNickname = params.pokemonNickname || '';
 	params.hasItem = (params.hasItem ? true : false);
 	params.hasHiddenAbility = (params.hasHiddenAbility ? true : false);
@@ -83,6 +94,7 @@ var WonderTradeModel = function(params, userId) {
 
 	this.attributes = {
 		"pokemonId" : params.pokemonId,
+		"pokeballType": params.pokeballType,
 		"pokemonNickname" : params.pokemonNickname,
 		"hasItem" : params.hasItem,
 		"hasHiddenAbility" : params.hasHiddenAbility,

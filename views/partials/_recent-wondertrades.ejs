@@ -1,7 +1,7 @@
 <table class="wondertrade-list">
 	<thead>
 		<tr>
-			<td class="pokemon-details strong-divider" colspan="9">Pokemon Details</td>
+			<td class="pokemon-details strong-divider" colspan="10">Pokemon Details</td>
 			<td class="trainer-details" colspan="3">Trainer Details</td>
 			<td colspan="2">&nbsp;</td>
 		</tr>
@@ -15,7 +15,8 @@
             <th class="pokemon-details">Egg<br/> Moves</th>
             <th class="pokemon-details">Perfect<br/>IV</th>
             
-			<th class="pokemon-details strong-divider">Hidden<br />Ability</th>
+			<th class="pokemon-details">Hidden<br />Ability</th>
+			<th class="pokemon-details  strong-divider">Poke ball<br />Type</th>
 			<th class="trainer-details">Trainer<br />Gender</th>
 			<th class="trainer-details">Trainer<br />Country</th>
 			<th class="trainer-details">Trainer<br />Country Sub</th>
@@ -35,7 +36,8 @@
             <td class="checkArea"><%= wondertrade.hasEggMove? '&check;' : '' %></td>
             <td class="checkArea"><%= wondertrade.hasPerfectIV? '&check;' : '' %></td>
 
-    		<td class="checkArea strong-divider"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
+			<td class="checkArea"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
+			<td class="strong-divider"><%= wondertrade.pokeballType? wondertrade.pokeballType : '' %></td>
     		<td>
                 <% if(wondertrade.trainerGender === 'male') { %>
                     <span class="gender-male">
