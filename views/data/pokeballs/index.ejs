@@ -1,0 +1,13 @@
+<% layout('../../layout') %>
+<h3>Pokeball Type Distribution</h3>
+
+
+<div id="pokeball-chart"></div>
+
+<% sortedResult.forEach(function(pokeball) { %>
+	<div class="pokeball-link"><a href="/data/pokeballs/<%= pokeball[0] %>"><%= pokeball[2] %></a> (<%= pokeball[1] %>)</div>
+<% }); %>
+
+<script>
+	<% include ../../partials/highcharts/_pokeball_pie_chart.ejs %>
+</script>

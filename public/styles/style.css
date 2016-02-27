@@ -246,6 +246,11 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
 .pokemon-groups{list-style: none;text-align: center}
 .pokemon-groups li{background: rgba(0,0,0,.3);display: inline-block;margin: 0.5em;padding: 0.5em;font-size: 1.5em;}
 
+.pokeball-link {
+    display: inline-block;
+    padding: 0.5em;
+}
+
 .trainers{list-style: none;padding: 0;}
 .trainers .trainer{padding:0.5em;background: rgba(0,0,0,.1);margin: 0.5em 0;}
 .trainer-wondertrades{list-style: none;padding: 5px 0;overflow: hidden;text-align: center;}

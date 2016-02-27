@@ -1,0 +1,26 @@
+$('#pokeball-chart').highcharts({
+    title: {
+        text: 'Pokeball Distribution'
+    },
+    color: ['#fff00', '#000fff'],
+    tooltip: {
+        pointFormat: '<b>{point.y}</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                color: '#000000',
+                connectorColor: '#000000',
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Country',
+        data: <%- pokeballChart %>
+    }]
+});

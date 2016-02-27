@@ -5,6 +5,10 @@ var _ = require('underscore'),
 	UserTableModel = require('../models/UserTable'),
 	RedditPostModel = require('../models/RedditPost');
 
+function capitalize(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 module.exports = function(app, dataStore, MemoryStore) {
 
 	var PokemonList = MemoryStore.store.PokemonList,
@@ -382,6 +386,46 @@ module.exports = function(app, dataStore, MemoryStore) {
 		});
 	}
 
+	function renderPokeballPage(req, res) {
+
+		req.highChartsData.getPokeballsData(function(err, result) {
+			var sortedResult = Object.keys(result).map(function(key) {
+				return [key, result[key], capitalize(key)];
+			}).sort(function(current, next) {
+				return (current[1] > next[1]) ? 1 : -1;
+			});
+
+
+			res.render('data/pokeballs/index', {
+				title: 'Wonder Trade Pokeball Analytics',
+				pageState: '',
+				user: req.user,
+				totalCount: req.resultSize,
+				pokeballChart: JSON.stringify(sortedResult),
+				sortedResult: sortedResult
+			});
+		});
+	}
+
+	function renderPokeballTypePage(req, res) {
+
+		var pokeballType = (req.params.type) || '';
+		var pokeballTypeCapitalized = capitalize(pokeballType);
+		res.render('data/pokeballs/type', {
+			title: 'Pokemon caught with a ' + pokeballTypeCapitalized,
+			pokeballType: pokeballTypeCapitalized,
+			pageState: '',
+			PokemonHash: PokemonHash,
+			levelBarChart: JSON.stringify(req.data.countsByLevels),
+			countryChart: JSON.stringify(req.data.sortedCountsByCountries),
+			pokemonList: PokemonList,
+			user: req.user,
+			pokemonTable: req.data.sortedCountsByPokemon,
+			pokemonChart: JSON.stringify(req.data.sortedCountsByPokemon),
+			quickstats: req.data.quickstats
+		});
+	}
+
 	app.get('/data', setupHighChartsData, HighCharts.getSortedCountsByCountries, HighCharts.getSortedCountsByPokemon, OverviewPage);
 
 	// Setup the highcharts Object before each /data/* request
@@ -426,6 +470,10 @@ module.exports = function(app, dataStore, MemoryStore) {
 	app.get('/data/likes', HighCharts.getCommunityLikes, LikesPage);
 	app.get('/data/time', HighCharts.getDataSplitByTime, HighCharts.getQuickStatsTrendsByTime, TimePage);
 	app.get('/data/recent', setupUserTableData, RecentWonderTradesPage);
+
+	app.get('/data/pokeballs', renderPokeballPage);
+	app.get('/data/pokeballs/:type',  HighCharts.setSubsetByPokeballType, HighCharts.getCountsByLevels,
+			HighCharts.getSortedCountsByCountries, HighCharts.getSortedCountsByPokemon, HighCharts.getQuickStats, renderPokeballTypePage);
 
 	app.get('/groups', GroupsPage);
 	app.get('/groups/:groupName', setupHighChartsData, HighCharts.setPokemonGroup, HighCharts.setSubsetByPokemonGroup,

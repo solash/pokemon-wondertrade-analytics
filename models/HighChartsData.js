@@ -1,5 +1,6 @@
 var async = require('async'),
 	customFormatDate = require('../lib/customFormatDate'),
+	pokeballTypes = require('../data/pokeballTypes'),
 	TOTAL_POKEMON_COUNT = 719;
 
 function formatDateFromString(dateString){
@@ -1119,6 +1120,27 @@ HighChartsData.prototype.getCachedGenderData = function(callback) {
 		return callback(null, this.cachedData.genderData);
 	}
 	callback('Still Loading');
+};
+
+HighChartsData.prototype.getPokeballsData = function(callback) {
+	async.reduce(this.deserializedResults, {}, function(memo, wonderTrade, filterBack) {
+		if (wonderTrade.pokeballType) {
+			memo[wonderTrade.pokeballType] = memo[wonderTrade.pokeballType] ? memo[wonderTrade.pokeballType] + 1 : 1;
+		}
+		process.nextTick(function() {
+			filterBack(null, memo);
+		});
+	}, callback);
+};
+
+HighChartsData.prototype.getResultsByPokeballType = function(type, callback) {
+	if (pokeballTypes.indexOf(type) === -1) {
+		return callback([]);
+	}
+
+	return async.filter(this.deserializedResults, function(wonderTrade, filterBack){
+		filterBack(wonderTrade.pokeballType === type);
+	}, callback);
 };
 
 module.exports = HighChartsData;

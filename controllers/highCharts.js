@@ -77,7 +77,13 @@ function setSubsetByDateRange (req, res, next) {
 		next();
 	});
 }
-
+function setSubsetByPokeballType(req, res, next) {
+	var type = req.params.type;
+	req.highChartsData.getResultsByPokeballType(type, function(result){
+		req.currentSubset = result;
+		next();
+	});
+}
 function setPokemonGroup (req, res, next) {
 
 	var groupName = req.params.groupName || '',
@@ -309,6 +315,7 @@ module.exports = {
 	setSubsetByUserIdAndSubmissionDate: setSubsetByUserIdAndSubmissionDate,
 	setSubsetBySubmissionDate: setSubsetBySubmissionDate,
 	setSubsetByDateRange: setSubsetByDateRange,
+	setSubsetByPokeballType: setSubsetByPokeballType,
 
 	setPokemonGroup: setPokemonGroup,
 
