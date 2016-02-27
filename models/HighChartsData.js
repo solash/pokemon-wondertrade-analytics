@@ -1127,7 +1127,7 @@ HighChartsData.prototype.getPokeballsData = function(callback) {
 		if (wonderTrade.pokeballType) {
 			memo[wonderTrade.pokeballType] = memo[wonderTrade.pokeballType] ? memo[wonderTrade.pokeballType] + 1 : 1;
 		}
-		process.nextTick(function() {
+		setImmediate(function() {
 			filterBack(null, memo);
 		});
 	}, callback);
