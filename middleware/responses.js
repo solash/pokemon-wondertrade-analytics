@@ -4,8 +4,7 @@
  */
 
 module.exports = {
-	renderError: function(err, req, res) {
-		console.log(req.originalUrl, ':', err);
+	renderError: function(req, res) {
 		res.render('500', {
 			title: 'Error',
 			status: '500',

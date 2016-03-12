@@ -180,7 +180,7 @@ function getCountsByGender (req, res, next) {
 function getCachedTrendByPokemonId (req, res, next) {
 	req.highChartsData.getCachedTrendByPokemonId (req.params.pokemonId, function(err, result) {
 		if (err) {
-			return responses.renderError(err, req, res);
+			return responses.renderError(req, res);
 		}
 		req.data.cachedTrendByPokemonId = result;
 		next();
@@ -189,7 +189,7 @@ function getCachedTrendByPokemonId (req, res, next) {
 function getCachedTrendByPokemonIds (req, res, next) {
 	req.highChartsData.getCachedTrendByPokemonIds (req.data.pokemonGroup, function(err, result) {
 		if (err) {
-			return responses.renderError(err, req, res);
+			return responses.renderError(req, res);
 		}
 		req.data.cachedTrendByPokemonIds = result;
 		next();
@@ -199,7 +199,7 @@ function getCachedTrendByPokemonIds (req, res, next) {
 function getCachedTrendsByDate (req, res, next) {
 	req.highChartsData.getCachedTrendsByDate (function(err, result) {
 		if (err) {
-			return responses.renderError(err, req, res);
+			return responses.renderError(req, res);
 		}
 		req.data.cachedTrendsByDate = result;
 		next();
@@ -223,7 +223,7 @@ function getCountsBySubRegions(req, res, next) {
 function getCachedQuickStatsTrendsByDates(req, res, next) {
 	req.highChartsData.getCachedQuickStatsTrendsByDates(function(err, result) {
 		if (err) {
-			return responses.renderError(err, req, res);
+			return responses.renderError(req, res);
 		}
 		req.data.cachedQuickStatsTrendsByDates = result;
 		next();
@@ -282,7 +282,7 @@ function getRandomSample(req, res, next){
 function getGenderData(req, res, next){
 	req.highChartsData.getCachedGenderData(function(err, result) {
 		if (err) {
-			return responses.renderError(err, req, res);
+			return responses.renderError(req, res);
 		}
 		req.data.genderData = result;
 		next();
