@@ -90,19 +90,28 @@ HighChartsData.prototype.refreshData = function(jsonResults) {
 HighChartsData.prototype.cachePageResults = function () {
 	var self = this;
 	console.time('Highcharts Page Cache has been reset');
+
+	console.time('getCountTrendsByPokemon');
 	this.getCountTrendsByPokemon(function(err, result) {
 		self.formatCountTrendsByPokemon(result, function(err, formattedResult){
 			self.cachedData.pokemonTrends = formattedResult;
 		});
+		console.timeEnd('getCountTrendsByPokemon');
 	});
+	console.time('getTrendsByDate');
 	this.getTrendsByDate(null, function(err, result){
 		self.cachedData.dateTrend = result;
+		console.timeEnd('getTrendsByDate');
 	});
+	console.time('getQuickStatsTrendsByDates');
 	this.getQuickStatsTrendsByDates(function(err, result){
 		self.cachedData.dateTrendQuickstats = result;
+		console.timeEnd('getQuickStatsTrendsByDates');
 	});
+	console.time('getGenderData');
 	this.getGenderData(function(err, result){
 		self.cachedData.genderData = result;
+		console.timeEnd('getGenderData');
 	});
 	console.timeEnd('Highcharts Page Cache has been reset');
 };
@@ -123,19 +132,25 @@ HighChartsData.prototype.getSortedCountsByCountries = function(resultSet, callba
 			country = result.trainerCountry;
 			countryCount = countryCountMap[country];
 			countryCountMap[country] = (countryCount) ? (countryCount + 1) : 1;
-			eachCallback();
+			setImmediate(function() {
+				eachCallback();
+			});
 		}, taskFinished);
 	}
 
 	function createCountryCountArray(taskFinished) {
 		async.map(Object.keys(countryCountMap), function (countryId, countryCallback) {
-			countryCallback(null, [countryHash[countryId], countryCountMap[countryId], countryId]);
+			setImmediate(function() {
+				countryCallback(null, [countryHash[countryId], countryCountMap[countryId], countryId]);
+			});
 		}, taskFinished);
 	}
 
 	function sortCountryCountArray(countryCountArray, taskFinished) {
 		async.sortBy(countryCountArray, function(country, sortCallback){
-			sortCallback(null, country[1]);
+			setImmediate(function() {
+				sortCallback(null, country[1]);
+			});
 		}, taskFinished);
 	}
 
@@ -177,19 +192,25 @@ HighChartsData.prototype.getSortedCountsByPokemon = function(resultSet, callback
 		async.each(resultSet, function(wonderTrade, wonderTradeCallback) {
 			pokemonCount = pokemonCountMap[wonderTrade.pokemonId];
 			pokemonCountMap[wonderTrade.pokemonId] = pokemonCount ? pokemonCount + 1 : 1;
-			wonderTradeCallback();
+			setImmediate(function() {
+				wonderTradeCallback();
+			});
 		}, taskFinished);
 	}
 
 	function createPokemonCountsArray (taskFinished) {
 		async.map(Object.keys(pokemonCountMap), function (pokemonId, itemCallback) {
-			itemCallback(null, [pokemonHash[pokemonId], pokemonCountMap[pokemonId], pokemonId]);
+			setImmediate(function() {
+				itemCallback(null, [pokemonHash[pokemonId], pokemonCountMap[pokemonId], pokemonId]);
+			});
 		}, taskFinished);
 	}
 
 	function sortPokemonCountArray(pokemonCountArray, taskFinished) {
 		async.sortBy(pokemonCountArray, function(pokemon, sortCallback){
-			sortCallback(null, pokemon[1]);
+			setImmediate(function() {
+				sortCallback(null, pokemon[1]);
+			});
 		}, taskFinished);
 	}
 
@@ -300,7 +321,9 @@ HighChartsData.prototype.getResultsByUserIdAndSubmissionDate = function(userId, 
 
 HighChartsData.prototype.getResultsBySubmissionDate = function(submissionDate, callback) {
 	async.filter(this.deserializedResults, function(wonderTrade, filterBack){
-		filterBack(wonderTrade.date === submissionDate);
+		setImmediate(function() {
+			filterBack(wonderTrade.date === submissionDate);
+		});
 	}, callback);
 };
 
@@ -317,7 +340,9 @@ HighChartsData.prototype.getResultsByDateRange = function(startDate, endDate, ca
 	}
 	async.filter(this.deserializedResults, function(wonderTrade, filterBack) {
 		var resultDate =wonderTrade.date;
-		filterBack(resultDate >= startDate && resultDate <= endDate);
+		setImmediate(function() {
+			filterBack(resultDate >= startDate && resultDate <= endDate);
+		});
 	}, callback);
 };
 
@@ -353,19 +378,25 @@ HighChartsData.prototype.getCountsBySubRegions = function(regionSet, callback) {
 				subregionCount = regionCountMap[subregion];
 				regionCountMap[subregion] = subregionCount ? subregionCount + 1 : 1;
 			}
-			wondertradeCallback();
+			setImmediate(function() {
+				wondertradeCallback();
+			});
 		}, taskFinished);
 	}
 
 	function createRegionCountArray(taskFinished){
 		async.map(Object.keys(regionCountMap), function(regionName, arrayCallback){
-			arrayCallback(null, [regionName, regionCountMap[regionName]]);
+			setImmediate(function() {
+				arrayCallback(null, [regionName, regionCountMap[regionName]]);
+			});
 		}, taskFinished);
 	}
 
 	function sortRegionCountArray(regionCounts, taskFinished) {
 		async.sortBy(regionCounts, function(region, sortCallback){
-			sortCallback(null, region[1]);
+			setImmediate(function() {
+				sortCallback(null, region[1]);
+			});
 		}, taskFinished);
 	}
 
@@ -386,7 +417,9 @@ HighChartsData.prototype.getCountsByGender = function(resultSet, callback) {
 	};
 	async.each(resultSet, function(wonderTrade, wonderTradeCallback){
 		trainerGender[wonderTrade.trainerGender]++;
-		wonderTradeCallback();
+		setImmediate(function() {
+			wonderTradeCallback();
+		});
 	}, function(err){
 		callback(err, [["Guys", trainerGender.male], ["Girls", trainerGender.female]]);
 	});
@@ -412,7 +445,10 @@ HighChartsData.prototype.getCountsByLevels = function(resultSet, callback) {
 		if(currentLevel >= 1 && currentLevel <= 100) {
 			levelsChart[currentLevel-1][1]++;
 		}
-		wonderTradeCallback();
+
+		setImmediate(function() {
+			wonderTradeCallback();
+		});
 	}, function(err){
 		levelsChartFormatted[0].data = levelsChart;
 		callback(err, levelsChartFormatted);
@@ -468,7 +504,11 @@ HighChartsData.prototype.getCountTrendsByPokemon = function(callback){
 			currentPokemon[currentDate]++;
 			totalPokemon[currentDate]++;
 		}
-		resultCallback();
+
+		setImmediate(function() {
+			resultCallback();
+		});
+
 	}, function(){
 		callback(null, countsByDate);
 	});
@@ -512,8 +552,9 @@ HighChartsData.prototype.formatCountTrendsByPokemon = function(result, callback)
 				percentage
 			]);
 		}
-
-		formattedCountTrend(null, pokemonData);
+		setImmediate(function() {
+			formattedCountTrend(null, pokemonData);
+		});
 	}, callback);
 };
 
@@ -555,9 +596,11 @@ HighChartsData.prototype.getCachedTrendByPokemonIds = function(pokemonIdArray, c
 			self.cachedData.pokemonTrends &&
 			self.cachedData.pokemonTrends[pokemonId - 1] &&
 			self.cachedData.pokemonTrends[pokemonId - 1].data ) || [];
-		pokemonCallback(null, {
-			name: self.pokemonHash[pokemonId],
-			data: pokemonData
+		setImmediate(function() {
+			pokemonCallback(null, {
+				name: self.pokemonHash[pokemonId],
+				data: pokemonData
+			});
 		});
 	}, callback);
 };
@@ -576,21 +619,27 @@ HighChartsData.prototype.getSubmissionDates = function(resultSet, callback) {
 			dateString = wondertrade.date;
 			dateStringCount = dateStringMap[dateString];
 			dateStringMap[dateString] = dateStringCount ? dateStringCount + 1 : 1;
-			wondertradeCallback();
+			setImmediate(function() {
+				wondertradeCallback();
+			});
 		}, taskFinished);
 	}
 	function createSubmissionDatesArray(taskFinished) {
 		async.map(Object.keys(dateStringMap), function(dateString, arrayCallback){
-			arrayCallback(null, {
-				dateString: dateString,
-				formattedDate: formatDateFromString(dateString),
-				count: dateStringMap[dateString]
+			setImmediate(function() {
+				arrayCallback(null, {
+					dateString: dateString,
+					formattedDate: formatDateFromString(dateString),
+					count: dateStringMap[dateString]
+				});
 			});
 		}, taskFinished);
 	}
 	function sortSubmissionDatesArray(submissionArray, taskFinished) {
 		async.sortBy(submissionArray, function(submission, sortCallback){
-			sortCallback(null, submission.formattedDate);
+			setImmediate(function() {
+				sortCallback(null, submission.formattedDate);
+			});
 		}, taskFinished);
 	}
 
@@ -624,13 +673,17 @@ HighChartsData.prototype.getTrendsByDate = function(resultSet, callback) {
 			dateString = formatDateFromString(wondertrade.date);
 			dateStringCount = dateStringMap[dateString];
 			dateStringMap[dateString] = dateStringCount ? dateStringCount + 1 : 1;
-			wondertradeCallback();
+			setImmediate(function() {
+				wondertradeCallback();
+			});
 		},taskFinished);
 	}
 	function createDatesArray(taskFinished) {
 		async.map(fullDateRange, function(dateStringObject, arrayCallback){
 			dateStringObject[1] = dateStringMap[dateStringObject[0]] || 0;
-			arrayCallback(null, dateStringObject);
+			setImmediate(function() {
+				arrayCallback(null, dateStringObject);
+			});
 		}, taskFinished);
 	}
 
@@ -666,7 +719,9 @@ HighChartsData.prototype.getTopPokemon = function(limit, callback){
 	this.getResultsByDateRange(customFormatDate(startDate), customFormatDate(endDate), function(lastMonthsResults) {
 		self.getSortedCountsByPokemon(lastMonthsResults, function(err, countTrends) {
 			countTrends = countTrends.reverse();
-			callback(null, countTrends.slice(0, limit));
+			setImmediate(function() {
+				callback(null, countTrends.slice(0, limit));
+			});
 		});
 	});
 };
@@ -713,7 +768,9 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet, callback){
 			opinionCount = pokemon.likes + pokemon.dislikes;
 			pokemon.percentage = (pokemon.likes / (opinionCount)*100).toFixed(2);
 
-			wondertradeCallback();
+			setImmediate(function() {
+				wondertradeCallback();
+			});
 		}, taskFinished);
 	}
 
@@ -722,26 +779,32 @@ HighChartsData.prototype.getCommunityLikes = function(resultSet, callback){
 			if (pokemonMap[pokemonId]) {
 				return pokemonIdCallback(null, pokemonMap[pokemonId]);
 			}
-			pokemonIdCallback(null, {
-				id: pokemonId,
-				name: pokemonHash[pokemonId],
-				percentage: 0,
-				count: 0,
-				likes: 0,
-				dislikes: 0
+			setImmediate(function() {
+				pokemonIdCallback(null, {
+					id: pokemonId,
+					name: pokemonHash[pokemonId],
+					percentage: 0,
+					count: 0,
+					likes: 0,
+					dislikes: 0
+				});
 			});
 		}, taskFinished);
 	}
 
 	function sortPokemonLikesArray (pokemonMapArray, taskFinished) {
 		async.sortBy(pokemonMapArray, function(pokemon, sortCallback) {
-			sortCallback(null, parseInt(pokemon.likes - pokemon.dislikes) * -1);
+			setImmediate(function() {
+				sortCallback(null, parseInt(pokemon.likes - pokemon.dislikes) * -1);
+			});
 		}, taskFinished);
 	}
 
 	function filterPokemonLikesArray(pokemonLikesArray, taskFinish) {
 		async.filter(pokemonLikesArray, function(pokemon, filterCallback){
-			filterCallback(( pokemon.count > 2 && (pokemon.percentage > 80 || pokemon.percentage < 20 ) ));
+			setImmediate(function() {
+				filterCallback(( pokemon.count > 2 && (pokemon.percentage > 80 || pokemon.percentage < 20 ) ));
+			});
 		}, function(result) {
 			taskFinish(null, result);
 		});
@@ -772,7 +835,9 @@ HighChartsData.prototype.getPercentageByAttribute = function(attribute, resultSe
 	}
 
 	async.filter(resultSet, function(wondertrade, wondertradeCallback){
-		wondertradeCallback(wondertrade[attribute]);
+		setImmediate(function() {
+			wondertradeCallback(wondertrade[attribute]);
+		});
 	}, function(result){
 		var subsetSize = result.length || 0,
 			totalSize = resultSet.length,
@@ -816,7 +881,9 @@ HighChartsData.prototype.getLikePercentage = function(resultSet, callback){
 		} else if(liked === 'dislike') {
 			dislikes++;
 		}
-		wondertradeCallback();
+		setImmediate(function() {
+			wondertradeCallback();
+		});
 	}, function(){
 		var total = likes+dislikes;
 		if(total > 0) {
@@ -930,9 +997,9 @@ HighChartsData.prototype.getQuickStatsTrendsByDates = function(callback) {
 
 					startDate.setDate(startDate.getDate()+1);
 
-					setTimeout( function() {
+					setImmediate(function() {
 						dateCallback();
-					}, 0 );
+					});
 				});
 			});
 		},
@@ -985,7 +1052,9 @@ HighChartsData.prototype.getDataCountsSplitByTime = function(resultSet, callback
 			async.map(hours, function(hour, hourBack){
 				filtered = (getFilteredDataByTime[hour] && getFilteredDataByTime[hour].length) || 0;
 				full = (getFullDataByTime[hour] && getFullDataByTime[hour].length) || filtered;
-				hourBack(null, (filtered / full));
+				setImmediate(function() {
+					hourBack(null, (filtered / full));
+				});
 			}, function(err, result){
 				callback(err, {
 					name: "Time Trends",
@@ -1037,7 +1106,9 @@ HighChartsData.prototype.getQuickStatsTrendsByTime = function(timeGrouping, call
 					eggMoveJSON.data.push([hour, quickStatsByDate.eggMovePercentage]);
 					perfectIvJSON.data.push([hour, quickStatsByDate.perfectIvPercentage]);
 				}
-				hourCallback();
+				setImmediate(function() {
+					hourCallback();
+				});
 			});
 		},
 	function(){
@@ -1062,7 +1133,9 @@ HighChartsData.prototype.getGenderData = function(callback) {
 		function(taskCallback){
 			self.getResultsByGender('male', function(result){
 				maleSubset = result;
-				taskCallback(null);
+				setImmediate(function() {
+					taskCallback(null);
+				});
 			});
 		},
 		function(taskCallback){
@@ -1077,7 +1150,9 @@ HighChartsData.prototype.getGenderData = function(callback) {
 		function(taskCallback){
 			self.getResultsByGender('female', function(result){
 				femaleSubset = result;
-				taskCallback(null);
+				setImmediate(function() {
+					taskCallback(null);
+				});
 			});
 		},
 		function(taskCallback){
