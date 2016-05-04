@@ -36,7 +36,8 @@ function getWonderTrades(index, max, step, result, redisStore, callback) {
 
 	redisStore.lrange('wondertrade' , index, index + step, function(error, chunk) {
 		setTimeout(function() {
-			getWonderTrades(index + step, max, step, result.concat(chunk), redisStore, callback);
+			Array.prototype.push.apply(result, chunk);
+			getWonderTrades(index + step, max, step, result, redisStore, callback);
 		}, 1);
 	});
 }
