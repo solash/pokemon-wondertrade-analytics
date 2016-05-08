@@ -110,20 +110,30 @@ module.exports = function(app, dataStore) {
 				resp.send('There was an error');
 				return;
 			}
-			var parsedData = JSON.parse(data),// This could be system breaking... we need a better solution here.
-				count = 0;
-			for(var wonderTradeJson in parsedData) {
-				var wonderTradeParsedData = parsedData[wonderTradeJson],
-					wonderTradeObject = new WondertradeModel(wonderTradeParsedData, wonderTradeParsedData.userId),
+
+			try {
+				var parsedData = JSON.parse(data),// This could be system breaking... we need a better solution here.
+					count = 0,
+					wonderTradeObject,
+					serializedWonderTrade;
+
+
+				parsedData.forEach(function(wonderTradeParsedData) {
+					wonderTradeObject = new WondertradeModel(wonderTradeParsedData, wonderTradeParsedData.userId);
 					serializedWonderTrade = JSON.stringify(wonderTradeObject.toJSON());
 
-				if(serializedWonderTrade) {
-					dataStore.lpush('wondertrade', serializedWonderTrade);
-					count++;
-				}
-			}
-			resp.send(count+' Wonder Trades Successfully Imported');
+					if(serializedWonderTrade) {
+						dataStore.lpush('wondertrade', serializedWonderTrade);
+						count++;
+					}
+				});
 
+				console.log('Mass Importing from File Finished.');
+				resp.send(count+' Wonder Trades Successfully Imported');
+			} catch(e) {
+				console.log(e);
+				resp.send('There was an issue parsing the data :(');
+			}
 		});
 	}
 
