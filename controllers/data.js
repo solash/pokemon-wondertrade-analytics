@@ -77,7 +77,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 		var pokemonId = parseInt(req.params.pokemonId, 10),
 			pokemonName = PokemonHash[pokemonId];
 
-		if (!(pokemonId > 0 && pokemonId <= 721)) {
+		if (!(pokemonId > 0 && pokemonId <= 801)) {
 			return res.redirect('404');
 		}
 

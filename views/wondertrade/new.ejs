@@ -145,7 +145,7 @@
 
         $('select[name=pokemonId]').on('change', function(){
             var pokemonId = $(this).val(),
-                hiddenAbility = hiddenAbilityHash[pokemonId].HiddenAbility,
+                hiddenAbility = (hiddenAbilityHash[pokemonId] && hiddenAbilityHash[pokemonId].HiddenAbility) || '',
                 tooltipHtml = hiddenAbility;
             $('.hiddenAbility-tooltip').html(tooltipHtml).show();
         });
