@@ -2,7 +2,8 @@ var profanityList = require('../data/profanityList');
 
 var validPokeballList = ['pokeball', 'greatball', 'ultraball', 'masterball', 'safariball', 'levelball', 'lureball',
 	'moonball', 'friendball', 'loveball', 'heavyball', 'fastball','sportball', 'premierball', 'repeatball', 'timerball',
-	'nestball', 'netball', 'diveball', 'luxuryball', 'healball', 'quickball', 'duskball', 'dreamball', 'cherishball', 'safariball'];
+	'nestball', 'netball', 'diveball', 'luxuryball', 'healball', 'quickball', 'duskball', 'dreamball', 'cherishball',
+	'safariball', 'beastball'];
 
 function sanitizeParams(params, userId) {
 	var currentTime = params.time || "",
