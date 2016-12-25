@@ -1,9 +1,6 @@
 var _ = require('underscore'),
-	rest = require('restler'),
-	parseString = require('xml2js').parseString,
 	HighCharts = require('./highCharts'),
-	UserTableModel = require('../models/UserTable'),
-	RedditPostModel = require('../models/RedditPost');
+	UserTableModel = require('../models/UserTable');
 
 function capitalize(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
@@ -280,7 +277,6 @@ module.exports = function(app, dataStore, MemoryStore) {
 
 		var userId = req.params.userId,
 			userName = req.userTable[userId],
-			redditUserName = req.data.redditUserName,
 			mav = {
 				title: ' Analytics for '+userName,
 				pageState: '',
@@ -298,31 +294,8 @@ module.exports = function(app, dataStore, MemoryStore) {
 				redditResults: false
 			};
 
-		// TODO: decrease page loads by moving this to clientside
-		if (redditUserName && redditUserName !== '') {
-			var redditPostsRequest = rest.get('http://www.reddit.com/r/WonderTrade/search.rss?q=subreddit%3Awondertrade+author%3A'+redditUserName);
-			redditPostsRequest.once('complete', function(data) {
-				parseString(data, function (err, result) {
 
-					if(result && result.rss && result.rss.channel && result.rss.channel[0]) {
-						var redditPosts = [];
-						for(var item in result.rss.channel[0].item) {
-							var redditItem = result.rss.channel[0].item[item];
-							if(redditItem) {
-								var redditPost = new RedditPostModel(redditItem);
-								redditPosts.push(redditPost);
-							}
-						}
-						mav.redditResults = redditPosts;
-					}
-					resp.render('data/user', mav);
-
-					redditPostsRequest.removeAllListeners('error');
-				});
-			});
-		} else {
-			resp.render('data/user', mav);
-		}
+		resp.render('data/user', mav);
 	}
 	function UserIdDatePage(req, res) {
 
@@ -483,7 +456,7 @@ module.exports = function(app, dataStore, MemoryStore) {
 	app.get('/originalTrainers', OTPage);
 
 	app.get('/users/*', setupHighChartsData, setupUserTableData);
-	app.get('/users/:userId', findRedditUserName, HighCharts.setSubsetByUserId,
+	app.get('/users/:userId', HighCharts.setSubsetByUserId,
 		HighCharts.getSortedCountsByPokemon, HighCharts.getSortedCountsByCountries, HighCharts.getCountsByGender,
 		HighCharts.getSubmissionDates, HighCharts.getTrendsByDate, HighCharts.getCountsByLevels,
 		HighCharts.getQuickStats, UserIdPage);

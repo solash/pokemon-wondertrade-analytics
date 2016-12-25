@@ -29,8 +29,6 @@
     "redis-url": "~0.2.0",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
-    "restler": "~2.0.1",
-    "xml2js": "~0.4.0",
     "connect-redis": "~1.4.6",
     "connect-heroku-redis": "~0.1.5",
     "lupus": "0.0.1",
