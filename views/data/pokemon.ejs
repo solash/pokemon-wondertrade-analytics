@@ -20,7 +20,7 @@
 	$(document).ready(function(){
         $('#selectPokemon').on('submit', function(){            
             var pokemonId = $(this).find('option:selected').val();
-            if(pokemonId > 0 && pokemonId <= 801) {
+            if(pokemonId > 0 && pokemonId <= 802) {
                 window.location = '/data/pokemon/'+pokemonId;
             }            
             return false;
