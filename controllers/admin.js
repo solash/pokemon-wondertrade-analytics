@@ -6,7 +6,7 @@ module.exports = function(app, dataStore) {
 
 	function adminVerification(req, resp, next) {
 		var currentUser = req.user;
-		if(currentUser && currentUser.username == "TheIronDeveloper") {
+		if(currentUser && currentUser.username == "TheIronDeveloper" || currentUser && currentUser.username == "admin") {
 			next();
 		} else {
 			resp.send('Forbidden.');
