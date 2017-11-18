@@ -75,6 +75,7 @@
 				<li><a href="/contributors">Contributors</a></li>
 				<li><a href="/help">Helping<br/> Out</a></li>
 				<li><a href="/data/recent">Recent<br/> WonderTrades</a></li>
+				<li><a href="/visualize">Random<br/> Sample</a></li>
 				<li><a href="/data/likes">Liked<br/> Pokemon</a></li>
 				<li class="last"><a href="/groups">Grouped<br/> Pokemon</a></li>
 				<li class="addTrade"><a href="/wondertrade/new">Submit a<br/> wonder trade</a></li>
@@ -103,6 +104,7 @@
 						<option value="/data/recent">Recent WonderTrades</option>
 						<option value="/data/likes">Liked Pokemon</option>
 						<option value="/groups">Grouped Pokemon</option>
+						<option value="/visualize">Random Sample</option>
 					</optgroup>
 					<optgroup label="Data">
 						<option value="/data">Overview</option>
@@ -142,17 +144,13 @@
 		});
 	})(document.getElementById('mobile-navigation'), document.location.pathname);
 </script>
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-45892387-1']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109830226-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
+  gtag('config', 'UA-109830226-1');
 </script>
 </body>
 </html>
