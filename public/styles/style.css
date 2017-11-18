@@ -58,6 +58,8 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .page-navigation ul .addTrade,
 .page-navigation ul .addTrade a {padding: 0 1em;color: #fff;}
 
+.page-navigation ul .privacy {float: right;}
+
 .page-navigation .sidebar-overview{margin-bottom: 5px;}
 .page-navigation .sidebar-data{}
 
@@ -290,6 +292,7 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
     .page-navigation .mobile-only .addTrade {display: block;margin: 0 auto;text-align: center}
     .page-navigation .mobile-only .addTrade {margin-top: 0.5em;}
     .addTrade {}
+	.page-navigation .mobile-only .privacy {margin:0 auto;}
     .input-column-inner {padding: 1px}
 
     .user-auth-form,
