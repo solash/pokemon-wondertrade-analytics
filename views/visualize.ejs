@@ -25,12 +25,16 @@
             $('.pokemon-list').on("mouseover", ".pkmn", function(){
                 var pokemonId = $(this).data("pokemonid");
                 $('.pkmn-'+pokemonId).addClass("highlight");
-				$('.pkmn-'+pokemonId).prop('href', "/data/pokemon/"+pokemonId);
             });
 
             $('.pokemon-list').on("mouseout", ".pkmn", function(){
                 var pokemonId = $(this).data("pokemonid");
                 $('.pkmn-'+pokemonId).removeClass("highlight");
+            });
+			
+            $('.pokemon-list').on("click", ".pkmn", function(){
+                var pokemonId = $(this).data("pokemonid");
+                location.href = '/data/pokemon/'+pokemonId;
             });
         });
     </script>
