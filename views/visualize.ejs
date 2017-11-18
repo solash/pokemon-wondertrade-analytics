@@ -25,6 +25,7 @@
             $('.pokemon-list').on("mouseover", ".pkmn", function(){
                 var pokemonId = $(this).data("pokemonid");
                 $('.pkmn-'+pokemonId).addClass("highlight");
+				$('.pkmn-'+pokemonId).prop('href', "/data/pokemon/"+pokemonId);
             });
 
             $('.pokemon-list').on("mouseout", ".pkmn", function(){
@@ -37,7 +38,7 @@
 <body>
     <section>
         <h1>Random Sampling of 1000 Wonder Trades</h1>
-        <p class="hover-msg">Hover Pokemon for more info</p>
+        <p class="hover-msg">Click Pokemon for more info</p>
         <div class="pokemon-list">
             <% pokemonIdList.forEach(function(pokemonId){ %>
                 <i data-pokemonId="<%= pokemonId %>" class="pkmn pkmn-<%= pokemonId %>"></i>
