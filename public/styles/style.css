@@ -58,8 +58,6 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .page-navigation ul .addTrade,
 .page-navigation ul .addTrade a {padding: 0 1em;color: #fff;}
 
-.page-navigation ul .privacy {float: right;}
-
 .page-navigation .sidebar-overview{margin-bottom: 5px;}
 .page-navigation .sidebar-data{}
 
@@ -74,6 +72,8 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .social{position: absolute;right: 0;}
 .social-btn{float: left;}
 .twitter-share-button{margin:4px 0 0 5px;}
+
+.privacy{position: absolute;left: 0;}
 
 .stateMessage{color:#000;padding:1em 0;text-align: center;}
 .stateMessage.warning{background: #ff6;}
@@ -292,7 +292,7 @@ button:hover{box-shadow: 0 0 50px #ccc;cursor: pointer;}
     .page-navigation .mobile-only .addTrade {display: block;margin: 0 auto;text-align: center}
     .page-navigation .mobile-only .addTrade {margin-top: 0.5em;}
     .addTrade {}
-	.page-navigation .mobile-only .privacy {margin:0 auto;}
+	.page-navigation .mobile-only .privacyMobile {margin:20px 0 0 95px;}
     .input-column-inner {padding: 1px}
 
     .user-auth-form,
