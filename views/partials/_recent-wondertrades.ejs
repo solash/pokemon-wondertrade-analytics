@@ -38,7 +38,7 @@
 			<td class="checkArea"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
 			<td class="strong-divider">
 				<% if(wondertrade.pokeballType) { %>
-					<a href="/data/pokeballs/<%= wondertrade.pokeballType %>"><%= wondertrade.pokeballType %> <i class="pokeball-icon pkbl-<%= wondertrade.pokeballType %>"></i></a>
+					<a href="/data/pokeballs/<%= wondertrade.pokeballType %>"><%= wondertrade.pokeballType %> <i class="pokeball-icon pkbl-<span class="pokeballCapitalize"><%= wondertrade.pokeballType %></span>"></i></a>
 				<% } %>
 			</td>
     		<td>
