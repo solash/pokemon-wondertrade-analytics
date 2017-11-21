@@ -1,81 +1,81 @@
-.pkbl-beastball, .pkbl-cherishball, .pkbl-diveball, .pkbl-dreamball, .pkbl-duskball, .pkbl-fastball, .pkbl-friendball, .pkbl-greatball, .pkbl-healball, .pkbl-heavyball, .pkbl-levelball, .pkbl-loveball, .pkbl-lureball, .pkbl-luxuryball, .pkbl-masterball, .pkbl-moonball, .pkbl-nestball, .pkbl-netball, .pkbl-pokeball, .pkbl-premierball, .pkbl-quickball, .pkbl-repeatball, .pkbl-safariball, .pkbl-sportball, .pkbl-timerball, .pkbl-ultraball {
+.pkbl-Beastball, .pkbl-Cherishball, .pkbl-Diveball, .pkbl-Dreamball, .pkbl-Duskball, .pkbl-Fastball, .pkbl-Friendball, .pkbl-Greatball, .pkbl-Healball, .pkbl-Heavyball, .pkbl-Levelball, .pkbl-Loveball, .pkbl-Lureball, .pkbl-Luxuryball, .pkbl-Masterball, .pkbl-Moonball, .pkbl-Nestball, .pkbl-Netball, .pkbl-Pokeball, .pkbl-Premierball, .pkbl-Quickball, .pkbl-Repeatball, .pkbl-Safariball, .pkbl-Sportball, .pkbl-Timerball, .pkbl-Ultraball {
 	background: url('/images/pokeball_sprites.png') no-repeat;
 }
-.pkbl-beastball {
+.pkbl-Beastball {
   background-position: 0 -600px;
 }
-.pkbl-cherishball {
+.pkbl-Cherishball {
   background-position: 0 -552px;
 }
-.pkbl-diveball {
+.pkbl-Diveball {
   background-position: 0 -408px;
 }
-.pkbl-dreamball {
+.pkbl-Dreamball {
   background-position: 0 -528px;
 }
-.pkbl-duskball {
+.pkbl-Duskball {
   background-position: 0 -504px;
 }
-.pkbl-fastball {
+.pkbl-Fastball {
   background-position: 0 -240px;
 }
-.pkbl-friendball {
+.pkbl-Friendball {
   background-position: 0 -168px;
 }
-.pkbl-greatball {
+.pkbl-Greatball {
   background-position: 0 -24px;
 }
-.pkbl-healball {
+.pkbl-Healball {
   background-position: 0 -456px;
 }
-.pkbl-heavyball {
+.pkbl-Heavyball {
   background-position: 0 -216px;
 }
-.pkbl-levelball {
+.pkbl-Levelball {
   background-position: 0 -96px;
 }
-.pkbl-loveball {
+.pkbl-Loveball {
   background-position: 0 -192px;
 }
-.pkbl-lureball {
+.pkbl-Lureball {
   background-position: 0 -120px;
 }
-.pkbl-luxuryball {
+.pkbl-Luxuryball {
   background-position: 0 -432px;
 }
-.pkbl-masterball {
+.pkbl-Masterball {
   background-position: 0 -72px;
 }
-.pkbl-moonball {
+.pkbl-Moonball {
   background-position: 0 -144px;
 }
-.pkbl-nestball {
+.pkbl-Nestball {
   background-position: 0 -360px;
 }
-.pkbl-netball {
+.pkbl-Netball {
   background-position: 0 -384px;
 }
-.pkbl-pokeball {
+.pkbl-Pokeball {
   background-position: 0 0;
 }
-.pkbl-premierball {
+.pkbl-Premierball {
   background-position: 0 -288px;
 }
-.pkbl-quickball {
+.pkbl-Quickball {
   background-position: 0 -480px;
 }
-.pkbl-repeatball {
+.pkbl-Repeatball {
   background-position: 0 -312px;
 }
-.pkbl-safariball {
+.pkbl-Safariball {
   background-position: 0 -576px;
 }
-.pkbl-sportball {
+.pkbl-Sportball {
   background-position: 0 -264px;
 }
-.pkbl-timerball {
+.pkbl-Timerball {
   background-position: 0 -336px;
 }
-.pkbl-ultraball {
+.pkbl-Ultraball {
   background-position: 0 -48px;
 }
