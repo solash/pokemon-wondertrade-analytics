@@ -102,6 +102,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 /* Wondertrade list */
 .wondertrade-list{text-align: center;width: 100%;}
 .wondertrade-list .strong-divider{border-right: 2px solid #000}
+.wondertrade-list .pokeballCapitalize{text-transform: capitalize;}
 .wondertrade-list .gender-male{color:blue;}
 .wondertrade-list .gender-female{color:#f0f;}
 .wondertrade-list a{color: #009;}
