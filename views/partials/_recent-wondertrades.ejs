@@ -37,7 +37,7 @@
             <td class="checkArea"><%= wondertrade.hasPerfectIV? '&check;' : '' %></td>
 
 			<td class="checkArea"><%= wondertrade.hasHiddenAbility? '&check;' : '' %></td>
-			<td class="strong-divider"><%= wondertrade.pokeballType? wondertrade.pokeballType : '' %></td>
+			<td class="strong-divider"><%= wondertrade.pokeballType? <a href="/data/pokeballs/<%= wondertrade.pokeballType %>">wondertrade.pokeballType <i class="pokeball-icon pkbl-<%= wondertrade.pokeballType %>" style="font-size: 24px;"></i></a> : '' %></td>
     		<td>
                 <% if(wondertrade.trainerGender === 'male') { %>
                     <span class="gender-male">
