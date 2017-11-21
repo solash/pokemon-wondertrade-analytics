@@ -1,0 +1,81 @@
+.pkbl-beastball, .pkbl-cherishball, .pkbl-diveball, .pkbl-dreamball, .pkbl-duskball, .pkbl-fastball, .pkbl-friendball, .pkbl-greatball, .pkbl-healball, .pkbl-heavyball, .pkbl-levelball, .pkbl-loveball, .pkbl-lureball, .pkbl-luxuryball, .pkbl-masterball, .pkbl-moonball, .pkbl-nestball, .pkbl-netball, .pkbl-pokeball, .pkbl-premierball, .pkbl-quickball, .pkbl-repeatball, .pkbl-safariball, .pkbl-sportball, .pkbl-timerball, .pkbl-ultraball {
+	background: url('/images/pokeball_sprites.png') no-repeat;
+}
+.pkbl-beastball {
+  background-position: 0 -600px;
+}
+.pkbl-cherishball {
+  background-position: 0 -552px;
+}
+.pkbl-diveball {
+  background-position: 0 -408px;
+}
+.pkbl-dreamball {
+  background-position: 0 -528px;
+}
+.pkbl-duskball {
+  background-position: 0 -504px;
+}
+.pkbl-fastball {
+  background-position: 0 -240px;
+}
+.pkbl-friendball {
+  background-position: 0 -168px;
+}
+.pkbl-greatball {
+  background-position: 0 -24px;
+}
+.pkbl-healball {
+  background-position: 0 -456px;
+}
+.pkbl-heavyball {
+  background-position: 0 -216px;
+}
+.pkbl-levelball {
+  background-position: 0 -96px;
+}
+.pkbl-loveball {
+  background-position: 0 -192px;
+}
+.pkbl-lureball {
+  background-position: 0 -120px;
+}
+.pkbl-luxuryball {
+  background-position: 0 -432px;
+}
+.pkbl-masterball {
+  background-position: 0 -72px;
+}
+.pkbl-moonball {
+  background-position: 0 -144px;
+}
+.pkbl-nestball {
+  background-position: 0 -360px;
+}
+.pkbl-netball {
+  background-position: 0 -384px;
+}
+.pkbl-pokeball {
+  background-position: 0 0;
+}
+.pkbl-premierball {
+  background-position: 0 -288px;
+}
+.pkbl-quickball {
+  background-position: 0 -480px;
+}
+.pkbl-repeatball {
+  background-position: 0 -312px;
+}
+.pkbl-safariball {
+  background-position: 0 -576px;
+}
+.pkbl-sportball {
+  background-position: 0 -264px;
+}
+.pkbl-timerball {
+  background-position: 0 -336px;
+}
+.pkbl-ultraball {
+  background-position: 0 -48px;
+}
