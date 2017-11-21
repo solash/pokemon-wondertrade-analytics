@@ -73,7 +73,7 @@ select:focus{box-shadow: 0 0 15px #ff0}
 .social-btn{float: left;}
 .twitter-share-button{margin:4px 0 0 5px;}
 
-.privacy{position: absolute;left: 0;}
+.privacy{position: absolute;left: 0; margin:5px 0 5px 0}
 
 .stateMessage{color:#000;padding:1em 0;text-align: center;}
 .stateMessage.warning{background: #ff6;}
@@ -112,6 +112,8 @@ select:focus{box-shadow: 0 0 15px #ff0}
 i.pokemon-icon{display: inline-block;height: 30px;width: 30px;vertical-align: middle;}
 .pokemon-icons{text-align: center;margin-bottom: 0.5em;}
 .checkArea{color: #0c0;text-shadow:1px 1px 1px #ccc;}
+
+i.pokeball-icon{display: inline-block;height: 24px;width: 24px;vertical-align: middle;}
 
 /* Wondertrade new */
 .input-columns{margin: 0 auto;width: 80%}
