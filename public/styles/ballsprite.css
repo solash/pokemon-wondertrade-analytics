@@ -1,81 +1,159 @@
-.pkbl-Beastball, .pkbl-Cherishball, .pkbl-Diveball, .pkbl-Dreamball, .pkbl-Duskball, .pkbl-Fastball, .pkbl-Friendball, .pkbl-Greatball, .pkbl-Healball, .pkbl-Heavyball, .pkbl-Levelball, .pkbl-Loveball, .pkbl-Lureball, .pkbl-Luxuryball, .pkbl-Masterball, .pkbl-Moonball, .pkbl-Nestball, .pkbl-Netball, .pkbl-Pokeball, .pkbl-Premierball, .pkbl-Quickball, .pkbl-Repeatball, .pkbl-Safariball, .pkbl-Sportball, .pkbl-Timerball, .pkbl-Ultraball {
+.pkbl-Beastball, .pkbl-beastball, .pkbl-Cherishball, .pkbl-cherishball, .pkbl-Diveball, .pkbl-diveball, .pkbl-Dreamball, .pkbl-dreamball, .pkbl-Duskball, .pkbl-duskball, .pkbl-Fastball, .pkbl-fastball, .pkbl-Friendball, .pkbl-friendball, .pkbl-Greatball, .pkbl-greatball, .pkbl-Healball, .pkbl-healball, .pkbl-Heavyball, .pkbl-heavyball, .pkbl-Levelball, .pkbl-levelball, .pkbl-Loveball, .pkbl-loveball, .pkbl-Lureball, .pkbl-lureball, .pkbl-Luxuryball, .pkbl-luxuryball, .pkbl-Masterball, .pkbl-masterball, .pkbl-Moonball, .pkbl-moonball, .pkbl-Nestball, .pkbl-nestball, .pkbl-Netball, .pkbl-netball, .pkbl-Pokeball, .pkbl-pokeball, .pkbl-Premierball, .pkbl-premierball, .pkbl-Quickball, .pkbl-quickball, .pkbl-Repeatball, .pkbl-repeatball, .pkbl-Safariball, .pkbl-safariball, .pkbl-Sportball, .pkbl-sportball, .pkbl-Timerball, .pkbl-timerball, .pkbl-Ultraball, .pkbl-ultraball {
 	background: url('/images/pokeball_sprites.png') no-repeat;
 }
 .pkbl-Beastball {
   background-position: 0 -600px;
 }
+.pkbl-beastball {
+  background-position: 0 -600px;
+}
 .pkbl-Cherishball {
+  background-position: 0 -552px;
+}
+.pkbl-cherishball {
   background-position: 0 -552px;
 }
 .pkbl-Diveball {
   background-position: 0 -408px;
 }
+.pkbl-diveball {
+  background-position: 0 -408px;
+}
 .pkbl-Dreamball {
+  background-position: 0 -528px;
+}
+.pkbl-dreamball {
   background-position: 0 -528px;
 }
 .pkbl-Duskball {
   background-position: 0 -504px;
 }
+.pkbl-duskball {
+  background-position: 0 -504px;
+}
 .pkbl-Fastball {
+  background-position: 0 -240px;
+}
+.pkbl-fastball {
   background-position: 0 -240px;
 }
 .pkbl-Friendball {
   background-position: 0 -168px;
 }
+.pkbl-friendball {
+  background-position: 0 -168px;
+}
 .pkbl-Greatball {
+  background-position: 0 -24px;
+}
+.pkbl-greatball {
   background-position: 0 -24px;
 }
 .pkbl-Healball {
   background-position: 0 -456px;
 }
+.pkbl-healball {
+  background-position: 0 -456px;
+}
 .pkbl-Heavyball {
+  background-position: 0 -216px;
+}
+.pkbl-heavyball {
   background-position: 0 -216px;
 }
 .pkbl-Levelball {
   background-position: 0 -96px;
 }
+.pkbl-levelball {
+  background-position: 0 -96px;
+}
 .pkbl-Loveball {
+  background-position: 0 -192px;
+}
+.pkbl-loveball {
   background-position: 0 -192px;
 }
 .pkbl-Lureball {
   background-position: 0 -120px;
 }
+.pkbl-lureball {
+  background-position: 0 -120px;
+}
 .pkbl-Luxuryball {
+  background-position: 0 -432px;
+}
+.pkbl-luxuryball {
   background-position: 0 -432px;
 }
 .pkbl-Masterball {
   background-position: 0 -72px;
 }
+.pkbl-masterball {
+  background-position: 0 -72px;
+}
 .pkbl-Moonball {
+  background-position: 0 -144px;
+}
+.pkbl-moonball {
   background-position: 0 -144px;
 }
 .pkbl-Nestball {
   background-position: 0 -360px;
 }
+.pkbl-nestball {
+  background-position: 0 -360px;
+}
 .pkbl-Netball {
+  background-position: 0 -384px;
+}
+.pkbl-netball {
   background-position: 0 -384px;
 }
 .pkbl-Pokeball {
   background-position: 0 0;
 }
+.pkbl-pokeball {
+  background-position: 0 0;
+}
 .pkbl-Premierball {
+  background-position: 0 -288px;
+}
+.pkbl-premierball {
   background-position: 0 -288px;
 }
 .pkbl-Quickball {
   background-position: 0 -480px;
 }
+.pkbl-quickball {
+  background-position: 0 -480px;
+}
 .pkbl-Repeatball {
+  background-position: 0 -312px;
+}
+.pkbl-repeatball {
   background-position: 0 -312px;
 }
 .pkbl-Safariball {
   background-position: 0 -576px;
 }
+.pkbl-safariball {
+  background-position: 0 -576px;
+}
 .pkbl-Sportball {
+  background-position: 0 -264px;
+}
+.pkbl-sportball {
   background-position: 0 -264px;
 }
 .pkbl-Timerball {
   background-position: 0 -336px;
 }
+.pkbl-timerball {
+  background-position: 0 -336px;
+}
 .pkbl-Ultraball {
+  background-position: 0 -48px;
+}
+.pkbl-ultraball {
   background-position: 0 -48px;
 }
