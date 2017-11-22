@@ -14,7 +14,7 @@ var express = require('express'),
     HerokuRedisStore = require('connect-heroku-redis')(express),
     MemoryStoreModel = require("./models/MemoryStore"),
 	redisEnvUrl = process.env.REDISCLOUD_URL,
-	REFRESH_CHARTS_RATE = 7200000, // 2 hours
+	REFRESH_CHARTS_RATE = 1800000, // 30 minutes
     MemoryStore,
 	dataStore;
 
