@@ -67,6 +67,12 @@ function sanitizeParams(params, userId) {
 		trainerName = "";
 	}
 
+	// Sanitize Nickname
+	var pokemonNickname = params.pokemonNickname || "";
+	if(pokemonNickname.length > 12) {
+		pokemonNickname = "";
+	}
+	
 	params.pokemonId = pokemonId;
 	params.pokeballType = pokeballType || '';
 	params.pokemonNickname = params.pokemonNickname || '';
