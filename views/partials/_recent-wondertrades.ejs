@@ -29,7 +29,11 @@
 		<tr data-unique='<%= wondertrade.userId %>/<%= wondertrade.date %>/<%= wondertrade.time %>'>
     		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %> <i class="pokemon-icon pkmn-<%= wondertrade.pokemonId %>"></i></a></td>
     		<td><%= wondertrade.level %></td>
-    		<td><%= wondertrade.pokemonNickname %></td>    		
+    		<td>
+				<% if(wondertrade.pokemonNickname.length <= 12) { %>
+					<%= wondertrade.pokemonNickname %>
+				<% } %>
+			</td>
     		<td class="checkArea"><%= wondertrade.hasItem? '&check;' : '' %></td>
     		<td class="checkArea"><%= wondertrade.isShiny? '&check;' : '' %></td>
     		<td class="checkArea"><%= wondertrade.hasPokerus? '&check;' : '' %></td>
