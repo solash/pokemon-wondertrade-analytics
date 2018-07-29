@@ -27,7 +27,7 @@
 	<tbody>
 	<% wondertrades.forEach(function(wondertrade){ %>
 		<tr data-unique='<%= wondertrade.userId %>/<%= wondertrade.date %>/<%= wondertrade.time %>'>
-    		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %> <i class="pokemon-icon pkmn-<%= wondertrade.pokemonId %>"></i></a></td>
+    		<td><a href="/data/pokemon/<%= wondertrade.pokemonId %>"><%= pokemonHash[wondertrade.pokemonId] %><% if(wondertrade.isShiny === true) { %><i class="pokemon-icon pkmn-s<%= wondertrade.pokemonId %>"></i></a><% } else if(wondertrade.isShiny === false) { %><i class="pokemon-icon pkmn-<%= wondertrade.pokemonId %>"></i></a><% } %></td>
     		<td><%= wondertrade.level %></td>
     		<td>
 				<% if(wondertrade.pokemonNickname.length <= 12) { %>
