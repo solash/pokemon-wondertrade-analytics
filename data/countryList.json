@@ -1,4 +1,5 @@
 [ 
+  {"name": "Not known", "id": "NK"},
   {"name": "United States", "id": "US"},
   {"name": "Japan", "id": "JP"},
   {"name": "Afghanistan", "id": "AF"}, 
