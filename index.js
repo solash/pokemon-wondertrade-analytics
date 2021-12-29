@@ -41,7 +41,7 @@ setInterval(function(){
     MemoryStore.refreshHighCharts();
 }, REFRESH_CHARTS_RATE);
 
-app.use(function() {
+app.configure(function() {
 	app.engine('ejs', engine);
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
